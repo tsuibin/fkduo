@@ -1,0 +1,77 @@
+/* µÇÂ¼Ìõ */
+#fkduo-login-wrapper { height:32px; overflow:hidden; background:url(../../html/img/login-bg.gif) repeat-x;}	  	
+	#fkduo-login, #fkduo-loginfo { width:860px; height:32px; line-height:32px; padding: 0 0 0 120px; margin:0 auto;background:url(../../html/img/login-logo.png) no-repeat 0 7px; position:relative;}
+	#fkduo-loginfo { padding-left:88px; color:#222}
+		* html #fkduo-loginfo {  padding:7px 5px 0 88px;  }
+	#fkduo-login-form { clear:both; float:left; margin-bottom:5px;}
+	#fkduo-login-form fieldset { padding:0; border:0;}
+	* html #fkduo-login-form fieldset{ padding:5px 5px 0 19px; }
+	#fkduo-login-form legend{ display:none;}
+	#fkduo-login-form input.input { padding:1px; margin:0 0 0 5px; height:18px; border:1px #999 solid; line-height:18px; }
+	#fkduo-login-form input.btn { width:50px; height:19px; line-height:19px; vertical-align:middle; background:url(../../html/img/btn1.gif) no-repeat; border:0;}
+	labal{  cursor:pointer}
+	#fkduo-loginfo a { text-decoration:underline;}
+	#fkduo-navmy { width:422px; height:24px;  padding: 0 5px; position:absolute; top:9px; right:56px; overflow:hidden; }
+	#fkduo-navmy a { text-decoration:none;}
+	#fkduo-navmy img { margin:0 3px 0 7px;}
+	#fkduo-navmy select{ width:100px; cursor:hand;}
+		#fkduo-navmy select option{ cursor:pointer;}		
+	#fkduo-login-wrapper a.map  { width:30px; height:19px; padding:0 0 0 20px; line-height:19px; vertical-align:middle; background:url(../../html/img/btn2.gif) no-repeat; display:block; position:absolute; top:5px; right:65px; text-decoration:none; overflow:hidden;}
+	#fkduo-login-wrapper a.help { width:30px; height:19px; padding:0 0 0 20px; line-height:19px; vertical-align:middle; background:url(../../html/img/btn3.gif) no-repeat; display:block; position:absolute; top:5px; right:5px; text-decoration:none; overflow:hidden;}	  
+body { background: #2A81BE; margin: 0; }
+body,div,td,th,input { font: normal 12px/180% simsun, /*'Lucida Grande',*/'ËÎÌå','ÐÂËÎÌå', /* arial,verdana, */ sans-serif;  }
+div,form,img,dl,dt,dd,ul,ol,li {  padding: 0; border: none; margin: 0; }
+ul,li,ol {	list-style: none; }
+dt,dd,li {	display: block; }
+select,input,img{ vertical-align: middle; }
+em { font-style: normal; }  
+/*fkduo*/
+#club_logo1{ display:block; width:190px; height:90px; position:relative; float:left; cursor:pointer;  font-family:Î¢ÈíÑÅºÚ; font-size:18px;}
+#club_logo1 #title{ display:block; width:190px; height:90px; position:absolute; left:0; top:0; background:url(../../html/img/logo.gif) no-repeat; }
+/*ÊýÂëÓ°Ïñ¾ãÀÖ²¿*/
+#club_logo2{ display:block; width:190px; height:90px; position:relative; float:left; cursor:pointer;   font-family:Î¢ÈíÑÅºÚ; font-size:18px;}
+#club_logo2 #title{ display:block; width:190px; height:90px; position:absolute; left:0; top:0; background:url(../../html/img/logo2.gif) no-repeat; }	
+	#fkduo-loglink { width:75px; height:20px; position:absolute; top:4px; left: 10px; z-index:100}
+		#fkduo-loglink a { display:block; width:95px; height:20px; }
+		#fkduo-loglink em { display:none;}	
+
+/*---µÇÂ½-------------------------------------------------------------------*/		 
+#club_login_wrapper{ background:url(../../html/img/navbg2.jpg) repeat; height:35px; overflow:hidden;}
+	#club_login{ width:888px; margin:0 auto; background:url(../../html/img/mian.gif) no-repeat 5px 3px; padding:0 0 0 100px; height:35px; line-height:35px;}
+	#club_login_form{ clear:both; float:left;  margin-bottom:5px;}
+	#club_login_form fieldset{ border:none; padding:0 5px 0 19px; margin:0; }
+	* html #club_login_form fieldset{ padding:7px 5px 0 19px; }
+	#club_login_form legend{ display:none;}
+	#club_login_form input {}
+	#club_login_form label{ margin-right:5px}
+	#club_login_form .input{ width:100px; height:18px; border:1px #999 solid; line-height:18px;}
+	#club_login_form .submit_login{ width:47px; height:21px; background:url(../../html/img/login.gif) no-repeat; border:none;}
+	
+	#login_info{ width:878px; margin:0 auto; background:url(../../html/img/mian.gif) no-repeat 5px 3px; padding:0 0 0 88px; height:35px; line-height:35px;}
+		* html #login_info {  padding:7px 5px 0 88px;  }
+	#login_info select{ *vertical-align:-3px;}
+	#login_info img{ margin-right:5px; vertical-align:-3px;}	  
+/*------µÇÂ½ÏÂµ¼º½----------------------------------------------------------------*/
+#top_content{ width:978px; height:105px; position:relative; padding:5px 0 10px 0;}
+#club_logo{ display:block; width:190px; height:90px; position:relative; float:left; cursor:pointer; }
+#club_logo #title{ display:block; width:190px; height:90px; position:absolute; left:0; top:0; background:url(../../html/img/logo_qq.gif) no-repeat; }
+#faq{ position:absolute; left:5px; top:10px;}
+#shortcut_link{ position:absolute; right:5px; bottom:0;}
+#shortcut_link a{color:#FFF;}
+/*¹ã¸æ*/
+.fkduo_ad0{ width:745px; height:90px;  position:absolute; top:10px; right:5px;}	  
+/*---Ö÷µ¼º½-----------------------------------------------------------------*/
+.bbsmenu{ width:974px; background:#D1EBFA; border:2px #45A4D8 solid; border-width:0 2px 1px 2px; clear:both;}
+#mainmenu{ background:url(../../html/img/navbg.gif) no-repeat 0 0; height:32px; line-height:32px; overflow:hidden; border:none; width:976px; letter-spacing:0px;}
+	#mainmenu a{ color:#333; font-size:13px; font-weight:700; background:url(../../html/img/navbg.gif) no-repeat -976px top; padding:0 0 0 9px; margin:0 2px }
+	#mainmenu a.first{ background:none;}
+	#mainmenu a.yellow{ color: #F37A0C;}	 
+#submenu{ position:relative; padding:6px 5px 4px 80px; width:889px; border-bottom:none; line-height:140%; min-height:19px;}
+* html #submenu{height:19px; }
+#submenu .t{ position: absolute; left:14px; top:6px; color:#333; cursor:pointer; }
+#submenu a{ color:#0D417C; margin-right:5px;}	   
+#shortcut_link a.strong{ color:#e4fc15; font-weight:700;}
+/*Æû³µ°å¿é Ñ¡Ôñ*/
+#submenu select{ width:80px; margin:0 5px}
+
+.center{margin:0 auto}

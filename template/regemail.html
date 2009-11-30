@@ -1,0 +1,70 @@
+{xingTemplate head}
+<!-- /论坛导航 -->
+<link href="html/css/myhome.css" rel="stylesheet" type="text/css" />
+
+{if ($_GET['action']!=sendok)}
+<!-- main -->
+<div class="mainCon fix">
+<!-- 注册wrapper -->
+<dl id="fkduoRegBox">
+<form action="sendemail.php" method="post" name="form1" onsubmit="return checkSubmit();">
+<dt class="t">用户注册(第一步)</dt>
+<dd class="c">
+<!-- 表单 -->
+<dl id="fkduoRegFormWrapper">
+<dt class="subT">验证用户电子邮件</dt>
+<dd class="subC">
+<table class="myDetialForm">
+<tr>
+<th><label for="email">电子邮件</label></th>
+<td><input type="text" id="email" class="inputText" name="email" /> &nbsp;&nbsp;
+<input type="submit" name="Submit" value="提 交" accesskey="6">
+<span id="emailInf" class=""inf_normal"">&nbsp; </span></td>
+</tr>
+</table>
+</dd>
+</dl>
+<span id="submitInf" class="inf_normal"></span>
+<!-- /表单 -->
+</dd>
+<dd class="submit">你需要收信验证，请认真填写
+</dd>
+</form>
+</dl>
+<!-- 注册wrapper -->
+</div> <!-- /main -->
+
+{else}
+
+<!-- main -->
+<div class="mainCon fix">
+<!-- 注册wrapper -->
+<dl id="fkduoRegBox">
+<dt class="t">用户注册(第一步)</dt>
+<dd class="c">
+<!-- 表单 -->
+<dl id="fkduoRegFormWrapper">
+<dt class="subT">验证用户电子邮件</dt>
+<dd class="subC">
+<table class="myDetialForm">
+<tr>
+<th><label for="email">提示：</label></th>
+<td><font color=green><h2>一封验证邮件已经发往你的邮箱{$email}，请查收并完成验证！</h2></font>
+<span id="emailInf" class=""inf_normal"">&nbsp; </span></td>
+</tr>
+</table>
+</dd>
+</dl>
+<span id="submitInf" class="inf_normal"></span>
+<!-- /表单 -->
+</dd>
+<dd class="submit">&nbsp;[ <a href="javascript:history.back(1)" ><font color="blue">返回</font></a> ]
+</dd>
+</dl>
+<!-- 注册wrapper -->
+</div> <!-- /main -->
+{/if}
+
+<!-- 页脚 -->
+{xingTemplate foot}
+<!-- /页脚 -->

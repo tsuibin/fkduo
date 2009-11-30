@@ -1,0 +1,26 @@
+
+/*----右栏区块---------------------------------------------------------------*/
+.rtag{ margin-bottom:5px; border:1px #CCC solid; background:#FFF; width:183px; overflow:hidden;}
+.rtag .t{ background:#45A4D8; height:22px; color:#FFF; font-weight:700; line-height:22px; letter-spacing:1px; text-align:center;}
+	.rtag .t a{ color:#FFF;}
+	.rtag .t a:visited{ color:#FFF;}
+.rtag .c{ padding:0 5px; width:173px; text-align:left;  overflow:hidden; }
+
+/*带图样式*/
+.rtag .c ul{ padding:3px 0;}
+.rtag .c .piclist li{overflow:hidden; margin:0 auto 5px auto; background:#FFF;text-align:center; padding:5px 0 0 0; height:auto; }
+.rtag .c .piclist li img{ border:1px #CCC solid; display:block; padding:3px; background:#FFF; margin:0 auto;}
+.rtag .c .piclist li br{ line-height:1%; display:table;}
+/*文字链*/
+.rtag .c ul li{ text-align:left; padding:0; height:20px; overflow:hidden; padding:0 0 0 10px; background:url(../../html/img/icon-links.gif) no-repeat 0 7px;}
+.rtag .c ul li{ line-height:160%}
+.noborder{ border:none;}
+.rtag table tr td{ line-height:140%}
+
+.adtag{ margin-bottom:5px; border:1px #CCC solid; background:#FFF; width:183px; overflow:hidden; padding:5px 0}
+.adtag img{ margin:0 auto; display:block; width:150px;}
+.adtag ul{ padding:0 3px;}
+.adtag .adlist li{ text-align:left; padding:0; height:20px; overflow:hidden; padding:0 0 0 10px; background:url(../../html/img/icon-links.gif) no-repeat 0 8px;}
+.adtag .adpiclist li{overflow:hidden; margin:0 auto 5px auto; background:#FFF;text-align:center; padding:5px 0 0 0; height:auto; }
+.adtag .adpiclist li img{ border:1px #CCC solid; display:block; padding:3px; background:#FFF; margin:0 auto; height:50px; width:150px;}
+.adtag .adpiclist li br{ line-height:1%; display:table;}

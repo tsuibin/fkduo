@@ -1,0 +1,296 @@
+{xingTemplate head}
+
+{xingTemplate $listtop}
+
+<!-- /插入论坛头部模块 -->
+
+<!-- 插入回复列表 -->
+<SCRIPT LANGUAGE="JavaScript">
+function lookme(){
+alert('无法查看此楼主！'); 
+return false;
+}
+</SCRIPT>
+<!-- 标题 -->
+<div class="topic_pager">
+<span class="t_pager"> 
+<b>{$scfy}</b>&nbsp; 
+[<a href='onlyou.php?cid={$cid}&bk={$bk}&logname={$row2[firstlogname]}' >只看楼主</a>]
+</span>
+<span class="stat">点击：{$row2[click]+1} 回复：{$row2[huifu]} <font color=red>已被{$row2[favcount]}人收藏</font></span>
+</div>
+<!-- /标题 -->
+<div id="topic_title"><h1>主题:{if $row2[through]==0}{$row2[title]}{else}请稍候,此贴子内容审核中...{/if}</h1>
+</div>
+<!-- /标题 -->
+
+{if $now<2}
+<!-- 主楼 -->
+<div class="item">
+<!-- 作者信息 -->
+<div class="author_info">
+<!-- 作者信息 -->
+<div class="author">
+<a href="info.php?logname={$row2[firstlogname]}" target="_blank"><strong>{$row2[firstnkname]}</STRONG>{$row2[firstlogname]}</a>
+</div>
+<div class="avatars">
+{if ($row2[face]!=1)}
+<img src="html/face/{$row2[firstlogname]}.{$row2[face]}" border="1">
+{/if}
+</div>
+
+<div class="hppp">
+<span class="hp">
+<img src="html/img/hp.gif" />{$row2[hp]}
+</span>
+<span class="pp">
+<img src="html/img/pp.gif" />{$row2[pp]}
+</span>
+</div>
+<br />
+<div>
+来自：{$row2[area]}&nbsp; <br />
+注册：{uuue($row2[regtime])}<br />
+发帖：{$row2[zts]}＋{$row2[hfs]}<br />
+</div>
+<div>
+<a href="info.php?logname={$row2[firstlogname]}" target="_blank"><img src="html/img/minihome.gif" /></a>
+{if ($_SESSION[power]<4) and ($_SESSION[power]!=0)}
+<br /><br />IP:{$row2[ip]}{/if}
+</div>
+</div> 
+<!-- /作者信息 --> 
+<div class="rc">
+<!-- 功能 -->
+<div class="fn">
+<a href="edit.php?action=lz&bk={$bk}&cid={$cid}">[编辑]</a>
+<a href="my.php?action=sendsms&logname={$row2[firstlogname]}" target="_blank">[短信]</a>
+<a href="#reply">[收藏]</a> 
+<a href="report.php?bk={$bk}&cid={$cid}&now={$now}&lc=0" target="_blank">[举报]</a>
+<a href="prize.php?mod=lz&bk={$bk}&cid={$cid}&from={$_SESSION[logname]}&to={$row2[firstlogname]}">[奖分]</a>
+<a href="#reply" onclick="quoteMsg('{$row2[cid]}')">[引用]</a>
+{if ($_SESSION[power]<4) and ($_SESSION[power]!=0)}
+管理：
+
+<a href="process.php?bk={$bk}&action=zd&zd=1&cid={$cid}" target="_blank" title="置顶" >[置顶</a><a href="process.php?bk={$bk}&action=zd&cid={$cid}" target="_blank" title="解除" >-解]</a>
+<a href="process.php?action=tj&tj=1&bk={$bk}&cid={$cid}" target="_blank" title="推荐" >[荐</a><a href="process.php?action=tj&bk={$bk}&cid={$cid}" target="_blank" title="解除" >-解]</a>
+<a href="process.php?action=jh&jh=1&cid={$cid}" target="_blank" title="精华" >[精华]</a>
+<a href="process.php?action=highlight&cid={$cid}&mod=1" target="_blank">[高亮]</a>
+<a href="process.php?action=lock&lock=1&cid={$cid}" target="_blank" title="锁定" >[锁定]</a>
+<a href="process.php?action=hslz&huifu={$row2[huifu]}&cid={$cid}" target="_blank">[回收]</a>
+<a href="process.php?action=pblz&pb=1&cid={$cid}" target="_blank" title="屏蔽" >[屏蔽]</a>
+{/if}
+
+<a href='onlyou.php?cid={$cid}&bk={$bk}&logname={$row2[firstlogname]}'><font color="red">[只看此人]</font></a><a id="pid{$row2[lc]}"></a>
+</div>
+<!-- /功能 -->
+<!-- 正文 -->
+<div class="mc">
+<a name="{$row2[cid]}" id="{$row2[cid]}"></a>
+<div id="__Message_{$row2[cid]}"> 
+{if $row2[through]==0}
+{if $row2[pb]==1}
+<FONT color=#000066><em>[此贴子内容被管理员屏蔽...]</em></FONT>
+{else}
+
+
+{if $row2[replyview]==0 or (replyview($row2[cid],$_SESSION[logname])==1)}
+{stripslashes($z_content)}
+{if (!$row2[pic]=="0")}<br><br>点击查看放大图片：<br>
+<a href="{$row2[pic]}" target="_blank"><img src="{$row2[pic]}" alt="{$row2[title]}" border=0 onload='javascript:this.width=Math.min(this.width,600)'></a>{/if}
+{else}
+<FONT color=red><em>[本帖内容需要回复才可以浏览]</em></FONT>
+{/if}
+
+
+{/if}{else}
+<FONT color=#000066><em>[请稍候,此贴子内容审核中...]</em></FONT>
+{/if}
+{if $row2[edit]>0}
+<p align=right><FONT color=#000066><em>[此贴子已经被作者于 {uuuw($row2[edit])} 编辑过]</em></FONT>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+{/if}
+
+</div>
+<br>
+{if ($row2[prizepp]>0) }
+<font color="#0033FF">本贴获网友奖分{$row2[prizepp]}点PP　</font>
+<a href="prize.php?action=prizeinfo&mod=lz&bk={$bk}&cid={$cid}">[详细记录]</a><br>{/if}
+{if $sys_sign==1}------------------------------------------------------------------------------------------- <br />
+<div id="sign">
+{$row2[sign]}
+</div>{/if}
+</div> 
+<!-- /正文 -->
+</div>
+<br class="nof"/>
+<!-- 时间 -->
+<div class="p_time">发表于:{uuuw($row2[firsttime])} </div> 
+<!-- /时间 -->
+<!-- 推荐 楼数 -->
+<div class="o_info">
+<font color='#980034'>推荐：</font>
+{$ad4}
+<span>
+...楼主
+</span>
+</div>
+<!-- /推荐 楼数 -->
+<br class="nof" />
+</div>
+<!-- /楼主 -->
+{/if}
+
+
+
+
+
+
+
+{if $row2[huifu]>0 }
+
+{while ($row=mysql_fetch_array($query)) }
+
+<!-- 回复 -->
+{if $row[lc]%2 == '0'}
+<div class="item">
+{else}
+<DIV class="item odd">
+{/if}
+<!-- 作者信息 -->
+<div class="author_info">
+<!-- 作者信息 -->
+<div class="author">
+<a href="info.php?logname={$row[lastlogname]}" target="_blank"><strong>{$row[lastnkname]}</STRONG>{$row[lastlogname]}</a>
+</div>
+<div class="avatars">
+{if $row[face]!=1}
+<img src="html/face/{$row[lastlogname]}.{$row[face]}" border="1">
+{/if}
+</div>
+
+<div class="hppp">
+<span class="hp">
+<img src="html/img/hp.gif" />{$row[hp]}
+</span>
+<span class="pp">
+<img src="html/img/pp.gif" />{$row[pp]}
+</span>
+</div>
+<br />
+<div>
+来自：{$row[area]}&nbsp; <br />
+注册：{uuue($row[regtime])} <br />
+发帖：{$row[zts]}＋{$row[hfs]}<br />
+</div>
+<div>
+<a href="info.php?logname={$row[lastlogname]}" target="_blank"><img src="html/img/minihome.gif" /></a>
+{if ($_SESSION[power]<4) and ($_SESSION[power]!=0)}
+<br /><br />IP:{$row2[ip]}{/if}
+</div>
+</div> 
+<!-- /作者信息 --> 
+<div class="rc">
+<!-- 功能 -->
+<div class="fn">
+<a href="edit.php?action=huifu&bk={$bk}&cid={$cid}&lc={$row[lc]}&now={$now}">[编辑]</a>
+<a href="my.php?action=sendsms&logname={$row[lastlogname]}" target="_blank">[短信]</a>
+<a href="report.php?bk={$bk}&cid={$cid}&now={$now}&lc={$row[lc]}" target="_blank">[举报]</a>
+<a href="prize.php?mod=huifu&bk={$bk}&cid={$cid}&lc={$row[lc]}&from={$_SESSION[logname]}&to={$row[lastlogname]}">[奖分]</a>
+<a href="#reply" onclick="quoteMsg('hf{$row[id]}')">[引用]</a>
+{if ($_SESSION[power]<4) and ($_SESSION[power]!=0)}
+管理：
+<a href="process.php?action=delhuifu&cid={$cid}&lc={$row[lc]}" target="_blank">[删除]</a>
+<a href="process.php?action=pbhuifu&pb=1&bk={$bk}&cid={$cid}&lc={$row[lc]}" target="_blank">[屏蔽</a><a href="process.php?action=pbhuifu&bk={$bk}&cid={$cid}&lc={$row[lc]}" target="_blank" title="解除" >-解]</a>
+{/if}
+<a href='onlyou.php?cid={$cid}&bk={$bk}&logname={$row[lastlogname]}'><font color="red">[只看此人]</font></a><a id="pid{$row[lc]}"></a>
+</div>
+<!-- /功能 -->
+<!-- 正文 -->
+<div class="mc">
+<a name="{$row[cid]}" id="{$row[cid]}"></a>
+<div id="__Message_hf{$row[id]}"> 
+{if $row[through]==0}
+{if $row[pb]==1}
+<FONT color=#000066><em>[此贴子内容被管理员屏蔽...]</em></FONT>
+{else}
+{stripslashes($row[content])}
+{if (!$row[pic]=="0")}<br><br>
+<a href="{$row[pic]}" target="_blank"><img src="{$row[pic]}" alt="{$row2[title]}" border=0 onload='javascript:this.width=Math.min(this.width,600)'></a>{/if}
+{/if}
+{else}
+<FONT color=#000066><em>[请稍候,此贴子内容审核中...]</em></FONT>
+{/if}
+
+{if $row[edit]>0}
+<p align=right><FONT color=#000066><em>[此贴子已经被作者于 {uuuw($row[edit])} 编辑过]</em></FONT>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+{/if}
+</div>
+<br><br><br> 
+{if ($row[prizepp]>0) }
+<font color="#0033FF">本贴获网友奖分{$row[prizepp]}点PP　</font>
+<a href="prize.php?action=prizeinfo&mod=huifu&bk={$bk}&cid={$cid}&lc={$row[lc]}">[详细记录]</a><br>{/if}
+{if $sys_sign==1}------------------------------------------------------------------------------------------- <br />
+<div id="sign">
+{$row[sign]}
+</div>{/if}
+</div> 
+<!-- /正文 -->
+</div>
+<br class="nof"/>
+<!-- 时间 -->
+<div class="p_time">发表于:{uuuw($row[lasttime])} </div> 
+<!-- /时间 -->
+<!-- 推荐 楼数 -->
+<div class="o_info">
+<font color='#980034'>推荐：</font>
+{$ad4}
+<span>
+...第{$row[lc]}楼
+</span>
+</div>
+<!-- /推荐 楼数 -->
+<br class="nof" />
+</div>
+<!-- /回复 -->
+{/while}
+
+{/if}
+
+
+
+
+
+
+<!-- 翻页 -->
+<div class="fn2">
+<div class="io">
+<a href="post.php?bk={$bk}"><img src="html/img/send.gif" alt="发表文章" /></a>
+<a href="#reply"><img src="html/img/reply.gif" alt="回复文章" /></a>
+</div>
+<div class="inner_pager">&nbsp;<b>{$scfy}</b>&nbsp;&nbsp; 
+[<a href='onlyou.php?cid={$cid}&bk={$bk}&logname={$row2[firstlogname]}'>只看楼主</a>]
+</div>
+</div>
+<!-- /翻页 -->
+
+
+
+
+<a name="reply"></a>
+{if $row2[lock]==1}
+本贴已锁定，暂时不可以回复！
+{else}
+{xingTemplate quickpost}
+{/if}
+<!-- 插入回复列表 -->
+</div>
+<!-- /左边 -->
+<!-- 右边 -->
+{xingTemplate right}
+<!-- /右边 -->
+<br class="nof" /> 
+</div>
+<!-- /主要框架 -->
+<!-- 插入尾部 -->
+{xingTemplate foot}
+{$runtimes}

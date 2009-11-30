@@ -1,0 +1,31 @@
+#
+# robots.txt for FkDuo Board
+# Version 1.1
+#
+User-agent: *
+
+Disallow: /install/
+Disallow: /fkduo/
+Disallow: /include/
+Disallow: /config/
+Disallow: /template/
+Disallow: /log.php
+Disallow: /edit.php
+Disallow: /post.php
+Disallow: /postok.php
+Disallow: /reg.php
+Disallow: /regok.php
+Disallow: /report.php
+Disallow: /process.php
+Disallow: /up.php
+Disallow: /prize.php
+Disallow: /make.php
+Disallow: /my.php
+Disallow: /myok.php
+Disallow: /loop2hs.php
+Disallow: /getpassword.php
+Disallow: /fkduo_delusercard.php
+Disallow: /feifuok.php
+Disallow: /conn.php
+Disallow: /postalert.php
+Disallow: /check.php

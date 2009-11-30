@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>!{$title!} !{$sitename!}{$sys_sitenameadd}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+!{if $bkk==alert!}
+<meta http-equiv="refresh" content="3;URL=!{$ghgh!}" />
+!{/if!}
+<meta name="Keywords" content="{$sys_Keywords}" />
+!{if ($Description==1)}
+<meta name="Description" content="!{$Description1}...- FKDUO Board" />
+!{else}
+<meta name="Description" content="{$sys_Description}- FKDUO Board" />
+!{/if}
+<link href="html/css/css.css" rel="stylesheet" type="text/css">
+!{if $bkk==bk!}
+<link href="html/css/list3.css" rel="stylesheet" type="text/css" />
+!{else!}
+<link href="html/css/display.css" rel="stylesheet" type="text/css" />
+!{/if!}
+<link href="html/css/fkduonav.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+<!-- 插入HTML头部 -->
+<script language="javascript" src="html/js/popupImages.js"></script>
+<!-- <DIV ID="dek" CLASS="dek"></DIV> -->
+<script language="JavaScript">
+var MouseX, MouseY
+if (!document.all) document.captureEvents(Event.MOUSEMOVE);
+document.onmousemove=MouseMove;
+function MouseMove(e){
+if(document.all){
+MouseX=document.documentElement.scrollLeft+event.clientX;
+MouseY=document.documentElement.scrollTop+event.clientY;
+}else{
+MouseX=e.pageX;
+MouseY=e.pageY;
+}
+}
+function getImageSize(ImgSrc)
+{
+var img=new Image();
+img.src=ImgSrc;
+var imgSize={w:img.width,h:img.height};
+delete img;
+return imgSize;
+}
+function ShowLayerAlbum(ImgSrc){
+if(MouseX && MouseY){
+swapImage('AlbumImage',ImgSrc,getImageSize(ImgSrc));
+}
+}
+function HideLayerAlbum(){
+showHideLayers('LayerAlbum','hide');
+}
+function showHideLayers(id, v) {
+if(v=='hide')
+{
+document.getElementById(id).innerHTML="";
+}else if(v=='show')
+{
+if(!document.getElementById("AlbumImage"))
+{
+var img=document.createElement("img");
+img.id="AlbumImage";
+img.cssText="border: 1px solid #cccccc; width:0px;height:0px";
+document.getElementById(id).appendChild(img);
+}
+}
+document.getElementById(id).style.visibility=(v=='show')?'visible':(v=='hide')?'hidden':v;
+}
+function swapImage(id, ImgSrc,imgsize) {
+var yOffset=imgsize.h;
+showHideLayers('LayerAlbum','show');
+document.getElementById('LayerAlbum').style.left=MouseX+"px";
+document.getElementById('LayerAlbum').style.top=MouseY-yOffset -20+"px";
+document.getElementById(id).src = ImgSrc;
+}
+</script>
+<div id="LayerAlbum" style="z-index:9999;visibility: hidden; position: absolute; top: 0px; left: 0px;"><img id="AlbumImage" style="border: 1px solid #cccccc;" /></div>
+<a name=top></a>
+<!-- 插入用户状态条 -->
+<script type="text/JavaScript">
+function MM_jumpMenu(selObj,restore){ //v3.0
+eval("location='"+selObj.options[selObj.selectedIndex].value+"'");
+if(restore) selObj.selectedIndex=0;
+}
+</script>
+<!-- 登陆头部 -->
+
+!{if ($_SESSION[logname])!}
+!{xingTemplate headlogin!}
+!{else!}
+!{xingTemplate headnologin!}
+!{/if!}
+
+
+<!-- /登陆头部 --><!-- 插入用户状态条 -->
+<!-- 头部logo & 广告 -->
+<div class="center" id="top_content">
+<a href="{$siteurl}" id="club_logo1" title="{$sitename}">{$sitename}<span id="title"></span></a>
+<!-- 广告 -->
+
+<div class="fkduo_ad0">
+!{$ad0!}
+</div>
+
+<!-- 广告 -->
+<!-- 快捷链接 -->
+<div id="shortcut_link">
+!{if $_SESSION[power]<4 and (int)($_SESSION[power])!=0!}
+[<a href="fkduo/log.php" target=_blank><font color=red><b>升为管理员权限</b></font></a>] ｜
+!{/if!}
+ <a href="#" class="strong">PP银行</a> ｜ <a href="#">无线WAP</a> </div>
+<!-- 快捷链接 -->
+</div>
+<!-- 头部logo & 广告 -->
+<!-- 论坛导航 -->
+<div class="bbsmenu center" id="mainmenu" ><a class="first" href="index.php">首页</a>
+{$nav}
+</div>
+<!-- /论坛导航 -->

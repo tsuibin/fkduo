@@ -1,0 +1,57 @@
+<div id="right_content">
+<div class="rtag">
+<div class="t">
+<a href="javascript:void(0)" onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('{$siteurl}');">
+设 <strong>[{$sitename}]</strong> 为主页
+</a>
+</div>
+</div>
+
+<div class="rtag noborder">
+{$ad1}
+</div>
+
+<!-- /wap -->
+<div class="rtag">
+<div class="c"><a href="{$siteurl}" target="_blank">本站:{$siteurl}</a></div>
+</div>
+<!-- 哇山 -->
+
+<!-- /右栏24小时 -->
+<div class="rtag">
+<div class="t">{$sys_right_hour}小时人气排行</div>
+<div class="c">
+<ul>
+{while ($row1=mysql_fetch_array($query1))}
+<li><a href="{url2($row1[bk],$row1[cid])}" title="{$row1[title]}" target=\"_blank\">{$row1[title]}</a></li>
+{/while}
+</ul>
+</div>
+</div>
+
+<!-- /版主推荐 -->
+<div class="rtag">
+<div class="t">版主推荐</div>
+<div class="c">
+<ul>
+{while ($row3=mysql_fetch_array($query3))}
+<li><a href="{url2($row3[bk],$row3[cid])}" title="{$row3[title]}" target=\"_blank\">{$row3[title]}</a></li>
+{/while}
+</ul>
+</div>
+</div>
+
+
+<!-- 推荐热图 -->
+<div class="rtag"> 
+<div class="t">推荐热图</div>
+<div class="c">
+<ul class="piclist">
+{while ($row2=mysql_fetch_array($query2))}
+<li><a href="{url2($row2[bk],$row2[cid])}" title="{$row2[title]}" target=\"_blank\"> <img src="{$row2[img]}" /><br />{$row2[title]}</a></li>
+{/while}
+</ul>
+</div> 
+</div>
+
+</div>

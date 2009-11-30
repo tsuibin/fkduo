@@ -1,0 +1,97 @@
+{xingTemplate head}
+{xingTemplate $listtop}
+<!-- /插入论坛头部模块 -->
+<table id="reply">
+<form name="input" enctype="multipart/form-data" method="POST" action="editok.php?bk={$bk}&action={$_GET['action']}&cid={$cid}&lc={$row[lc]}&now={$_GET['now']}">
+<tr>
+<th colspan="2" class="t">修改话题 
+<a href=#top><img src=html/img/top.gif border=0></a>
+</th>
+</tr>
+<!-- 插入发贴文件 -->
+<script language="JavaScript" src="html/js/postFunction.js"></script>
+<script language="JavaScript" src="html/js/replyIcons.js"></script>
+<tr>
+<th width="125">主题：</th>
+<td>
+<!--<input type="text" name="title" size="58" class="input" value="<h1>{$str1}">-->
+<?php
+if ($_GET['action']==huifu){
+$str1="回复";
+}
+?>
+<textarea name="title" cols="70" class="input" rows="1" >{$str1}</textarea>
+</td>
+</tr>
+
+<tr>
+<td bgcolor="#F9F9F9">消息图标:<br>
+（点击图标可以在发言中贴图）</td>
+<td bgcolor="#F9F9F9">
+<script language="JavaScript">
+ToolBar.outputExp();
+</script> 
+</td>
+</tr>
+<tr id="codebuttons">
+<td bgcolor="#F9F9F9">代码辅助模式：<br>
+<input onclick="chmode('2')"
+type="RADIO" checked value="2" name="mode">
+提示插入<br>
+<input
+onclick="chmode('0')" type="RADIO" value="0" name="mode">
+直接插入<br>
+<input
+onclick="chmode('1')" type="RADIO" value="1" name="mode">
+帮助信息</td>
+<td bgcolor="#F9F9F9"><a
+href="javascript:bold()"><img alt=插入粗体文本
+src="html/ico/bb_bold.gif" border="0"></a> <a href="javascript:hyperlink()"><img
+alt=插入超级链接 src="html/ico/bb_url.gif"
+border="0"></a> 
+<a href="javascript:image()"><img alt=插入图像
+src="html/ico/bb_image.gif"
+border="0"></a> <a href="javascript:quote()"><img alt=插入引用
+src="html/ico/bb_quote.gif"
+border="0"></a>  <a href="javascript:flash()"><img alt=插入FLASH
+src="html/ico/bb_flash.gif"
+border="0"></a>
+<br>
+<input name="closecode" type="CHECKBOX" value="1" class="pt9" >
+关闭所有标签</td>
+</tr>
+<tr>
+<td bgcolor="#F9F9F9">内容区:<br>
+(最大长度8000字节)<a href="javascript:checklength(document.input);">[字数检查]</a></td>
+<td bgcolor="#F9F9F9"><textarea name="message" cols="70" rows="12" class="input" onkeydown="javascript: ctlent();" onkeyup="javascript: storeCaret(this);" onclick="javascript: storeCaret(this);" onselect="javascript: storeCaret(this);">{$str}</textarea></td>
+</tr>
+<tr>
+<td bgcolor="#F9F9F9">&nbsp;</td>
+<td bgcolor="#F9F9F9"><div id="__PCHOME_AD_SYS_CLUB_TOPIC_BOTTOM"></div></td>
+</tr>
+<!-- 插入发贴文件 -->
+<tr>
+<th width="125"></th>
+<td>
+<input type="hidden" name="_EditTopicBtn" value="1">
+<input type="HIDDEN" name="topicid" value="15">
+<input type="HIDDEN" name="bbsid" value="4556683">
+<input type="HIDDEN" name="msgid" value="2948560">
+<input type="HIDDEN" name="areaid" value="1">
+<input type="HIDDEN" name="isTop" value="0">
+<input type="button" name="Summit" value="修改话题" class="button" onClick="validate()">
+<input type="RESET" name="clear" value="清除字段" class="button"> 
+</td>
+</tr>
+</form>
+</table>
+</div>
+<!-- 右边 -->
+{xingTemplate right}
+<!-- /右边 -->
+<br class="nof" /> 
+</div>
+<!-- /主要框架 -->
+<!-- 插入尾部 -->
+{xingTemplate foot}
+<!-- 插入尾部 -->

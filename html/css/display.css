@@ -1,0 +1,89 @@
+@import url(layout.css);
+@import url(nav.css);
+@import url(rcol.css);
+@import url(common.css);
+
+/*帖子内页*---------------------------------------------------*/
+#topic_title{width:755px; background:#45A4D8; color:#FFF; padding:3px 0 3px 10px;   border-top:1px #A8D4EC solid; position:relative;}
+h1{ font-size:12px; margin:0; padding:0}
+#topic_title span{ position:absolute; top:2px; right:5px; display:block; background:#FFF; border:1px #CCC solid; padding:0 5px; color:#333}
+#topic_title span strong{ padding:0 0 0 5px;}
+.item{ width:763px; border:1px #E6E6E6 solid; border-bottom:none; background:#FFF; overflow:hidden; }
+	* html .item{height:10px; overflow:visible; border-bottom:none;}
+.odd{ background:#F9F9F9}
+	
+.author_info{ float:left; width:115px; border-right:1px #E6E6E6 solid;padding:5px 5px 10px ; }
+	.author{ line-height:140%; margin-bottom:3px; word-break : break-all; }
+		.author strong{ display:block;}
+	.avatars{  margin-bottom:5px; padding-top:3px;}
+	.avatars img{border:1px #333 solid;}
+	.hppp{ margin-bottom:10px; font-weight:700; margin-left:-2px;}
+		.hppp img{ margin-right:3px; vertical-align:-3px; }
+		.hp{ color:#36C; margin-right:3px;}
+		.pp{ color:#C39; }
+	.digi_club { padding:10px 0 0 0; height:55px; overflow:hidden; margin-bottom:5px;}
+		.digi_club img{ float:left; margin-right:3px;}
+		.digi_club br{ line-height:1%; display:table;}
+
+.author_info div{ line-height:140%;}
+
+.rc{ border-left:1px #E6E6E6 solid; float:left; width:637px;  margin-left:-1px; overflow:hidden;}
+
+.fn{ border-bottom:1px #E6E6E6 solid; padding:0 0 0 5px; overflow:hidden; height:24px; line-height:24px; position:relative; }
+	.fn span{ position:absolute; right:5px; top:0;}
+	.fn span.innerMsg{ position:relative; margin-left:3px;}
+	.fn input{ height:20px; font-size:12px; line-height:16px;}
+
+
+.mc{ padding:13px 8px 0 13px; }
+.mc div{line-height:160%; }
+.mc table{}
+.mc center{ text-align:left; padding: 10px 0 0 30px; margin-bottom:7px; }
+.mc img { vertical-align:-2px;}
+
+.p_time{ clear:both; float:left; width:115px; border-right:1px #E6E6E6 solid; padding:3px 5px 2px 5px;  border-top:1px #E6E5E6 solid; height:35px; line-height:140%; }
+.o_info{ float:left;  border-left:1px #E6E6E6 solid; float:left; width:632px;  margin-left:-1px; height:39px; border-top:1px #E6E5E6 solid; line-height:39px; padding:0 0 0 5px; position:relative;}
+	.o_info span{ position:absolute; right:5px; top:0;}
+	
+/*--帖子内页上部翻页-----------------------------*--------------------*/
+.topic_pager{ background:#FFF; margin-bottom:5px; width:763px; height:22px; line-height:22px; border:1px #DBEEF7 solid; overflow:hidden; }
+	.topic_pager span{ display:block; float:left; border-right:1px #DBEEF7 solid;    }
+	.topic_pager span.t_pager{  width:382px; padding:0 0 0 5px;}
+	.topic_pager span.stat{ width:340px; text-align:center;  border-right:none;  }
+	.topic_pager span.fns{display:none; border:none; text-align:right; width:120px; padding:0 15px 0 0;}
+	
+/*帖子内页下部翻页*/
+.fn2{ width:755px;  padding:10px 10px 2px 0;border-top:1px #A8D4EC solid; position:relative; margin-bottom:15px}
+	.fn2 .io{}
+	.fn2 .inner_pager{ background:#FFF; border:1px #E6E5E6 solid; position:absolute; right:0; top:5px; padding:0 5px;}
+
+
+/* 回复表单----------------------------------------------------------------- */
+#reply{ background:#FFF border:1px #CCC solid; border-collapse:collapse; width:100%;}
+#reply .t{ background:#45A4D8; color:#FFF; padding:2px 5px; font-weight:700; position:relative; width:auto;}
+#reply .t img{ float:right; margin:-18px 0 0 0}
+#reply .t .return{ position:absolute; left:600px; *line-height:120%;}
+#reply th{ background:/*#F5F6F7*/ #F9F9F9; padding:2px 5px 0px 5px; text-align:left;/* border-bottom:1px #EEE solid;*/ border:1px #E6E6E6 solid;  word-break : break-all; width:125px;}
+#reply td{ background:/*#F5F6F7*/ #F9F9F9;padding:2px 5px 0px 5px;  border:none; border:1px #E6E6E6 solid; word-break : break-all;  }
+#reply td img{ padding:1px 0px; vertical-align:bottom;}
+
+
+#reply tr td input{ line-height:120%; }
+
+/*sign*/
+#sign{ height:75px; overflow:hidden;}
+
+/*引用*/
+#quote{ background:#F0F0F0; border:1px #CCC solid; padding:7px; display:block; margin:10px 25px 15px 25px;  overflow:hidden;}
+#quote strong{ color:#333; margin:0 0 5px 0; padding:0; display:block; font-weight:100;}
+#quote p{ text-indent:20px; padding:0 5px; margin:0;}
+#quote hr{ border:1px #999 dashed; height:0px; overflow:hidden; margin:10px 0;}
+
+
+.relate_tag {overflow:hidden; padding:5px 0;  width:760px; border:1px #45A4D8 solid;  background:#FEFEFE; margin-bottom:5px; }
+.relate_tag li{ float:left; height:21px; margin:0 5px 5px; display:inline; overflow:hidden; width:230px; /*170*/ background:url(../img/icon-links.gif) no-repeat 0 8px; padding-left:8px; border-bottom:1px #CCC dashed;}
+
+
+	.relate_tag li.more{ clear:both; background:none; width:923px; text-align:right;}
+
+	.relate_tag_t{ background:#45A4D8; height:20px; font-weight:700; color:#FFF; padding:2px 0 0 5px ;  }
