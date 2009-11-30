@@ -1,0 +1,559 @@
+{xingTemplate head}
+<link href="html/css/myhome.css" rel="stylesheet" type="text/css" />
+<!-- main -->
+<div class="mainCon fix">
+<!-- left -->
+<dl class="fl" id="myPlace">
+<dt class="t">我的头像<a href="my.php?action=myface" class="rlink" title="修改">修改</a></dt>
+<dd class="c" id="myAvatar">
+{if ($row2[face]!=1)}
+<img src="html/face/{$row2[logname]}.{$row2[face]}" border="1">
+{else}
+<img src="html/img/nopic.gif" alt="{$row2[logname]}的头像" />
+{/if}</dd>
+<dt class="t">当前状态：{if $row2[lock]==1}<font color=red>冻结</font>{else}正常{/if}</dt>
+<dd class="c" id="myDetail">
+<table summary="个人资料">
+<tr>
+<th scope="row">昵称</th>
+<td><strong>{$row2[nickname]}</strong></td>
+</tr>
+<tr>
+<th scope="row">用户名</th>
+<td>{$row2[logname]}</td>
+</tr>
+<tr>
+<th scope="row"><img src="html/img/authUser.gif" alt="认证会员"></th>
+<td>认证会员</td>
+</tr>
+<tr>
+<th scope="row"><img src="html/img/hp.gif" alt="hp"></th>
+<td>{$row2[hp]}</td>
+</tr>
+<tr>
+<th scope="row"><img src="html/img/pp.gif" alt="pp"></th>
+<td>{$row2[pp]}</td>
+</tr>
+<tr>
+<th scope="row">发帖</th>
+<td>{$row2[zts]} + {$row2[hfs]}</td>
+</tr>
+<tr>
+<th scope="row">&nbsp;</th>
+<td style="text-align:right"><span id="openMore"><img src="html/img/i2k8-ico14.gif"> 更多</span></td>
+</tr>
+<tr id="moreInfo0">
+<th scope="row">注册时间</th>
+<td>{uuuw($row2[regtime])}</td>
+</tr>
+<tr id="moreInfo1">
+<th scope="row">最后登陆</th>
+<td>{uuuw($row2[lasttime])}</td>
+</tr>
+<tr id="moreInfo2">
+<th scope="row">来自</th>
+<td>{$row2[area]}</td>
+</tr>
+</table> 
+<script>
+var isOpen = 0;
+var btn = document.getElementById('openMore');
+btn.rel = btn.innerHTML;
+btn.onclick = function(){ 
+if(isOpen == 0){
+for(var i=0; i<3; i++){ 
+if(document.addEventListener){document.getElementById("moreInfo"+i).style.display = "table-row"; }
+else{document.getElementById("moreInfo"+i).style.display = "block"; }
+} 
+this.innerHTML='<img src="html/img/i2k8-ico14up.gif"> 隐藏'
+isOpen = 1; 
+} else{
+for(var i=0; i<3; i++){ 
+document.getElementById("moreInfo"+i).style.display = "none";
+} 
+this.innerHTML = this.rel;
+isOpen = 0; 
+} 
+} 
+</script>
+<div id="ppbtn">
+</div>
+</dd>
+</dl><!-- /left -->
+<!-- right -->
+<div class="fl">
+<div id="myHomeCon"> 
+<!-- myDetailMenu -->
+<ul id="myDetailMenu" class="fix">
+{if ($_GET['action']==myinfo)}<li class="current">{else}<li>{/if}
+<a href="my.php?action=myinfo">个人资料</a></li>
+{if ($_GET['action']==myfav)}<li class="current">{else}<li>{/if}
+<a href="my.php?action=myfav">帖子收藏夹</a></li> 
+{if ($_GET['action']==mypost)}<li class="current">{else}<li>{/if}
+<a href="my.php?action=mypost">我的贴子</a></li>
+{if ($_GET['action']==mysms or $_GET['action']==sendsms or $_GET['action']==readsms)}<li class="current">{else}<li>{/if}
+<a href="my.php?action=mysms">短信</a></li>
+{if ($_GET['action']==myface)}<li class="current">{else}<li>{/if}
+<a href="my.php?action=myface">头像设置</a></li>
+</ul> 
+<!-- /myDetailMenu --> 
+
+
+
+{if ($_GET['action']==myinfo)}
+<script type="text/javascript">
+ function checkpwd(){
+  var p1=document.form1.newpassword.value;//获取密码框的值
+  var p2=document.form1.repeatPwd.value;//获取重新输入的密码值
+  if(p1==""){
+   alert("请输入密码！");//检测到密码为空，提醒输入//
+   document.form1.newpassword.focus();//焦点放到密码框
+   return false;//退出检测函数
+  }//如果允许空密码，可取消这个条件
+  
+  if(p1!=p2){//判断两次输入的值是否一致，不一致则显示错误信息
+   document.getElementById("msg").innerHTML="两次输入密码不一致，请重新输入";//在div显示错误信息
+   return false;
+  }else{
+   //密码一致，可以继续下一步操作 
+   document.getElementById("msg").innerHTML="OK";//在div显示错误信息
+  }
+ }
+</script>
+
+<script   language="javascript">
+<!--
+function   CheckForm()
+{  
+if   (document.form1.oldpassword.value.length   ==   0)   {  
+alert("必须输入原来的密码!");
+document.form1.oldpassword.focus();
+return   false;
+}
+return   true;
+}
+
+     
+	 function test() 
+     {
+     if(document.form1.newpassword.value.length<4)
+     {
+     alert("不能少于4个字符！");
+     document.form1.newpassword.focus();
+     return false;
+     }
+     }
+-->
+</script>
+<!-- 表单 -->
+<form action="myok.php?action=myinfook" method="post" name="form1" onsubmit="return CheckForm()">
+<table class="myDetialForm">
+<tr>
+<th><label for="neckName">用户名</label></th>
+<td><input type="text" id="logname" name="logname" class="inputText" value="{$row2[logname]}" disabled /> 
+<span id="nickNameInf" class=""inf_normal"">&nbsp; 用户名不可修改</span></td>
+</tr>
+
+<tr>
+<th><label for="neckName">昵称</label></th>
+<td><input type="text" id="nickname" name="nickname" class="inputText" value="{$row2[nickname]}" /> 
+<span id="nickNameInf" class=""inf_normal"">&nbsp; 昵称长度1-10位，可由中英文、数字、下划线组成</span></td>
+</tr>
+<tr>
+<th><label for="password">原密码</label></th>
+<td><input type="password" id="oldpassword" class="inputText" name="oldpassword" /> 
+  <span id="oldPasswordInf" class=""inf_normal"">&nbsp; <font color=red>**必填</font></span></td>
+</tr>
+
+<tr>
+<th><label for="newPwd">新密码(1)</label></th>
+<td><input type="password" id="newpassword" class="inputText" name="newpassword" onchange="test();" /> <span id="passwordInf" class="inf_normal">&nbsp; 选填,密码需长度为 4-20 的任意字符</span></td>
+</tr>
+<tr>
+<th><label for="repeatPwd">再输一次新密码(2)</label></th>
+<td><input type="password" id="repeatPwd" class="inputText" name="repeatPwd"  onchange="checkpwd();"/> <div id="msg" style="color:red;"></div></td>
+</tr>
+
+<tr>
+<th><label for="area">所在地区</label></th>
+<td>
+<select name="area">
+<option value="{$row2[area]}" selected>{$row2[area]}</option>
+<option value="北京" >北京</option>
+<option value="上海" >上海</option>
+<option value="福建" >福建</option>
+<option value="天津" >天津</option>
+<option value="重庆" >重庆</option>
+<option value="河北" >河北</option>
+<option value="山西" >山西</option>
+<option value="内蒙古" >内蒙古</option>
+<option value="辽宁" >辽宁</option>
+<option value="吉林" >吉林</option>
+<option value="黑龙江" >黑龙江</option>
+<option value="江西" >江西</option>
+<option value="浙江" >浙江</option>
+<option value="江苏" >江苏</option>
+<option value="安徽" >安徽</option>
+<option value="山东" >山东</option>
+<option value="河南" >河南</option>
+<option value="湖北" >湖北</option>
+<option value="湖南" >湖南</option>
+<option value="广东" >广东</option>
+<option value="广西" >广西</option>
+<option value="海南" >海南</option>
+<option value="四川" >四川</option>
+<option value="贵州" >贵州</option>
+<option value="云南" >云南</option>
+<option value="西藏" >西藏</option>
+<option value="陕西" >陕西</option>
+<option value="甘肃" >甘肃</option>
+<option value="宁夏" >宁夏</option>
+<option value="青海" >青海</option>
+<option value="新疆" >新疆</option>
+<option value="香港" >香港</option>
+<option value="澳门" >澳门</option>
+<option value="台湾" >台湾</option>
+<option value="海外" >海外</option>
+<option value="保密" >保密</option>
+</select>
+</td>
+</tr>
+
+
+<tr>
+<th><label for="area">签名</label></th>
+<td><label><textarea name="sign" cols="30" rows="3" id="sign">{stripcslashes($row2[sign])}</textarea>
+</label></td>
+</tr>
+
+<tr>
+<th><label for="email">电子邮件</label></th>
+<td><input type="text" id="email" name="email" value="{$row2[email]}" class="inputText" /> <span id="emailInf" class=""inf_normal""></span></td>
+</tr>
+ 
+<tr>
+<td></td>
+<td>
+
+<label>
+<input type="submit" name="Submit" value="保 存" />
+</label></td>
+</tr>
+</table>
+</form>
+<!-- 表单 -->
+<div class="myTopicPager"></div>
+</div> <!-- /wrapper -->
+</div>
+<!-- /right -->
+</div>
+<!-- /main -->
+{/if}
+
+
+
+
+
+
+
+{if ($_GET['action']==mypost)}
+<!-- 我的主题 -->
+<ul class="fkduoInfoList" id="myTopicList">
+<li class="th">
+<div class="t1">标题</div> 
+<div class="t2">发表时间</div> 
+<div class="t3">人气/回复</div> 
+<div class="t4">最新回复</div> 
+</li>
+
+{while ($row=mysql_fetch_array($query)) }
+
+<li class="td">
+<div class="t1"><a href="loop2.php?cid={$row[cid]}&bk={$row[bk]}" target=_blank>{$row[title]}</a></div>
+<div class="t2">{uuuw($row[firsttime])}</div> 
+<div class="t3">{$row[click]}/{$row[huifu]}</div> 
+<div class="t4">{uuuw($row[lasttime])}</div> 
+</li>
+
+{/while}
+
+</ul> 
+<!-- /我的主题 -->
+<!-- 翻页 -->
+<div class="myTopicPager"> 第{$now}页/共{$pages}页&nbsp;{$theup}&nbsp;{$thedown} </div>
+<!-- /翻页 -->
+</div> <!-- /wrapper -->
+</div>
+<!-- /right -->
+</div>
+<!-- /main -->
+{/if}
+
+
+
+
+
+
+
+{if ($_GET['action']==myfav)}
+<!-- wrapper -->
+<script language='javascript'>function checkall(form) { for(var i=0;i<form.elements.length; i++) { var e = form.elements[i]; if (e.name != 'chkall' && e.disabled != true) { e.checked = form.chkall.checked; } }}</script>
+<div id="myHomeCon"> 
+<!-- msg -->
+<form name="form1" action="myok.php?action=favdel&mod=listt" method="post">
+<div class="fkduoInfoBox" id="myMsg">
+<ul class="fkduoInfoList">
+<li class="th">
+<div class="t1"><input type="checkbox" id="selectAll" name='chkall' onclick="checkall(this.form)"/><label for="selectAll"></label></div>
+<div class="t2"></div>
+<div class="t3">标题</div>
+<div class="t4">收藏时间</div>
+<div class="t5"></div>
+</li>
+{while ($row=mysql_fetch_array($query)) }
+<li class="td">
+<div class="t1"><input type="checkbox" name="Idx[]" value="{$row[cid]}"></div>
+<div class="t2">
+<img src="html/img/gif5.gif" /></div>
+<div class="t3"><a href="loop2.php?cid={$row[cid]}&bk={$row[bk]}" target=_blank>{$row[title]}</a></div>
+<div class="t4">{uuuw($row[favtime])}</div>
+<div class="t5"></div> 
+</li>
+{/while}
+
+<li id="tdColSpan3">
+<div class="t1">
+<input type="submit" value="删除">
+</div>
+<div class="t3">
+</div>
+</li>
+</ul> 
+</div>
+</form>
+<!-- /msg -->
+<!-- 翻页 -->
+<!-- /翻页 -->
+</div> <!-- /wrapper -->
+<!-- 翻页 -->
+<div class="myTopicPager"> 第{$now}页/共{$pages}页&nbsp;{$theup}&nbsp;{$thedown} </div>
+<!-- /翻页 -->
+</div> <!-- /wrapper -->
+</div>
+<!-- /right -->
+</div>
+<!-- /main -->
+{/if}
+
+
+
+
+{if ($_GET['action']==mysms)}
+<!-- wrapper -->
+<script language='javascript'>function checkall(form) { for(var i=0;i<form.elements.length; i++) { var e = form.elements[i]; if (e.name != 'chkall' && e.disabled != true) { e.checked = form.chkall.checked; } }}</script>
+<div id="myHomeCon"> 
+<!-- msgNav-->
+<div id="msgNav">
+<div class="t1">
+<input type="submit" name="button" id="button" value="写短信" onclick="window.location.href='my.php?action=sendsms'" /> 
+<a href="my.php?action=mysms">收件箱</a>
+</div>
+<div class="t2">
+<img src="html/img/msg-ico1.gif" />未读
+<img src="html/img/msg-ico2.gif" />已读
+</div>
+<div class="t3">
+短信空间已被使用0%
+</div>
+</div>
+<!-- /msgNav--> 
+
+<!-- msg -->
+<form name="form1" action="myok.php?action=del&mod=listt" method="post">
+<div class="fkduoInfoBox" id="myMsg">
+<ul class="fkduoInfoList">
+<li class="th">
+<div class="t1"><input type="checkbox" id="selectAll" name='chkall' onclick="checkall(this.form)"/><label for="selectAll"></label></div>
+<div class="t2">状态</div>
+<div class="t3">留言标题</div>
+<div class="t4">发件人</div>
+<div class="t5">接收时间</div>
+</li>
+{while ($row=mysql_fetch_array($query)) }
+<li class="td">
+<div class="t1"><input type="checkbox" name="Idx[]" value="{$row[id]}"></div>
+<div class="t2">
+{if $row[read]==0}
+<img src="html/img/msg-ico1.gif" /></div>
+<div class="t3 new">
+{else}
+<img src="html/img/msg-ico2.gif" /></div>
+<div class="t3">{/if}<a href="my.php?action=readsms&id={$row[id]}">{$row[title]}</a></div>
+<div class="t4"><a href="info.php?logname={$row[from]}" target="_blank">{$row[fromnkname]}[{$row[from]}]</a></div>
+<div class="t5">{uuuw($row[time])}</div> 
+</li>
+{/while}
+
+<li id="tdColSpan3">
+<div class="t1">
+<input type="submit" value="删除">
+</div>
+<div class="t3">
+</div>
+</li>
+</ul> 
+</div>
+</form>
+<!-- /msg -->
+</div> <!-- /wrapper -->
+
+<!-- 翻页 -->
+<div class="myTopicPager">{$theup}&nbsp;{$thedown} </div>
+<!-- /翻页 -->
+</div> <!-- /wrapper -->
+</div>
+<!-- /right -->
+</div>
+<!-- /main -->
+{/if}
+
+
+{if ($_GET['action']==myface)}
+<!-- 我的主题 -->
+<ul class="fkduoInfoList" id="myTopicList">
+<br>
+<form action="myok.php?action=myfaceok" enctype="multipart/form-data" method="post" name="upform">
+  <p>上传头像:
+    <input name="upfile" type="file">
+    <br>
+      <input type="submit" value="上传">
+    </p>
+  <p>&nbsp;</p>
+  <p>注意：头像大小请限制在{$face_size}K以内，尺寸100*100内<br>
+   </p>
+</form>
+</ul> 
+<!-- /我的主题 -->
+</div> <!-- /wrapper -->
+</div>
+<!-- /right -->
+</div>
+<!-- /main -->
+{/if}
+
+
+
+
+
+
+
+
+{if ($_GET['action']==sendsms)}
+<!-- wrapper -->
+<div id="myHomeCon"> 
+<!-- msgNav-->
+<div id="msgNav">
+<div class="t1">
+<input type="submit" name="button" id="button" value="写短信" onclick="window.location.href='my.php?action=sendsms'" /> 
+<a href="my.php?action=mysms">收件箱</a>
+</div>
+<div class="t2">
+<img src="html/img/msg-ico1.gif" />未读
+<img src="html/img/msg-ico2.gif" />已读
+</div>
+<div class="t3">
+短信空间已被使用0%
+</div>
+</div>
+<!-- /msgNav--> 
+<!-- msg -->
+<div class="fkduoInfoBox" id="msgCon">
+<form method="post" name="form1" action="myok.php?action=send" onsubmit="javascript:document.getElementById('messageSubmit').disabled='disabled';">
+<table class="myDetialForm">
+<tr>
+<th><label for="neckName">收件人</label></th>
+<td><input type="text" name="to" id="neckName" class="inputText" value="{$_GET['logname']}"/> 用户名</td>
+</tr>
+<tr>
+<th><label for="subject">标题</label></th>
+<td><input type="text" name="title" id="subject" class="inputText" value=""/> 标题长度上限为46字节</td>
+</tr>
+<tr>
+<th><label for="content">消息内容</label></th>
+<td><textarea name="content" class="content" id="sign"></textarea><br><input type="checkbox" name="saveSend" value="1">保存到发件箱中</td>
+</tr>
+<tr>
+<th></th>
+<td><input class="login" id="messageSubmit" type="submit" value="发 送" /> 
+</td>
+</tr>
+</table>
+</form>
+</div>
+<!-- /msg -->
+</div> <!-- /wrapper -->
+</div> 
+</div>
+<!-- /right -->
+</div>
+<!-- /main -->
+{/if}
+
+
+
+
+{if ($_GET['action']==readsms)}
+<!-- wrapper -->
+<div id="myHomeCon"> 
+<!-- msgNav-->
+<div id="msgNav">
+<div class="t1">
+<input type="submit" name="button" id="button" value="写短信" onclick="window.location.href='my.php?action=sendsms'" /> 
+<a href="my.php?action=mysms">收件箱</a>
+</div>
+<div class="t2">
+<img src="html/img/msg-ico1.gif" />未读
+<img src="html/img/msg-ico2.gif" />已读
+</div>
+<div class="t3">
+短信空间已被使用0%
+</div>
+</div>
+<!-- /msgNav--> 
+<!-- msg -->
+<div class="fkduoInfoBox" id="msgCon">
+<table class="myDetialForm">
+<tr>
+<th><label for="neckName">发件人</label></th>
+<td>{$row[fromnkname]}[{$row[from]}]
+</td>
+</tr>
+<tr>
+<th><label for="newPwd">标题</label></th>
+<td>{$row[title]}</td>
+</tr>
+<tr>
+<th><label for="repeatPwd">消息内容</label></th>
+<td class="msgCon">{$row[content]}</td>
+</tr>
+<tr>
+<th></th>
+<td>
+<a href="my.php?action=sendsms&logname={$row[from]}">回复</a> - <a href="myok.php?action=del&mod=one&id={$row[id]}">删除</a> - 
+<a href="my.php?action=mysms">返回</a>
+</td>
+</tr>
+</table>
+</div>
+<!-- /msg -->
+</div><!-- /wrapper -->
+</div>
+<!-- /right -->
+</div>
+<!-- /main -->
+{/if}
+
+
+<!-- 页脚 -->
+{xingTemplate foot}
+<!-- /页脚 -->

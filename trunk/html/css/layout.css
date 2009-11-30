@@ -1,0 +1,21 @@
+body { background: #2A81BE; margin: 0; }
+body,div,td,th,input { font: normal 12px/180% simsun, /*'Lucida Grande',*/'ËÎÌå','ÐÂËÎÌå', /* arial,verdana, */ sans-serif;  }
+div,form,img,dl,dt,dd,ul,ol,li {  padding: 0; border: none; margin: 0; }
+ul,li,ol {	list-style: none; }
+dt,dd,li {	display: block; }
+select,input,img{ vertical-align: middle; }
+em { font-style: normal; }
+a { text-decoration: none;}
+a:link    { color: #000;  }
+a:visited { color: #000; }
+a:hover   { color: #F37A0C; text-decoration: underline; }
+a:active  { color: #F37A0C; }
+a:focus  { color: #F37A0C; }	
+.center{ margin:0 auto;}
+.f-left{ float:left;}
+.f-right{ float:right;}
+.nof { clear: both; height: 0; overflow: hidden; display:block; }	
+/*-¿ò¼Ü------------------------------------------------------------------*/
+#main_frame{ background:#F1F7FB; width:974px; border:2px #45A4D8 solid; border-width:1px 2px 0 2px; position:relative; }
+#left_content{ float:left;  background:#F1F7FB;  padding:9px; width:762px;  border-right:1px #45A4D8 solid; overflow:hidden;  padding-bottom:10px;}
+#right_content{  float:left; background:#FFF; border-left:1px #45A4D8 solid; margin-left:-1px; width:183px; padding:5px 5px 10px 5px; overflow:hidden; display:inline;}

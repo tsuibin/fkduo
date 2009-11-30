@@ -1,0 +1,74 @@
+/*您的位置*/
+#breadcrumbs{ float:left; margin:0 0 5px 5px; display:inline;}
+#breadcrumbs strong.t{ color:#B33369; font-weight:100;}
+.mlink{ font-weight:700; color:#333; text-decoration:underline;} /*当前板块*/	   
+/*版主*/
+#admin{ float:right; margin:0 0 5px 0; display:inline;}
+#admin a{ /*padding:0 0 0 20px; background:url(../../html/images/img/moderator.gif) no-repeat left top;*/}
+#admin img{ vertical-align:-3px;}			 
+/*搜索*/
+#topic_search{ clear:both; float:left; width:450px; margin-bottom:5px; padding:4px 5px 0 19px;}
+/*#topic_search fieldset{ border:none; padding:4px 5px 0 19px; margin:0; }
+#topic_search legend{ display:none;}
+#topic_search input{}
+.submit_seach{ width:36px; }*/
+#searchKey{line-height:16px; height:16px; border:1px #999 solid; background:#FFFDF7; padding-left:2px;}
+#searchKey:focus{  border:1px #45A4D8 solid; }
+#submit_seach{ width:36px; line-height:120%; height:22px; }
+ /*按钮*/
+#button{ float:right; margin:0 0 5px 0; display:inline;}
+#button a{ width:68px; height:26px; line-height:26px; color:333; text-align:center; display:block; float:left; margin-right:1px; font-weight:700}
+#button a:visited{}
+#button a:hover{ color:#333}
+/*发帖按钮*/
+#publish{ background:#B5DDF2; border:1px #2476B7 solid;}
+/*我发过的贴*/
+#my_topic{ background:#E3CFFF;  border:1px #B581FF solid;}
+/*精华*/
+#ess{ background:#9CDC6E; border:1px #5FC43C solid;}		 
+/*公告专题*/
+#at_wrapper{  background:#F0F0F0; margin:0 0 12px 0; clear:both; height:31px; line-height:31px; border-top:1px #CCC solid;}
+/*公告*/
+#announcement{float:left; height:31px; line-height:31px;  margin:0 5px; display:inline; width:330px; overflow:hidden; position:relative; padding:0 0 0 40px;}
+#announcement strong.t{ color:#B33369; position:absolute; left:0; top:0}
+* html #announcement marquee{padding-top:7px;}
+/*专题*/
+#theme{float:left; margin:0 0 0 9px;  position:relative; top:5px;   display:inline;}
+#theme strong.t{ color:#B33369;}	 
+#theme strong img{ }
+/*板块选择区------------------------------------------------------------------*/
+#area{  width:765px; border-bottom:1px #45A4D8 solid; position:relative; clear:both; }
+#area ul{ border-bottom:3px #EE80AE solid; height:25px; width:765px; display:block;}
+#area ul li{ float:left; width:66px; height:25px; line-height:25px; background:url(../../html/img/club-tabbg.gif) left bottom; text-align:center; margin-right:3px;}
+#area ul li.current{ background:url(../../html/img/club-tabbg.gif) left top; color:#FFF; font-weight:700;}
+#area ul li.current a{ color:#FFF;}
+#area ul li.current a:visited{ color:#FFF;}
+#area ul li.select{ background:none; padding:0 10px;}
+#topic_select{ float:left;vertical-align:middle;}
+#club_select{position:absolute; right:5px; bottom:5px;}			  
+/*翻页粗体*/	
+.page{ font-weight:700}
+/*刷新此页*/
+.pager a.reload{ position:absolute; top:5px; font-weight:700;  left:200px;  color:#FFF; padding:0 5px}	   
+#btn_delMyTopics{ padding:0 10px; position:absolute; left:52px; top:5px; line-height:normal; width:60px;; }	  	
+.option tbody tr td{  color:#555;}
+.option tr td.label{ width:30%; text-align:right; padding-right:5px;  line-height:140%; color:#333;  font-weight:700; }
+.option tr td.i{ width:50%;  }
+.option tr td.data{ padding-left:6px; font-family:verdana; }
+.option tr td.checkbox{  width:30px;}
+.option tr td.checkbox input{ }	
+.option tr td div div{  border:1px #666 solid; padding-left:1px; height:16px;  overflow:Hidden; width:1% }
+.option tr td .i{ background: #F5F5F5;  border:none; padding-left:0;  height:18px;   border:1px #F2F2F2 solid; }
+.option div img{ display:block; height:16px; width:100%;}		
+.option tr td div.i0{ border-color: #B2655F; background: #EF6459}
+.option tr td div.i1{ border-color: #9D766B; background: #CB8470}
+.option tr td div.i2{ border-color: #B39C78; background: #F3C886}
+.option tr td div.i3{ border-color: #629B87; background: #5EC7A3}
+.option tr td div.i4{ border-color: #7A8B9D; background: #8BAACA}
+.option tr td div.i5{ border-color: #7B9066; background: #8CB366}
+.option tr td div.i6{ border-color: #8C9092; background: #ACB2B7}
+.option tr td div.i7{ border-color: #A18CA0; background: #D1ABCF}
+.option tr td div.i8{ border-color: #A19C63; background: #D1C860}
+.option tr td div.i9{ border-color: #A85176; background: #DE4083} 
+.priInfo{border:1px #CCC solid; margin:5px; background: #FEFCE9 url(../../html/img/lock.gif) no-repeat 3px center; padding:4px 0 1px 20px; letter-spacing:1px}
+ .showPriInfo{border:1px #CCC solid; margin:5px; padding:4px 0 1px 20px; letter-spacing:1px;background: #FEFCE9;padding-left:10px}

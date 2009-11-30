@@ -1,0 +1,83 @@
+{xingTemplate head}
+<!-- /论坛导航 -->
+<link href="html/css/myhome.css" rel="stylesheet" type="text/css" />
+<!-- main -->
+<div class="mainCon fix">
+
+<!-- 注册wrapper -->
+<dl id="fkduoRegBox">
+
+<script type="text/javascript">
+ function checkpwd(){
+  var p1=document.form1.password.value;//获取密码框的值
+  var p2=document.form1.repeatPwd.value;//获取重新输入的密码值
+  if(p1==""){
+   alert("请输入密码！");//检测到密码为空，提醒输入//
+   document.form1.password.focus();//焦点放到密码框
+   return false;//退出检测函数
+  }//如果允许空密码，可取消这个条件
+  
+  if(p1!=p2){//判断两次输入的值是否一致，不一致则显示错误信息
+   document.getElementById("msg").innerHTML="两次输入密码不一致，请重新输入";//在div显示错误信息
+   return false;
+  }else{
+   //密码一致，可以继续下一步操作 
+   document.getElementById("msg").innerHTML="OK";//在div显示错误信息
+  }
+ }
+</script>
+
+<form action="regok.php" method="post" name="form1" onsubmit="return checkSubmit();">
+<dt class="t">用户注册(第二步)</dt>
+<dd class="c">
+<!-- 表单 -->
+<dl id="fkduoRegFormWrapper">
+<dt class="subT">基本信息(必填)</dt>
+<dd class="subC">
+<table class="myDetialForm">
+<tr>
+<th><label for="userName">用户名</label></th>
+<td><input type="text" id="logname" class="inputText" name="logname" /> 
+<span id="userNameInf" class="inf_normal">&nbsp; 用户ID只能包含(数字、字母、下划线)，并必须以字母开始，长度为 4-15 个字符</span></td>
+</tr> 
+
+<tr>
+<th><label for="newPwd">密码(1)</label></th>
+<td><input type="password" id="password" class="inputText" name="password" /> <span id="passwordInf" class=""inf_normal"">&nbsp; 密码需长度为 4-20 的任意字符</span></td>
+</tr>
+<tr>
+<th><label for="repeatPwd">再输一次密码(2)</label></th>
+<td><input type="password" id="repeatPwd" class="inputText" name="repeatPwd"  onchange="checkpwd();"/> <div id="msg" style="color:red;"></div></td>
+</tr>
+<tr>
+<th><label for="email">电子邮件</label></th>
+<td>
+{if ($regemail==1)}
+<input name="email" type="text" class="inputText" id="email" value="{$email}" disabled /> 
+<span id="emailInf" class=""inf_normal"">&nbsp; Email已验证</span>
+{else}
+<input name="email" type="text" class="inputText" id="email" value="{$email}" /> 
+<span id="emailInf" class=""inf_normal"">&nbsp; </span>
+{/if}
+</td>
+</tr>
+</table>
+</dd>
+</dl>
+<span id="submitInf" class="inf_normal"></span>
+<!-- /表单 -->
+</dd>
+<dd class="submit">
+<label>
+<input type="submit" name="Submit" value="提 交" accesskey="6">
+</label>
+</dd>
+</form>
+</dl>
+<!-- 注册wrapper -->
+</div> <!-- /main -->
+<!-- 页脚 -->
+{xingTemplate foot}
+<!-- /页脚 -->
+</body>
+</html> 

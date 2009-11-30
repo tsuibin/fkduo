@@ -1,0 +1,20 @@
+.lrb {BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid}.px14 {FONT-SIZE: 14px}.tahoma {FONT-SIZE: 12px; FONT-FAMILY: "tahoma"}.arial {FONT-SIZE: 12px; FONT-FAMILY: "arial"}.shengming {FONT-SIZE: 14px; COLOR: #336600}INPUT {FONT-SIZE: 12px}.copytext {BORDER-RIGHT: #0099e3 1px; BORDER-TOP: #0099e3 1px; FONT-SIZE: 9px; BORDER-LEFT: #0099e3 1px; COLOR: #000000; BORDER-BOTTOM: #0099e3 1px solid; FONT-FAMILY: "tahoma"; BACKGROUND-COLOR: #ccf3ff}.DEK {FONT-SIZE: 6px; Z-INDEX: 200; VISIBILITY: hidden; LINE-HEIGHT: 2px; POSITION: absolute; BACKGROUND-COLOR: transparent; layer-background-color: transparent}TD.DEK {FONT-SIZE: 6px}.input {BORDER-RIGHT: #666666 1px solid; BORDER-TOP: #666666 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #666666 1px solid; BORDER-BOTTOM: #666666 1px solid}BODY {MARGIN: 0px}TD {FONT-SIZE: 12px; LINE-HEIGHT: 17px; FONT-FAMILY: "宋体"}A {COLOR: #000000; TEXT-DECORATION: none}A:hover {COLOR: #f37a0c; TEXT-DECORATION: underline}.forumbg {BACKGROUND-COLOR: #f1f7fb}.forumleftbg {BACKGROUND-COLOR: #f8f8f8}.topbg {FONT-SIZE: 10pt; COLOR: #fff; BACKGROUND-COLOR: #45a4d8}.topbg1 {FONT-SIZE: 10pt; COLOR: #fff; BACKGROUND-COLOR: #71bae1}.nav {FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: #0d417c; BACKGROUND-COLOR: #d1ebfa}.head {FONT-WEIGHT: normal; FONT-SIZE: 10pt}#white A:link {COLOR: #fff}#white A:visited {COLOR: #fff}#nav1 A {DISPLAY: block; COLOR: #000000; TEXT-DECORATION: none}#nav1 A:hover {COLOR: #ffff00; POSITION: relative}h1 {margin:0px;font-size:12px;color:#FFFFFF;}.text{text-align:left}
+#awardRight{}
+ /*奖分样式*/
+ #awardRight .rtag{ margin-bottom:5px; border:1px #CCC solid; background:#FFF; width:183px; overflow:hidden;}
+#awardRight .rtag .t{  height:23px; line-height:23px; border-bottom:1px #CCC solid; background:#D3E6FB; color:#036; padding:0 0 0 9px; position:relative;text-align:center;}
+	#awardRight .rtag .t a{ color:#036; font-weight:700}
+	#awardRight .rtag .t a:visited{ color:#036;}
+#awardRight .rtag .c{ padding:0 5px; width:173px; text-align:left;  overflow:hidden; }
+/*奖分样式*/
+#awardRight .rtag .c ul{ padding:3px 0;}
+#awardRight .rtag .c ul li{overflow:hidden; background:url(../../html/img/ico-arrow5.gif) no-repeat 0 7px;  padding:0 0 0 10px; height:22px}
+/*跳转页面新加页面*/
+.returnTag .rtag{ margin-bottom:5px; border:1px #CCC solid; background:#FFF; width:183px; overflow:hidden;}
+.returnTag .rtag .t{  height:23px; line-height:23px; border-bottom:1px #CCC solid; background:#D3E6FB; color:#036; padding:0 0 0 9px; position:relative;text-align:center;}
+	.returnTag .rtag .t a{ color:#036; font-weight:700}
+	.returnTag .rtag .t a:visited{ color:#036;}
+.returnTag .rtag .c{ padding:0 5px; width:173px; text-align:left;  overflow:hidden; }
+/*带图样式*/
+.returnTag .rtag .c ul{ padding:3px 0;}
+.returnTag .rtag .c ul li{overflow:hidden; background:url(../../html/img/ico-arrow5.gif) no-repeat 0 7px;  padding:0 0 0 10px; height:22px}

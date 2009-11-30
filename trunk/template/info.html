@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="Description" content="个人门户，个人空间，个人文集，个人影展" />
+<title>{$row[logname]}的个人空间 {$sitename}</title>
+<link href="html/css/blog_css.css" rel="stylesheet" type="text/css" /> 
+</head>
+<body>
+
+<div id="title" class="center">
+<div class="center" id="title_a">{$row[logname]} 的个人空间</div>
+</div>
+
+<div id="content" class="center">
+<div id="content-a">
+<div id="info">
+<div id="li_2" class="center">
+{if ($row[face]!=1)}
+<img src="html/face/{$row[logname]}.{$row[face]}" border="1">
+{else}
+<img src="html/img/nopic.gif" alt="{$row[logname]}的头像" />
+{/if}
+</div>
+<div id="li">
+<p>
+<a target="_blank" href="#">
+<img alt="认证会员" src="html/img/authUser.gif"/>认证会员</a><br /> 
+{$row[nickname]} [{$row[logname]}] <br />
+<img src="html/img/hp.gif" /> 
+{$row[hp]}  
+<img src="html/img/pp.gif" /> 
+{$row[pp]}  
+<br />
+来自：
+上海 
+<br /> 
+注册：
+{uuuw($row[regtime])}
+<br /> 
+发帖：
+{$row[zts]} 
++ 
+{$row[hfs]} 
+<br /> 
+用户编号：
+{$row[uid]}
+<br /> 
+[<a href="my.php?action=sendsms&logname={$row[logname]}" target="_blank" > 发短消息 </a>] </div>
+
+<div id="li">[ {$row[logname]}的最热贴 ]</div>
+{while ($row3=mysql_fetch_array($query3)) }
+<div id="li_2">·<a href="{url2($row3[bk],$row3[cid])}" target='_blank'>{$row3[title]}</a></div>
+{/while}
+</div>
+
+{if $jilu>0}
+{while ($row2=mysql_fetch_array($query2)) }
+<div id="topic_a">&nbsp;{$row2[title]}</div>
+<div id="topic">
+<div id="li_1">发贴日期：
+{uuuw($row2[firsttime])}&nbsp;&nbsp;&nbsp;[ {$row2[huifu]}人评论过 ]</div>
+<br>
+<div id="li_8" style="word-break:break-all;" align="left">{$row2[content]}<br>
+{if !(empty($row2[img]))}
+<a href="{url2($row2[bk],$row2[cid])}" target=_blank><img src="{$row2[img]}" border=0 ></a>{/if}</div>
+<br>
+<br>
+<div id="pix">
+&nbsp;<a href="{url2($row2[bk],$row2[cid])}" target="_blank">点击此处查看原文 {url2($row2[bk],$row2[cid])}</a>
+</div>
+</div>
+<br>
+{/while}
+{else}
+<div id="topic_a">&nbsp;</div>
+<div id="topic">
+<div id="li_1">当前此用户还没有发表过任何主题贴</div>
+</div>
+<br>
+{/if}
+
+<div id="topic">{$theup}&nbsp;{$thedown}&nbsp; 共{$pages}页，当前第 {$now} 页 <input name="page" value="1" size=3> 
+<input type='button' value='翻页' onclick="location.href='info.php?logname={$logname}&now='+document.all.page.value+' '">
+</div>
+</div>
+</div>
+{xingTemplate foot}

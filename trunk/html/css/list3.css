@@ -1,0 +1,48 @@
+/*built by shanghaikid
+	jiangruiyi@gmail.com*/	  
+@import url(layout.css);
+@import url(nav.css);
+@import url(rcol.css);
+@import url(common.css);	  
+/*帖子列表*/
+.list_item{ width:765px; background:#FFF; overflow:hidden; border-bottom:1px #E6E5E6 solid;}
+	.list_title{ background:#45A4D8; color:#FFF; border-bottom:2px #A8D4EC solid; border-top:1px #A8D4EC solid;}
+		.list_title a{ color:#FFF;}
+		.list_title a:visited{ color:#FFF;}	  		
+	.top{ background:#FFF9E6;}
+	.list_item li{ float:left;  padding:6px 0 4px 0; height:20px; overflow:hidden;}
+	.i1{ width:30px; text-align:center; }
+		.i1 img{ display:block; margin:0 auto}
+	.i2{ width:40px; text-align:center; }
+	.i3{ width:340px;  margin-left:3px; }			
+	.i3 img{ vertical-align:-3px; margin-left:3px;}
+	* html .list_item li.i3 img{ padding:2px 0 0 0 }
+	.i4{ width:40px; text-align:center; }
+	.i5{ width:75px; text-align:center; }	 		
+	.i6{ width:90px;text-align:center; }	 
+	.i7{ width:75px; text-align:center;}/*回复时间*/	
+	.i8{ width:70px;text-align:center; }	
+.list_title li{ padding:4px 0 2px 0;}
+/*翻页*/
+.pager{ width:755px;  text-align:right; background:#45A4D8; color:#FFF; padding:2px 10px 2px 0;  border-bottom:2px #A8D4EC solid; border-top:1px #A8D4EC solid; position:relative;}
+	.pager input{ width:30px; line-height:19px; height:19px; }
+	.pager a{ color:#FFF;}
+	.pager a:visited{ color:#FFF;}	  	
+/*话题类型*/
+#topic_type { width:300px; margin:15px 0 0 11px}
+#topic_type li{ width:124px; float:left; margin-bottom:5px}
+#topic_type li img{ margin:0 10px 0 0}
+/*我的关注*/
+.attention{ background:#FFF; padding:10px 10px 10px 30px; border-bottom:1px #CCC dotted;width:725px}
+.attention:hover{background:#F2F2F2;}
+	.cb{ position:absolute; top:-2px; left:-24px}
+	.attention a,.attention a:visited{color:#131313}.attention a:hover,.attention a:active{ color:#C30}
+	.attention .t{ position:relative; height:25px; padding:1px 0; color:#333}.attention .t a{ font-size:12px}.attention .t strong a,.attention .t strong a:visited{ position:relative;font-size:14px; text-decoration:none; }.attention .t strong a img{position:relative; top:-2px}
+.attention .t span{ position:absolute; top:0; right:0; zoom:1} .attention .t span select{ width:64px; vertical-align:text-bottom}.attention .t span a,.attention .t span a:visited{ text-decoration:none}
+.attention .c{ margin:8px 0; color:#333; line-height:1.6}.attention .c em{ font-size:10px; margin-left:10px; font-family:arial}
+.attention .btm{ position:relative; overflow:hidden; color:#666; zoom:1; height:22px; line-height:22px}.attention .btm .c5{ position:absolute; top:0; right:0}.attention .btm span strong{ color:#C30}
+.attention .btm .c0,.attention .btm .c1,.attention .btm .c2,.attention .btm .c3,.attention .btm .c4{display:block;float:left}
+.attention .btm .c1{width:113px}.attention .btm .c2{width:155px}.attention .btm .c0{width:70px} .attention .btm .c3{width:107px}.attention .btm .c4{width:120px}
+.allDelete{ position:absolute; top:5px; left:0; height:22px; line-height:22px; font-family:tahoma; }.allDelete input{ padding:0; margin:0 5px 0 10px; vertical-align: middle; width:13px; height:13px;}
+.tzHead .deleteBtn,.pager .deleteBtn{ position:absolute; top:3px; left:70px; width:60px; height:24px;padding:0 10px}
+.tzHead{background:#45A4D8;border-bottom:2px solid #A8D4EC;border-top:1px solid #A8D4EC;color:#FFF;padding:2px 10px 2px;position:relative;text-align:right;width:745px; height:25px}

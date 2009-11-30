@@ -1,0 +1,23 @@
+  
+/*------登陆下导航----------------------------------------------------------------*/
+#top_content{ width:978px; height:105px; position:relative; padding:5px 0 10px 0;}
+#club_logo{ display:block; width:190px; height:90px; position:relative; float:left; cursor:pointer; }
+#club_logo #title{ display:block; width:190px; height:90px; position:absolute; left:0; top:0; background:url(../../html/img/logo_qq.gif) no-repeat; }
+#faq{ position:absolute; left:5px; top:10px;}
+#shortcut_link{ position:absolute; right:5px; bottom:0;}
+#shortcut_link a{color:#FFF;}
+/*广告*/
+.fkduo_ad0{ width:745px; height:90px;  position:absolute; top:10px; right:5px;}	  
+/*---主导航-----------------------------------------------------------------*/
+.bbsmenu{ width:974px; background:#D1EBFA; border:2px #45A4D8 solid; border-width:0 2px 1px 2px; clear:both;}
+#mainmenu{ background:url(../../html/img/navbg.gif) no-repeat 0 0; height:32px; line-height:32px; overflow:hidden; border:none; width:976px; letter-spacing:0px;}
+	#mainmenu a{ color:#333; font-size:13px; font-weight:700; background:url(../../html/img/navbg.gif) no-repeat -976px top; padding:0 0 0 9px; margin:0 2px }
+	#mainmenu a.first{ background:none;}
+	#mainmenu a.yellow{ color: #F37A0C;}	 
+#submenu{ position:relative; padding:6px 5px 4px 80px; width:889px; border-bottom:none; line-height:140%; min-height:19px;}
+* html #submenu{height:19px; }
+#submenu .t{ position: absolute; left:14px; top:6px; color:#333; cursor:pointer; }
+#submenu a{ color:#0D417C; margin-right:5px;}	   
+#shortcut_link a.strong{ color:#e4fc15; font-weight:700;}
+/*汽车板块 选择*/
+#submenu select{ width:80px; margin:0 5px}

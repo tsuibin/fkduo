@@ -1,0 +1,84 @@
+{xingTemplate head}
+{xingTemplate $listtop}
+
+{while ($row=mysql_fetch_array($query)) }
+<ul class="list_item">
+<li class="i1">
+<a href="{url2($row[bk],$row[cid])}" target=_blank>
+{if $row[jh]=='0'}
+{if ($row[huifu]=='0')}
+<img src="html/img/topic_n.gif" border=0>
+{else}
+<img src="html/img/gif5.gif" border=0>
+{/if}
+{else}
+<img src="html/img/gif3.gif" border=0>
+{/if}
+</a>
+</li>
+<li class="i2">{$row[click]}</li>
+<li class="i3"><font color='#CC0000'>{$row[sort]}</font>
+{if ($row[img]=="0")}
+<a href="{url2($row[bk],$row[cid])}" title="{$row[title]}">{if ($row[highlight]==0)}{$row[title]}
+{else}<font color="{$sys_highlight}">{$row[title]}</font>{/if}</a>
+{else}
+<a onmouseout="HideLayerAlbum()" onmousemove="ShowLayerAlbum('{$row[img]}')" href="{url2($row[bk],$row[cid])}" title="{$row[title]}">{if ($row[highlight]==0)}{$row[title]}{else}
+<font color="{$sys_highlight}">{$row[title]}</font>
+{/if}</a> <img src="html/img/dv.gif">
+{/if}
+<?php
+$px1=ceil($row[huifu]/$contentstep);
+?>
+{if $px1>1}
+(<A HREF={url2($row[bk],$row[cid])} class=zhuti>1</A>&nbsp;<A HREF={url2($row[bk],$row[cid],2)} class=zhuti>2</A>{if $px1>2}
+&nbsp;<A HREF={url2($row[bk],$row[cid],3)} class=zhuti>3</A>..<A HREF={url2($row[bk],$row[cid],$px1)} class=zhuti>{$px1}</A></a>{/if}){/if}
+
+</li>
+<li class="i4">{$row[huifu]} </li>
+<li class="i5">
+<a href="info.php?logname={$row[firstlogname]}" target=_blank >{$row[firstnkname]}</a>
+</li>
+<li class="i6">{uuuw($row[firsttime])}</li>
+<li class="i7">
+<a href="info.php?logname={$row[lastlogname]}" target=_blank >{$row[lastnkname]}</a>
+</li>
+<li class="i8">{uuuy($row[lasttime])}</li>
+</ul> 
+{/while}
+</form>
+
+
+
+
+<!-- 翻页 -->
+<div class="pager">
+<a class="reload" href="{url($bk,$now)}">[ 刷新本页 ]</a> 
+共有 <b>{$pages}</b> 页,现在是第 <b>{$now}</b> 页,转到 <input name="nowpage" id="nowpage" type="text" size="2" value='1' onKeyPress="var code =event.keyCode;if(code==13){location='loop.php?bk={$bk}&now='+document.getElementById('nowpage').value+'&search=0'; return false; } else {return true;}"> 页 
+&nbsp;{$theup}&nbsp;{$thedown}
+</div>
+<!-- /翻页 --> 
+<!-- 说明信息 -->
+<ul id="topic_type">
+<li><img src="html/img/gif5.gif" />含有回复的话题</li>
+<li><img src="html/img/topic_t.gif" />置于顶部的话题</li>
+<li><img src="html/img/topic_n.gif" />没有回复的话题</li>
+<li><img src="html/img/notice.gif" />版面通告</li>
+<li><img src="html/img/topic_lock.gif" />已关闭的话题</li>
+<li><img src="html/img/club1tag.gif" />精华话题</li> 
+</ul>
+<!-- /说明信息 -->
+<!-- 插入主题列表 -->
+</div>
+<!-- /左边 -->
+<!-- 右边 -->
+{xingTemplate right}
+<!-- /右边 -->
+<br class="nof" /> 
+</div>
+<!-- /主要框架 -->
+<!-- 插入尾部 -->
+{if $link==1}
+{xingTemplate link}
+{/if}
+{xingTemplate foot}
+{$runtimes}

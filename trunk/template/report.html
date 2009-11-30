@@ -1,0 +1,77 @@
+{xingTemplate head}
+<!-- 插入头部页面 -->
+<script language="javascript">
+function check()
+{ var check_error=0;
+if(document.Reportform.content.value=="")
+{
+alert("内容不能为空!");
+document.Reportform.content.focus();
+return false; 
+}
+for(i=0;i<8;i++){
+if(document.Reportform.error_type[i].checked==true){
+check_error=1;
+}
+}
+if(check_error==0)
+{
+alert("错误类型没选!");
+return false;
+}
+document.Reportform.action="report.php?action=report&bk={$bk}";
+document.Reportform.submit();
+//return true;
+}
+</script>
+<!-- 主要框架 -->
+<div class="center" id="main_frame"><!-- 左边 -->
+<div id="left_content">
+
+<div id="reportForm">
+<h1 style="color: #000; font-size: 14px; margin: 10px 0">用户反馈</h1>
+<form name="Reportform" method="post" action="report.php?action=report&bk={$bk}">
+<font color="#FF0000">举报网址:</font><a href="{$url}" target=_blank >{$url}</a><br>
+<input type=hidden name=bbsid value="4563834">
+<input type=hidden name=topicid value="15">
+<input type=hidden name=msgid value="2926788">
+<input type=hidden name=nowpage value="0">
+<input type="hidden" name="url"  value="{$url}"/>
+<input type="radio" name="error_type" value="1"> 
+违反国家法律 &nbsp;&nbsp;<br>
+<input type="radio" name="error_type" value="2"> 
+含有色情内容 &nbsp;&nbsp;<br>
+<input type="radio" name="error_type" value="3"> 
+对他人进行恶意攻击 &nbsp;&nbsp;<br>
+<input type="radio" name="error_type" value="4"> 
+散布广告以及其它商业化的宣传 &nbsp;&nbsp;<br>
+<input type="radio" name="error_type" value="5"> 
+干扰或混乱论坛及网络服务 &nbsp;&nbsp;<br>
+<input type="radio" name="error_type" value="6"> 
+发布任何包含种族、 性别、宗教歧视性和猥亵性的信息内容 &nbsp;&nbsp;<br>
+<input type="radio" name="error_type" value="7"> 
+网页不能打开 &nbsp;&nbsp;<br>
+
+<input type="hidden" name="bk"  value="{$_GET['bk']}"/>
+<input type="radio" name="error_type" value="8"> 
+图片不能显示 &nbsp;&nbsp;<br>
+<label> <strong>内容:</strong> <br /> <textarea name="content" cols="50" rows="9"></textarea> </label>
+<table>
+<tr>
+<td height="10" colspan="2" align="center" bgcolor="#F6F6F6"><input
+type="button" name="submit1" value=" 提 交 " onclick="check()">
+</td>
+</tr>
+</form>
+</table>
+</div>
+</div>
+<!-- /左边 -->
+<!-- 右边 -->
+{xingTemplate right}
+<!-- /右边 --> <br class="nof" />
+</div>
+<!-- /主要框架 -->
+<!-- 插入尾部 -->
+{xingTemplate foot}
+<!-- 插入尾部 -->
