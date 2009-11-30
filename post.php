@@ -3,16 +3,16 @@ include 'conn.php';
 include 'check.php' ;
 
 if ($_SESSION[lock]==1){
-$tis= "对不起，你的账号处于冻结期，无法发贴！";
-tis($tis);
-exit;
+	$tis= "对不起，你的账号处于冻结期，无法发贴！";
+	tis($tis);
+	exit;
 }
 
 $filename="template/listtop{$_GET['bk']}.html";
 if (!file_exists($filename)) {
-$tis= "版块参数错误，或者相关模板文件不存在！";
-tis($tis);
-exit;
+	$tis= "版块参数错误，或者相关模板文件不存在！";
+	tis($tis);
+	exit;
 } 
 
 
