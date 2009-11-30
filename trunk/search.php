@@ -2,14 +2,16 @@
 include 'conn.php';
 
 $filename="template/listtop{$_GET['bk']}.html";
+
 if (!file_exists($filename)) {
-include 'tis.php';
-$tis= "版块参数错误，或者相关模板文件不存在！";
-tis($tis);
-exit;
+	include 'tis.php';
+	$tis= "版块参数错误，或者相关模板文件不存在！";
+	tis($tis);
+	exit;
 } 
 
-$keyword1=urldecode(iconv("UTF-8", "gb2312", "$_GET['keyword']"));
+
+$keyword1=urldecode(iconv('UTF-8', 'gb2312', $_GET['keyword'] ));
 $keyword1=addslashes($keyword1);//
 $kk1=urlencode(iconv("gb2312", "UTF-8", "$keyword1"));   //翻页url
 
