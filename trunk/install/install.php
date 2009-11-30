@@ -41,12 +41,16 @@ if (!$_POST['step']){
  echo "(如果您使用的是Linux 或 Freebsd服务器，先确认以下目录或文件的属性为 (777) 可写模式。
 )<br /><br />";
   
-  iswrite('../template/');  
-  iswrite('../config/'); 
-  iswrite('../html/face/'); 
-  iswrite('../html/up/img/');   
-  iswrite('../html/up/pic/');
-  iswrite('../html/Compile/');
+	iswrite('../template/');  
+	iswrite('../config/'); 
+	iswrite('../html/face/'); 
+	iswrite('../html/up/img/');   
+	iswrite('../html/up/pic/');
+	iswrite('../html/Compile/');
+	iswrite('../install/');
+	iswrite('..install/install.php');
+	iswrite('..config/database.php');
+
   
   echo $passd;
   echo "<br /><br />";
