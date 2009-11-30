@@ -1,3 +1,7 @@
+<?
+include 'check.php';
+if (empty($_GET[step])){
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -6,11 +10,7 @@
 </head>
 
 <body>
-<?
-include 'check.php';
 
-if (empty($_GET[step])){
-?>
 
 <form id="form1" name="form1" method="post" action="sign.php?step=2">
 <p>批量修改用户帖子签名：</p>

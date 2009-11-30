@@ -1,3 +1,6 @@
+<?php 
+include 'conn.php';
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -10,12 +13,9 @@
 <script language='javascript'>function checkall(form) { for(var i=0;i<form.elements.length; i++) { var e = form.elements[i]; if (e.name != 'chkall' && e.disabled != true) { e.checked = form.chkall.checked; } }}</script>
 
 <?
-
-include 'conn.php';
-
 if ($_SESSION[power]!=1){
-echo "<font color=red>管理重地，闲人勿进！</font>";
-exit;
+	echo "<font color=red>管理重地，闲人勿进！</font>";
+	exit;
 }
 
 
