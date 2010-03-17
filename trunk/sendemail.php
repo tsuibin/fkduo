@@ -3,12 +3,12 @@ include 'conn.php';
 require_once ('include/email.class.php');
 include 'tis.php';
 if (empty($_POST['email'])){
-$tis="Email²»ÄÜÎª¿Õ";
+$tis="Emailä¸èƒ½ä¸ºç©º";
 tis($tis);
 exit;
 }
 
-//$emailcontrol="139.com,126.com,163.com";//ÅäÖÃÀïµÄ
+//$emailcontrol="139.com,126.com,163.com";//é…ç½®é‡Œçš„
 $emailcontrol1=explode(",",$sys_emailcontrol);
 //$emailhou="126.com";
 $email=trim($_POST['email']);
@@ -16,7 +16,7 @@ eregi("@(.*)", $email, $regs);
 
 if (!in_array($regs[1],$emailcontrol1))
 {
-$tis= "³ö´íÁË!!!<br />±¾Õ¾Ö»ÔÊĞíÊ¹ÓÃÒÔÏÂºóê¡µÄÓÊÏä×¢²á£º<br />".$sys_emailcontrol;
+$tis= "å‡ºé”™äº†!!!<br />æœ¬ç«™åªå…è®¸ä½¿ç”¨ä»¥ä¸‹åè¾çš„é‚®ç®±æ³¨å†Œï¼š<br />".$sys_emailcontrol;
 tis($tis);
 exit;
 }
@@ -27,22 +27,22 @@ $code = substr(uniqid(rand()), -6);
 include_once 'config/email.php';
 
 $sql="INSERT INTO `{$fkduo}emailact` (`code`,`email`) VALUES ('$code','$smtpemailto')";
-$query=mysql_query($sql);//¸üĞÂÈÕÖ¾
-$id=mysql_insert_id();//È¡µÃ×Ô¶¯²úÉúµÄcid
+$query=mysql_query($sql);//æ›´æ–°æ—¥å¿—
+$id=mysql_insert_id();//å–å¾—è‡ªåŠ¨äº§ç”Ÿçš„cid
 
 $link=$siteurl."reg.php?id=".$id."&amp;code=".$code;
-$mailsubject=$sitename."ÑéÖ¤ÓÊ¼ş";
-$mailbody="ÑéÖ¤³É¹¦£¡<p>Çëµã»÷ÏÂÃæµÄÁ´½Ó½øÈëÌîĞ´¸öÈËĞÅÏ¢,ÒÔÍê³É×îºóµÄ×¢²á²½Öè£º</p><p><a href=".$link.">".$link."</a></p>
-<p>(Èç¹ûÉÏÃæ²»ÊÇÁ´½ÓĞÎÊ½£¬Çë½«µØÖ·ÊÖ¹¤Õ³Ìùµ½ä¯ÀÀÆ÷µØÖ·À¸ÔÙ·ÃÎÊ)</p><p>".$sitename."</p><p>".$siteurl."</p>";
+$mailsubject=$sitename."éªŒè¯é‚®ä»¶";
+$mailbody="éªŒè¯æˆåŠŸï¼<p>è¯·ç‚¹å‡»ä¸‹é¢çš„é“¾æ¥è¿›å…¥å¡«å†™ä¸ªäººä¿¡æ¯,ä»¥å®Œæˆæœ€åçš„æ³¨å†Œæ­¥éª¤ï¼š</p><p><a href=".$link.">".$link."</a></p>
+<p>(å¦‚æœä¸Šé¢ä¸æ˜¯é“¾æ¥å½¢å¼ï¼Œè¯·å°†åœ°å€æ‰‹å·¥ç²˜è´´åˆ°æµè§ˆå™¨åœ°å€æ å†è®¿é—®)</p><p>".$sitename."</p><p>".$siteurl."</p>";
 
 
-$smtp = new smtp($smtpserver,$smtpserverport,true,$smtpuser,$smtppass);//ÕâÀïÃæµÄÒ»¸ötrueÊÇ±íÊ¾Ê¹ÓÃÉí·İÑéÖ¤,·ñÔò²»Ê¹ÓÃÉí·İÑéÖ¤.
-$smtp->debug = FALSE;//ÊÇ·ñÏÔÊ¾·¢ËÍµÄµ÷ÊÔĞÅÏ¢
+$smtp = new smtp($smtpserver,$smtpserverport,true,$smtpuser,$smtppass);//è¿™é‡Œé¢çš„ä¸€ä¸ªtrueæ˜¯è¡¨ç¤ºä½¿ç”¨èº«ä»½éªŒè¯,å¦åˆ™ä¸ä½¿ç”¨èº«ä»½éªŒè¯.
+$smtp->debug = FALSE;//æ˜¯å¦æ˜¾ç¤ºå‘é€çš„è°ƒè¯•ä¿¡æ¯
 if ($smtp->sendmail($smtpemailto, $smtpusermail, $mailsubject, $mailbody, $mailtype)){
 header ("location: reg.php?action=sendok"); 
 }else
 {
-$tis="·¢ËÍ²»³É¹¦£¬ÇëÁªÏµ¹ÜÀíÔ±£¡";
+$tis="å‘é€ä¸æˆåŠŸï¼Œè¯·è”ç³»ç®¡ç†å‘˜ï¼";
 tis($tis);
 }
 ?>

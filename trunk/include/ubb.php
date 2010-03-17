@@ -14,14 +14,14 @@ function get_ubb($str) {
 $content=get_ubb($content);
 
 
-//function checkurl($urlgg){//¼ì²âÍøÖ·ÊÇ·ñ¿ÉĞĞ
-//$urlgg3=$urlgg; //Ô­Ê¼
-//$urlgg=str_replace("&", "fkduo-sadfvbn", $urlgg);//'&'ÎŞ·¨Ö±½Ó´¦Àí
-//$str1=array('"', '<', '>','(',')','*',' ','	','fkduo-sadfvbn#',';');//¿çÕ¾¹ıÂË´Ê´¦Àí..
-//$str1[]="'"; //×·¼Óµ¥ÒıºÅ
+//function checkurl($urlgg){//æ£€æµ‹ç½‘å€æ˜¯å¦å¯è¡Œ
+//$urlgg3=$urlgg; //åŸå§‹
+//$urlgg=str_replace("&", "fkduo-sadfvbn", $urlgg);//'&'æ— æ³•ç›´æ¥å¤„ç†
+//$str1=array('"', '<', '>','(',')','*',' ','	','fkduo-sadfvbn#',';');//è·¨ç«™è¿‡æ»¤è¯å¤„ç†..
+//$str1[]="'"; //è¿½åŠ å•å¼•å·
 //$urlgg=trim($urlgg);
 //$urlgg1=str_replace($str1, "", $urlgg);
-//if ($urlgg1!=$urlgg){ //²»ÔÊĞíÍøÖ·
+//if ($urlgg1!=$urlgg){ //ä¸å…è®¸ç½‘å€
 //return 1;
 //}else
 //{
@@ -31,15 +31,15 @@ $content=get_ubb($content);
 
 
 
-function checkurl($urlgg){//¼ì²âÍøÖ·ÊÇ·ñ¿ÉĞĞ
-//$urlgg3=$urlgg; //Ô­Ê¼
-//$urlgg=str_replace("&", "fkduo-sadfvbn", $urlgg);//'&'ÎŞ·¨Ö±½Ó´¦Àí
-//$str1=array('"', '<', '>','(',')','*',' ','	','&#',"'");//¿çÕ¾¹ıÂË´Ê´¦Àí..
+function checkurl($urlgg){//æ£€æµ‹ç½‘å€æ˜¯å¦å¯è¡Œ
+//$urlgg3=$urlgg; //åŸå§‹
+//$urlgg=str_replace("&", "fkduo-sadfvbn", $urlgg);//'&'æ— æ³•ç›´æ¥å¤„ç†
+//$str1=array('"', '<', '>','(',')','*',' ','	','&#',"'");//è·¨ç«™è¿‡æ»¤è¯å¤„ç†..
 
-$str1=array('&quot;', '&lt;', '&gt;','(',')','*',' ','	','&amp;#','&#039;');//¿çÕ¾¹ıÂË´Ê´¦Àí..
+$str1=array('&quot;', '&lt;', '&gt;','(',')','*',' ','	','&amp;#','&#039;');//è·¨ç«™è¿‡æ»¤è¯å¤„ç†..
 $urlgg=trim($urlgg);
 $urlgg1=str_replace($str1, "fkduo", $urlgg);
-if ($urlgg1!=$urlgg){ //²»ÔÊĞíÍøÖ·
+if ($urlgg1!=$urlgg){ //ä¸å…è®¸ç½‘å€
 return 1;
 }else
 {
@@ -58,14 +58,14 @@ $urlgg[$key] = imgurl($value);
 {
 
 global $siteurl;
-if (!stripos($urlgg,"://")>0){ //¼Óhttp
+if (!stripos($urlgg,"://")>0){ //åŠ http
 $urlgg="{$siteurl}$urlgg";
 }
-if (checkurl($urlgg)==1){ //²»ÔÊĞíÍøÖ·
+if (checkurl($urlgg)==1){ //ä¸å…è®¸ç½‘å€
 $urlgg="[img]".$urlgg."[/img]"; 
 }else
 {
-$urlgg="<a href=\"".$urlgg."\" target=_blank><img src=\"".$urlgg."\" alt=\"µã»÷²é¿´È«Í¼\" onload=\"if(this.width>600) {this.width=600;}\" /></a>";
+$urlgg="<a href=\"".$urlgg."\" target=_blank><img src=\"".$urlgg."\" alt=\"ç‚¹å‡»æŸ¥çœ‹å…¨å›¾\" onload=\"if(this.width>600) {this.width=600;}\" /></a>";
 }
 
 
@@ -83,10 +83,10 @@ $urlgg[$key] = flashurl($value);
 } else
 {
 global $siteurl;
-if (!stripos($urlgg,"://")>0){ //¼Óhttp
+if (!stripos($urlgg,"://")>0){ //åŠ http
 $urlgg="{$siteurl}$urlgg";
 }
-if (checkurl($urlgg)==1){ //²»ÔÊĞíÍøÖ·
+if (checkurl($urlgg)==1){ //ä¸å…è®¸ç½‘å€
 $urlgg="[flash]".$urlgg."[/flash]"; 
 }else
 {
@@ -106,10 +106,10 @@ $urlgg[$key] = httpurl($value);
 } else
 {
 global $siteurl;
-if (!stripos($urlgg,"://")>0){ //¼Óhttp
+if (!stripos($urlgg,"://")>0){ //åŠ http
 $urlgg="{$siteurl}$urlgg";
 }
-if (checkurl($urlgg)==1){ //²»ÔÊĞíÍøÖ·
+if (checkurl($urlgg)==1){ //ä¸å…è®¸ç½‘å€
 $urlgg="[url]".$urlgg."[/url]"; 
 }else
 {
@@ -128,10 +128,10 @@ $urlgg[$key] = httpurl2($value);
 } else
 {
 global $siteurl;
-if (!stripos($urlgg,"://")>0){ //¼Óhttp
+if (!stripos($urlgg,"://")>0){ //åŠ http
 $urlgg="{$siteurl}$urlgg";
 }
-if (checkurl($urlgg)==1){ //²»ÔÊĞíÍøÖ·
+if (checkurl($urlgg)==1){ //ä¸å…è®¸ç½‘å€
 $urlgg="[url=".$urlgg."]".$sitenames."[/url]"; 
 }else
 {

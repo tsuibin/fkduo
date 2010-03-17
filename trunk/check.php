@@ -2,7 +2,7 @@
 include_once 'tis.php';
 if (!$_SESSION[logname]) 
 {
-$tis= '您没有登录，还不能进行此操作';
+$tis= '鎮ㄦ病鏈夌櫥褰曪紝杩樹笉鑳借繘琛屾鎿嶄綔';
 tis($tis);
 exit;
 }

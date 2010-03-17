@@ -18,7 +18,7 @@ break;
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>ÎŞ±êÌâÎÄµµa</title>
+<title>æ— æ ‡é¢˜æ–‡æ¡£a</title>
 </head>
 
 <body>
@@ -30,7 +30,7 @@ $jilu=mysql_num_rows($query);
 ?>
 <table border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td bgcolor="#00CCFF">¾Ù±¨ÁĞ±í,×Ü¹²<font color=red><? echo $jilu ?></font>ÌõÖ÷Ìâ</td>
+    <td bgcolor="#00CCFF">ä¸¾æŠ¥åˆ—è¡¨,æ€»å…±<font color=red><? echo $jilu ?></font>æ¡ä¸»é¢˜</td>
   </tr>
 <?
 function uuuw($mkktime){
@@ -42,9 +42,9 @@ while ($row=mysql_fetch_array($query)){
   <tr>
     <td>
 	<?
-echo $row[from]."¾Ù±¨:<a href=../".stripcslashes($row[url])." target=_blank>".stripcslashes($row[url])."</a>&nbsp;".$row[why2]."<br>";
-echo "¾Ù±¨Ê±¼ä£º".uuuw($row[time]);
-echo "<a href=report.php?action=del&id=".$row[id]."><br>É¾³ı´Ë¾Ù±¨¼ÇÂ¼</a>";
+echo $row[from]."ä¸¾æŠ¥:<a href=../".stripcslashes($row[url])." target=_blank>".stripcslashes($row[url])."</a>&nbsp;".$row[why2]."<br>";
+echo "ä¸¾æŠ¥æ—¶é—´ï¼š".uuuw($row[time]);
+echo "<a href=report.php?action=del&id=".$row[id]."><br>åˆ é™¤æ­¤ä¸¾æŠ¥è®°å½•</a>";
 echo "<hr>";
 ?></td>
   </tr><? }?>

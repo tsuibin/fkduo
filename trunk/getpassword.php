@@ -9,19 +9,19 @@ exit;
 
 include_once 'tis.php';
 if ($_GET['action']==ok){
-$tis="ÇëÇó³É¹¦!<br>ÎÒÃÇ»áÓÚ5·ÖÖÓÄÚ½ĞÈË°ÑĞÂÃÜÂë·¢ËÍµ½ÄúµÄÓÊÏä£¬ÇëÉÔºò²éÊÕ£¡";
+$tis="è¯·æ±‚æˆåŠŸ!<br>æˆ‘ä»¬ä¼šäº5åˆ†é’Ÿå†…å«äººæŠŠæ–°å¯†ç å‘é€åˆ°æ‚¨çš„é‚®ç®±ï¼Œè¯·ç¨å€™æŸ¥æ”¶ï¼";
 tis($tis);
 exit;
 }
 
 if (empty($_POST['logname'])){
-$tis="ÓÃ»§Ãû²»ÄÜÎª¿Õ";
+$tis="ç”¨æˆ·åä¸èƒ½ä¸ºç©º";
 tis($tis);
 exit;
 }
 
 if (empty($_POST['email'])){
-$tis="Email²»ÄÜÎª¿Õ";
+$tis="Emailä¸èƒ½ä¸ºç©º";
 tis($tis);
 exit;
 }
@@ -37,31 +37,31 @@ $salt=$row[salt];
 if ($row[email]==$_POST['email']){
 
 $email=trim($_POST['email']);
-$passnow = substr(uniqid(rand()), -6);//Éú³ÉĞÂÃÜÂë
+$passnow = substr(uniqid(rand()), -6);//ç”Ÿæˆæ–°å¯†ç 
 $password = md5(md5($passnow).$salt);
-mysql_query("update `{$fkduo}user` set `pass`='$password' where (`logname`='$logname') limit 1");//¸ü¸ÄÃÜÂë
+mysql_query("update `{$fkduo}user` set `pass`='$password' where (`logname`='$logname') limit 1");//æ›´æ”¹å¯†ç 
 
-$mailsubject=$sitename."È¡»ØÃÜÂë";
-$mailbody="ÄúµÄÃÜÂëÒÑ¾­±»ÖØÖÃÎª£º".$passnow."<br>Çë¼´¿ÌµÇÂ¼ĞŞ¸Ä£¬Ğ»Ğ»£¡<br>".$sitename."<br>".$siteurl;
+$mailsubject=$sitename."å–å›å¯†ç ";
+$mailbody="æ‚¨çš„å¯†ç å·²ç»è¢«é‡ç½®ä¸ºï¼š".$passnow."<br>è¯·å³åˆ»ç™»å½•ä¿®æ”¹ï¼Œè°¢è°¢ï¼<br>".$sitename."<br>".$siteurl;
 $smtpemailto=$email;
 
 //---------------------------------------
 include_once ('include/email.class.php');
 include_once ('config/email.php');
 
-$smtp = new smtp($smtpserver,$smtpserverport,true,$smtpuser,$smtppass);//trueÊÇ±íÊ¾Ê¹ÓÃÉí·İÑéÖ¤
-$smtp->debug = FALSE;//ÊÇ·ñÏÔÊ¾·¢ËÍµÄµ÷ÊÔĞÅÏ¢
+$smtp = new smtp($smtpserver,$smtpserverport,true,$smtpuser,$smtppass);//trueæ˜¯è¡¨ç¤ºä½¿ç”¨èº«ä»½éªŒè¯
+$smtp->debug = FALSE;//æ˜¯å¦æ˜¾ç¤ºå‘é€çš„è°ƒè¯•ä¿¡æ¯
 if ($smtp->sendmail($smtpemailto, $smtpusermail, $mailsubject, $mailbody, $mailtype)){
 header ("location: getpassword.php?action=ok"); 
 }else
 {
-$tis="·¢ËÍ²»³É¹¦£¬ÇëÁªÏµ¹ÜÀíÔ±£¡";
+$tis="å‘é€ä¸æˆåŠŸï¼Œè¯·è”ç³»ç®¡ç†å‘˜ï¼";
 tis($tis);
 exit;
 }
 //---------------------------------------
 }else{
-$tis="ÓÃ»§ÃûºÍÓÊÏä¶Ô²»ÉÏºÅ£¡ÇëÔÙÏëÏë";
+$tis="ç”¨æˆ·åå’Œé‚®ç®±å¯¹ä¸ä¸Šå·ï¼è¯·å†æƒ³æƒ³";
 tis($tis);
 }
 

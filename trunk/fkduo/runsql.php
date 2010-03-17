@@ -5,7 +5,7 @@ include 'check.php';
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>ÎÞ±êÌâÎÄµµ</title>
+<title>æ— æ ‡é¢˜æ–‡æ¡£</title>
 </head>
 
 <body><br /><br />
@@ -14,19 +14,19 @@ $sqlcode=stripcslashes($_POST[sql]);
 $sqlcode=str_replace('{$fkduo}', $fkduo, $sqlcode);
 
 if (!empty($sqlcode)){
-mysql_query($sqlcode) or die("<font color=red>³ö´íÀ²£¡£¡Ö´ÐÐ²»³É¹¦¡£</font>");//¸üÐÂÈÕÖ¾
-echo "²Ù×÷³É¹¦£¡£¡£¡";
+mysql_query($sqlcode) or die("<font color=red>å‡ºé”™å•¦ï¼ï¼æ‰§è¡Œä¸æˆåŠŸã€‚</font>");//æ›´æ–°æ—¥å¿—
+echo "æ“ä½œæˆåŠŸï¼ï¼ï¼";
 exit;
 }
 ?>
-<center>Éý¼¶Êý¾Ý¿â£¬Ö´ÐÐSQLÓï¾ä£¨Çë½÷É÷ÔËÐÐ£©£º
+<center>å‡çº§æ•°æ®åº“ï¼Œæ‰§è¡ŒSQLè¯­å¥ï¼ˆè¯·è°¨æ…Žè¿è¡Œï¼‰ï¼š
 <form id="form1" name="form1" method="post" action="runsql.php">
   <label>
   <textarea name="sql" cols="50" rows="12"></textarea>
   </label>
   <p>
     <label>
-    <input type="submit" name="Submit" value=" ÔË ÐÐ " />
+    <input type="submit" name="Submit" value=" è¿ è¡Œ " />
     </label>
   </p>
 </form>

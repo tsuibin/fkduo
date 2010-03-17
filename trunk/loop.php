@@ -8,7 +8,7 @@ $query=mysql_query($sql);
 $rows=mysql_num_rows($query); 
 if ($rows==0){
 include 'tis.php';
-$tis= "¶Ô²»Æğ£¬µ±Ç°°æÃæ²»´æÔÚ";
+$tis= "å¯¹ä¸èµ·ï¼Œå½“å‰ç‰ˆé¢ä¸å­˜åœ¨";
 tis($tis);
 exit();
 }
@@ -34,41 +34,41 @@ if ($now==1 and $pages==1)
 $start=0;
 }elseif ($now==1 and $pages>1)
 {
-$thedown="<a href=".url($bk,$now+1).">ÏÂÒ»Ò³</a>";
+$thedown="<a href=".url($bk,$now+1).">ä¸‹ä¸€é¡µ</a>";
 $start=0;
 }elseif ($now>1 and $now<$pages)
 {
-$theup="<a href=".url($bk,$now-1).">ÉÏÒ»Ò³</a>";
-$thedown="<a href=".url($bk,$now+1).">ÏÂÒ»Ò³</a>";
+$theup="<a href=".url($bk,$now-1).">ä¸Šä¸€é¡µ</a>";
+$thedown="<a href=".url($bk,$now+1).">ä¸‹ä¸€é¡µ</a>";
 $start=($now-1)*$liststep;
 }elseif (($now>1 and $now==$pages) or ($now>$pages))
 {
-$theup="<a href=".url($bk,$pages-1).">ÉÏÒ»Ò³</a>";
+$theup="<a href=".url($bk,$pages-1).">ä¸Šä¸€é¡µ</a>";
 $start=($pages-1)*$liststep;
 $now=$pages;
 }
 
-function uuuw($mkktime){ //Ê±¼ä×ª»»¸ñÊ½
+function uuuw($mkktime){ //æ—¶é—´è½¬æ¢æ ¼å¼
 $mkktime=date("y-m-d H:i",$mkktime);
 return $mkktime;  
 }
 
-function uuuy($mkktime){ //Ê±¼ä×ª»»¸ñÊ½
+function uuuy($mkktime){ //æ—¶é—´è½¬æ¢æ ¼å¼
 $mkktime=date("m-d H:i",$mkktime);
 return $mkktime;
 }
 
-function uuuz($uuuz1,$uuuz2){ //ÁĞ±í¼òÂÔ·ÖÒ³
+function uuuz($uuuz1,$uuuz2){ //åˆ—è¡¨ç®€ç•¥åˆ†é¡µ
 $uuuz=(int)($uuuz1/$uuuz2);
 return $uuuz+1;
 }
 
-$listtop="listtop".$bk;//ÎÄ¼şÃû
+$listtop="listtop".$bk;//æ–‡ä»¶å
 
 $sql="select * from `{$fkduo}zhuti` where (bk='$bk' and zd='0'and hs='0' and through='0') order by `lasttime` DESC limit $start,$liststep";
 $query=mysql_query($sql);
 
-$endtime=microtime(true);//Êä³öÔËĞĞÊ±¼ä
+$endtime=microtime(true);//è¾“å‡ºè¿è¡Œæ—¶é—´
 $total=$endtime-$starttime; 
 $runtimes="<center>{$total} second(s)</center>";
 

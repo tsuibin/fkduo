@@ -2,7 +2,7 @@
 include 'conn.php';
 include 'check.php';
 
-if ($_GET['action']==send){//SMS·¢ËÍ´¦Àí
+if ($_GET['action']==send){//SMSå‘é€å¤„ç†
 $to=ruku($_POST['to']);
 $from=$_SESSION[logname];
 
@@ -17,7 +17,7 @@ $content=str_replace("\r\n","<br />",$content);
 $content=addslashes($content);
 
 if (empty($title) or empty($to)) {
-$tis= "±êÌâ»òÓÃ»§ÃûÎª¿Õ£¬·¢ËÍÊ§°Ü"; 
+$tis= "æ ‡é¢˜æˆ–ç”¨æˆ·åä¸ºç©ºï¼Œå‘é€å¤±è´¥"; 
 tis($tis);
 exit;
 }
@@ -26,7 +26,7 @@ $sql6="select * FROM `{$fkduo}user` where (`logname`='$to') limit 1";
 $query6=mysql_query($sql6);
 $jilu=mysql_num_rows($query6);
 if ($jilu==0){
-$tis="ÕÒ²»µ½Õâ¸öÓÃ»§Ãû£¬·¢ËÍÊ§°Ü!";
+$tis="æ‰¾ä¸åˆ°è¿™ä¸ªç”¨æˆ·åï¼Œå‘é€å¤±è´¥!";
 tis($tis);
 exit;
 }
@@ -38,7 +38,7 @@ $fromnkname=$row[nickname];
 
 $time=mktime();
 $sql="INSERT INTO `{$fkduo}sms` (`title`,`content`,`from`,`fromnkname`,`to`,`time`,`read`) VALUES ('$title','$content','$from','$fromnkname','$to','$time','0')";
-$query=mysql_query($sql);//¸üĞÂÈÕÖ¾
+$query=mysql_query($sql);//æ›´æ–°æ—¥å¿—
 
 header ("location: my.php?action=mysms&mod=sendok"); 
 exit;}
@@ -46,7 +46,7 @@ exit;}
 
 
 
-if ($_GET['action']==del){//SMSÉ¾³ı´¦Àí
+if ($_GET['action']==del){//SMSåˆ é™¤å¤„ç†
 
 switch ($_GET['mod']){
 case listt:
@@ -63,7 +63,7 @@ mysql_query("DELETE FROM `{$fkduo}sms` WHERE `id`='$idd' and `to`='$_SESSION[log
 break;
 
 default;
-echo "³ö´íÁË£¡";
+echo "å‡ºé”™äº†ï¼";
 exit;
 }
 header ("location: my.php?action=mysms&mod=delok"); 
@@ -73,15 +73,15 @@ exit;
 
 
 
-if ($_GET['action']==myinfook){//¸öÈËĞÅÏ¢ĞŞ¸Ä´¦Àí
+if ($_GET['action']==myinfook){//ä¸ªäººä¿¡æ¯ä¿®æ”¹å¤„ç†
 if (empty($_POST['oldpassword'])){
-$tis= "ÄãÃ»ÓĞÊäÈëÔ­ÃÜÂë";
+$tis= "ä½ æ²¡æœ‰è¾“å…¥åŸå¯†ç ";
 tis($tis);
 exit;
 }
 
 if (!preg_match( "/^[^_][".chr(0xa1)."-".chr(0xff)."A-Za-z0-9_]{1,20}$/s ",$_POST['nickname'])) { 
-$tis= "³ö´íÁË£¬êÇ³Æ²»ÄÜº¬ÓĞÌØÊâ·ûºÅ<br />(Ö»ÔÊĞíºº×Ö£¬Ó¢ÎÄ×ÖÄ¸£¬Êı×ÖºÍÏÂ»®Ïß£¬ÖĞ¼ä²»ÄÜÓĞ¿Õ¸ñ£¬³¤¶È10¸ö×Ö·ûÄÚ)"; 
+$tis= "å‡ºé”™äº†ï¼Œæ˜µç§°ä¸èƒ½å«æœ‰ç‰¹æ®Šç¬¦å·<br />(åªå…è®¸æ±‰å­—ï¼Œè‹±æ–‡å­—æ¯ï¼Œæ•°å­—å’Œä¸‹åˆ’çº¿ï¼Œä¸­é—´ä¸èƒ½æœ‰ç©ºæ ¼ï¼Œé•¿åº¦10ä¸ªå­—ç¬¦å†…)"; 
 tis($tis);
 exit;
 }
@@ -89,7 +89,7 @@ exit;
 $_POST['email']=trim($_POST['email']);
 if(!ereg('^[a-zA-Z0-9\._\-]+@([a-zA-Z0-9][a-zA-Z0-9\-]*\.)+[a-zA-Z]+$',$_POST['email'])) 
 { 
-$tis= "Email¸ñÊ½²»ÕıÈ·£¬»òÕßº¬ÓĞ·Ç·¨×Ö·û£¬ÇëÈÏÕæÌîĞ´"; 
+$tis= "Emailæ ¼å¼ä¸æ­£ç¡®ï¼Œæˆ–è€…å«æœ‰éæ³•å­—ç¬¦ï¼Œè¯·è®¤çœŸå¡«å†™"; 
 tis($tis);
 exit;
 }
@@ -107,7 +107,7 @@ $password=$row[pass];
 $oldpassword = md5(md5($_POST['oldpassword']).$row[salt]);
 
 if ($oldpassword!=$password){
-$tis= "ÃÜÂë²»¶Ô£¬¸ãÊ²Ã´·É»ú°¡£¡";
+$tis= "å¯†ç ä¸å¯¹ï¼Œæä»€ä¹ˆé£æœºå•Šï¼";
 tis($tis);
 exit;
 }
@@ -117,7 +117,7 @@ $sign=htmlentities($sign, ENT_QUOTES,gb2312);
 $sign=str_replace("\r\n","<br />",$sign);
 $sign=addslashes($sign);
 
-if (!empty($_POST['newpassword'])){//ĞÂÃÜÂëÊÇ·ñÉèÁË
+if (!empty($_POST['newpassword'])){//æ–°å¯†ç æ˜¯å¦è®¾äº†
 $password = md5(md5($_POST['newpassword']).$row[salt]);
 }
 
@@ -132,7 +132,7 @@ exit;}
 
 
 
-if ($_GET['action']==myfaceok){//Í·ÏñÉÏ´«´¦Àí
+if ($_GET['action']==myfaceok){//å¤´åƒä¸Šä¼ å¤„ç†
 if (is_uploaded_file($_FILES['upfile']['tmp_name'])){
 $upfile=$_FILES["upfile"];
 $type = $upfile["type"];
@@ -144,13 +144,13 @@ $face_size=$face_size*1000;
 
 
 if ($size>$face_size){
-$tis= "´íÎó£¬ÉÏ´«µÄÍ·ÏñÎÄ¼ş´óĞ¡²»ÄÜ³¬¹ı".($face_size/1000)."K";
+$tis= "é”™è¯¯ï¼Œä¸Šä¼ çš„å¤´åƒæ–‡ä»¶å¤§å°ä¸èƒ½è¶…è¿‡".($face_size/1000)."K";
  tis($tis);
 exit;
 }
 
 if ($image_size[0]>100 or $image_size[1]>100){
-$tis= "´íÎó£¬Í¼Æ¬³ß´çÇëÏŞÖÆÔÚ100*100ÒÔÄÚ";
+$tis= "é”™è¯¯ï¼Œå›¾ç‰‡å°ºå¯¸è¯·é™åˆ¶åœ¨100*100ä»¥å†…";
  tis($tis);
 exit;
 }
@@ -170,7 +170,7 @@ switch ($type) {
 		$face=gif;
 		break;
 	default:
-		echo "²»ÔÊĞíµÄÎÄ¼şÄÚĞÍ";
+		echo "ä¸å…è®¸çš„æ–‡ä»¶å†…å‹";
 		exit;
 }
 
@@ -179,7 +179,7 @@ $name="html/face/".$name;
 if($ok && $error=='0'){
  move_uploaded_file($tmp_name,$name); 
  mysql_query("update `{$fkduo}user` set `face`='$face' where (`logname`='$_SESSION[logname]') limit 1");
- $tis= "Í·ÏñÉÏ´«³É¹¦£¡<br />Èç¹û×ó²àÍ·ÏñÍ¼Æ¬Ã»¸üĞÂ£¬ÇëË¢ĞÂÒ»ÏÂ¡£"; 
+ $tis= "å¤´åƒä¸Šä¼ æˆåŠŸï¼<br />å¦‚æœå·¦ä¾§å¤´åƒå›¾ç‰‡æ²¡æ›´æ–°ï¼Œè¯·åˆ·æ–°ä¸€ä¸‹ã€‚"; 
  tis($tis);
 }
 }exit;}
@@ -188,7 +188,7 @@ if($ok && $error=='0'){
 
 
 
-if ($_GET['action']==favdel){//ÊÕ²Ø¼ĞÉ¾³ı
+if ($_GET['action']==favdel){//æ”¶è—å¤¹åˆ é™¤
 switch ($_GET['mod']){
 case listt:
 $idd=$_POST['Idx'];
@@ -202,7 +202,7 @@ mysql_query("update `{$fkduo}user` set `favcount`=`favcount`-'$how' where (`logn
 break;
 
 default;
-echo "³ö´íÁË£¡";
+echo "å‡ºé”™äº†ï¼";
 exit;
 }
 header ("location: my.php?action=myfav&mod=delok"); 

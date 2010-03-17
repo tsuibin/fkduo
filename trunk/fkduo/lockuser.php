@@ -3,14 +3,14 @@ include 'check.php';
 
 $logname=$_POST[logname];
 $day=(int)($_POST[day]);
-$locktime=$day*86400+mktime();//·âºÅÆÚÏŞ
+$locktime=$day*86400+mktime();//å°å·æœŸé™
 
 switch ($_GET[action]){
 case lock:
 $query=mysql_query("select * FROM `{$fkduo}user` where `logname`='$logname' limit 1");
 $jilu=mysql_num_rows($query);
 if ($jilu==0){
-echo "²Ù×÷Ê§°Ü£¬Ã»ÓĞÕâ¸öÓÃ»§Ãû£¡";
+echo "æ“ä½œå¤±è´¥ï¼Œæ²¡æœ‰è¿™ä¸ªç”¨æˆ·åï¼";
 exit;
 }
 
@@ -22,7 +22,7 @@ header ("location: $eee");
 break;
 
 case ok:
-echo "<font color=red>²Ù×÷³É¹¦£¡</font>";
+echo "<font color=red>æ“ä½œæˆåŠŸï¼</font>";
 break;
 
 case unlock:
@@ -46,16 +46,16 @@ break;
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>ÎŞ±êÌâÎÄµµ</title>
+<title>æ— æ ‡é¢˜æ–‡æ¡£</title>
 </head>
 
 <body>
-<h2>»áÔ±ÕËºÅ¶³½á-½â¶³¹ÜÀí£¡</h2>
-(ÒÔÏÂÎª±»·âºÅµÄ»áÔ±) 
+<h2>ä¼šå‘˜è´¦å·å†»ç»“-è§£å†»ç®¡ç†ï¼</h2>
+(ä»¥ä¸‹ä¸ºè¢«å°å·çš„ä¼šå‘˜) 
 <table width="44%" border="1" cellpadding="0" cellspacing="0">
   <tr>
-    <td bgcolor="#99CC99">ÓÃ»§Ãû</td>
-	<td bgcolor="#99CC99">¶³½áÆÚÏŞ</td>
+    <td bgcolor="#99CC99">ç”¨æˆ·å</td>
+	<td bgcolor="#99CC99">å†»ç»“æœŸé™</td>
     <td bgcolor="#99CC99"></td>
   </tr>
   <?
@@ -73,7 +73,7 @@ while ($row=mysql_fetch_array($query)){
     <tr>
       <td><a href=../info.php?logname=<? echo $row[logname] ?> target=_blank> <? echo $row[logname] ?></a></td>
 	  <td><? echo uuuw($row[locktime]) ?></td>
-      <td><a href="lockuser.php?action=unlock&logname=<? echo $row[logname] ?>">½â¶³</a></td>
+      <td><a href="lockuser.php?action=unlock&logname=<? echo $row[logname] ?>">è§£å†»</a></td>
     </tr>
   <?
   }
@@ -81,8 +81,8 @@ while ($row=mysql_fetch_array($query)){
   </table><br><br>
   <table>
     <tr>
-    <td bgcolor="#99CC99">ÓÃ»§Ãû</td>
-	<td bgcolor="#99CC99">·âºÅÌìÊı(ÕûÊı)</td>
+    <td bgcolor="#99CC99">ç”¨æˆ·å</td>
+	<td bgcolor="#99CC99">å°å·å¤©æ•°(æ•´æ•°)</td>
     <td></td>
   </tr>
   
@@ -90,7 +90,7 @@ while ($row=mysql_fetch_array($query)){
     <tr>
     <td><input name="logname" type="text" id="logname" accesskey="1" /></td>
 	<td><input name="day" type="text" id="day" accesskey="2" value="1" size="10" /></td>
-    <td><input type="submit" name="Submit" value="Ìí ¼Ó" accesskey="3" /></td>
+    <td><input type="submit" name="Submit" value="æ·» åŠ " accesskey="3" /></td>
   </tr>
   </form>
 </table>

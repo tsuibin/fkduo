@@ -1,9 +1,9 @@
-��л��
-ģ���������xingtemplate,
-����ģ�弰���ܲο�pchome��
-��װ����qxhtml,
-����php100.
-�ڴ������Ǳ�ʾ��л�����������ߵľ��⣡
+感谢：
+模板引擎采用xingtemplate,
+部分模板及功能参考pchome，
+安装技术qxhtml,
+更多php100.
+在此向他们表示感谢，并致以最崇高的敬意！
 
-�ÿͶ�
+访客多
 fkduo.cn

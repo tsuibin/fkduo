@@ -7,7 +7,7 @@ include 'check.php';
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>访客多论坛后台管理</title>
+<title>璁垮澶氳鍧涘悗鍙扮鐞�</title>
 </head>
 
 <frameset rows="*" cols="147,1102">

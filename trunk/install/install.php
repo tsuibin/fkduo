@@ -6,7 +6,7 @@ $_SESSION[abcd]=0;
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>°²×°Ïòµ¼</title>
+<title>å®‰è£…å‘å¯¼</title>
 <style type="text/css">
 * { margin: 0; padding: 0; }
 label { width: 200px; float: left; }
@@ -20,7 +20,7 @@ h2 { font-size: 100%; margin-bottom: 10px; }
 </head>
 
 <body>
-<h1>°²×°Ïòµ¼</h1>
+<h1>å®‰è£…å‘å¯¼</h1>
 <?php
 if (!$_POST['step']){
 
@@ -28,17 +28,17 @@ if (!$_POST['step']){
     
 	if(!is_writable($files)){
 	echo "&nbsp;&nbsp;".$files.":&nbsp;&nbsp;";
-  	echo "<font color=red>´íÎó,²»¿ÉĞ´</font><br />";
+  	echo "<font color=red>é”™è¯¯,ä¸å¯å†™</font><br />";
 	$_SESSION[abcd]=1;
     }else{
 	echo "&nbsp;&nbsp;".$files.":&nbsp;&nbsp;";
-  	echo "<font color=green>¿ÉĞ´</font><br />";
+  	echo "<font color=green>å¯å†™</font><br />";
     }
 
   }
   
- echo "¼ì²â°²×°Ä¿Â¼µÄÈ¨ÏŞ<br />";
- echo "(Èç¹ûÄúÊ¹ÓÃµÄÊÇLinux »ò Freebsd·şÎñÆ÷£¬ÏÈÈ·ÈÏÒÔÏÂÄ¿Â¼»òÎÄ¼şµÄÊôĞÔÎª (777) ¿ÉĞ´Ä£Ê½¡£
+ echo "æ£€æµ‹å®‰è£…ç›®å½•çš„æƒé™<br />";
+ echo "(å¦‚æœæ‚¨ä½¿ç”¨çš„æ˜¯Linux æˆ– FreebsdæœåŠ¡å™¨ï¼Œå…ˆç¡®è®¤ä»¥ä¸‹ç›®å½•æˆ–æ–‡ä»¶çš„å±æ€§ä¸º (777) å¯å†™æ¨¡å¼ã€‚
 )<br /><br />";
   
 	iswrite('../template/');  
@@ -56,39 +56,39 @@ if (!$_POST['step']){
   echo "<br /><br />";
   
 if ($_SESSION[abcd]==1){
-echo "<font color=red><b>&nbsp;ÎÄ¼şÈ¨ÏŞ¼ì²â²»Í¨¹ı,ÎŞ·¨°²×°!</b></font><br />";
-echo "(Çë½«²»¿ÉĞ´µÄÄ¿Â¼ÉèÎª777,È»ºóË¢ĞÂ±¾Ò³Ãæ)";
+echo "<font color=red><b>&nbsp;æ–‡ä»¶æƒé™æ£€æµ‹ä¸é€šè¿‡,æ— æ³•å®‰è£…!</b></font><br />";
+echo "(è¯·å°†ä¸å¯å†™çš„ç›®å½•è®¾ä¸º777,ç„¶ååˆ·æ–°æœ¬é¡µé¢)";
 exit;
 }else{
-echo "<font color=blue>¼ì²âÍ¨¹ı£¬Äã¿ÉÒÔ½øÈëÏÂÒ»²½</font>";
+echo "<font color=blue>æ£€æµ‹é€šè¿‡ï¼Œä½ å¯ä»¥è¿›å…¥ä¸‹ä¸€æ­¥</font>";
 }
 
   
 ?>
 <form action="install.php" method="post">
 <p><input type="hidden" name="step" value="1" /></p>
-<p><input type="submit" value="ÏÂÒ»²½" name="ok" /></p>
+<p><input type="submit" value="ä¸‹ä¸€æ­¥" name="ok" /></p>
 </form>
 
 <?php
-/*°²×°µÄµÚÒ»²½*/
+/*å®‰è£…çš„ç¬¬ä¸€æ­¥*/
 }elseif($_POST['step']=='1')
  {
 ?>
-<h2>¿ªÊ¼°²×°</h2>
+<h2>å¼€å§‹å®‰è£…</h2>
 <form action="install.php" method="post">
-		<p><label>·şÎñÆ÷µØÖ·£º</label><input type="text" name="host" value="localhost" />* Ò»°ãÎªlocalhost</p>
-		<p><label>·şÎñÆ÷ÓÃ»§Ãû£º</label><input name="name_s" type="text" value="root" />
+		<p><label>æœåŠ¡å™¨åœ°å€ï¼š</label><input type="text" name="host" value="localhost" />* ä¸€èˆ¬ä¸ºlocalhost</p>
+		<p><label>æœåŠ¡å™¨ç”¨æˆ·åï¼š</label><input name="name_s" type="text" value="root" />
 		*</p>
-		<p><label>·şÎñÆ÷ÓÃ»§ÃÜÂë£º</label><input type="text" name="pass" /> Èç¹ûÃ»ÓĞÉèÖÃ¾Í²»ÓÃÌî</p>
-		<p><label>Êı¾İ¿âÃû³Æ£º</label><input type="text" name="database" />*</p>
-		<p><label>Êı¾İ±íÇ°×º£º</label><input name="table_prefix" type="text" /> 
-		Èç¹û²»Ìî¾ÍÎªfkduo_</p>
+		<p><label>æœåŠ¡å™¨ç”¨æˆ·å¯†ç ï¼š</label><input type="text" name="pass" /> å¦‚æœæ²¡æœ‰è®¾ç½®å°±ä¸ç”¨å¡«</p>
+		<p><label>æ•°æ®åº“åç§°ï¼š</label><input type="text" name="database" />*</p>
+		<p><label>æ•°æ®è¡¨å‰ç¼€ï¼š</label><input name="table_prefix" type="text" /> 
+		å¦‚æœä¸å¡«å°±ä¸ºfkduo_</p>
 		<p><input type="hidden" name="step" value="2" /></p>
-		<p><input type="submit" value="ÏÂÒ»²½" name="ok" /></p>
+		<p><input type="submit" value="ä¸‹ä¸€æ­¥" name="ok" /></p>
 </form>
 <?php
-/*°²×°µÄµÚ¶ş²½*/
+/*å®‰è£…çš„ç¬¬äºŒæ­¥*/
 }elseif($_POST['step']=='2'){
 	$host = trim($_POST['host']);
 	$name = trim($_POST['name_s']);
@@ -98,17 +98,17 @@ echo "<font color=blue>¼ì²âÍ¨¹ı£¬Äã¿ÉÒÔ½øÈëÏÂÒ»²½</font>";
 	$table_prefix = trim($_POST['table_prefix']) ? trim($_POST['table_prefix']) : 'fkduo_';
 	
 	if($host==''||$name==''||$database==''){
-		echo '<p>ÇëÈ·ÈÏ±ØÌîĞ´ÊÇ·ñÌîĞ´</p>','<p><input type="button" value="ÉÏÒ»²½" onclick="history.back()" /></p>';
+		echo '<p>è¯·ç¡®è®¤å¿…å¡«å†™æ˜¯å¦å¡«å†™</p>','<p><input type="button" value="ä¸Šä¸€æ­¥" onclick="history.back()" /></p>';
 		exit();
 	}
 	
 	$conn = @mysql_connect($host,$name,$pass) or die('
-		<p>ÇëÈ·ÈÏ·şÎñÆ÷µØÖ·¡¢·şÎñÆ÷ÓÃ»§Ãû¡¢·şÎñÆ÷ÓÃ»§ÃÜÂëÊÇ·ñÕıÈ·£¡</p>
-		<p><input type="button" value="ÉÏÒ»²½" onclick="history.back()" /></p>
+		<p>è¯·ç¡®è®¤æœåŠ¡å™¨åœ°å€ã€æœåŠ¡å™¨ç”¨æˆ·åã€æœåŠ¡å™¨ç”¨æˆ·å¯†ç æ˜¯å¦æ­£ç¡®ï¼</p>
+		<p><input type="button" value="ä¸Šä¸€æ­¥" onclick="history.back()" /></p>
 	');
 
 	mysql_query("CREATE DATABASE IF NOT EXISTS `".$database."` DEFAULT CHARACTER SET gbk") or die(mysql_error());
-	mysql_select_db($database,$conn) or die("Ã»ÓĞ¸ÃÊı¾İ¿â");
+	mysql_select_db($database,$conn) or die("æ²¡æœ‰è¯¥æ•°æ®åº“");
 	mysql_query("set names 'GBK'");
 	mysql_query("SET character_set_client = gbk;");
     mysql_query("SET character_set_connection = gbk;");
@@ -123,7 +123,7 @@ echo "<font color=blue>¼ì²âÍ¨¹ı£¬Äã¿ÉÒÔ½øÈëÏÂÒ»²½</font>";
 
 	
 	$file = 'fkduo.sql';
-	echo '<h2 id="prompt">ÕıÔÚ°²×°£¬ÇëÉÔµÈ...</h2>',
+	echo '<h2 id="prompt">æ­£åœ¨å®‰è£…ï¼Œè¯·ç¨ç­‰...</h2>',
 		 '<div id="progress_w"><div id="progress"></div></div>',
 		 '<div id="wrapper"><div id="info">';
 	if(file_exists($file)){
@@ -132,24 +132,24 @@ echo "<font color=blue>¼ì²âÍ¨¹ı£¬Äã¿ÉÒÔ½øÈëÏÂÒ»²½</font>";
 		fclose($handle);
 		$buffer = str_replace('{table_prefix}',$table_prefix,$buffer);
 		$arr = explode(";\r",$buffer);
-		//³öÕ»£¬É¾³ı×îºóÒ»¸ö¿ÕSQLÓï¾äµÄÊı×é
+		//å‡ºæ ˆï¼Œåˆ é™¤æœ€åä¸€ä¸ªç©ºSQLè¯­å¥çš„æ•°ç»„
 		array_pop($arr);
-		//¼ÆËãÒ»¹²ÓĞ¶àÉÙÕÅ±í
+		//è®¡ç®—ä¸€å…±æœ‰å¤šå°‘å¼ è¡¨
 		$total_table = preg_match_all("/CREATE TABLE `(.*)` /i",$buffer,$a);
-		//¼ÆÊıÆ÷
+		//è®¡æ•°å™¨
 		$n = 0;
-		//±éÀú¿ª¸î¿ªµÄSQLÓï¾ä²¢Ö´ĞĞ
+		//éå†å¼€å‰²å¼€çš„SQLè¯­å¥å¹¶æ‰§è¡Œ
 		foreach($arr as $query){
-			//°²×°½ø¶ÈÌõµÄ¿í¶È
+			//å®‰è£…è¿›åº¦æ¡çš„å®½åº¦
 			$width = 500;
                         mysql_query("set names 'GBK'");
 			mysql_query($query) or die(mysql_error());
-			//Æ¥Åä½¨Á¢±íµÄSQLÓï¾ä
+			//åŒ¹é…å»ºç«‹è¡¨çš„SQLè¯­å¥
 			$is = preg_match("/CREATE TABLE `(.*)` /i",$query,$arr_preg);
 			if($is){
 				$n++;
 				$progress = ceil(($n/$total_table)*$width);
-				echo 'ÕıÔÚ´´½¨±í ',$arr_preg[1],'... <font color=red>³É¹¦</font><br />',
+				echo 'æ­£åœ¨åˆ›å»ºè¡¨ ',$arr_preg[1],'... <font color=red>æˆåŠŸ</font><br />',
 					 '<script type="text/javascript">',
 					 	'var wrapper = document.getElementById("wrapper");',
 					 	'var height = wrapper.clientHeight;',
@@ -158,13 +158,13 @@ echo "<font color=blue>¼ì²âÍ¨¹ı£¬Äã¿ÉÒÔ½øÈëÏÂÒ»²½</font>";
 						'progress.style.background = "#999";',
 						'progress.style.width = "',$progress,'px"',
 					 '</script>';
-				//Ñ­»·Ò»´ÎÏÔÊ¾Ò»´Î
+				//å¾ªç¯ä¸€æ¬¡æ˜¾ç¤ºä¸€æ¬¡
 				flush();
 			}
 		}
 		echo '</div></div>';
 	}else{
-		echo 'SQLµÄµ¼ÈëÎÄ¼ş²»´æÔÚ£¬°²×°ÎŞ·¨¼ÌĞø£¡',dirname(__FILE__),'/fkduo.sql';
+		echo 'SQLçš„å¯¼å…¥æ–‡ä»¶ä¸å­˜åœ¨ï¼Œå®‰è£…æ— æ³•ç»§ç»­ï¼',dirname(__FILE__),'/fkduo.sql';
 		exit();
 	}
 	
@@ -181,7 +181,7 @@ echo "<font color=blue>¼ì²âÍ¨¹ı£¬Äã¿ÉÒÔ½øÈëÏÂÒ»²½</font>";
 		fclose($handle);
 	}
 	
-	echo '<script type="text/javascript">document.getElementById("prompt").innerHTML = "°²×°Íê³ÉÀ²£¬ºÜ¿ì°É£¡^_^";</script>';
+	echo '<script type="text/javascript">document.getElementById("prompt").innerHTML = "å®‰è£…å®Œæˆå•¦ï¼Œå¾ˆå¿«å§ï¼^_^";</script>';
 	
 	$filename="install.lock";
     if (file_exists($filename)) {
