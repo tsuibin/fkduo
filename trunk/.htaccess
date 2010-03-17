@@ -2,7 +2,7 @@
 RewriteEngine On
 
 # 修改以下语句中的 /fkduo 为你的论坛目录地址，如果程序放在根目录中，请将 /fkduo 修改为 /
-RewriteBase /fkduo
+RewriteBase /
 
 # Rewrite 系统规则请勿修改
 RewriteRule ^loop,([0-9]+),([0-9]+)\.html$ loop.php?bk=$1&now=$2
