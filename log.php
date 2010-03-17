@@ -18,7 +18,7 @@ exit;
 
 $yanc=1;
 if (empty($_POST['logname'])){
-$tis= "ÓÃ»§Ãû²»ÄÜÎª¿Õ£¡";
+$tis= "ç”¨æˆ·åä¸èƒ½ä¸ºç©ºï¼";
 tis($tis);
 exit;
 }
@@ -34,7 +34,7 @@ $sql="select * FROM `{$fkduo}userlog` where (logip='$logip' and `errortime` betw
 $query=mysql_query($sql);
 $jilu=mysql_num_rows($query);
 if ($jilu>=$logcount){
-$tis="<b>´Ë´ÎÊäÈëÎŞĞ§£¬Äúµ±Ç°ÃÜÂë´íÎó´ÎÊı¹ı¶à£¬Çë 15 ·ÖÖÓºóÔÙ³¢ÊÔ£¡</b>";
+$tis="<b>æ­¤æ¬¡è¾“å…¥æ— æ•ˆï¼Œæ‚¨å½“å‰å¯†ç é”™è¯¯æ¬¡æ•°è¿‡å¤šï¼Œè¯· 15 åˆ†é’Ÿåå†å°è¯•ï¼</b>";
 tis($tis);
 exit;
 }
@@ -56,7 +56,7 @@ $locktime=$row[locktime];
 $picallow=$row[picallow];
 $password = md5(md5($password).$row[salt]);
 
-if ($lock==1 and $locktime<=$now1){//½â·â
+if ($lock==1 and $locktime<=$now1){//è§£å°
 $lock=0;
 }
 
@@ -78,7 +78,7 @@ $_SESSION[picallow]=$picallow;
 $_SESSION[holdtimes]=$now1;
 $_SESSION[lock]=$lock;
 
-$lasttime =$now1; //ÉèĞÂÊ±¼ä
+$lasttime =$now1; //è®¾æ–°æ—¶é—´
 $oldtime=(int)date('Ymd',$oldtime);
 $newtime=date('Ymd',$lasttime);
 if ($oldtime<$newtime){ //
@@ -87,7 +87,7 @@ $_SESSION[hp]=$hp=$hp+1;//
 if ($hp==$hplower){
 $ppallow=1;
 }elseif($hp>$hplower){
-$ppallow=(int)(($hp-$hplower)/$hpstep)+1;//ÖØÖÃ
+$ppallow=(int)(($hp-$hplower)/$hpstep)+1;//é‡ç½®
 }
 
 
@@ -106,7 +106,7 @@ header ("location: index.php"); //
 {
 $sql="INSERT INTO `{$fkduo}userlog` (`logip`,`errortime`) VALUES ('$logip', '$aa2')";
 $query=mysql_query($sql);
-$tis= "ÕËºÅ»òÕßÃÜÂë²»ÕıÈ·£¬ÇëÖØĞÂÊäÈë£¡<br>»¹¿É³¢ÊÔ:<font color=red>".($logcount-$jilu-1)."</font>´Î";
+$tis= "è´¦å·æˆ–è€…å¯†ç ä¸æ­£ç¡®ï¼Œè¯·é‡æ–°è¾“å…¥ï¼<br>è¿˜å¯å°è¯•:<font color=red>".($logcount-$jilu-1)."</font>æ¬¡";
 tis($tis);
 }
 ?>

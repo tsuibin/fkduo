@@ -3,14 +3,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>�ޱ����ĵ�</title>
+<title>无标题文档</title>
 </head>
 
 <body>
-<p>��ϲ�����Ѿ��ɹ���½��̨����...</p>
-<p>�ÿͶ���� <br />�汾:1.1</p>
-<p>�������ʺͽ��飬</p>
-<p>�뵽�ٷ���վ��<a href="http://www.fkduo.cn/" target="_blank">http://www.fkduo.cn/</a>
+<p>恭喜，您已经成功登陆后台管理...</p>
+<p>访客多程序 <br />版本:1.1</p>
+<p>如有疑问和建议，</p>
+<p>请到官方网站：<a href="http://www.fkduo.cn/" target="_blank">http://www.fkduo.cn/</a>
 </p>
 </body>
 

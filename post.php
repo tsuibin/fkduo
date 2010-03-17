@@ -3,14 +3,14 @@ include 'conn.php';
 include 'check.php' ;
 
 if ($_SESSION[lock]==1){
-	$tis= "¶Ô²»Æğ£¬ÄãµÄÕËºÅ´¦ÓÚ¶³½áÆÚ£¬ÎŞ·¨·¢Ìù£¡";
+	$tis= "å¯¹ä¸èµ·ï¼Œä½ çš„è´¦å·å¤„äºå†»ç»“æœŸï¼Œæ— æ³•å‘è´´ï¼";
 	tis($tis);
 	exit;
 }
 
 $filename="template/listtop{$_GET['bk']}.html";
 if (!file_exists($filename)) {
-	$tis= "°æ¿é²ÎÊı´íÎó£¬»òÕßÏà¹ØÄ£°åÎÄ¼ş²»´æÔÚ£¡";
+	$tis= "ç‰ˆå—å‚æ•°é”™è¯¯ï¼Œæˆ–è€…ç›¸å…³æ¨¡æ¿æ–‡ä»¶ä¸å­˜åœ¨ï¼";
 	tis($tis);
 	exit;
 } 
@@ -18,8 +18,8 @@ if (!file_exists($filename)) {
 
 $query=mysql_query("select * FROM `{$fkduo}sort` where `bk`='$bk' ");
 
-$listtop="listtop".$bk;//ÎÄ¼şÃû
-$cid=1;//¼ÙµÄCID
+$listtop="listtop".$bk;//æ–‡ä»¶å
+$cid=1;//å‡çš„CID
 
 
 include 'xingTemplate.php';

@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<meta name="Description" content="¸öÈËÃÅ»§£¬¸öÈË¿Õ¼ä£¬¸öÈËÎÄ¼¯£¬¸öÈËÓ°Õ¹" />
-<title>{$row[logname]}µÄ¸öÈË¿Õ¼ä {$sitename}</title>
+<meta name="Description" content="ä¸ªäººé—¨æˆ·ï¼Œä¸ªäººç©ºé—´ï¼Œä¸ªäººæ–‡é›†ï¼Œä¸ªäººå½±å±•" />
+<title>{$row[logname]}çš„ä¸ªäººç©ºé—´ {$sitename}</title>
 <link href="html/css/blog_css.css" rel="stylesheet" type="text/css" /> 
 </head>
 <body>
 
 <div id="title" class="center">
-<div class="center" id="title_a">{$row[logname]} µÄ¸öÈË¿Õ¼ä</div>
+<div class="center" id="title_a">{$row[logname]} çš„ä¸ªäººç©ºé—´</div>
 </div>
 
 <div id="content" class="center">
@@ -19,38 +19,38 @@
 {if ($row[face]!=1)}
 <img src="html/face/{$row[logname]}.{$row[face]}" border="1">
 {else}
-<img src="html/img/nopic.gif" alt="{$row[logname]}µÄÍ·Ïñ" />
+<img src="html/img/nopic.gif" alt="{$row[logname]}çš„å¤´åƒ" />
 {/if}
 </div>
 <div id="li">
 <p>
 <a target="_blank" href="#">
-<img alt="ÈÏÖ¤»áÔ±" src="html/img/authUser.gif"/>ÈÏÖ¤»áÔ±</a><br /> 
+<img alt="è®¤è¯ä¼šå‘˜" src="html/img/authUser.gif"/>è®¤è¯ä¼šå‘˜</a><br /> 
 {$row[nickname]} [{$row[logname]}] <br />
 <img src="html/img/hp.gif" /> 
 {$row[hp]}  
 <img src="html/img/pp.gif" /> 
 {$row[pp]}  
 <br />
-À´×Ô£º
-ÉÏº£ 
+æ¥è‡ªï¼š
+ä¸Šæµ· 
 <br /> 
-×¢²á£º
+æ³¨å†Œï¼š
 {uuuw($row[regtime])}
 <br /> 
-·¢Ìû£º
+å‘å¸–ï¼š
 {$row[zts]} 
 + 
 {$row[hfs]} 
 <br /> 
-ÓÃ»§±àºÅ£º
+ç”¨æˆ·ç¼–å·ï¼š
 {$row[uid]}
 <br /> 
-[<a href="my.php?action=sendsms&logname={$row[logname]}" target="_blank" > ·¢¶ÌÏûÏ¢ </a>] </div>
+[<a href="my.php?action=sendsms&logname={$row[logname]}" target="_blank" > å‘çŸ­æ¶ˆæ¯ </a>] </div>
 
-<div id="li">[ {$row[logname]}µÄ×îÈÈÌù ]</div>
+<div id="li">[ {$row[logname]}çš„æœ€çƒ­è´´ ]</div>
 {while ($row3=mysql_fetch_array($query3)) }
-<div id="li_2">¡¤<a href="{url2($row3[bk],$row3[cid])}" target='_blank'>{$row3[title]}</a></div>
+<div id="li_2">Â·<a href="{url2($row3[bk],$row3[cid])}" target='_blank'>{$row3[title]}</a></div>
 {/while}
 </div>
 
@@ -58,8 +58,8 @@
 {while ($row2=mysql_fetch_array($query2)) }
 <div id="topic_a">&nbsp;{$row2[title]}</div>
 <div id="topic">
-<div id="li_1">·¢ÌùÈÕÆÚ£º
-{uuuw($row2[firsttime])}&nbsp;&nbsp;&nbsp;[ {$row2[huifu]}ÈËÆÀÂÛ¹ı ]</div>
+<div id="li_1">å‘è´´æ—¥æœŸï¼š
+{uuuw($row2[firsttime])}&nbsp;&nbsp;&nbsp;[ {$row2[huifu]}äººè¯„è®ºè¿‡ ]</div>
 <br>
 <div id="li_8" style="word-break:break-all;" align="left">{$row2[content]}<br>
 {if !(empty($row2[img]))}
@@ -67,7 +67,7 @@
 <br>
 <br>
 <div id="pix">
-&nbsp;<a href="{url2($row2[bk],$row2[cid])}" target="_blank">µã»÷´Ë´¦²é¿´Ô­ÎÄ {url2($row2[bk],$row2[cid])}</a>
+&nbsp;<a href="{url2($row2[bk],$row2[cid])}" target="_blank">ç‚¹å‡»æ­¤å¤„æŸ¥çœ‹åŸæ–‡ {url2($row2[bk],$row2[cid])}</a>
 </div>
 </div>
 <br>
@@ -75,13 +75,13 @@
 {else}
 <div id="topic_a">&nbsp;</div>
 <div id="topic">
-<div id="li_1">µ±Ç°´ËÓÃ»§»¹Ã»ÓĞ·¢±í¹ıÈÎºÎÖ÷ÌâÌù</div>
+<div id="li_1">å½“å‰æ­¤ç”¨æˆ·è¿˜æ²¡æœ‰å‘è¡¨è¿‡ä»»ä½•ä¸»é¢˜è´´</div>
 </div>
 <br>
 {/if}
 
-<div id="topic">{$theup}&nbsp;{$thedown}&nbsp; ¹²{$pages}Ò³£¬µ±Ç°µÚ {$now} Ò³ <input name="page" value="1" size=3> 
-<input type='button' value='·­Ò³' onclick="location.href='info.php?logname={$logname}&now='+document.all.page.value+' '">
+<div id="topic">{$theup}&nbsp;{$thedown}&nbsp; å…±{$pages}é¡µï¼Œå½“å‰ç¬¬ {$now} é¡µ <input name="page" value="1" size=3> 
+<input type='button' value='ç¿»é¡µ' onclick="location.href='info.php?logname={$logname}&now='+document.all.page.value+' '">
 </div>
 </div>
 </div>

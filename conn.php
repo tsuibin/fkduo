@@ -12,16 +12,16 @@ if ($yanc!=1){
 
 include 'config/database.php';
 
-$starttime=microtime(true);//¼ÆËãÔËÐÐÊ±¼äÆðÊ¼Öµ
-$conn = @ mysql_connect($db_host, $db_username, $db_password) or die("Êý¾Ý¿âÅäÖÃ´íÎó");
+$starttime=microtime(true);//è®¡ç®—è¿è¡Œæ—¶é—´èµ·å§‹å€¼
+$conn = @ mysql_connect($db_host, $db_username, $db_password) or die("æ•°æ®åº“é…ç½®é”™è¯¯");
 mysql_select_db($db_name, $conn);
-mysql_query("set names 'GBK'"); //Ê¹ÓÃGBKÖÐÎÄ±àÂë;
-date_default_timezone_set('PRC'); //ÉèÎªÖÐÎÄÊ±
+mysql_query("set names 'GBK'"); //ä½¿ç”¨GBKä¸­æ–‡ç¼–ç ;
+date_default_timezone_set('PRC'); //è®¾ä¸ºä¸­æ–‡æ—¶
 
 include 'config/fkduo.php';
 
-$bk=(int)($_GET['bk']);  //³£ÓÃÖµ
-$cid=(int)($_GET['cid']);  //³£ÓÃÖµ
+$bk=(int)($_GET['bk']);  //å¸¸ç”¨å€¼
+$cid=(int)($_GET['cid']);  //å¸¸ç”¨å€¼
 
 $holdtime=$holdtime*60;
 
@@ -29,7 +29,7 @@ if ($bk==0){
 	$bk=$zhuid;
 }
 
-if (isset($_SESSION['logname'])){//ÅÐ¶ÏSESSIONÊÇ·ñ¹ýÆÚ
+if (isset($_SESSION['logname'])){//åˆ¤æ–­SESSIONæ˜¯å¦è¿‡æœŸ
 	if (($time_curr-(int)($_SESSION['holdtimes']))>$holdtime){
 		session_destroy();
 	}else{

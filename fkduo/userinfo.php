@@ -7,7 +7,7 @@ if (empty($_GET[step])){
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>ÎŞ±êÌâÎÄµµ</title>
+<title>æ— æ ‡é¢˜æ–‡æ¡£</title>
 </head>
 
 <body>
@@ -16,15 +16,15 @@ if (empty($_GET[step])){
 <form id="form1" name="form1" method="post" action="userinfo.php?step=2">
   <table width="412" height="110" border="1">
     <tr>
-      <td height="44" colspan="3">ĞŞ¸ÄÓÃ»§ĞÅÏ¢</td>
+      <td height="44" colspan="3">ä¿®æ”¹ç”¨æˆ·ä¿¡æ¯</td>
     </tr>
     <tr>
-      <td>ÓÃ»§Ãû</td>
+      <td>ç”¨æˆ·å</td>
       <td><label>
         <input type="text" name="logname" />
       </label></td>
       <td><label>
-        <input type="submit" name="Submit2" value=" ËÑ Ë÷ " />
+        <input type="submit" name="Submit2" value=" æœ ç´¢ " />
       </label></td>
     </tr>
   </table>
@@ -42,11 +42,11 @@ $sql="select * from {$fkduo}user where `logname`='$logname' limit 1";
 $query=mysql_query($sql);
 $jilu=mysql_num_rows($query);
 if ($jilu<1){
-echo "<font color=red>ÕÒ²»µ½´ËÓÃ»§Ãû</font>";
+echo "<font color=red>æ‰¾ä¸åˆ°æ­¤ç”¨æˆ·å</font>";
 exit;
 }
 
-function uuuw($mkktime){ //Ê±¼ä×ª»»¸ñÊ½
+function uuuw($mkktime){ //æ—¶é—´è½¬æ¢æ ¼å¼
 $mkktime=date("Y-m-d H:i",$mkktime);
 return $mkktime;  
 }
@@ -59,24 +59,24 @@ $row=mysql_fetch_array($query);
 <form id="form1" name="form1" method="post" action="userinfo.php?step=3&logname=<? echo $logname?>">
 <table width="439" height="427" border="1">
   <tr>
-    <td colspan="2">ĞŞ¸ÄÓÃ»§ĞÅÏ¢</td>
+    <td colspan="2">ä¿®æ”¹ç”¨æˆ·ä¿¡æ¯</td>
   </tr>
   <tr>
-    <td>ÓÃ»§Ãû</td>
+    <td>ç”¨æˆ·å</td>
     <td><? echo $row[logname] ?></td>
   </tr>
   <tr>
-    <td>ÄØ³Æ</td>
+    <td>å‘¢ç§°</td>
     <td>
 	<input name="nickname" type="text" id="nickname" value="<? echo $row[nickname] ?>" />	</td>
   </tr>
   <? if ($row[face]==0){?>
   <tr>
-    <td>Í·Ïñ</td>
+    <td>å¤´åƒ</td>
     <td><img src="<? echo "../html/face/".$row[logname].".".$row[face] ?>" border="0" />
       <label>
       <input name="delface" type="checkbox" id="delface" value="1" />
-      É¾³ıÍ·Ïñ</label></td>
+      åˆ é™¤å¤´åƒ</label></td>
   </tr>
   <? } ?>
   <tr>
@@ -90,26 +90,26 @@ $row=mysql_fetch_array($query);
 	<input name="pp" type="text" id="pp" value="<? echo $row[pp] ?>" />	</td>
   </tr>
   <tr>
-    <td>·¢Ìù</td>
+    <td>å‘è´´</td>
     <td><input name="zts" type="text" id="zts" value="<? echo $row[zts] ?>" size="6" />
     +<input name="hfs" type="text" id="hfs" value="<? echo $row[hfs] ?>" size="6" /></td>
   </tr>
   
     <tr>
-    <td>À´×Ô</td>
+    <td>æ¥è‡ª</td>
     <td><input name="area" type="text" id="area" value="<? echo $row[area] ?>" size="10" />
 	</td>
   </tr>
   
     <tr>
-    <td>×¢²áÊ±¼ä</td>
+    <td>æ³¨å†Œæ—¶é—´</td>
     <td>
 	<input name="regtime" type="text" id="regtime" value="<? echo uuuw($row[regtime]) ?>" />
 	</td>
   </tr>
   
     <tr>
-    <td>Ç©Ãû</td>
+    <td>ç­¾å</td>
     <td>
 	<label>
 	<textarea name="sign" cols="30" rows="6"><? echo $row[sign] ?></textarea>
@@ -118,13 +118,13 @@ $row=mysql_fetch_array($query);
   
   
   <tr>
-    <td>ÓÃ»§±àºÅ</td>
+    <td>ç”¨æˆ·ç¼–å·</td>
     <td><? echo $row[uid] ?></td>
   </tr>
   <tr>
     <td colspan="2">
 	<center>
-      <input type="submit" name="Submit" value="Ìá ½» ĞŞ ¸Ä" />
+      <input type="submit" name="Submit" value="æ äº¤ ä¿® æ”¹" />
     </center></td>
     </tr>
 </table>        
@@ -151,9 +151,9 @@ $sql="update `{$fkduo}user` set `nickname`='$nickname',`hp`='$hp',`pp`='$pp',`zt
 }
 
 
-$query=mysql_query($sql) or die("¸üĞÂ³ö´íÁË!!!");//¸üĞÂÓÃ»§ĞÅÏ¢
+$query=mysql_query($sql) or die("æ›´æ–°å‡ºé”™äº†!!!");//æ›´æ–°ç”¨æˆ·ä¿¡æ¯
 
-echo "ĞŞ¸Ä³É¹¦";
+echo "ä¿®æ”¹æˆåŠŸ";
 }
 ?>
 </body>

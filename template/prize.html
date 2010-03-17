@@ -1,5 +1,5 @@
 {xingTemplate head}
-<!-- ²åÈëÍ·²¿Ò³Ãæ -->
+<!-- æ’å…¥å¤´éƒ¨é¡µé¢ -->
 <table width="975" border="0" align="center" cellpadding="0" cellspacing="0" class="forumbg">
 <tr>
 <td width="2" class="topbg"></td>
@@ -7,7 +7,7 @@
 <table width="90%" border="0" cellspacing="0" cellpadding="0">
 <tr>
 <td width=90%> 
-<!-- ²åÈë·¢½±Ò³Ãæ -->
+<!-- æ’å…¥å‘å¥–é¡µé¢ -->
 <table width="100%" border="0" cellpadding="6" cellspacing="1" bgcolor="e7e3e7">
 <tr>
 <td width="80%" bgcolor="#FFFFFF" style="text-align:left">
@@ -27,20 +27,20 @@ return true;
 function doPostAward(){
 var awardVal = document.getElementById('awardValue');
 if(!IsInt(awardVal.value,'+1','')) {
-alert('½±·Ö·ÖÖµ±ØĞëÊÇÒ»ÕûÊı,ÇëÖØĞÂÊäÈë');
+alert('å¥–åˆ†åˆ†å€¼å¿…é¡»æ˜¯ä¸€æ•´æ•°,è¯·é‡æ–°è¾“å…¥');
 return false;
 }
 if(awardVal.value<=0 || awardVal.value>{$ppallow}) {
-alert('ÄãÊäÈëµÄ·ÖÖµ±ØĞëÔÚ 0 ÖÁ {$ppallow} Ö®¼ä,ÇëÖØĞÂÊäÈëºóÔÙÊÔ');
+alert('ä½ è¾“å…¥çš„åˆ†å€¼å¿…é¡»åœ¨ 0 è‡³ {$ppallow} ä¹‹é—´,è¯·é‡æ–°è¾“å…¥åå†è¯•');
 return false;
 }
 var memo = document.getElementById('memo');
 if(memo.value =='') {
-alert('Çë¼òµ¥ÊäÈë½±·ÖµÄÀíÓÉ');
+alert('è¯·ç®€å•è¾“å…¥å¥–åˆ†çš„ç†ç”±');
 return false;
 }
 if(memo.value.length >40 ) {
-alert('½±·ÖÀíÓÉµÄ³¤¶È±ØĞëĞ¡ÓÚ 40 ¸ö×Ö·û»ò 20 ¸öºº×Ö,ÇëÊäÈëºóÖØÊÔ');
+alert('å¥–åˆ†ç†ç”±çš„é•¿åº¦å¿…é¡»å°äº 40 ä¸ªå­—ç¬¦æˆ– 20 ä¸ªæ±‰å­—,è¯·è¾“å…¥åé‡è¯•');
 return;
 }
 document.getElementById('doPost').disabled = true;
@@ -50,20 +50,20 @@ document.postAwardForm.submit();
 <table width="95%" border="0" cellspacing="0" cellpadding="3">
 <form name='postAwardForm' action='prize.php?action=prizeok&mod={$_GET['mod']}&bk={$bk}&cid={$cid}&lc={$_GET['lc']}' method="post">
 <tr>
-<td height="35" colspan="2" ><b><font size=4>Ìû×Ó½±·Ö</font></b> [<a href="{$url}"><font color="blue">·µ»ØÌù×Ó</font></a>]</td>
+<td height="35" colspan="2" ><b><font size=4>å¸–å­å¥–åˆ†</font></b> [<a href="{$url}"><font color="blue">è¿”å›è´´å­</font></a>]</td>
 </tr>
 <tr>
-<td align="right" height=24>µÃ·ÖÕß£º</td>
+<td align="right" height=24>å¾—åˆ†è€…ï¼š</td>
 <td><a href="info.php?logname={$_GET['to']}" target=_blank >{$bb} ( {$_GET['to']} )<a/></td>
 </tr>
 <tr>
-<td align="right" height=24>½±Àø·ÖÖµ£º</td>
-<td><input name="awardValue" id="awardValue" type="text" size="8" /> ¡¡
-Äú½ñÈÕ»¹ÓĞ <b><font color=red>{$ppallow}</font></b> µã·ÖÖµ¿ÉÒÔ½±Àø </td>
+<td align="right" height=24>å¥–åŠ±åˆ†å€¼ï¼š</td>
+<td><input name="awardValue" id="awardValue" type="text" size="8" /> ã€€
+æ‚¨ä»Šæ—¥è¿˜æœ‰ <b><font color=red>{$ppallow}</font></b> ç‚¹åˆ†å€¼å¯ä»¥å¥–åŠ± </td>
 </tr>
 
 <tr>
-<td align="right" height=24>½±·ÖÀíÓÉ£º</td>
+<td align="right" height=24>å¥–åˆ†ç†ç”±ï¼š</td>
 <td><textarea name="why" id='memo' rows="5"></textarea></td>
 </tr>
 <tr>
@@ -72,7 +72,7 @@ document.postAwardForm.submit();
 <input type=hidden name=url value="{$url}">
 
 </td>
-<td> <input id=doPost name=doPost type=button value='È·ÈÏ' onclick="return doPostAward();">&nbsp;&nbsp;<input name=reset type=reset value='ÖØÉè'></td>
+<td> <input id=doPost name=doPost type=button value='ç¡®è®¤' onclick="return doPostAward();">&nbsp;&nbsp;<input name=reset type=reset value='é‡è®¾'></td>
 </tr>
 </form>
 </table>
@@ -87,6 +87,6 @@ document.postAwardForm.submit();
 </table><br></td>
 </tr>
 </table>
-<!-- ²åÈëÎ²²¿ -->
+<!-- æ’å…¥å°¾éƒ¨ -->
 {xingTemplate foot}
-<!-- ²åÈëÎ²²¿ -->
+<!-- æ’å…¥å°¾éƒ¨ -->

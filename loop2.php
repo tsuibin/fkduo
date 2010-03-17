@@ -6,7 +6,7 @@ include 'tis.php';
 $Description=1;//headmb
 
 if ($jilu==0){
-$tis= "¶Ô²»Æğ£¬µ±Ç°Ö÷Ìâ²»´æÔÚ»òÒÑ±»É¾³ı";
+$tis= "å¯¹ä¸èµ·ï¼Œå½“å‰ä¸»é¢˜ä¸å­˜åœ¨æˆ–å·²è¢«åˆ é™¤";
 tis($tis);
 exit();
 }
@@ -42,7 +42,7 @@ return 0;
 }
 }
 
-function msubstr($str, $start, $len) { //½ØÈ¡ÖĞÎÄ
+function msubstr($str, $start, $len) { //æˆªå–ä¸­æ–‡
     $tmpstr = ""; 
     $strlen = $start + $len; 
     for($i = 0; $i < $strlen; $i++) { 
@@ -55,15 +55,15 @@ function msubstr($str, $start, $len) { //½ØÈ¡ÖĞÎÄ
     return $tmpstr; 
 }
 
-$z_content=$row2[content];//Ö»ÄÜÈ¡Ò»´Î
+$z_content=$row2[content];//åªèƒ½å–ä¸€æ¬¡
 $Description1=msubstr($z_content,0,160);
 $Description1=htmlentities($Description1, ENT_QUOTES,gb2312);
 
-$endtime=microtime(true);//Êä³öÔËĞĞÊ±¼ä
+$endtime=microtime(true);//è¾“å‡ºè¿è¡Œæ—¶é—´
 $total=$endtime-$starttime; 
 $runtimes="<center>{$total} second(s)</center>";
 
-$listtop="listtop".$bk;//ÎÄ¼şÃû
+$listtop="listtop".$bk;//æ–‡ä»¶å
 include 'xingTemplate.php';
 $xingTemplate->setConfig('PHP_off',true);
 $xingTemplate->display('icbc21');

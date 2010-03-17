@@ -21,7 +21,7 @@ break;
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>ÎŞ±êÌâÎÄµµ</title>
+<title>æ— æ ‡é¢˜æ–‡æ¡£</title>
 <style type="text/css">
 <!--
 .aa {
@@ -40,7 +40,7 @@ $jilu=mysql_num_rows($query);
 ?>
 <table border="0">
   <tr>
-    <td bgcolor="#00CCFF">ÉóºËÖ÷ÌâÌû×Ó,×Ü¹²<font color=red><? echo $jilu ?></font>Ìõ</td>
+    <td bgcolor="#00CCFF">å®¡æ ¸ä¸»é¢˜å¸–å­,æ€»å…±<font color=red><? echo $jilu ?></font>æ¡</td>
   </tr>
 <?
 function uuuw($mkktime){
@@ -53,14 +53,14 @@ while ($row=mysql_fetch_array($query)){
   <tr>
     <td>
 	<?
-echo "Ìû×Ó±êÌâ:".$row[title]."<br>";
-echo "·¢ÌùÊ±¼ä:".uuuw($row[firsttime])."&nbsp;&nbsp;&nbsp;&nbsp;<a href=checkzhuti.php?action=del&cid=".$row[cid].">É¾³ı</a>&nbsp;&nbsp;<a href=checkzhuti.php?action=pass&cid=".$row[cid].">Í¨¹ı</a>";
+echo "å¸–å­æ ‡é¢˜:".$row[title]."<br>";
+echo "å‘è´´æ—¶é—´:".uuuw($row[firsttime])."&nbsp;&nbsp;&nbsp;&nbsp;<a href=checkzhuti.php?action=del&cid=".$row[cid].">åˆ é™¤</a>&nbsp;&nbsp;<a href=checkzhuti.php?action=pass&cid=".$row[cid].">é€šè¿‡</a>";
 
 
-   $row[content] = preg_replace("/\<([\/]?)br(.*?)\>/i","\n",$row[content]); // /bµÄ
+   $row[content] = preg_replace("/\<([\/]?)br(.*?)\>/i","\n",$row[content]); // /bçš„
 ?>
 
-<br>Ìû×ÓÄÚÈİ:<br><textarea name="textarea" cols="70" rows="15"><? echo $row[content] ?></textarea>
+<br>å¸–å­å†…å®¹:<br><textarea name="textarea" cols="70" rows="15"><? echo $row[content] ?></textarea>
 
 
 <?

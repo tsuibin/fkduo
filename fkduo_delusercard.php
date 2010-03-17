@@ -5,7 +5,7 @@ include 'conn.php';
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>ÎŞ±êÌâÎÄµµ</title>
+<title>æ— æ ‡é¢˜æ–‡æ¡£</title>
 <link href="css.css" rel="stylesheet" type="text/css" />
 </head>
 
@@ -14,7 +14,7 @@ include 'conn.php';
 
 <?
 if ($_SESSION[power]!=1){
-	echo "<font color=red>¹ÜÀíÖØµØ£¬ÏĞÈËÎğ½ø£¡</font>";
+	echo "<font color=red>ç®¡ç†é‡åœ°ï¼Œé—²äººå‹¿è¿›ï¼</font>";
 	exit;
 }
 
@@ -33,7 +33,7 @@ $logname=ruku($_GET['logname']);
 $logname=ruku($_POST['logname']);
 }
 
-function uuuw($mkktime){ //Ê±¼ä×ª»»¸ñÊ½
+function uuuw($mkktime){ //æ—¶é—´è½¬æ¢æ ¼å¼
 $mkktime=date("Y-m-d H:i",$mkktime);
 return $mkktime;  
 }
@@ -46,19 +46,19 @@ if (empty($_GET['step'])){
 <form id="form1" name="form1" method="post" action="fkduo_delusercard.php?step=2">
   <table width="648" height="105" border="1">
     <tr>
-      <td height="44" colspan="4">ÅúÁ¿É¾³ıÓÃ»§Ìû×Ó</td>
+      <td height="44" colspan="4">æ‰¹é‡åˆ é™¤ç”¨æˆ·å¸–å­</td>
     </tr>
     <tr>
-      <td>ÓÃ»§Ãû</td>
+      <td>ç”¨æˆ·å</td>
       <td><label>
         <input type="text" name="logname" />
       </label></td>
       <td><input name="mod" type="radio" value="1" checked="checked" />
-Ö÷Ìâ
+ä¸»é¢˜
   <input type="radio" name="mod" value="2" />
-»Ø¸´</td>
+å›å¤</td>
       <td><label>
-        <input type="submit" name="Submit2" value=" ÁĞ ³ö Ìû ×Ó" />
+        <input type="submit" name="Submit2" value=" åˆ— å‡º å¸– å­" />
       </label></td>
     </tr>
   </table>
@@ -72,7 +72,7 @@ $sql="select * from {$fkduo}zhuti where `firstlogname`='$logname' and `hs`='0'";
 $query=mysql_query($sql);
 $rows=mysql_num_rows($query);
 if ($rows<1){
-echo "<font color=red>ÕÒ²»µ½´ËÓÃ»§Ãû»òµ±Ç°´ËÓÃ»§Ã»ÓĞÌû×Ó¼ÇÂ¼</font>";
+echo "<font color=red>æ‰¾ä¸åˆ°æ­¤ç”¨æˆ·åæˆ–å½“å‰æ­¤ç”¨æˆ·æ²¡æœ‰å¸–å­è®°å½•</font>";
 exit;
 }
 
@@ -99,23 +99,23 @@ if ($now==1 and $pages==1)
 $start=0;
 }elseif ($now==1 and $pages>1)
 {
-$thedown="<a href=fkduo_delusercard.php?step=2&mod=1&logname=".$logname."&now=".($now+1).">ÏÂÒ»Ò³</a>";
+$thedown="<a href=fkduo_delusercard.php?step=2&mod=1&logname=".$logname."&now=".($now+1).">ä¸‹ä¸€é¡µ</a>";
 $start=0;
 }elseif ($now>1 and $now<$pages)
 {
-$theup="<a href=fkduo_delusercard.php?step=2&mod=1&logname=".$logname."&now=".($now-1).">ÉÏÒ»Ò³</a>";
-$thedown="<a href=fkduo_delusercard.php?step=2&mod=1&logname=".$logname."&now=".($now+1).">ÏÂÒ»Ò³</a>";
+$theup="<a href=fkduo_delusercard.php?step=2&mod=1&logname=".$logname."&now=".($now-1).">ä¸Šä¸€é¡µ</a>";
+$thedown="<a href=fkduo_delusercard.php?step=2&mod=1&logname=".$logname."&now=".($now+1).">ä¸‹ä¸€é¡µ</a>";
 $start=($now-1)*$liststep;
 }elseif (($now>1 and $now==$pages) or ($now>$pages))
 {
-$theup="<a href=fkduo_delusercard.php?step=2&mod=1&logname=".$logname."&now=".($pages-1).">ÉÏÒ»Ò³</a>";
+$theup="<a href=fkduo_delusercard.php?step=2&mod=1&logname=".$logname."&now=".($pages-1).">ä¸Šä¸€é¡µ</a>";
 $start=($pages-1)*$liststep;
 $now=$pages;
 }
 
-$thefirst="<a href=fkduo_delusercard.php?step=2&mod=1&logname=".$logname."&now=1>Ê×Ò³</a>";
+$thefirst="<a href=fkduo_delusercard.php?step=2&mod=1&logname=".$logname."&now=1>é¦–é¡µ</a>";
 if ($now==1){$thefirst="";}
-$thelast="<a href=fkduo_delusercard.php?step=2&mod=1&logname=".$logname."&now=".$pages.">Î²Ò³</a>";
+$thelast="<a href=fkduo_delusercard.php?step=2&mod=1&logname=".$logname."&now=".$pages.">å°¾é¡µ</a>";
 if ($now==$pages){$thelast="";}
 $sql="select * from {$fkduo}zhuti where `firstlogname`='$logname' and `hs`='0' ORDER by `cid` DESC limit $start,$liststep";
 $query=mysql_query($sql);
@@ -124,11 +124,11 @@ $query=mysql_query($sql);
 <form id="form" name="form" method="post" action="fkduo_delusercard.php?step=3&mod=1&logname=<? echo $logname ?>&now=<? echo $now ?>">
 <table width="567" height="148" border="1">
   <tr>
-    <td colspan="2" bgcolor="#99CC66">ÅúÁ¿É¾³ıÓÃ»§Ö÷Ìù</td>
+    <td colspan="2" bgcolor="#99CC66">æ‰¹é‡åˆ é™¤ç”¨æˆ·ä¸»è´´</td>
   </tr>
   <tr>
-    <td width="51">É¾³ı</td>
-    <td width="372">±êÌâ</td>
+    <td width="51">åˆ é™¤</td>
+    <td width="372">æ ‡é¢˜</td>
   </tr>
  
   <? while ($row=mysql_fetch_array($query)){ ?>
@@ -144,11 +144,11 @@ $query=mysql_query($sql);
   
   <tr>
     <td colspan="2">
-	È«Ñ¡:<input type="checkbox" id="selectAll" name='chkall' onclick="checkall(this.form)"/>
-	  ×Ü¹²<? echo $pages ?>Ò³£¬µ±Ç°µÚ<? echo $now ?>Ò³&nbsp;
+	å…¨é€‰:<input type="checkbox" id="selectAll" name='chkall' onclick="checkall(this.form)"/>
+	  æ€»å…±<? echo $pages ?>é¡µï¼Œå½“å‰ç¬¬<? echo $now ?>é¡µ&nbsp;
 	  <? echo $thefirst ?>&nbsp;<? echo $theup ?> &nbsp;<? echo $thedown ?>&nbsp;<? echo $thelast ?>&nbsp;<br /><br />
 	<center>
-      <input type="submit" name="Submit" value="É¾ ³ı" />
+      <input type="submit" name="Submit" value="åˆ  é™¤" />
     </center></td>
     </tr>
 </table>        
@@ -161,7 +161,7 @@ $sql="select * from {$fkduo}card where `lastlogname`='$logname' and `hs`='0'";
 $query=mysql_query($sql);
 $rows=mysql_num_rows($query);
 if ($rows<1){
-echo "<font color=red>ÕÒ²»µ½´ËÓÃ»§Ãû»òµ±Ç°´ËÓÃ»§Ã»ÓĞÌû×Ó¼ÇÂ¼</font>";
+echo "<font color=red>æ‰¾ä¸åˆ°æ­¤ç”¨æˆ·åæˆ–å½“å‰æ­¤ç”¨æˆ·æ²¡æœ‰å¸–å­è®°å½•</font>";
 exit;
 }
 
@@ -187,22 +187,22 @@ if ($now==1 and $pages==1)
 $start=0;
 }elseif ($now==1 and $pages>1)
 {
-$thedown="<a href=fkduo_delusercard.php?step=2&mod=2&logname=".$logname."&now=".($now+1).">ÏÂÒ»Ò³</a>";
+$thedown="<a href=fkduo_delusercard.php?step=2&mod=2&logname=".$logname."&now=".($now+1).">ä¸‹ä¸€é¡µ</a>";
 $start=0;
 }elseif ($now>1 and $now<$pages)
 {
-$theup="<a href=fkduo_delusercard.php?step=2&mod=2&logname=".$logname."&now=".($now-1).">ÉÏÒ»Ò³</a>";
-$thedown="<a href=fkduo_delusercard.php?step=2&mod=2&logname=".$logname."&now=".($now+1).">ÏÂÒ»Ò³</a>";
+$theup="<a href=fkduo_delusercard.php?step=2&mod=2&logname=".$logname."&now=".($now-1).">ä¸Šä¸€é¡µ</a>";
+$thedown="<a href=fkduo_delusercard.php?step=2&mod=2&logname=".$logname."&now=".($now+1).">ä¸‹ä¸€é¡µ</a>";
 $start=($now-1)*$liststep;
 }elseif (($now>1 and $now==$pages) or ($now>$pages))
 {
-$theup="<a href=fkduo_delusercard.php?step=2&mod=2&logname=".$logname."&now=".($pages-1).">ÉÏÒ»Ò³</a>";
+$theup="<a href=fkduo_delusercard.php?step=2&mod=2&logname=".$logname."&now=".($pages-1).">ä¸Šä¸€é¡µ</a>";
 $start=($pages-1)*$liststep;
 $now=$pages;
 }
 
-$thefirst="<a href=fkduo_delusercard.php?step=2&mod=2&logname=".$logname."&now=1>Ê×Ò³</a>";
-$thelast="<a href=fkduo_delusercard.php?step=2&mod=2&logname=".$logname."&now=".$pages.">Î²Ò³</a>";
+$thefirst="<a href=fkduo_delusercard.php?step=2&mod=2&logname=".$logname."&now=1>é¦–é¡µ</a>";
+$thelast="<a href=fkduo_delusercard.php?step=2&mod=2&logname=".$logname."&now=".$pages.">å°¾é¡µ</a>";
 if ($now==1){$thefirst="";}
 if ($now==$pages){$thelast="";}
 
@@ -218,11 +218,11 @@ $query=mysql_query($sql);
 <form id="form" name="form" method="post" action="fkduo_delusercard.php?step=3&mod=2&logname=<? echo $logname ?>&now=<? echo $now ?>">
 <table width="567" height="148" border="1">
   <tr>
-    <td colspan="2" bgcolor="#99CC66">ÅúÁ¿É¾³ıÓÃ»§»ØÌù</td>
+    <td colspan="2" bgcolor="#99CC66">æ‰¹é‡åˆ é™¤ç”¨æˆ·å›è´´</td>
   </tr>
   <tr>
-    <td width="51">É¾³ı</td>
-    <td width="372">ÄÚÈİ</td>
+    <td width="51">åˆ é™¤</td>
+    <td width="372">å†…å®¹</td>
   </tr>
  
   <? while ($row=mysql_fetch_array($query)){ ?>
@@ -231,7 +231,7 @@ $query=mysql_query($sql);
       <input name="delhuifu[]" type="checkbox" id="delhuifu[]" value="<? echo $row[id].",".$row[cid] ?>" />
     </td>
     <td>
-	<? echo $row[lc] ?>Â¥:
+	<? echo $row[lc] ?>æ¥¼:
 	<a href="../loop2.php?bk=<? echo $row[bk] ?>&cid=<? echo $row[cid] ?>#pid<? echo $row[lc] ?>" target="_blank">
 	<? echo $row[content] ?>
 	<? if ($row[pic]!=0){echo "<br /><img src=".$row[pic]." /><br />";} ?>
@@ -244,11 +244,11 @@ $query=mysql_query($sql);
   
   <tr>
     <td colspan="2">
-	  È«Ñ¡:<input type="checkbox" id="selectAll" name='chkall' onclick="checkall(this.form)"/>
-	  ×Ü¹²<? echo $pages ?>Ò³£¬µ±Ç°µÚ<? echo $now ?>Ò³&nbsp;
+	  å…¨é€‰:<input type="checkbox" id="selectAll" name='chkall' onclick="checkall(this.form)"/>
+	  æ€»å…±<? echo $pages ?>é¡µï¼Œå½“å‰ç¬¬<? echo $now ?>é¡µ&nbsp;
 	  <? echo $thefirst ?>&nbsp;<? echo $theup ?> &nbsp;<? echo $thedown ?>&nbsp;<? echo $thelast ?>&nbsp;<br /><br />
 	<center>
-      <input type="submit" name="Submit" value="É¾ ³ı" />
+      <input type="submit" name="Submit" value="åˆ  é™¤" />
     </center></td>
     </tr>
 </table>        
@@ -274,9 +274,9 @@ $idd=$_POST['delzhuti'];
 for ($i=0;$i<count($idd);$i++){
 $cid=(int)($idd[$i]);
 $query=mysql_query("select * FROM `{$fkduo}zhuti` where `cid`='$cid' limit 1");
-$row=mysql_fetch_array($query); if ($row[pic]!="0"){ unlink($row[pic]);}//É¾³ı¸½¼ş
+$row=mysql_fetch_array($query); if ($row[pic]!="0"){ unlink($row[pic]);}//åˆ é™¤é™„ä»¶
 mysql_query("DELETE FROM `{$fkduo}zhuti` WHERE `cid`='$cid' limit 1");
-mysql_query("DELETE FROM `{$fkduo}card` WHERE `cid`='$cid'");//É¾³ı»Ø¸´
+mysql_query("DELETE FROM `{$fkduo}card` WHERE `cid`='$cid'");//åˆ é™¤å›å¤
 }
 $url="fkduo_delusercard.php?step=2&mod=1&logname=".$_GET['logname']."&now=".$_GET['now']."";
 break;
@@ -289,7 +289,7 @@ $aabb=explode(",",trim($idd[$i]));
 $id=$aabb[0];
 $cid=$aabb[1];
 $query=mysql_query("select * FROM `{$fkduo}card` where `id`='$id' limit 1");
-$row=mysql_fetch_array($query); if ($row[pic]!="0"){ unlink($row[pic]); }//É¾³ı¸½¼ş
+$row=mysql_fetch_array($query); if ($row[pic]!="0"){ unlink($row[pic]); }//åˆ é™¤é™„ä»¶
 mysql_query("DELETE FROM `{$fkduo}card` WHERE `id`='$id'");
 mysql_query("update `{$fkduo}zhuti` set `huifu`=`huifu`-1 where (`cid`='$cid') limit 1"); 
 }
@@ -297,15 +297,15 @@ $url="fkduo_delusercard.php?step=2&mod=2&logname=".$_GET['logname']."&now=".$_GE
 break;
 
 default;
-echo "³ö´íÁË£¡";
+echo "å‡ºé”™äº†ï¼";
 exit;
 }
 
 
-//$query=mysql_query($sql) or die("¸üĞÂ³ö´íÁË!!!");//¸üĞÂÓÃ»§ĞÅÏ¢
+//$query=mysql_query($sql) or die("æ›´æ–°å‡ºé”™äº†!!!");//æ›´æ–°ç”¨æˆ·ä¿¡æ¯
 
-echo "É¾³ı³É¹¦";
-echo "[ <a href=".$url." ><font color=\"blue\">·µ»Ø</font></a> ]";
+echo "åˆ é™¤æˆåŠŸ";
+echo "[ <a href=".$url." ><font color=\"blue\">è¿”å›</font></a> ]";
 }
 ?>
 </body>
