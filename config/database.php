@@ -1,8 +1,8 @@
 <?php
-$db_host = '#host#';
-$db_username = '#name#';
-$db_password = '#pass#';
-$db_name = '#database#';
-$fkduo = '#$table_prefix#';
+$db_host = 'localhost';
+$db_username = 'root';
+$db_password = 'a12345';
+$db_name = 'fkduo';
+$fkduo = 'tmp_';
 $db_charset = 'utf8';
 ?>

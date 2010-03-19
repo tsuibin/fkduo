@@ -1,7 +1,7 @@
 <?
 $sitename="访客多论坛";       //网站名称
-$siteurl="http://www.fkduo.cn/";      //网站网址，后面要有"/"
-$beian='华ICP备888888号';   //网站的备案号
+$siteurl="http://localhost/";      //网站网址，后面要有"/"
+$beian='中国ICP备888888号';   //网站的备案号
 $sys_sitenameadd=''; //标题附加字
 $sys_Keywords=''; //网站关键字，供搜索引擎参考
 $sys_Description=''; //网站简介，供搜索引擎参考

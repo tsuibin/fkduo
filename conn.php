@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 if ($yanc!=1){
 	$time_curr = time();
 	$time_pre = (int)($_SESSION['time_pre']);
