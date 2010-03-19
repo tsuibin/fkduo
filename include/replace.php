@@ -2,14 +2,14 @@
 
 
 $replace="**";
-$query=mysql_query("select * FROM `{$fkduo}replace` where `type`='1'");//Ìæ»»´Ê¹¦ÄÜ
+$query=mysql_query("select * FROM `{$fkduo}replace` where `type`='1'");//æ›¿æ¢è¯åŠŸèƒ½
 while ($row=mysql_fetch_array($query)){
 $content=str_replace($row[oldw],$replace,$content);
 $title=str_replace($row[oldw],$replace,$title);
 }
 
 $through=0;
-$query=mysql_query("select * FROM `{$fkduo}replace` where `type`='2'");//ºóÌ¨ÉóºË¹¦ÄÜ
+$query=mysql_query("select * FROM `{$fkduo}replace` where `type`='2'");//åå°å®¡æ ¸åŠŸèƒ½
 while ($row=mysql_fetch_array($query)){
 
 if (stristr($title,$row[oldw])){
@@ -25,7 +25,7 @@ $through=1;break;
 	
 
 
-$query=mysql_query("select * FROM `{$fkduo}replace` where `type`='3'");//Ìæ»»´Ê¹¦ÄÜ
+$query=mysql_query("select * FROM `{$fkduo}replace` where `type`='3'");//æ›¿æ¢è¯åŠŸèƒ½
 while ($row=mysql_fetch_array($query)){
 $content=str_replace($row[oldw],$row[neww],$content);
 $title=str_replace($row[oldw],$row[neww],$title);

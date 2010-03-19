@@ -1,8 +1,8 @@
 <?
-$smtpserver = "smtp.139.com";    //SMTP·þÎñÆ÷
-$smtpserverport ='25';    //SMTP·þÎñÆ÷¶Ë¿Ú
-$smtpusermail = "user@139.com";    //SMTP·þÎñÆ÷µÄÓÃ»§ÓÊÏä
-$smtpuser = "user@139.com";    //SMTP·þÎñÆ÷µÄÓÃ»§ÕÊºÅ
-$smtppass = "888888";    //SMTP·þÎñÆ÷µÄÓÃ»§ÃÜÂë
-$mailtype = "HTML";    //ÓÊ¼þ¸ñÊ½£¨HTML/TXT£©,TXTÎªÎÄ±¾ÓÊ¼þ
+$smtpserver = "smtp.139.com";    //SMTPæœåŠ¡å™¨
+$smtpserverport ='25';    //SMTPæœåŠ¡å™¨ç«¯å£
+$smtpusermail = "user@139.com";    //SMTPæœåŠ¡å™¨çš„ç”¨æˆ·é‚®ç®±
+$smtpuser = "user@139.com";    //SMTPæœåŠ¡å™¨çš„ç”¨æˆ·å¸å·
+$smtppass = "888888";    //SMTPæœåŠ¡å™¨çš„ç”¨æˆ·å¯†ç 
+$mailtype = "HTML";    //é‚®ä»¶æ ¼å¼ï¼ˆHTML/TXTï¼‰,TXTä¸ºæ–‡æœ¬é‚®ä»¶
 ?>

@@ -5,7 +5,7 @@ include 'check.php';
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
-<title>ÎŞ±êÌâÎÄµµ</title>
+<title>æ— æ ‡é¢˜æ–‡æ¡£</title>
 </head>
 
 <body>
@@ -15,14 +15,14 @@ include 'check.php';
 <table width="36%" border="0" cellpadding="0" cellspacing="0">
 
   <tr>
-    <td bgcolor="#9999FF">É¾³ı»°Ìâ¹éÀà</td>
+    <td bgcolor="#9999FF">åˆ é™¤è¯é¢˜å½’ç±»</td>
     <td bgcolor="#9999FF"></td>
     <td bgcolor="#9999FF"></td>
   </tr>
   
   
   <tr>
-    <td>Ñ¡Ôñ°æ¿é£º</td>
+    <td>é€‰æ‹©ç‰ˆå—ï¼š</td>
     <td>
 	<select name="bkid" accesskey="1" >
 <?
@@ -37,7 +37,7 @@ while ($row=mysql_fetch_array($query)){
 </select>
 	
 	</td>
-    <td><input type="submit" name="Submit" value="ÁĞ³ö»°Ìâ¹éÀà" accesskey="3" /></td>
+    <td><input type="submit" name="Submit" value="åˆ—å‡ºè¯é¢˜å½’ç±»" accesskey="3" /></td>
   </tr>
 </table>      </form>
 
@@ -52,10 +52,10 @@ $query=mysql_query($sql);
 $jilu=mysql_num_rows($query);
 if ($jilu>0){
 while ($row=mysql_fetch_array($query)){
-echo $row[name]."<a href=sortdel.php?action=del&id=".$row[id].">É¾³ı</a><br>"; }
+echo $row[name]."<a href=sortdel.php?action=del&id=".$row[id].">åˆ é™¤</a><br>"; }
 }else
 {
-echo "<font color=red>µ±Ç°´Ë°æÃ»ÓĞ»°Ìâ¹éÀà</font>";
+echo "<font color=red>å½“å‰æ­¤ç‰ˆæ²¡æœ‰è¯é¢˜å½’ç±»</font>";
 }
 //$eee="bkmaster.php?action=ok&bk=".$bkid;
 //header ("location: $eee"); 
@@ -63,7 +63,7 @@ break;
 
 case del:
 mysql_query("DELETE FROM `{$fkduo}sort` WHERE `id`='$_GET[id]'");
-echo "É¾³ı³É¹¦";
+echo "åˆ é™¤æˆåŠŸ";
 break;
 
 default:

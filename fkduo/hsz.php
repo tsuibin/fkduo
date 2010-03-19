@@ -9,10 +9,10 @@ $query=mysql_query("select * FROM `{$fkduo}zhuti` where `cid`='$cid' limit 1");
 $row=mysql_fetch_array($query);
 if ($row[pic]!="0"){
 $dirr=substr(getcwd(),0, -5).$row[pic];
-unlink($dirr);}//É¾³ı¸½¼ş
+unlink($dirr);}//åˆ é™¤é™„ä»¶
 
-mysql_query("DELETE FROM `{$fkduo}zhuti` WHERE (`cid`='$cid') limit 1") or die ("É¾³ı³ö´íÁË!");
-mysql_query("DELETE FROM `{$fkduo}card` WHERE (`cid`='$cid')") or die ("É¾³ı³ö´íÁË!");
+mysql_query("DELETE FROM `{$fkduo}zhuti` WHERE (`cid`='$cid') limit 1") or die ("åˆ é™¤å‡ºé”™äº†!");
+mysql_query("DELETE FROM `{$fkduo}card` WHERE (`cid`='$cid')") or die ("åˆ é™¤å‡ºé”™äº†!");
 header ("location: hsz.php");
 break;
 
@@ -31,7 +31,7 @@ break;
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
-<title>ÎŞ±êÌâÎÄµµ</title>
+<title>æ— æ ‡é¢˜æ–‡æ¡£</title>
 </head>
 
 <body>
@@ -43,7 +43,7 @@ $jilu=mysql_num_rows($query);
 ?>
 <table border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td bgcolor="#00CCFF">»ØÊÕÕ¾,×Ü¹²<font color=red><? echo $jilu ?></font>ÌõÖ÷Ìâ</td>
+    <td bgcolor="#00CCFF">å›æ”¶ç«™,æ€»å…±<font color=red><? echo $jilu ?></font>æ¡ä¸»é¢˜</td>
   </tr>
 <?
 function uuuw($mkktime){
@@ -57,9 +57,9 @@ while ($row=mysql_fetch_array($query)){
     <td>
 	<?
 
-//echo "»Ø¸´Ê±¼ä:".uuuw($row[lasttime])."<br>";
+//echo "å›å¤æ—¶é—´:".uuuw($row[lasttime])."<br>";
 echo "<a href=../loop2hs.php?cid=".$row[cid]."&bk=".$row[bk]." target=_blank>".$row[title]."<br>";
-echo "<a href=hsz.php?action=del&cid=".$row[cid].">³¹µ×É¾³ı</a>&nbsp;&nbsp;<a href=hsz.php?action=pass&cid=".$row[cid].">»Ö¸´Ìû×Ó</a>";
+echo "<a href=hsz.php?action=del&cid=".$row[cid].">å½»åº•åˆ é™¤</a>&nbsp;&nbsp;<a href=hsz.php?action=pass&cid=".$row[cid].">æ¢å¤å¸–å­</a>";
 if (!$row[pic]==0){
 echo "<img src=../".$row[pic].">";
 }

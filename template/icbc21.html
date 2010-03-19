@@ -2,34 +2,34 @@
 
 {xingTemplate $listtop}
 
-<!-- /²åÈëÂÛÌ³Í·²¿Ä£¿é -->
+<!-- /æ’å…¥è®ºå›å¤´éƒ¨æ¨¡å— -->
 
-<!-- ²åÈë»Ø¸´ÁĞ±í -->
+<!-- æ’å…¥å›å¤åˆ—è¡¨ -->
 <SCRIPT LANGUAGE="JavaScript">
 function lookme(){
-alert('ÎŞ·¨²é¿´´ËÂ¥Ö÷£¡'); 
+alert('æ— æ³•æŸ¥çœ‹æ­¤æ¥¼ä¸»ï¼'); 
 return false;
 }
 </SCRIPT>
-<!-- ±êÌâ -->
+<!-- æ ‡é¢˜ -->
 <div class="topic_pager">
 <span class="t_pager"> 
 <b>{$scfy}</b>&nbsp; 
-[<a href='onlyou.php?cid={$cid}&bk={$bk}&logname={$row2[firstlogname]}' >Ö»¿´Â¥Ö÷</a>]
+[<a href='onlyou.php?cid={$cid}&bk={$bk}&logname={$row2[firstlogname]}' >åªçœ‹æ¥¼ä¸»</a>]
 </span>
-<span class="stat">µã»÷£º{$row2[click]+1} »Ø¸´£º{$row2[huifu]} <font color=red>ÒÑ±»{$row2[favcount]}ÈËÊÕ²Ø</font></span>
+<span class="stat">ç‚¹å‡»ï¼š{$row2[click]+1} å›å¤ï¼š{$row2[huifu]} <font color=red>å·²è¢«{$row2[favcount]}äººæ”¶è—</font></span>
 </div>
-<!-- /±êÌâ -->
-<div id="topic_title"><h1>Ö÷Ìâ:{if $row2[through]==0}{$row2[title]}{else}ÇëÉÔºò,´ËÌù×ÓÄÚÈİÉóºËÖĞ...{/if}</h1>
+<!-- /æ ‡é¢˜ -->
+<div id="topic_title"><h1>ä¸»é¢˜:{if $row2[through]==0}{$row2[title]}{else}è¯·ç¨å€™,æ­¤è´´å­å†…å®¹å®¡æ ¸ä¸­...{/if}</h1>
 </div>
-<!-- /±êÌâ -->
+<!-- /æ ‡é¢˜ -->
 
 {if $now<2}
-<!-- Ö÷Â¥ -->
+<!-- ä¸»æ¥¼ -->
 <div class="item">
-<!-- ×÷ÕßĞÅÏ¢ -->
+<!-- ä½œè€…ä¿¡æ¯ -->
 <div class="author_info">
-<!-- ×÷ÕßĞÅÏ¢ -->
+<!-- ä½œè€…ä¿¡æ¯ -->
 <div class="author">
 <a href="info.php?logname={$row2[firstlogname]}" target="_blank"><strong>{$row2[firstnkname]}</STRONG>{$row2[firstlogname]}</a>
 </div>
@@ -49,9 +49,9 @@ return false;
 </div>
 <br />
 <div>
-À´×Ô£º{$row2[area]}&nbsp; <br />
-×¢²á£º{uuue($row2[regtime])}<br />
-·¢Ìû£º{$row2[zts]}£«{$row2[hfs]}<br />
+æ¥è‡ªï¼š{$row2[area]}&nbsp; <br />
+æ³¨å†Œï¼š{uuue($row2[regtime])}<br />
+å‘å¸–ï¼š{$row2[zts]}ï¼‹{$row2[hfs]}<br />
 </div>
 <div>
 <a href="info.php?logname={$row2[firstlogname]}" target="_blank"><img src="html/img/minihome.gif" /></a>
@@ -59,85 +59,85 @@ return false;
 <br /><br />IP:{$row2[ip]}{/if}
 </div>
 </div> 
-<!-- /×÷ÕßĞÅÏ¢ --> 
+<!-- /ä½œè€…ä¿¡æ¯ --> 
 <div class="rc">
-<!-- ¹¦ÄÜ -->
+<!-- åŠŸèƒ½ -->
 <div class="fn">
-<a href="edit.php?action=lz&bk={$bk}&cid={$cid}">[±à¼­]</a>
-<a href="my.php?action=sendsms&logname={$row2[firstlogname]}" target="_blank">[¶ÌĞÅ]</a>
-<a href="#reply">[ÊÕ²Ø]</a> 
-<a href="report.php?bk={$bk}&cid={$cid}&now={$now}&lc=0" target="_blank">[¾Ù±¨]</a>
-<a href="prize.php?mod=lz&bk={$bk}&cid={$cid}&from={$_SESSION[logname]}&to={$row2[firstlogname]}">[½±·Ö]</a>
-<a href="#reply" onclick="quoteMsg('{$row2[cid]}')">[ÒıÓÃ]</a>
+<a href="edit.php?action=lz&bk={$bk}&cid={$cid}">[ç¼–è¾‘]</a>
+<a href="my.php?action=sendsms&logname={$row2[firstlogname]}" target="_blank">[çŸ­ä¿¡]</a>
+<a href="#reply">[æ”¶è—]</a> 
+<a href="report.php?bk={$bk}&cid={$cid}&now={$now}&lc=0" target="_blank">[ä¸¾æŠ¥]</a>
+<a href="prize.php?mod=lz&bk={$bk}&cid={$cid}&from={$_SESSION[logname]}&to={$row2[firstlogname]}">[å¥–åˆ†]</a>
+<a href="#reply" onclick="quoteMsg('{$row2[cid]}')">[å¼•ç”¨]</a>
 {if ($_SESSION[power]<4) and ($_SESSION[power]!=0)}
-¹ÜÀí£º
+ç®¡ç†ï¼š
 
-<a href="process.php?bk={$bk}&action=zd&zd=1&cid={$cid}" target="_blank" title="ÖÃ¶¥" >[ÖÃ¶¥</a><a href="process.php?bk={$bk}&action=zd&cid={$cid}" target="_blank" title="½â³ı" >-½â]</a>
-<a href="process.php?action=tj&tj=1&bk={$bk}&cid={$cid}" target="_blank" title="ÍÆ¼ö" >[¼ö</a><a href="process.php?action=tj&bk={$bk}&cid={$cid}" target="_blank" title="½â³ı" >-½â]</a>
-<a href="process.php?action=jh&jh=1&cid={$cid}" target="_blank" title="¾«»ª" >[¾«»ª]</a>
-<a href="process.php?action=highlight&cid={$cid}&mod=1" target="_blank">[¸ßÁÁ]</a>
-<a href="process.php?action=lock&lock=1&cid={$cid}" target="_blank" title="Ëø¶¨" >[Ëø¶¨]</a>
-<a href="process.php?action=hslz&huifu={$row2[huifu]}&cid={$cid}" target="_blank">[»ØÊÕ]</a>
-<a href="process.php?action=pblz&pb=1&cid={$cid}" target="_blank" title="ÆÁ±Î" >[ÆÁ±Î]</a>
+<a href="process.php?bk={$bk}&action=zd&zd=1&cid={$cid}" target="_blank" title="ç½®é¡¶" >[ç½®é¡¶</a><a href="process.php?bk={$bk}&action=zd&cid={$cid}" target="_blank" title="è§£é™¤" >-è§£]</a>
+<a href="process.php?action=tj&tj=1&bk={$bk}&cid={$cid}" target="_blank" title="æ¨è" >[è</a><a href="process.php?action=tj&bk={$bk}&cid={$cid}" target="_blank" title="è§£é™¤" >-è§£]</a>
+<a href="process.php?action=jh&jh=1&cid={$cid}" target="_blank" title="ç²¾å" >[ç²¾å]</a>
+<a href="process.php?action=highlight&cid={$cid}&mod=1" target="_blank">[é«˜äº®]</a>
+<a href="process.php?action=lock&lock=1&cid={$cid}" target="_blank" title="é”å®š" >[é”å®š]</a>
+<a href="process.php?action=hslz&huifu={$row2[huifu]}&cid={$cid}" target="_blank">[å›æ”¶]</a>
+<a href="process.php?action=pblz&pb=1&cid={$cid}" target="_blank" title="å±è”½" >[å±è”½]</a>
 {/if}
 
-<a href='onlyou.php?cid={$cid}&bk={$bk}&logname={$row2[firstlogname]}'><font color="red">[Ö»¿´´ËÈË]</font></a><a id="pid{$row2[lc]}"></a>
+<a href='onlyou.php?cid={$cid}&bk={$bk}&logname={$row2[firstlogname]}'><font color="red">[åªçœ‹æ­¤äºº]</font></a><a id="pid{$row2[lc]}"></a>
 </div>
-<!-- /¹¦ÄÜ -->
-<!-- ÕıÎÄ -->
+<!-- /åŠŸèƒ½ -->
+<!-- æ­£æ–‡ -->
 <div class="mc">
 <a name="{$row2[cid]}" id="{$row2[cid]}"></a>
 <div id="__Message_{$row2[cid]}"> 
 {if $row2[through]==0}
 {if $row2[pb]==1}
-<FONT color=#000066><em>[´ËÌù×ÓÄÚÈİ±»¹ÜÀíÔ±ÆÁ±Î...]</em></FONT>
+<FONT color=#000066><em>[æ­¤è´´å­å†…å®¹è¢«ç®¡ç†å‘˜å±è”½...]</em></FONT>
 {else}
 
 
 {if $row2[replyview]==0 or (replyview($row2[cid],$_SESSION[logname])==1)}
 {stripslashes($z_content)}
-{if (!$row2[pic]=="0")}<br><br>µã»÷²é¿´·Å´óÍ¼Æ¬£º<br>
+{if (!$row2[pic]=="0")}<br><br>ç‚¹å‡»æŸ¥çœ‹æ”¾å¤§å›¾ç‰‡ï¼š<br>
 <a href="{$row2[pic]}" target="_blank"><img src="{$row2[pic]}" alt="{$row2[title]}" border=0 onload='javascript:this.width=Math.min(this.width,600)'></a>{/if}
 {else}
-<FONT color=red><em>[±¾ÌûÄÚÈİĞèÒª»Ø¸´²Å¿ÉÒÔä¯ÀÀ]</em></FONT>
+<FONT color=red><em>[æœ¬å¸–å†…å®¹éœ€è¦å›å¤æ‰å¯ä»¥æµè§ˆ]</em></FONT>
 {/if}
 
 
 {/if}{else}
-<FONT color=#000066><em>[ÇëÉÔºò,´ËÌù×ÓÄÚÈİÉóºËÖĞ...]</em></FONT>
+<FONT color=#000066><em>[è¯·ç¨å€™,æ­¤è´´å­å†…å®¹å®¡æ ¸ä¸­...]</em></FONT>
 {/if}
 {if $row2[edit]>0}
-<p align=right><FONT color=#000066><em>[´ËÌù×ÓÒÑ¾­±»×÷ÕßÓÚ {uuuw($row2[edit])} ±à¼­¹ı]</em></FONT>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p align=right><FONT color=#000066><em>[æ­¤è´´å­å·²ç»è¢«ä½œè€…äº {uuuw($row2[edit])} ç¼–è¾‘è¿‡]</em></FONT>&nbsp;&nbsp;&nbsp;&nbsp;</p>
 {/if}
 
 </div>
 <br>
 {if ($row2[prizepp]>0) }
-<font color="#0033FF">±¾Ìù»ñÍøÓÑ½±·Ö{$row2[prizepp]}µãPP¡¡</font>
-<a href="prize.php?action=prizeinfo&mod=lz&bk={$bk}&cid={$cid}">[ÏêÏ¸¼ÇÂ¼]</a><br>{/if}
+<font color="#0033FF">æœ¬è´´è·ç½‘å‹å¥–åˆ†{$row2[prizepp]}ç‚¹PPã€€</font>
+<a href="prize.php?action=prizeinfo&mod=lz&bk={$bk}&cid={$cid}">[è¯¦ç»†è®°å½•]</a><br>{/if}
 {if $sys_sign==1}------------------------------------------------------------------------------------------- <br />
 <div id="sign">
 {$row2[sign]}
 </div>{/if}
 </div> 
-<!-- /ÕıÎÄ -->
+<!-- /æ­£æ–‡ -->
 </div>
 <br class="nof"/>
-<!-- Ê±¼ä -->
-<div class="p_time">·¢±íÓÚ:{uuuw($row2[firsttime])} </div> 
-<!-- /Ê±¼ä -->
-<!-- ÍÆ¼ö Â¥Êı -->
+<!-- æ—¶é—´ -->
+<div class="p_time">å‘è¡¨äº:{uuuw($row2[firsttime])} </div> 
+<!-- /æ—¶é—´ -->
+<!-- æ¨è æ¥¼æ•° -->
 <div class="o_info">
-<font color='#980034'>ÍÆ¼ö£º</font>
+<font color='#980034'>æ¨èï¼š</font>
 {$ad4}
 <span>
-...Â¥Ö÷
+...æ¥¼ä¸»
 </span>
 </div>
-<!-- /ÍÆ¼ö Â¥Êı -->
+<!-- /æ¨è æ¥¼æ•° -->
 <br class="nof" />
 </div>
-<!-- /Â¥Ö÷ -->
+<!-- /æ¥¼ä¸» -->
 {/if}
 
 
@@ -150,15 +150,15 @@ return false;
 
 {while ($row=mysql_fetch_array($query)) }
 
-<!-- »Ø¸´ -->
+<!-- å›å¤ -->
 {if $row[lc]%2 == '0'}
 <div class="item">
 {else}
 <DIV class="item odd">
 {/if}
-<!-- ×÷ÕßĞÅÏ¢ -->
+<!-- ä½œè€…ä¿¡æ¯ -->
 <div class="author_info">
-<!-- ×÷ÕßĞÅÏ¢ -->
+<!-- ä½œè€…ä¿¡æ¯ -->
 <div class="author">
 <a href="info.php?logname={$row[lastlogname]}" target="_blank"><strong>{$row[lastnkname]}</STRONG>{$row[lastlogname]}</a>
 </div>
@@ -178,9 +178,9 @@ return false;
 </div>
 <br />
 <div>
-À´×Ô£º{$row[area]}&nbsp; <br />
-×¢²á£º{uuue($row[regtime])} <br />
-·¢Ìû£º{$row[zts]}£«{$row[hfs]}<br />
+æ¥è‡ªï¼š{$row[area]}&nbsp; <br />
+æ³¨å†Œï¼š{uuue($row[regtime])} <br />
+å‘å¸–ï¼š{$row[zts]}ï¼‹{$row[hfs]}<br />
 </div>
 <div>
 <a href="info.php?logname={$row[lastlogname]}" target="_blank"><img src="html/img/minihome.gif" /></a>
@@ -188,70 +188,70 @@ return false;
 <br /><br />IP:{$row2[ip]}{/if}
 </div>
 </div> 
-<!-- /×÷ÕßĞÅÏ¢ --> 
+<!-- /ä½œè€…ä¿¡æ¯ --> 
 <div class="rc">
-<!-- ¹¦ÄÜ -->
+<!-- åŠŸèƒ½ -->
 <div class="fn">
-<a href="edit.php?action=huifu&bk={$bk}&cid={$cid}&lc={$row[lc]}&now={$now}">[±à¼­]</a>
-<a href="my.php?action=sendsms&logname={$row[lastlogname]}" target="_blank">[¶ÌĞÅ]</a>
-<a href="report.php?bk={$bk}&cid={$cid}&now={$now}&lc={$row[lc]}" target="_blank">[¾Ù±¨]</a>
-<a href="prize.php?mod=huifu&bk={$bk}&cid={$cid}&lc={$row[lc]}&from={$_SESSION[logname]}&to={$row[lastlogname]}">[½±·Ö]</a>
-<a href="#reply" onclick="quoteMsg('hf{$row[id]}')">[ÒıÓÃ]</a>
+<a href="edit.php?action=huifu&bk={$bk}&cid={$cid}&lc={$row[lc]}&now={$now}">[ç¼–è¾‘]</a>
+<a href="my.php?action=sendsms&logname={$row[lastlogname]}" target="_blank">[çŸ­ä¿¡]</a>
+<a href="report.php?bk={$bk}&cid={$cid}&now={$now}&lc={$row[lc]}" target="_blank">[ä¸¾æŠ¥]</a>
+<a href="prize.php?mod=huifu&bk={$bk}&cid={$cid}&lc={$row[lc]}&from={$_SESSION[logname]}&to={$row[lastlogname]}">[å¥–åˆ†]</a>
+<a href="#reply" onclick="quoteMsg('hf{$row[id]}')">[å¼•ç”¨]</a>
 {if ($_SESSION[power]<4) and ($_SESSION[power]!=0)}
-¹ÜÀí£º
-<a href="process.php?action=delhuifu&cid={$cid}&lc={$row[lc]}" target="_blank">[É¾³ı]</a>
-<a href="process.php?action=pbhuifu&pb=1&bk={$bk}&cid={$cid}&lc={$row[lc]}" target="_blank">[ÆÁ±Î</a><a href="process.php?action=pbhuifu&bk={$bk}&cid={$cid}&lc={$row[lc]}" target="_blank" title="½â³ı" >-½â]</a>
+ç®¡ç†ï¼š
+<a href="process.php?action=delhuifu&cid={$cid}&lc={$row[lc]}" target="_blank">[åˆ é™¤]</a>
+<a href="process.php?action=pbhuifu&pb=1&bk={$bk}&cid={$cid}&lc={$row[lc]}" target="_blank">[å±è”½</a><a href="process.php?action=pbhuifu&bk={$bk}&cid={$cid}&lc={$row[lc]}" target="_blank" title="è§£é™¤" >-è§£]</a>
 {/if}
-<a href='onlyou.php?cid={$cid}&bk={$bk}&logname={$row[lastlogname]}'><font color="red">[Ö»¿´´ËÈË]</font></a><a id="pid{$row[lc]}"></a>
+<a href='onlyou.php?cid={$cid}&bk={$bk}&logname={$row[lastlogname]}'><font color="red">[åªçœ‹æ­¤äºº]</font></a><a id="pid{$row[lc]}"></a>
 </div>
-<!-- /¹¦ÄÜ -->
-<!-- ÕıÎÄ -->
+<!-- /åŠŸèƒ½ -->
+<!-- æ­£æ–‡ -->
 <div class="mc">
 <a name="{$row[cid]}" id="{$row[cid]}"></a>
 <div id="__Message_hf{$row[id]}"> 
 {if $row[through]==0}
 {if $row[pb]==1}
-<FONT color=#000066><em>[´ËÌù×ÓÄÚÈİ±»¹ÜÀíÔ±ÆÁ±Î...]</em></FONT>
+<FONT color=#000066><em>[æ­¤è´´å­å†…å®¹è¢«ç®¡ç†å‘˜å±è”½...]</em></FONT>
 {else}
 {stripslashes($row[content])}
 {if (!$row[pic]=="0")}<br><br>
 <a href="{$row[pic]}" target="_blank"><img src="{$row[pic]}" alt="{$row2[title]}" border=0 onload='javascript:this.width=Math.min(this.width,600)'></a>{/if}
 {/if}
 {else}
-<FONT color=#000066><em>[ÇëÉÔºò,´ËÌù×ÓÄÚÈİÉóºËÖĞ...]</em></FONT>
+<FONT color=#000066><em>[è¯·ç¨å€™,æ­¤è´´å­å†…å®¹å®¡æ ¸ä¸­...]</em></FONT>
 {/if}
 
 {if $row[edit]>0}
-<p align=right><FONT color=#000066><em>[´ËÌù×ÓÒÑ¾­±»×÷ÕßÓÚ {uuuw($row[edit])} ±à¼­¹ı]</em></FONT>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p align=right><FONT color=#000066><em>[æ­¤è´´å­å·²ç»è¢«ä½œè€…äº {uuuw($row[edit])} ç¼–è¾‘è¿‡]</em></FONT>&nbsp;&nbsp;&nbsp;&nbsp;</p>
 {/if}
 </div>
 <br><br><br> 
 {if ($row[prizepp]>0) }
-<font color="#0033FF">±¾Ìù»ñÍøÓÑ½±·Ö{$row[prizepp]}µãPP¡¡</font>
-<a href="prize.php?action=prizeinfo&mod=huifu&bk={$bk}&cid={$cid}&lc={$row[lc]}">[ÏêÏ¸¼ÇÂ¼]</a><br>{/if}
+<font color="#0033FF">æœ¬è´´è·ç½‘å‹å¥–åˆ†{$row[prizepp]}ç‚¹PPã€€</font>
+<a href="prize.php?action=prizeinfo&mod=huifu&bk={$bk}&cid={$cid}&lc={$row[lc]}">[è¯¦ç»†è®°å½•]</a><br>{/if}
 {if $sys_sign==1}------------------------------------------------------------------------------------------- <br />
 <div id="sign">
 {$row[sign]}
 </div>{/if}
 </div> 
-<!-- /ÕıÎÄ -->
+<!-- /æ­£æ–‡ -->
 </div>
 <br class="nof"/>
-<!-- Ê±¼ä -->
-<div class="p_time">·¢±íÓÚ:{uuuw($row[lasttime])} </div> 
-<!-- /Ê±¼ä -->
-<!-- ÍÆ¼ö Â¥Êı -->
+<!-- æ—¶é—´ -->
+<div class="p_time">å‘è¡¨äº:{uuuw($row[lasttime])} </div> 
+<!-- /æ—¶é—´ -->
+<!-- æ¨è æ¥¼æ•° -->
 <div class="o_info">
-<font color='#980034'>ÍÆ¼ö£º</font>
+<font color='#980034'>æ¨èï¼š</font>
 {$ad4}
 <span>
-...µÚ{$row[lc]}Â¥
+...ç¬¬{$row[lc]}æ¥¼
 </span>
 </div>
-<!-- /ÍÆ¼ö Â¥Êı -->
+<!-- /æ¨è æ¥¼æ•° -->
 <br class="nof" />
 </div>
-<!-- /»Ø¸´ -->
+<!-- /å›å¤ -->
 {/while}
 
 {/if}
@@ -261,36 +261,36 @@ return false;
 
 
 
-<!-- ·­Ò³ -->
+<!-- ç¿»é¡µ -->
 <div class="fn2">
 <div class="io">
-<a href="post.php?bk={$bk}"><img src="html/img/send.gif" alt="·¢±íÎÄÕÂ" /></a>
-<a href="#reply"><img src="html/img/reply.gif" alt="»Ø¸´ÎÄÕÂ" /></a>
+<a href="post.php?bk={$bk}"><img src="html/img/send.gif" alt="å‘è¡¨æ–‡ç« " /></a>
+<a href="#reply"><img src="html/img/reply.gif" alt="å›å¤æ–‡ç« " /></a>
 </div>
 <div class="inner_pager">&nbsp;<b>{$scfy}</b>&nbsp;&nbsp; 
-[<a href='onlyou.php?cid={$cid}&bk={$bk}&logname={$row2[firstlogname]}'>Ö»¿´Â¥Ö÷</a>]
+[<a href='onlyou.php?cid={$cid}&bk={$bk}&logname={$row2[firstlogname]}'>åªçœ‹æ¥¼ä¸»</a>]
 </div>
 </div>
-<!-- /·­Ò³ -->
+<!-- /ç¿»é¡µ -->
 
 
 
 
 <a name="reply"></a>
 {if $row2[lock]==1}
-±¾ÌùÒÑËø¶¨£¬ÔİÊ±²»¿ÉÒÔ»Ø¸´£¡
+æœ¬è´´å·²é”å®šï¼Œæš‚æ—¶ä¸å¯ä»¥å›å¤ï¼
 {else}
 {xingTemplate quickpost}
 {/if}
-<!-- ²åÈë»Ø¸´ÁĞ±í -->
+<!-- æ’å…¥å›å¤åˆ—è¡¨ -->
 </div>
-<!-- /×ó±ß -->
-<!-- ÓÒ±ß -->
+<!-- /å·¦è¾¹ -->
+<!-- å³è¾¹ -->
 {xingTemplate right}
-<!-- /ÓÒ±ß -->
+<!-- /å³è¾¹ -->
 <br class="nof" /> 
 </div>
-<!-- /Ö÷Òª¿ò¼Ü -->
-<!-- ²åÈëÎ²²¿ -->
+<!-- /ä¸»è¦æ¡†æ¶ -->
+<!-- æ’å…¥å°¾éƒ¨ -->
 {xingTemplate foot}
 {$runtimes}

@@ -16,7 +16,7 @@ break;
 
 case ok:
 
-echo "ĞŞ¸Ä³É¹¦£¬Õë¶Ô°æ¿éid:<font color=red>".$_GET[bkid]."</font><br><br>";
+echo "ä¿®æ”¹æˆåŠŸï¼Œé’ˆå¯¹ç‰ˆå—id:<font color=red>".$_GET[bkid]."</font><br><br>";
 $eee="../make.php?action=head";
 echo "<iframe src=".$eee." width=\"300\" height=\"30\" frameborder=\"0\" marginheight=\"0\" marginwidth=\"0\"></iframe>";
 
@@ -31,7 +31,7 @@ break;
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
-<title>ÎŞ±êÌâÎÄµµ</title>
+<title>æ— æ ‡é¢˜æ–‡æ¡£</title>
 </head>
 
 <body>
@@ -40,9 +40,9 @@ break;
 <table width="59%" height="71" border="0" cellpadding="0" cellspacing="0">
   <tr>
     <td>ID:</td>
-    <td>°æ¿éÃû³Æ</td>
-    <td>°æ¿é¼ò½é</td>
-    <td>°æ¿éÅÅĞò(Ğ¡µÄÔÚÇ°)</td>
+    <td>ç‰ˆå—åç§°</td>
+    <td>ç‰ˆå—ç®€ä»‹</td>
+    <td>ç‰ˆå—æ’åº(å°çš„åœ¨å‰)</td>
 	<td>&nbsp;</td>
   </tr>
 <?
@@ -56,7 +56,7 @@ while ($row=mysql_fetch_array($query)){
     <td><input name="bkname" type="text" id="bkname" value="<? echo $row[bkname] ?>" /></td>
     <td><input name="bkjj" type="text" id="bkjj" value="<? echo $row[bkjj] ?>" /></td>
     <td><input name="px" type="text" id="px" value="<? echo $row[px] ?>" /></td>
-	<td><input type="submit" name="Submit<? $row[id] ?>" value="ĞŞ ¸Ä" /></td>
+	<td><input type="submit" name="Submit<? $row[id] ?>" value="ä¿® æ”¹" /></td>
   </tr>
   </form>
   

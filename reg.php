@@ -14,7 +14,7 @@ exit;
 }else
 {
 if (empty($_GET['id'])){
-//$tis="Î´Öª´íÎó£¬ÄúÐèÒªÍ¨¹ýÓÊ¼þÑéÖ¤ºó²ÅÄÜ·ÃÎÊ±¾Ò³Ãæ£¡";
+//$tis="æœªçŸ¥é”™è¯¯ï¼Œæ‚¨éœ€è¦é€šè¿‡é‚®ä»¶éªŒè¯åŽæ‰èƒ½è®¿é—®æœ¬é¡µé¢ï¼";
 $xingTemplate->display('regemail');
 exit;
 }else{
@@ -25,7 +25,7 @@ $row=mysql_fetch_array($query);
 $jilu=mysql_num_rows($query);
 
 if ($jilu=='0'){
-$tis="¶Ô²»Æð£¬ÄúµÄÑéÖ¤Âë²»ÕýÈ·»òÒÑ¹ýÆÚ£¡";
+$tis="å¯¹ä¸èµ·ï¼Œæ‚¨çš„éªŒè¯ç ä¸æ­£ç¡®æˆ–å·²è¿‡æœŸï¼";
 $xingTemplate->display('tis');
 exit;
 }

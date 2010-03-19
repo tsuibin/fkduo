@@ -6,13 +6,13 @@ case add:
 $bk=$_POST[bkid];
 $name=$_POST[name];
 
-$query=mysql_query("INSERT INTO `{$fkduo}sort` (`name`,`bk`) VALUES ('$name','$bk')");//¸üĞÂÈÕÖ¾
+$query=mysql_query("INSERT INTO `{$fkduo}sort` (`name`,`bk`) VALUES ('$name','$bk')");//æ›´æ–°æ—¥å¿—
 $eee="sortadd.php?action=ok";
 header ("location: $eee"); 
 break;
 
 case ok:
-echo "<font color=red>»°Ìâ¹éÀàÔö¼Ó³É¹¦!</fotn><br><br>";
+echo "<font color=red>è¯é¢˜å½’ç±»å¢åŠ æˆåŠŸ!</fotn><br><br>";
 break;
 
 default:
@@ -24,7 +24,7 @@ break;
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
-<title>ÎŞ±êÌâÎÄµµ</title>
+<title>æ— æ ‡é¢˜æ–‡æ¡£</title>
 </head>
 
 <body>
@@ -34,14 +34,14 @@ break;
 <table width="36%" height="108" border="0" cellpadding="0" cellspacing="0">
 
   <tr>
-    <td bgcolor="#9999FF">Ìí¼Ó»°Ìâ¹éÀà</td>
+    <td bgcolor="#9999FF">æ·»åŠ è¯é¢˜å½’ç±»</td>
     <td bgcolor="#9999FF"></td>
     <td bgcolor="#9999FF"></td>
   </tr>
   
   
   <tr>
-    <td>Ñ¡Ôñ°æ¿é£º</td>
+    <td>é€‰æ‹©ç‰ˆå—ï¼š</td>
     <td>
 	<select name="bkid" accesskey="1" >
 <?
@@ -59,15 +59,15 @@ while ($row=mysql_fetch_array($query)){
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td>»°Ìâ¹éÀà</td>
+    <td>è¯é¢˜å½’ç±»</td>
     <td><label>
           <input type="text" name="name" accesskey="2" />
         </label>    </td>
     <td><label>
-      <input type="submit" name="Submit" value="Ìí ¼Ó" accesskey="3" />
+      <input type="submit" name="Submit" value="æ·» åŠ " accesskey="3" />
       </label></td>
   </tr>
 </table>      </form>
-  <a href="sortdel.php" target="main">»°Ìâ¹éÀàÉ¾³ı</a><br />
+  <a href="sortdel.php" target="main">è¯é¢˜å½’ç±»åˆ é™¤</a><br />
 </body>
 </html>

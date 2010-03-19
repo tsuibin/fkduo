@@ -50,33 +50,33 @@ $px1=ceil($row[huifu]/$contentstep);
 
 
 
-<!-- ·­Ò³ -->
+<!-- ç¿»é¡µ -->
 <div class="pager">
-<a class="reload" href="{url($bk,$now)}">[ Ë¢ĞÂ±¾Ò³ ]</a> 
-¹²ÓĞ <b>{$pages}</b> Ò³,ÏÖÔÚÊÇµÚ <b>{$now}</b> Ò³,×ªµ½ <input name="nowpage" id="nowpage" type="text" size="2" value='1' onKeyPress="var code =event.keyCode;if(code==13){location='loop.php?bk={$bk}&now='+document.getElementById('nowpage').value+'&search=0'; return false; } else {return true;}"> Ò³ 
+<a class="reload" href="{url($bk,$now)}">[ åˆ·æ–°æœ¬é¡µ ]</a> 
+å…±æœ‰ <b>{$pages}</b> é¡µ,ç°åœ¨æ˜¯ç¬¬ <b>{$now}</b> é¡µ,è½¬åˆ° <input name="nowpage" id="nowpage" type="text" size="2" value='1' onKeyPress="var code =event.keyCode;if(code==13){location='loop.php?bk={$bk}&now='+document.getElementById('nowpage').value+'&search=0'; return false; } else {return true;}"> é¡µ 
 &nbsp;{$theup}&nbsp;{$thedown}
 </div>
-<!-- /·­Ò³ --> 
-<!-- ËµÃ÷ĞÅÏ¢ -->
+<!-- /ç¿»é¡µ --> 
+<!-- è¯´æ˜ä¿¡æ¯ -->
 <ul id="topic_type">
-<li><img src="html/img/gif5.gif" />º¬ÓĞ»Ø¸´µÄ»°Ìâ</li>
-<li><img src="html/img/topic_t.gif" />ÖÃÓÚ¶¥²¿µÄ»°Ìâ</li>
-<li><img src="html/img/topic_n.gif" />Ã»ÓĞ»Ø¸´µÄ»°Ìâ</li>
-<li><img src="html/img/notice.gif" />°æÃæÍ¨¸æ</li>
-<li><img src="html/img/topic_lock.gif" />ÒÑ¹Ø±ÕµÄ»°Ìâ</li>
-<li><img src="html/img/club1tag.gif" />¾«»ª»°Ìâ</li> 
+<li><img src="html/img/gif5.gif" />å«æœ‰å›å¤çš„è¯é¢˜</li>
+<li><img src="html/img/topic_t.gif" />ç½®äºé¡¶éƒ¨çš„è¯é¢˜</li>
+<li><img src="html/img/topic_n.gif" />æ²¡æœ‰å›å¤çš„è¯é¢˜</li>
+<li><img src="html/img/notice.gif" />ç‰ˆé¢é€šå‘Š</li>
+<li><img src="html/img/topic_lock.gif" />å·²å…³é—­çš„è¯é¢˜</li>
+<li><img src="html/img/club1tag.gif" />ç²¾åè¯é¢˜</li> 
 </ul>
-<!-- /ËµÃ÷ĞÅÏ¢ -->
-<!-- ²åÈëÖ÷ÌâÁĞ±í -->
+<!-- /è¯´æ˜ä¿¡æ¯ -->
+<!-- æ’å…¥ä¸»é¢˜åˆ—è¡¨ -->
 </div>
-<!-- /×ó±ß -->
-<!-- ÓÒ±ß -->
+<!-- /å·¦è¾¹ -->
+<!-- å³è¾¹ -->
 {xingTemplate right}
-<!-- /ÓÒ±ß -->
+<!-- /å³è¾¹ -->
 <br class="nof" /> 
 </div>
-<!-- /Ö÷Òª¿ò¼Ü -->
-<!-- ²åÈëÎ²²¿ -->
+<!-- /ä¸»è¦æ¡†æ¶ -->
+<!-- æ’å…¥å°¾éƒ¨ -->
 {if $link==1}
 {xingTemplate link}
 {/if}

@@ -4,27 +4,27 @@
 <div class="mainCon fix">
 <!-- left -->
 <dl class="fl" id="myPlace">
-<dt class="t">ÎÒµÄÍ·Ïñ<a href="my.php?action=myface" class="rlink" title="ĞŞ¸Ä">ĞŞ¸Ä</a></dt>
+<dt class="t">æˆ‘çš„å¤´åƒ<a href="my.php?action=myface" class="rlink" title="ä¿®æ”¹">ä¿®æ”¹</a></dt>
 <dd class="c" id="myAvatar">
 {if ($row2[face]!=1)}
 <img src="html/face/{$row2[logname]}.{$row2[face]}" border="1">
 {else}
-<img src="html/img/nopic.gif" alt="{$row2[logname]}µÄÍ·Ïñ" />
+<img src="html/img/nopic.gif" alt="{$row2[logname]}çš„å¤´åƒ" />
 {/if}</dd>
-<dt class="t">µ±Ç°×´Ì¬£º{if $row2[lock]==1}<font color=red>¶³½á</font>{else}Õı³£{/if}</dt>
+<dt class="t">å½“å‰çŠ¶æ€ï¼š{if $row2[lock]==1}<font color=red>å†»ç»“</font>{else}æ­£å¸¸{/if}</dt>
 <dd class="c" id="myDetail">
-<table summary="¸öÈË×ÊÁÏ">
+<table summary="ä¸ªäººèµ„æ–™">
 <tr>
-<th scope="row">êÇ³Æ</th>
+<th scope="row">æ˜µç§°</th>
 <td><strong>{$row2[nickname]}</strong></td>
 </tr>
 <tr>
-<th scope="row">ÓÃ»§Ãû</th>
+<th scope="row">ç”¨æˆ·å</th>
 <td>{$row2[logname]}</td>
 </tr>
 <tr>
-<th scope="row"><img src="html/img/authUser.gif" alt="ÈÏÖ¤»áÔ±"></th>
-<td>ÈÏÖ¤»áÔ±</td>
+<th scope="row"><img src="html/img/authUser.gif" alt="è®¤è¯ä¼šå‘˜"></th>
+<td>è®¤è¯ä¼šå‘˜</td>
 </tr>
 <tr>
 <th scope="row"><img src="html/img/hp.gif" alt="hp"></th>
@@ -35,23 +35,23 @@
 <td>{$row2[pp]}</td>
 </tr>
 <tr>
-<th scope="row">·¢Ìû</th>
+<th scope="row">å‘å¸–</th>
 <td>{$row2[zts]} + {$row2[hfs]}</td>
 </tr>
 <tr>
 <th scope="row">&nbsp;</th>
-<td style="text-align:right"><span id="openMore"><img src="html/img/i2k8-ico14.gif"> ¸ü¶à</span></td>
+<td style="text-align:right"><span id="openMore"><img src="html/img/i2k8-ico14.gif"> æ›´å¤š</span></td>
 </tr>
 <tr id="moreInfo0">
-<th scope="row">×¢²áÊ±¼ä</th>
+<th scope="row">æ³¨å†Œæ—¶é—´</th>
 <td>{uuuw($row2[regtime])}</td>
 </tr>
 <tr id="moreInfo1">
-<th scope="row">×îºóµÇÂ½</th>
+<th scope="row">æœ€åç™»é™†</th>
 <td>{uuuw($row2[lasttime])}</td>
 </tr>
 <tr id="moreInfo2">
-<th scope="row">À´×Ô</th>
+<th scope="row">æ¥è‡ª</th>
 <td>{$row2[area]}</td>
 </tr>
 </table> 
@@ -65,7 +65,7 @@ for(var i=0; i<3; i++){
 if(document.addEventListener){document.getElementById("moreInfo"+i).style.display = "table-row"; }
 else{document.getElementById("moreInfo"+i).style.display = "block"; }
 } 
-this.innerHTML='<img src="html/img/i2k8-ico14up.gif"> Òş²Ø'
+this.innerHTML='<img src="html/img/i2k8-ico14up.gif"> éšè—'
 isOpen = 1; 
 } else{
 for(var i=0; i<3; i++){ 
@@ -86,15 +86,15 @@ isOpen = 0;
 <!-- myDetailMenu -->
 <ul id="myDetailMenu" class="fix">
 {if ($_GET['action']==myinfo)}<li class="current">{else}<li>{/if}
-<a href="my.php?action=myinfo">¸öÈË×ÊÁÏ</a></li>
+<a href="my.php?action=myinfo">ä¸ªäººèµ„æ–™</a></li>
 {if ($_GET['action']==myfav)}<li class="current">{else}<li>{/if}
-<a href="my.php?action=myfav">Ìû×ÓÊÕ²Ø¼Ğ</a></li> 
+<a href="my.php?action=myfav">å¸–å­æ”¶è—å¤¹</a></li> 
 {if ($_GET['action']==mypost)}<li class="current">{else}<li>{/if}
-<a href="my.php?action=mypost">ÎÒµÄÌù×Ó</a></li>
+<a href="my.php?action=mypost">æˆ‘çš„è´´å­</a></li>
 {if ($_GET['action']==mysms or $_GET['action']==sendsms or $_GET['action']==readsms)}<li class="current">{else}<li>{/if}
-<a href="my.php?action=mysms">¶ÌĞÅ</a></li>
+<a href="my.php?action=mysms">çŸ­ä¿¡</a></li>
 {if ($_GET['action']==myface)}<li class="current">{else}<li>{/if}
-<a href="my.php?action=myface">Í·ÏñÉèÖÃ</a></li>
+<a href="my.php?action=myface">å¤´åƒè®¾ç½®</a></li>
 </ul> 
 <!-- /myDetailMenu --> 
 
@@ -103,20 +103,20 @@ isOpen = 0;
 {if ($_GET['action']==myinfo)}
 <script type="text/javascript">
  function checkpwd(){
-  var p1=document.form1.newpassword.value;//»ñÈ¡ÃÜÂë¿òµÄÖµ
-  var p2=document.form1.repeatPwd.value;//»ñÈ¡ÖØĞÂÊäÈëµÄÃÜÂëÖµ
+  var p1=document.form1.newpassword.value;//è·å–å¯†ç æ¡†çš„å€¼
+  var p2=document.form1.repeatPwd.value;//è·å–é‡æ–°è¾“å…¥çš„å¯†ç å€¼
   if(p1==""){
-   alert("ÇëÊäÈëÃÜÂë£¡");//¼ì²âµ½ÃÜÂëÎª¿Õ£¬ÌáĞÑÊäÈë//
-   document.form1.newpassword.focus();//½¹µã·Åµ½ÃÜÂë¿ò
-   return false;//ÍË³ö¼ì²âº¯Êı
-  }//Èç¹ûÔÊĞí¿ÕÃÜÂë£¬¿ÉÈ¡ÏûÕâ¸öÌõ¼ş
+   alert("è¯·è¾“å…¥å¯†ç ï¼");//æ£€æµ‹åˆ°å¯†ç ä¸ºç©ºï¼Œæé†’è¾“å…¥//
+   document.form1.newpassword.focus();//ç„¦ç‚¹æ”¾åˆ°å¯†ç æ¡†
+   return false;//é€€å‡ºæ£€æµ‹å‡½æ•°
+  }//å¦‚æœå…è®¸ç©ºå¯†ç ï¼Œå¯å–æ¶ˆè¿™ä¸ªæ¡ä»¶
   
-  if(p1!=p2){//ÅĞ¶ÏÁ½´ÎÊäÈëµÄÖµÊÇ·ñÒ»ÖÂ£¬²»Ò»ÖÂÔòÏÔÊ¾´íÎóĞÅÏ¢
-   document.getElementById("msg").innerHTML="Á½´ÎÊäÈëÃÜÂë²»Ò»ÖÂ£¬ÇëÖØĞÂÊäÈë";//ÔÚdivÏÔÊ¾´íÎóĞÅÏ¢
+  if(p1!=p2){//åˆ¤æ–­ä¸¤æ¬¡è¾“å…¥çš„å€¼æ˜¯å¦ä¸€è‡´ï¼Œä¸ä¸€è‡´åˆ™æ˜¾ç¤ºé”™è¯¯ä¿¡æ¯
+   document.getElementById("msg").innerHTML="ä¸¤æ¬¡è¾“å…¥å¯†ç ä¸ä¸€è‡´ï¼Œè¯·é‡æ–°è¾“å…¥";//åœ¨divæ˜¾ç¤ºé”™è¯¯ä¿¡æ¯
    return false;
   }else{
-   //ÃÜÂëÒ»ÖÂ£¬¿ÉÒÔ¼ÌĞøÏÂÒ»²½²Ù×÷ 
-   document.getElementById("msg").innerHTML="OK";//ÔÚdivÏÔÊ¾´íÎóĞÅÏ¢
+   //å¯†ç ä¸€è‡´ï¼Œå¯ä»¥ç»§ç»­ä¸‹ä¸€æ­¥æ“ä½œ 
+   document.getElementById("msg").innerHTML="OK";//åœ¨divæ˜¾ç¤ºé”™è¯¯ä¿¡æ¯
   }
  }
 </script>
@@ -126,7 +126,7 @@ isOpen = 0;
 function   CheckForm()
 {  
 if   (document.form1.oldpassword.value.length   ==   0)   {  
-alert("±ØĞëÊäÈëÔ­À´µÄÃÜÂë!");
+alert("å¿…é¡»è¾“å…¥åŸæ¥çš„å¯†ç !");
 document.form1.oldpassword.focus();
 return   false;
 }
@@ -138,96 +138,96 @@ return   true;
      {
      if(document.form1.newpassword.value.length<4)
      {
-     alert("²»ÄÜÉÙÓÚ4¸ö×Ö·û£¡");
+     alert("ä¸èƒ½å°‘äº4ä¸ªå­—ç¬¦ï¼");
      document.form1.newpassword.focus();
      return false;
      }
      }
 -->
 </script>
-<!-- ±íµ¥ -->
+<!-- è¡¨å• -->
 <form action="myok.php?action=myinfook" method="post" name="form1" onsubmit="return CheckForm()">
 <table class="myDetialForm">
 <tr>
-<th><label for="neckName">ÓÃ»§Ãû</label></th>
+<th><label for="neckName">ç”¨æˆ·å</label></th>
 <td><input type="text" id="logname" name="logname" class="inputText" value="{$row2[logname]}" disabled /> 
-<span id="nickNameInf" class=""inf_normal"">&nbsp; ÓÃ»§Ãû²»¿ÉĞŞ¸Ä</span></td>
+<span id="nickNameInf" class=""inf_normal"">&nbsp; ç”¨æˆ·åä¸å¯ä¿®æ”¹</span></td>
 </tr>
 
 <tr>
-<th><label for="neckName">êÇ³Æ</label></th>
+<th><label for="neckName">æ˜µç§°</label></th>
 <td><input type="text" id="nickname" name="nickname" class="inputText" value="{$row2[nickname]}" /> 
-<span id="nickNameInf" class=""inf_normal"">&nbsp; êÇ³Æ³¤¶È1-10Î»£¬¿ÉÓÉÖĞÓ¢ÎÄ¡¢Êı×Ö¡¢ÏÂ»®Ïß×é³É</span></td>
+<span id="nickNameInf" class=""inf_normal"">&nbsp; æ˜µç§°é•¿åº¦1-10ä½ï¼Œå¯ç”±ä¸­è‹±æ–‡ã€æ•°å­—ã€ä¸‹åˆ’çº¿ç»„æˆ</span></td>
 </tr>
 <tr>
-<th><label for="password">Ô­ÃÜÂë</label></th>
+<th><label for="password">åŸå¯†ç </label></th>
 <td><input type="password" id="oldpassword" class="inputText" name="oldpassword" /> 
-  <span id="oldPasswordInf" class=""inf_normal"">&nbsp; <font color=red>**±ØÌî</font></span></td>
+  <span id="oldPasswordInf" class=""inf_normal"">&nbsp; <font color=red>**å¿…å¡«</font></span></td>
 </tr>
 
 <tr>
-<th><label for="newPwd">ĞÂÃÜÂë(1)</label></th>
-<td><input type="password" id="newpassword" class="inputText" name="newpassword" onchange="test();" /> <span id="passwordInf" class="inf_normal">&nbsp; Ñ¡Ìî,ÃÜÂëĞè³¤¶ÈÎª 4-20 µÄÈÎÒâ×Ö·û</span></td>
+<th><label for="newPwd">æ–°å¯†ç (1)</label></th>
+<td><input type="password" id="newpassword" class="inputText" name="newpassword" onchange="test();" /> <span id="passwordInf" class="inf_normal">&nbsp; é€‰å¡«,å¯†ç éœ€é•¿åº¦ä¸º 4-20 çš„ä»»æ„å­—ç¬¦</span></td>
 </tr>
 <tr>
-<th><label for="repeatPwd">ÔÙÊäÒ»´ÎĞÂÃÜÂë(2)</label></th>
+<th><label for="repeatPwd">å†è¾“ä¸€æ¬¡æ–°å¯†ç (2)</label></th>
 <td><input type="password" id="repeatPwd" class="inputText" name="repeatPwd"  onchange="checkpwd();"/> <div id="msg" style="color:red;"></div></td>
 </tr>
 
 <tr>
-<th><label for="area">ËùÔÚµØÇø</label></th>
+<th><label for="area">æ‰€åœ¨åœ°åŒº</label></th>
 <td>
 <select name="area">
 <option value="{$row2[area]}" selected>{$row2[area]}</option>
-<option value="±±¾©" >±±¾©</option>
-<option value="ÉÏº£" >ÉÏº£</option>
-<option value="¸£½¨" >¸£½¨</option>
-<option value="Ìì½ò" >Ìì½ò</option>
-<option value="ÖØÇì" >ÖØÇì</option>
-<option value="ºÓ±±" >ºÓ±±</option>
-<option value="É½Î÷" >É½Î÷</option>
-<option value="ÄÚÃÉ¹Å" >ÄÚÃÉ¹Å</option>
-<option value="ÁÉÄş" >ÁÉÄş</option>
-<option value="¼ªÁÖ" >¼ªÁÖ</option>
-<option value="ºÚÁú½­" >ºÚÁú½­</option>
-<option value="½­Î÷" >½­Î÷</option>
-<option value="Õã½­" >Õã½­</option>
-<option value="½­ËÕ" >½­ËÕ</option>
-<option value="°²»Õ" >°²»Õ</option>
-<option value="É½¶«" >É½¶«</option>
-<option value="ºÓÄÏ" >ºÓÄÏ</option>
-<option value="ºş±±" >ºş±±</option>
-<option value="ºşÄÏ" >ºşÄÏ</option>
-<option value="¹ã¶«" >¹ã¶«</option>
-<option value="¹ãÎ÷" >¹ãÎ÷</option>
-<option value="º£ÄÏ" >º£ÄÏ</option>
-<option value="ËÄ´¨" >ËÄ´¨</option>
-<option value="¹óÖİ" >¹óÖİ</option>
-<option value="ÔÆÄÏ" >ÔÆÄÏ</option>
-<option value="Î÷²Ø" >Î÷²Ø</option>
-<option value="ÉÂÎ÷" >ÉÂÎ÷</option>
-<option value="¸ÊËà" >¸ÊËà</option>
-<option value="ÄşÏÄ" >ÄşÏÄ</option>
-<option value="Çàº£" >Çàº£</option>
-<option value="ĞÂ½®" >ĞÂ½®</option>
-<option value="Ïã¸Û" >Ïã¸Û</option>
-<option value="°ÄÃÅ" >°ÄÃÅ</option>
-<option value="Ì¨Íå" >Ì¨Íå</option>
-<option value="º£Íâ" >º£Íâ</option>
-<option value="±£ÃÜ" >±£ÃÜ</option>
+<option value="åŒ—äº¬" >åŒ—äº¬</option>
+<option value="ä¸Šæµ·" >ä¸Šæµ·</option>
+<option value="ç¦å»º" >ç¦å»º</option>
+<option value="å¤©æ´¥" >å¤©æ´¥</option>
+<option value="é‡åº†" >é‡åº†</option>
+<option value="æ²³åŒ—" >æ²³åŒ—</option>
+<option value="å±±è¥¿" >å±±è¥¿</option>
+<option value="å†…è’™å¤" >å†…è’™å¤</option>
+<option value="è¾½å®" >è¾½å®</option>
+<option value="å‰æ—" >å‰æ—</option>
+<option value="é»‘é¾™æ±Ÿ" >é»‘é¾™æ±Ÿ</option>
+<option value="æ±Ÿè¥¿" >æ±Ÿè¥¿</option>
+<option value="æµ™æ±Ÿ" >æµ™æ±Ÿ</option>
+<option value="æ±Ÿè‹" >æ±Ÿè‹</option>
+<option value="å®‰å¾½" >å®‰å¾½</option>
+<option value="å±±ä¸œ" >å±±ä¸œ</option>
+<option value="æ²³å—" >æ²³å—</option>
+<option value="æ¹–åŒ—" >æ¹–åŒ—</option>
+<option value="æ¹–å—" >æ¹–å—</option>
+<option value="å¹¿ä¸œ" >å¹¿ä¸œ</option>
+<option value="å¹¿è¥¿" >å¹¿è¥¿</option>
+<option value="æµ·å—" >æµ·å—</option>
+<option value="å››å·" >å››å·</option>
+<option value="è´µå·" >è´µå·</option>
+<option value="äº‘å—" >äº‘å—</option>
+<option value="è¥¿è—" >è¥¿è—</option>
+<option value="é™•è¥¿" >é™•è¥¿</option>
+<option value="ç”˜è‚ƒ" >ç”˜è‚ƒ</option>
+<option value="å®å¤" >å®å¤</option>
+<option value="é’æµ·" >é’æµ·</option>
+<option value="æ–°ç–†" >æ–°ç–†</option>
+<option value="é¦™æ¸¯" >é¦™æ¸¯</option>
+<option value="æ¾³é—¨" >æ¾³é—¨</option>
+<option value="å°æ¹¾" >å°æ¹¾</option>
+<option value="æµ·å¤–" >æµ·å¤–</option>
+<option value="ä¿å¯†" >ä¿å¯†</option>
 </select>
 </td>
 </tr>
 
 
 <tr>
-<th><label for="area">Ç©Ãû</label></th>
+<th><label for="area">ç­¾å</label></th>
 <td><label><textarea name="sign" cols="30" rows="3" id="sign">{stripcslashes($row2[sign])}</textarea>
 </label></td>
 </tr>
 
 <tr>
-<th><label for="email">µç×ÓÓÊ¼ş</label></th>
+<th><label for="email">ç”µå­é‚®ä»¶</label></th>
 <td><input type="text" id="email" name="email" value="{$row2[email]}" class="inputText" /> <span id="emailInf" class=""inf_normal""></span></td>
 </tr>
  
@@ -236,12 +236,12 @@ return   true;
 <td>
 
 <label>
-<input type="submit" name="Submit" value="±£ ´æ" />
+<input type="submit" name="Submit" value="ä¿ å­˜" />
 </label></td>
 </tr>
 </table>
 </form>
-<!-- ±íµ¥ -->
+<!-- è¡¨å• -->
 <div class="myTopicPager"></div>
 </div> <!-- /wrapper -->
 </div>
@@ -257,13 +257,13 @@ return   true;
 
 
 {if ($_GET['action']==mypost)}
-<!-- ÎÒµÄÖ÷Ìâ -->
+<!-- æˆ‘çš„ä¸»é¢˜ -->
 <ul class="fkduoInfoList" id="myTopicList">
 <li class="th">
-<div class="t1">±êÌâ</div> 
-<div class="t2">·¢±íÊ±¼ä</div> 
-<div class="t3">ÈËÆø/»Ø¸´</div> 
-<div class="t4">×îĞÂ»Ø¸´</div> 
+<div class="t1">æ ‡é¢˜</div> 
+<div class="t2">å‘è¡¨æ—¶é—´</div> 
+<div class="t3">äººæ°”/å›å¤</div> 
+<div class="t4">æœ€æ–°å›å¤</div> 
 </li>
 
 {while ($row=mysql_fetch_array($query)) }
@@ -278,10 +278,10 @@ return   true;
 {/while}
 
 </ul> 
-<!-- /ÎÒµÄÖ÷Ìâ -->
-<!-- ·­Ò³ -->
-<div class="myTopicPager"> µÚ{$now}Ò³/¹²{$pages}Ò³&nbsp;{$theup}&nbsp;{$thedown} </div>
-<!-- /·­Ò³ -->
+<!-- /æˆ‘çš„ä¸»é¢˜ -->
+<!-- ç¿»é¡µ -->
+<div class="myTopicPager"> ç¬¬{$now}é¡µ/å…±{$pages}é¡µ&nbsp;{$theup}&nbsp;{$thedown} </div>
+<!-- /ç¿»é¡µ -->
 </div> <!-- /wrapper -->
 </div>
 <!-- /right -->
@@ -306,8 +306,8 @@ return   true;
 <li class="th">
 <div class="t1"><input type="checkbox" id="selectAll" name='chkall' onclick="checkall(this.form)"/><label for="selectAll"></label></div>
 <div class="t2"></div>
-<div class="t3">±êÌâ</div>
-<div class="t4">ÊÕ²ØÊ±¼ä</div>
+<div class="t3">æ ‡é¢˜</div>
+<div class="t4">æ”¶è—æ—¶é—´</div>
 <div class="t5"></div>
 </li>
 {while ($row=mysql_fetch_array($query)) }
@@ -323,7 +323,7 @@ return   true;
 
 <li id="tdColSpan3">
 <div class="t1">
-<input type="submit" value="É¾³ı">
+<input type="submit" value="åˆ é™¤">
 </div>
 <div class="t3">
 </div>
@@ -332,12 +332,12 @@ return   true;
 </div>
 </form>
 <!-- /msg -->
-<!-- ·­Ò³ -->
-<!-- /·­Ò³ -->
+<!-- ç¿»é¡µ -->
+<!-- /ç¿»é¡µ -->
 </div> <!-- /wrapper -->
-<!-- ·­Ò³ -->
-<div class="myTopicPager"> µÚ{$now}Ò³/¹²{$pages}Ò³&nbsp;{$theup}&nbsp;{$thedown} </div>
-<!-- /·­Ò³ -->
+<!-- ç¿»é¡µ -->
+<div class="myTopicPager"> ç¬¬{$now}é¡µ/å…±{$pages}é¡µ&nbsp;{$theup}&nbsp;{$thedown} </div>
+<!-- /ç¿»é¡µ -->
 </div> <!-- /wrapper -->
 </div>
 <!-- /right -->
@@ -355,15 +355,15 @@ return   true;
 <!-- msgNav-->
 <div id="msgNav">
 <div class="t1">
-<input type="submit" name="button" id="button" value="Ğ´¶ÌĞÅ" onclick="window.location.href='my.php?action=sendsms'" /> 
-<a href="my.php?action=mysms">ÊÕ¼şÏä</a>
+<input type="submit" name="button" id="button" value="å†™çŸ­ä¿¡" onclick="window.location.href='my.php?action=sendsms'" /> 
+<a href="my.php?action=mysms">æ”¶ä»¶ç®±</a>
 </div>
 <div class="t2">
-<img src="html/img/msg-ico1.gif" />Î´¶Á
-<img src="html/img/msg-ico2.gif" />ÒÑ¶Á
+<img src="html/img/msg-ico1.gif" />æœªè¯»
+<img src="html/img/msg-ico2.gif" />å·²è¯»
 </div>
 <div class="t3">
-¶ÌĞÅ¿Õ¼äÒÑ±»Ê¹ÓÃ0%
+çŸ­ä¿¡ç©ºé—´å·²è¢«ä½¿ç”¨0%
 </div>
 </div>
 <!-- /msgNav--> 
@@ -374,10 +374,10 @@ return   true;
 <ul class="fkduoInfoList">
 <li class="th">
 <div class="t1"><input type="checkbox" id="selectAll" name='chkall' onclick="checkall(this.form)"/><label for="selectAll"></label></div>
-<div class="t2">×´Ì¬</div>
-<div class="t3">ÁôÑÔ±êÌâ</div>
-<div class="t4">·¢¼şÈË</div>
-<div class="t5">½ÓÊÕÊ±¼ä</div>
+<div class="t2">çŠ¶æ€</div>
+<div class="t3">ç•™è¨€æ ‡é¢˜</div>
+<div class="t4">å‘ä»¶äºº</div>
+<div class="t5">æ¥æ”¶æ—¶é—´</div>
 </li>
 {while ($row=mysql_fetch_array($query)) }
 <li class="td">
@@ -396,7 +396,7 @@ return   true;
 
 <li id="tdColSpan3">
 <div class="t1">
-<input type="submit" value="É¾³ı">
+<input type="submit" value="åˆ é™¤">
 </div>
 <div class="t3">
 </div>
@@ -407,9 +407,9 @@ return   true;
 <!-- /msg -->
 </div> <!-- /wrapper -->
 
-<!-- ·­Ò³ -->
+<!-- ç¿»é¡µ -->
 <div class="myTopicPager">{$theup}&nbsp;{$thedown} </div>
-<!-- /·­Ò³ -->
+<!-- /ç¿»é¡µ -->
 </div> <!-- /wrapper -->
 </div>
 <!-- /right -->
@@ -419,21 +419,21 @@ return   true;
 
 
 {if ($_GET['action']==myface)}
-<!-- ÎÒµÄÖ÷Ìâ -->
+<!-- æˆ‘çš„ä¸»é¢˜ -->
 <ul class="fkduoInfoList" id="myTopicList">
 <br>
 <form action="myok.php?action=myfaceok" enctype="multipart/form-data" method="post" name="upform">
-  <p>ÉÏ´«Í·Ïñ:
+  <p>ä¸Šä¼ å¤´åƒ:
     <input name="upfile" type="file">
     <br>
-      <input type="submit" value="ÉÏ´«">
+      <input type="submit" value="ä¸Šä¼ ">
     </p>
   <p>&nbsp;</p>
-  <p>×¢Òâ£ºÍ·Ïñ´óĞ¡ÇëÏŞÖÆÔÚ{$face_size}KÒÔÄÚ£¬³ß´ç100*100ÄÚ<br>
+  <p>æ³¨æ„ï¼šå¤´åƒå¤§å°è¯·é™åˆ¶åœ¨{$face_size}Kä»¥å†…ï¼Œå°ºå¯¸100*100å†…<br>
    </p>
 </form>
 </ul> 
-<!-- /ÎÒµÄÖ÷Ìâ -->
+<!-- /æˆ‘çš„ä¸»é¢˜ -->
 </div> <!-- /wrapper -->
 </div>
 <!-- /right -->
@@ -454,15 +454,15 @@ return   true;
 <!-- msgNav-->
 <div id="msgNav">
 <div class="t1">
-<input type="submit" name="button" id="button" value="Ğ´¶ÌĞÅ" onclick="window.location.href='my.php?action=sendsms'" /> 
-<a href="my.php?action=mysms">ÊÕ¼şÏä</a>
+<input type="submit" name="button" id="button" value="å†™çŸ­ä¿¡" onclick="window.location.href='my.php?action=sendsms'" /> 
+<a href="my.php?action=mysms">æ”¶ä»¶ç®±</a>
 </div>
 <div class="t2">
-<img src="html/img/msg-ico1.gif" />Î´¶Á
-<img src="html/img/msg-ico2.gif" />ÒÑ¶Á
+<img src="html/img/msg-ico1.gif" />æœªè¯»
+<img src="html/img/msg-ico2.gif" />å·²è¯»
 </div>
 <div class="t3">
-¶ÌĞÅ¿Õ¼äÒÑ±»Ê¹ÓÃ0%
+çŸ­ä¿¡ç©ºé—´å·²è¢«ä½¿ç”¨0%
 </div>
 </div>
 <!-- /msgNav--> 
@@ -471,20 +471,20 @@ return   true;
 <form method="post" name="form1" action="myok.php?action=send" onsubmit="javascript:document.getElementById('messageSubmit').disabled='disabled';">
 <table class="myDetialForm">
 <tr>
-<th><label for="neckName">ÊÕ¼şÈË</label></th>
-<td><input type="text" name="to" id="neckName" class="inputText" value="{$_GET['logname']}"/> ÓÃ»§Ãû</td>
+<th><label for="neckName">æ”¶ä»¶äºº</label></th>
+<td><input type="text" name="to" id="neckName" class="inputText" value="{$_GET['logname']}"/> ç”¨æˆ·å</td>
 </tr>
 <tr>
-<th><label for="subject">±êÌâ</label></th>
-<td><input type="text" name="title" id="subject" class="inputText" value=""/> ±êÌâ³¤¶ÈÉÏÏŞÎª46×Ö½Ú</td>
+<th><label for="subject">æ ‡é¢˜</label></th>
+<td><input type="text" name="title" id="subject" class="inputText" value=""/> æ ‡é¢˜é•¿åº¦ä¸Šé™ä¸º46å­—èŠ‚</td>
 </tr>
 <tr>
-<th><label for="content">ÏûÏ¢ÄÚÈİ</label></th>
-<td><textarea name="content" class="content" id="sign"></textarea><br><input type="checkbox" name="saveSend" value="1">±£´æµ½·¢¼şÏäÖĞ</td>
+<th><label for="content">æ¶ˆæ¯å†…å®¹</label></th>
+<td><textarea name="content" class="content" id="sign"></textarea><br><input type="checkbox" name="saveSend" value="1">ä¿å­˜åˆ°å‘ä»¶ç®±ä¸­</td>
 </tr>
 <tr>
 <th></th>
-<td><input class="login" id="messageSubmit" type="submit" value="·¢ ËÍ" /> 
+<td><input class="login" id="messageSubmit" type="submit" value="å‘ é€" /> 
 </td>
 </tr>
 </table>
@@ -508,15 +508,15 @@ return   true;
 <!-- msgNav-->
 <div id="msgNav">
 <div class="t1">
-<input type="submit" name="button" id="button" value="Ğ´¶ÌĞÅ" onclick="window.location.href='my.php?action=sendsms'" /> 
-<a href="my.php?action=mysms">ÊÕ¼şÏä</a>
+<input type="submit" name="button" id="button" value="å†™çŸ­ä¿¡" onclick="window.location.href='my.php?action=sendsms'" /> 
+<a href="my.php?action=mysms">æ”¶ä»¶ç®±</a>
 </div>
 <div class="t2">
-<img src="html/img/msg-ico1.gif" />Î´¶Á
-<img src="html/img/msg-ico2.gif" />ÒÑ¶Á
+<img src="html/img/msg-ico1.gif" />æœªè¯»
+<img src="html/img/msg-ico2.gif" />å·²è¯»
 </div>
 <div class="t3">
-¶ÌĞÅ¿Õ¼äÒÑ±»Ê¹ÓÃ0%
+çŸ­ä¿¡ç©ºé—´å·²è¢«ä½¿ç”¨0%
 </div>
 </div>
 <!-- /msgNav--> 
@@ -524,23 +524,23 @@ return   true;
 <div class="fkduoInfoBox" id="msgCon">
 <table class="myDetialForm">
 <tr>
-<th><label for="neckName">·¢¼şÈË</label></th>
+<th><label for="neckName">å‘ä»¶äºº</label></th>
 <td>{$row[fromnkname]}[{$row[from]}]
 </td>
 </tr>
 <tr>
-<th><label for="newPwd">±êÌâ</label></th>
+<th><label for="newPwd">æ ‡é¢˜</label></th>
 <td>{$row[title]}</td>
 </tr>
 <tr>
-<th><label for="repeatPwd">ÏûÏ¢ÄÚÈİ</label></th>
+<th><label for="repeatPwd">æ¶ˆæ¯å†…å®¹</label></th>
 <td class="msgCon">{$row[content]}</td>
 </tr>
 <tr>
 <th></th>
 <td>
-<a href="my.php?action=sendsms&logname={$row[from]}">»Ø¸´</a> - <a href="myok.php?action=del&mod=one&id={$row[id]}">É¾³ı</a> - 
-<a href="my.php?action=mysms">·µ»Ø</a>
+<a href="my.php?action=sendsms&logname={$row[from]}">å›å¤</a> - <a href="myok.php?action=del&mod=one&id={$row[id]}">åˆ é™¤</a> - 
+<a href="my.php?action=mysms">è¿”å›</a>
 </td>
 </tr>
 </table>
@@ -554,6 +554,6 @@ return   true;
 {/if}
 
 
-<!-- Ò³½Å -->
+<!-- é¡µè„š -->
 {xingTemplate foot}
-<!-- /Ò³½Å -->
+<!-- /é¡µè„š -->

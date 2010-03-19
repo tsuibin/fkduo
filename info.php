@@ -4,7 +4,7 @@ include 'tis.php';
 
 if (empty($_GET['logname']))
 {
-$tis= "Ã»ÓĞÕâ¸öÓÃ»§£¡";
+$tis= "æ²¡æœ‰è¿™ä¸ªç”¨æˆ·ï¼";
 tis($tis);
 exit;
 }
@@ -16,13 +16,13 @@ $row=mysql_fetch_array($query) ;
 
 if (!($row[logname]==$logname))
 {
-$tis= "Ã»ÓĞÕâ¸öÓÃ»§£¡";
+$tis= "æ²¡æœ‰è¿™ä¸ªç”¨æˆ·ï¼";
 tis($tis);
 exit;
 }
 
 
-function uuuw($mkktime){ //Ê±¼ä×ª»»¸ñÊ½
+function uuuw($mkktime){ //æ—¶é—´è½¬æ¢æ ¼å¼
 $mkktime=date("y-m-d H:i",$mkktime);
 return $mkktime;  
 }
@@ -53,16 +53,16 @@ if ($now==1 and $pages==1)
 $start=0;
 }elseif ($now==1 and $pages>1)
 {
-$thedown="<a href=info.php?logname={$logname}&now=".($now+1).">ÏÂÒ»Ò³</a>";
+$thedown="<a href=info.php?logname={$logname}&now=".($now+1).">ä¸‹ä¸€é¡µ</a>";
 $start=0;
 }elseif ($now>1 and $now<$pages)
 {
-$theup="<a href=info.php?logname={$logname}&now=".($now-1).">ÉÏÒ»Ò³</a>";
-$thedown="<a href=info.php?logname={$logname}&now=".($now+1).">ÏÂÒ»Ò³</a>";
+$theup="<a href=info.php?logname={$logname}&now=".($now-1).">ä¸Šä¸€é¡µ</a>";
+$thedown="<a href=info.php?logname={$logname}&now=".($now+1).">ä¸‹ä¸€é¡µ</a>";
 $start=($now-1)*$liststep;
 }elseif (($now>1 and $now==$pages) or ($now>$pages))
 {
-$theup="<a href=info.php?logname={$logname}&now=".($now-1).">ÉÏÒ»Ò³</a>";
+$theup="<a href=info.php?logname={$logname}&now=".($now-1).">ä¸Šä¸€é¡µ</a>";
 $start=($pages-1)*$liststep;
 $now=$pages;
 }

@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
-<title>ÎÞ±êÌâÎÄµµ</title>
+<title>æ— æ ‡é¢˜æ–‡æ¡£</title>
 <style type="text/css">
 <!--
 .aaa {
@@ -17,46 +17,46 @@ body {
 </head>
 
 <body>
-<p class="aaa"><a href="f2.php" target="main">¹ÜÀíÑ¡Ïî</a>  <br /> <br />
-    <a href="info.php" target="main">»ù±¾ÅäÖÃ</a><br />
-	<a href="email.php" target="main">ÓÊ¼þÅäÖÃ</a><br />
+<p class="aaa"><a href="f2.php" target="main">ç®¡ç†é€‰é¡¹</a>  <br /> <br />
+    <a href="info.php" target="main">åŸºæœ¬é…ç½®</a><br />
+	<a href="email.php" target="main">é‚®ä»¶é…ç½®</a><br />
       ...<br />
-    <a href="bkadd.php" target="main">°æ¿éÔö¼Ó</a><br />
-    <a href="bkmod.php" target="main">°æ¿éÐÞ¸Ä</a><br />
-    <a href="bkdel.php" target="main">°æ¿éÉ¾³ý</a><br />
-    <a href="bkmasteradd.php" target="main">Ôö¼Ó°æÖ÷</a><br />
-    <a href="bkmasterdel.php" target="main">É¾³ý°æÖ÷</a><br />
+    <a href="bkadd.php" target="main">ç‰ˆå—å¢žåŠ </a><br />
+    <a href="bkmod.php" target="main">ç‰ˆå—ä¿®æ”¹</a><br />
+    <a href="bkdel.php" target="main">ç‰ˆå—åˆ é™¤</a><br />
+    <a href="bkmasteradd.php" target="main">å¢žåŠ ç‰ˆä¸»</a><br />
+    <a href="bkmasterdel.php" target="main">åˆ é™¤ç‰ˆä¸»</a><br />
   ...<br />
-  <a href="sortadd.php" target="main">»°Ìâ¹éÀà</a><br />
+  <a href="sortadd.php" target="main">è¯é¢˜å½’ç±»</a><br />
   ...<br />
-  <a href="checkzhuti.php" target="main">ÉóºËÖ÷Ìù</a><br />
-  <a href="checkhuifu.php" target="main">ÉóºË»ØÌù</a><br />
+  <a href="checkzhuti.php" target="main">å®¡æ ¸ä¸»è´´</a><br />
+  <a href="checkhuifu.php" target="main">å®¡æ ¸å›žè´´</a><br />
   ...<br />
-  <a href="replace1.php" target="main">´ÊÓï"**"</a><br />
-  <a href="replace2.php" target="main">´ÊÓïÉóºË</a><br />
-  <a href="replace3.php" target="main">´ÊÓïÌæ»»</a><br />
+  <a href="replace1.php" target="main">è¯è¯­"**"</a><br />
+  <a href="replace2.php" target="main">è¯è¯­å®¡æ ¸</a><br />
+  <a href="replace3.php" target="main">è¯è¯­æ›¿æ¢</a><br />
   ...<br />
-  <a href="lockuser.php" target="main">·âºÅ½â¶³</a><br />
-  <a href="userinfo.php" target="main">ÐÞ¸ÄÓÃ»§ÐÅÏ¢</a><br />
-  <a href="../fkduo_delusercard.php" target="main">É¾³ýÓÃ»§Ìû×Ó</a><br />
-  <a href="sign.php" target="main">ÐÞ¸ÄÓÃ»§Ç©Ãû</a><br />
+  <a href="lockuser.php" target="main">å°å·è§£å†»</a><br />
+  <a href="userinfo.php" target="main">ä¿®æ”¹ç”¨æˆ·ä¿¡æ¯</a><br />
+  <a href="../fkduo_delusercard.php" target="main">åˆ é™¤ç”¨æˆ·å¸–å­</a><br />
+  <a href="sign.php" target="main">ä¿®æ”¹ç”¨æˆ·ç­¾å</a><br />
    ...<br />
-  <a href="hsz.php" target="main">»ØÊÕÕ¾</a><br />
+  <a href="hsz.php" target="main">å›žæ”¶ç«™</a><br />
   
-   ...<br />Ò³ÃæÉú³É£º<br />
-  <a href="../make.php?action=head" target="main">Éú³Éµ¼º½</a><br />
-    <a href="../make.php?action=right" target="main">Éú³ÉÓÒ²àÍÆ¼ö</a><br />
+   ...<br />é¡µé¢ç”Ÿæˆï¼š<br />
+  <a href="../make.php?action=head" target="main">ç”Ÿæˆå¯¼èˆª</a><br />
+    <a href="../make.php?action=right" target="main">ç”Ÿæˆå³ä¾§æŽ¨è</a><br />
   ...<br />
-  <a href="link.php" target="main">ÓÑÇéÁ´½Ó</a><br />
-  <a href="ads.php" target="main">¹ã¸æÉèÖÃ</a><br />
+  <a href="link.php" target="main">å‹æƒ…é“¾æŽ¥</a><br />
+  <a href="ads.php" target="main">å¹¿å‘Šè®¾ç½®</a><br />
   ...<br />
-  <a href="report.php" target="main">¾Ù±¨´¦Àí</a><br />
+  <a href="report.php" target="main">ä¸¾æŠ¥å¤„ç†</a><br />
   ...<br />
-  <a href="adminadd.php" target="main">¹ÜÀíÔ±ÉèÖÃ</a><br />
+  <a href="adminadd.php" target="main">ç®¡ç†å‘˜è®¾ç½®</a><br />
   ...<br />
-  <a href="runsql.php" target="main">Êý¾Ý¿âÉý¼¶</a><br />
+  <a href="runsql.php" target="main">æ•°æ®åº“å‡çº§</a><br />
    ...<br />
-   <a href="log.php?action=out" target="main">ÍË³ö</a><br />
+   <a href="log.php?action=out" target="main">é€€å‡º</a><br />
 </p>
 </body>
 

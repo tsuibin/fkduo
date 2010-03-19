@@ -1,5 +1,5 @@
 <?
-//±¾Ò³Éú³Éloop2.php·ÖÒ³Ò³Êý
+//æœ¬é¡µç”Ÿæˆloop2.phpåˆ†é¡µé¡µæ•°
 $now=(int)($_GET['now']);
 if ($now==0) {
 $now=1;
@@ -9,7 +9,7 @@ $sql2="select * from {$fkduo}zhuti where `cid`='$cid' and `hs`='0' limit 1";
 $query2=mysql_query($sql2);
 $jilu=mysql_num_rows($query2);
 if ($jilu==0){
-$tis= "¶Ô²»Æð£¬µ±Ç°Ö÷Ìâ²»´æÔÚ»òÒÑ±»É¾³ý";
+$tis= "å¯¹ä¸èµ·ï¼Œå½“å‰ä¸»é¢˜ä¸å­˜åœ¨æˆ–å·²è¢«åˆ é™¤";
 tis($tis);
 exit();
 }
@@ -19,10 +19,10 @@ $title=$row2[title];
 
 $sql="select * FROM `{$fkduo}card` where (`cid`='$cid' and `hs`='0' and `lastlogname`='$logname')";
 $query=mysql_query($sql);
-$huifu=mysql_num_rows($query);//µÃ³ö»Ø¸´ÊýÁ¿
+$huifu=mysql_num_rows($query);//å¾—å‡ºå›žå¤æ•°é‡
 
 
-if ($huifu<$contentstep){ //ÇóÒ³Êý
+if ($huifu<$contentstep){ //æ±‚é¡µæ•°
 $pnum=1;
 }elseif($huifu%$contentstep==0)
 {
@@ -48,10 +48,10 @@ return $url;
 
 
 function now1($now,$pnum,$contentstep,$cid,$bk) {
-//$start=($now-1)*$contentstep;//Ä¬ÈÏ
+//$start=($now-1)*$contentstep;//é»˜è®¤
 
 if ($pnum<=1){
-//echo "¿Õ";
+//echo "ç©º";
 //$start=0;
 }elseif ($pnum>1 and $pnum<=9)
 {
@@ -78,10 +78,10 @@ return $str;
 
 
 
-function now2($now,$pnum,$contentstep,$cid,$bk) { //µ±now=2;
-//$start=($now-1)*$contentstep;//Ä¬ÈÏ
+function now2($now,$pnum,$contentstep,$cid,$bk) { //å½“now=2;
+//$start=($now-1)*$contentstep;//é»˜è®¤
 if ($pnum<=1){
-//echo "¿Õ";
+//echo "ç©º";
 //$start=0;
 }elseif ($pnum>1 and $pnum<=9)
 {
@@ -113,8 +113,8 @@ return $str;
 }
 
 
-function now3($now,$pnum,$contentstep,$cid,$bk) { //µ±now>2;
-//$start=($now-1)*$contentstep;//Ä¬ÈÏ
+function now3($now,$pnum,$contentstep,$cid,$bk) { //å½“now>2;
+//$start=($now-1)*$contentstep;//é»˜è®¤
 if (($now+8)<$pnum) {
 $str1="<<"."<a href=onlyou.php?logname=".$_GET['logname']."&bk=".$bk."&cid=".$cid."&now=".($now-2).">".($now-2)."</a>&nbsp;";
 $str2="<a href=onlyou.php?logname=".$_GET['logname']."&bk=".$bk."&cid=".$cid."&now=".($now-1).">".($now-1)."</a>&nbsp;";
@@ -146,7 +146,7 @@ return $str;
 switch ($now){
 
 case 1:
-$scfy=now1($now,$pnum,$contentstep,$cid,$bk);break;//Êä³ö·ÖÒ³
+$scfy=now1($now,$pnum,$contentstep,$cid,$bk);break;//è¾“å‡ºåˆ†é¡µ
 case 2:
 $scfy=now2($now,$pnum,$contentstep,$cid,$bk);break;
 default:
