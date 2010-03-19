@@ -4,8 +4,8 @@ include 'check.php';
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>鏃犳爣棰樻枃妗�</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+<title>无标题文档</title>
 </head>
 
 <body>
@@ -15,14 +15,14 @@ include 'check.php';
 <table width="36%" border="0" cellpadding="0" cellspacing="0">
 
   <tr>
-    <td bgcolor="#9999FF">鍒犻櫎璇濋褰掔被</td>
+    <td bgcolor="#9999FF">删除话题归类</td>
     <td bgcolor="#9999FF"></td>
     <td bgcolor="#9999FF"></td>
   </tr>
   
   
   <tr>
-    <td>閫夋嫨鐗堝潡锛�</td>
+    <td>选择版块：</td>
     <td>
 	<select name="bkid" accesskey="1" >
 <?
@@ -37,7 +37,7 @@ while ($row=mysql_fetch_array($query)){
 </select>
 	
 	</td>
-    <td><input type="submit" name="Submit" value="鍒楀嚭璇濋褰掔被" accesskey="3" /></td>
+    <td><input type="submit" name="Submit" value="列出话题归类" accesskey="3" /></td>
   </tr>
 </table>      </form>
 
@@ -52,10 +52,10 @@ $query=mysql_query($sql);
 $jilu=mysql_num_rows($query);
 if ($jilu>0){
 while ($row=mysql_fetch_array($query)){
-echo $row[name]."<a href=sortdel.php?action=del&id=".$row[id].">鍒犻櫎</a><br>"; }
+echo $row[name]."<a href=sortdel.php?action=del&id=".$row[id].">删除</a><br>"; }
 }else
 {
-echo "<font color=red>褰撳墠姝ょ増娌℃湁璇濋褰掔被</font>";
+echo "<font color=red>当前此版没有话题归类</font>";
 }
 //$eee="bkmaster.php?action=ok&bk=".$bkid;
 //header ("location: $eee"); 
@@ -63,7 +63,7 @@ break;
 
 case del:
 mysql_query("DELETE FROM `{$fkduo}sort` WHERE `id`='$_GET[id]'");
-echo "鍒犻櫎鎴愬姛";
+echo "删除成功";
 break;
 
 default:

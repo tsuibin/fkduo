@@ -2,7 +2,7 @@
 include '../conn.php';
 
 if ($_SESSION[power]!=1){
-echo "<font color=red>绠＄悊閲嶅湴锛岄棽浜哄嬁杩涳紒</font>";
+echo "<font color=red>管理重地，闲人勿进！</font>";
 exit;
 }
 ?>

@@ -4,7 +4,7 @@ include 'conn.php';
 include 'check.php' ;
 
 if (empty($_POST['message']) or empty($_GET['cid'])) {
-$tis= "å‚æ•°é”™è¯¯ï¼Œè¯·ä»æ­£å¸¸é¡µé¢è¿›è¡Œæ“ä½œ"; 
+$tis= "²ÎÊı´íÎó£¬Çë´ÓÕı³£Ò³Ãæ½øĞĞ²Ù×÷"; 
 tis($tis);
 exit;
 }
@@ -12,7 +12,7 @@ exit;
 $_POST['title']=trim($_POST['title']);
 
 if (empty($_POST['title'])){
-$tis="å¯¹ä¸èµ·ï¼Œæ ‡é¢˜ä¸èƒ½ä¸ºç©ºï¼";
+$tis="¶Ô²»Æğ£¬±êÌâ²»ÄÜÎª¿Õ£¡";
 tis($tis);
 exit;
 }
@@ -22,7 +22,7 @@ $query11=mysql_query("select * from `{$fkduo}user` where `logname`='$_SESSION[lo
 $row11=mysql_fetch_array($query11) ;
 
 if ($row11[lock]==1){
-$tis="å¯¹ä¸èµ·ï¼Œä½ çš„è´¦å·å¤„äºå†»ç»“æœŸï¼Œæ— æ³•å‘è´´ï¼";
+$tis="¶Ô²»Æğ£¬ÄãµÄÕËºÅ´¦ÓÚ¶³½áÆÚ£¬ÎŞ·¨·¢Ìù£¡";
 tis($tis);
 exit;
 }
@@ -31,17 +31,17 @@ exit;
 
 
 $title=$_POST['title'];
-$title=htmlentities($title, ENT_QUOTES,gb2312);
+$title=htmlentities($title, ENT_QUOTES,utf8);
 $title=str_replace("\r\n","",$title);
 $title=addslashes($title);
 
 $content=$_POST['message'];
-$content=htmlentities($content, ENT_QUOTES,gb2312);
+$content=htmlentities($content, ENT_QUOTES,utf8);
 $content=str_replace("\r\n","<br />",$content); 
 $content=addslashes($content);
 
 
-include 'include/replace.php';//è¿›è¡Œå®¡æ ¸è¿‡æ»¤è¯è¯­å¤„ç†
+include 'include/replace.php';//½øĞĞÉóºË¹ıÂË´ÊÓï´¦Àí
 
 
 if (!($_POST['closecode']==1)){
@@ -67,7 +67,7 @@ $eee="postalert.php?action=lz&cid=".$cid."&bk=".$bk;
 
 header ("location: $eee"); 
 
-$tis="ä¸»é¢˜æˆåŠŸ";
+$tis="Ö÷Ìâ³É¹¦";
 
 tis($tis);
 
@@ -91,7 +91,7 @@ $eee="postalert.php?action=huifu&cid=".$cid."&bk=".$_GET['bk']."&now=".$_GET['no
 
 header ("location: $eee"); 
 
-$tis="å›å¤æˆåŠŸ";
+$tis="»Ø¸´³É¹¦";
 
 tis($tis);
 

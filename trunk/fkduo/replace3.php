@@ -7,14 +7,14 @@ $id=(int)($_GET[id]);
 
 switch ($_GET[action]){
 case add:
-$query=mysql_query("INSERT INTO `{$fkduo}replace` (`oldw`,`neww`,`type`) VALUES ('$oldw','$neww','3')");//æ›´æ–°æ—¥å¿—
+$query=mysql_query("INSERT INTO `{$fkduo}replace` (`oldw`,`neww`,`type`) VALUES ('$oldw','$neww','3')");//¸üĞÂÈÕÖ¾
 $bkid=mysql_insert_id();
 $eee="replace3.php?action=ok";
 header ("location: $eee"); 
 break;
 
 case ok:
-echo "<font color=red>æ“ä½œæˆåŠŸï¼</font>";
+echo "<font color=red>²Ù×÷³É¹¦£¡</font>";
 break;
 
 case del:
@@ -34,17 +34,17 @@ break;
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>æ— æ ‡é¢˜æ–‡æ¡£</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+<title>ÎŞ±êÌâÎÄµµ</title>
 </head>
 
 <body>
-<h2>è®¾ç½®è¯è¯­æ›¿æ¢ï¼</h2>
-(è¯´æ˜:è‹¥å¸–å­å†…å®¹ä¸­å«æœ‰"è¯è¯­1"ï¼Œå°†è¢«æ›¿æ¢æˆç›¸åº”çš„"è¯è¯­2")
+<h2>ÉèÖÃ´ÊÓïÌæ»»£¡</h2>
+(ËµÃ÷:ÈôÌû×ÓÄÚÈİÖĞº¬ÓĞ"´ÊÓï1"£¬½«±»Ìæ»»³ÉÏàÓ¦µÄ"´ÊÓï2")
 <table width="44%" border="1" cellpadding="0" cellspacing="0">
   <tr>
-    <td bgcolor="#99CC99">è¯è¯­1</td>
-	<td bgcolor="#99CC99">è¯è¯­2</td>
+    <td bgcolor="#99CC99">´ÊÓï1</td>
+	<td bgcolor="#99CC99">´ÊÓï2</td>
     <td bgcolor="#99CC99"></td>
   </tr>
   <?
@@ -55,7 +55,7 @@ while ($row=mysql_fetch_array($query)){
     <tr>
       <td><? echo $row[oldw] ?></td>
 	  <td><? echo $row[neww] ?></td>
-      <td><a href="replace3.php?action=del&id=<? echo $row[id] ?>">åˆ é™¤</a></td>
+      <td><a href="replace3.php?action=del&id=<? echo $row[id] ?>">É¾³ı</a></td>
     </tr>
   <?
   }
@@ -63,8 +63,8 @@ while ($row=mysql_fetch_array($query)){
   </table><br><br>
   <table>
     <tr>
-    <td bgcolor="#99CC99">è¯è¯­1</td>
-	<td bgcolor="#99CC99">è¯è¯­2</td>
+    <td bgcolor="#99CC99">´ÊÓï1</td>
+	<td bgcolor="#99CC99">´ÊÓï2</td>
     <td></td>
   </tr>
   
@@ -72,12 +72,12 @@ while ($row=mysql_fetch_array($query)){
     <tr>
     <td><input name="oldw" type="text" id="oldw" accesskey="1" /></td>
 	<td><input name="neww" type="text" id="neww" accesskey="2" /></td>
-    <td><input type="submit" name="Submit" value="æ·»åŠ " accesskey="3" /></td>
+    <td><input type="submit" name="Submit" value="Ìí¼Ó" accesskey="3" /></td>
   </tr>
   </form>
 </table>
 
 <br /><br />
-è¯·æ³¨æ„ï¼šè¿‡å¤šè¿‡æ»¤è¯ä¼šå½±å“å‘è´´é€Ÿåº¦ã€‚
+Çë×¢Òâ£º¹ı¶à¹ıÂË´Ê»áÓ°Ïì·¢ÌùËÙ¶È¡£
 </body>
 </html>

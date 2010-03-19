@@ -6,7 +6,7 @@ include 'check.php' ;
 $_POST['message']=trim($_POST['message']);
 
 if (empty($_POST['message']) or empty($_GET['cid'])) {
-$tis= "å‚æ•°é”™è¯¯ï¼Œæˆ–å›å¤å†…å®¹ä¸èƒ½ä¸ºç©ºï¼Œè¯·ä»æ­£å¸¸é¡µé¢è¿›è¡Œæ“ä½œ"; 
+$tis= "²ÎÊı´íÎó£¬»ò»Ø¸´ÄÚÈİ²»ÄÜÎª¿Õ£¬Çë´ÓÕı³£Ò³Ãæ½øĞĞ²Ù×÷"; 
 tis($tis);
 exit;
 }
@@ -16,13 +16,13 @@ $favtime=$lasttime=mktime();
 $query9=mysql_query("select * FROM `{$fkduo}user` where `logname`='$_SESSION[logname]' limit 1");
 $row9=mysql_fetch_array($query9) ;
 if ($row9[lock]==1){
-$tis="å¯¹ä¸èµ·ï¼Œä½ çš„è´¦å·å¤„äºå†»ç»“æœŸï¼Œæ— æ³•å‘è´´ï¼";
+$tis="¶Ô²»Æğ£¬ÄãµÄÕËºÅ´¦ÓÚ¶³½áÆÚ£¬ÎŞ·¨·¢Ìù£¡";
 tis($tis);
 exit;
 }
 
 if (($lasttime-$row9[lastft])<$ftime){
-$tis="å¯¹ä¸èµ·ï¼Œä½ çš„å‘è´´é—´éš”æ—¶é—´å°‘äº".$ftime."ç§’ï¼";
+$tis="¶Ô²»Æğ£¬ÄãµÄ·¢Ìù¼ä¸ôÊ±¼äÉÙÓÚ".$ftime."Ãë£¡";
 tis($tis);
 exit;
 }
@@ -31,29 +31,29 @@ exit;
 $sql2="select * FROM `{$fkduo}zhuti` where (cid='$cid') limit 1";
 $query2=mysql_query($sql2);
 $row2=mysql_fetch_array($query2);
-$lcnow=$row2[huifu]+1;//jumpç”¨
+$lcnow=$row2[huifu]+1;//jumpÓÃ
 $lc=$row2[huifuall]+1;
-$favtitle=$row2[title];//å¢åŠ æ”¶è—ç”¨
+$favtitle=$row2[title];//Ôö¼ÓÊÕ²ØÓÃ
 
 if ($row2[lock]==1)
 {
-$tis= "æœ¬è´´å·²é”å®šï¼Œæš‚æ—¶ä¸å¯ä»¥å›å¤ï¼";
+$tis= "±¾ÌùÒÑËø¶¨£¬ÔİÊ±²»¿ÉÒÔ»Ø¸´£¡";
 tis($tis);
 exit;
 }
 
 
-if (is_uploaded_file($_FILES["upfile"][tmp_name]))//æ˜¯å¦æœ‰ä¸Šä¼ æ–‡ä»¶è¦å¤„ç†
+if (is_uploaded_file($_FILES["upfile"][tmp_name]))//ÊÇ·ñÓĞÉÏ´«ÎÄ¼şÒª´¦Àí
 {
 
 if ($_SESSION[picallow]<1){
 
-$tis="æ‚¨ä»Šå¤©çš„å‘å›¾é¢åº¦å·²ç”¨å®Œï¼";
+$tis="Äú½ñÌìµÄ·¢Í¼¶î¶ÈÒÑÓÃÍê£¡";
 tis($tis);
 exit;
 }
 
-$smallmark = 2;//ä¸ç”Ÿæˆç¼©ç•¥å›¾
+$smallmark = 2;//²»Éú³ÉËõÂÔÍ¼
 include 'up.php';
 }else
 {
@@ -63,11 +63,11 @@ $img=0;
 //$content=strip_tags($_POST['message'],"<b>");//
 
 $content=$_POST['message'];
-$content=htmlentities($content, ENT_QUOTES,gb2312);
+$content=htmlentities($content, ENT_QUOTES,utf8);
 $content=str_replace("\r\n","<br />",$content);  
 $content=addslashes($content);
 include 'include/ubb.php';
-include 'include/replace.php';//è¿›è¡Œå®¡æ ¸è¿‡æ»¤è¯è¯­å¤„ç†
+include 'include/replace.php';//½øĞĞÉóºË¹ıÂË´ÊÓï´¦Àí
 
 $ip=$_SERVER['REMOTE_ADDR']; 
 
@@ -77,7 +77,7 @@ $lastlogname=$_SESSION[logname];
 $regtime=$row9[regtime];
 $hp=$row9[hp];
 $pp=$row9[pp];
-$favcount=$row9[favcount];//æ”¶è—æ•°é‡
+$favcount=$row9[favcount];//ÊÕ²ØÊıÁ¿
 $lastnkname=$row9[nickname];
 $sign=$row9[sign];
 $zts=$row9[zts];
@@ -85,16 +85,16 @@ $hfs=$row9[hfs]+1;
 $face=$row9[face];
 $area=$row9[area];
 
-$tis="å‡ºé”™äº†ï¼Œå›å¤ä¸æˆåŠŸï¼Œè¯·è”ç³»ç®¡ç†å‘˜ã€‚";
+$tis="³ö´íÁË£¬»Ø¸´²»³É¹¦£¬ÇëÁªÏµ¹ÜÀíÔ±¡£";
 $sql="INSERT INTO `{$fkduo}card` (`content`,`bk`,`lastlogname`,`lastnkname`,`lasttime`,`pic`,`ip`,`cid`,`lc`,`regtime`,`hp`,`pp`,`area`,`sign`,`through`,`zts`,`hfs`,`face`) VALUES ('$content','$bk','$lastlogname','$lastnkname','$lasttime','$pic','$ip','$cid','$lc','$regtime','$hp','$pp','$area','$sign','$through','$zts','$hfs','$face')";
-$query=mysql_query($sql) or die(tis($tis));//æ›´æ–°æ—¥å¿—
+$query=mysql_query($sql) or die(tis($tis));//¸üĞÂÈÕÖ¾
 
 $sql2="update `{$fkduo}user` set `hfs`=`hfs`+1,`lastft`='$lasttime' where (`logname`='$lastlogname') limit 1";
-$query2=mysql_query($sql2);//æ›´æ–°ç”¨æˆ·å‘è´´æ€»æ•°
+$query2=mysql_query($sql2);//¸üĞÂÓÃ»§·¢Ìù×ÜÊı
 
 
 $sql3="update `{$fkduo}zhuti` set `huifu`=`huifu`+1,`huifuall`=`huifuall`+1,`lasttime`='$lasttime',`lastnkname`='$lastnkname',`lastlogname`='$lastlogname' where (`cid`='$cid') limit 1";
-$query3=mysql_query($sql3);//æ›´æ–°ä¸»é¢˜å›å¤æ•°ä¿¡æ¯
+$query3=mysql_query($sql3);//¸üĞÂÖ÷Ìâ»Ø¸´ÊıĞÅÏ¢
 
 
 
@@ -105,7 +105,7 @@ $rowu=mysql_num_rows(mysql_query($sql2));
 if ($rowu==0){
 
 if ($favcount>10){
-$tis= "å¸–å­å›å¤æˆåŠŸï¼Œä½†æ˜¯æ‚¨çš„æ”¶è—å¤¹å·²æ»¡ï¼Œè¯·å…ˆåˆ é™¤æ— ç”¨æ”¶è—å†è¿›è¡Œæ“ä½œï¼";
+$tis= "Ìû×Ó»Ø¸´³É¹¦£¬µ«ÊÇÄúµÄÊÕ²Ø¼ĞÒÑÂú£¬ÇëÏÈÉ¾³ıÎŞÓÃÊÕ²ØÔÙ½øĞĞ²Ù×÷£¡";
 tis($tis);
 exit(); }
 else{
@@ -113,14 +113,14 @@ $sql="INSERT INTO `{$fkduo}fav` (`cid`,`title`,`bk`,`favuser`,`favtime`) VALUES 
 $query=mysql_query($sql);
 
 $sql2="update `{$fkduo}user` set `favcount`=`favcount`+1 where (`logname`='$lastlogname') limit 1";
-$query2=mysql_query($sql2);//æ›´æ–°ç”¨æˆ·æ”¶è—å¤¹æ€»æ•°
+$query2=mysql_query($sql2);//¸üĞÂÓÃ»§ÊÕ²Ø¼Ğ×ÜÊı
 
 $sql2="update `{$fkduo}zhuti` set `favcount`=`favcount`+1 where (`cid`='$cid') limit 1";
 mysql_query($sql2); }
 }
 else
 {
-$tis= "å¸–å­å›å¤<font color=red>æˆåŠŸ</font>ï¼Œä½†æ”¶è—<font color=red>ä¸æˆåŠŸ</font>ï¼Œå› ä¸ºæ‚¨å·²ç»æ”¶è—è¿‡æ­¤è´´ï¼";
+$tis= "Ìû×Ó»Ø¸´<font color=red>³É¹¦</font>£¬µ«ÊÕ²Ø<font color=red>²»³É¹¦</font>£¬ÒòÎªÄúÒÑ¾­ÊÕ²Ø¹ı´ËÌù£¡";
 tis($tis);
 exit();
 }
@@ -129,7 +129,7 @@ exit();
 }
 
 
-if ($lcnow<$contentstep){ //æ±‚å›å¤åè¦è¿”å›çš„é¡µæ•°
+if ($lcnow<$contentstep){ //Çó»Ø¸´ºóÒª·µ»ØµÄÒ³Êı
 $now=1;
 }
 elseif($lcnow%$contentstep==0)

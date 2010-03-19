@@ -5,8 +5,8 @@ $_SESSION[abcd]=0;
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>å®‰è£…å‘å¯¼</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+<title>°²×°Ïòµ¼</title>
 <style type="text/css">
 * { margin: 0; padding: 0; }
 label { width: 200px; float: left; }
@@ -20,7 +20,7 @@ h2 { font-size: 100%; margin-bottom: 10px; }
 </head>
 
 <body>
-<h1>å®‰è£…å‘å¯¼</h1>
+<h1>°²×°Ïòµ¼</h1>
 <?php
 if (!$_POST['step']){
 
@@ -28,17 +28,17 @@ if (!$_POST['step']){
     
 	if(!is_writable($files)){
 	echo "&nbsp;&nbsp;".$files.":&nbsp;&nbsp;";
-  	echo "<font color=red>é”™è¯¯,ä¸å¯å†™</font><br />";
+  	echo "<font color=red>´íÎó,²»¿ÉĞ´</font><br />";
 	$_SESSION[abcd]=1;
     }else{
 	echo "&nbsp;&nbsp;".$files.":&nbsp;&nbsp;";
-  	echo "<font color=green>å¯å†™</font><br />";
+  	echo "<font color=green>¿ÉĞ´</font><br />";
     }
 
   }
   
- echo "æ£€æµ‹å®‰è£…ç›®å½•çš„æƒé™<br />";
- echo "(å¦‚æœæ‚¨ä½¿ç”¨çš„æ˜¯Linux æˆ– FreebsdæœåŠ¡å™¨ï¼Œå…ˆç¡®è®¤ä»¥ä¸‹ç›®å½•æˆ–æ–‡ä»¶çš„å±æ€§ä¸º (777) å¯å†™æ¨¡å¼ã€‚
+ echo "¼ì²â°²×°Ä¿Â¼µÄÈ¨ÏŞ<br />";
+ echo "(Èç¹ûÄúÊ¹ÓÃµÄÊÇLinux »ò Freebsd·şÎñÆ÷£¬ÏÈÈ·ÈÏÒÔÏÂÄ¿Â¼»òÎÄ¼şµÄÊôĞÔÎª (777) ¿ÉĞ´Ä£Ê½¡£
 )<br /><br />";
   
 	iswrite('../template/');  
@@ -56,39 +56,39 @@ if (!$_POST['step']){
   echo "<br /><br />";
   
 if ($_SESSION[abcd]==1){
-echo "<font color=red><b>&nbsp;æ–‡ä»¶æƒé™æ£€æµ‹ä¸é€šè¿‡,æ— æ³•å®‰è£…!</b></font><br />";
-echo "(è¯·å°†ä¸å¯å†™çš„ç›®å½•è®¾ä¸º777,ç„¶ååˆ·æ–°æœ¬é¡µé¢)";
+echo "<font color=red><b>&nbsp;ÎÄ¼şÈ¨ÏŞ¼ì²â²»Í¨¹ı,ÎŞ·¨°²×°!</b></font><br />";
+echo "(Çë½«²»¿ÉĞ´µÄÄ¿Â¼ÉèÎª777,È»ºóË¢ĞÂ±¾Ò³Ãæ)";
 exit;
 }else{
-echo "<font color=blue>æ£€æµ‹é€šè¿‡ï¼Œä½ å¯ä»¥è¿›å…¥ä¸‹ä¸€æ­¥</font>";
+echo "<font color=blue>¼ì²âÍ¨¹ı£¬Äã¿ÉÒÔ½øÈëÏÂÒ»²½</font>";
 }
 
   
 ?>
 <form action="install.php" method="post">
 <p><input type="hidden" name="step" value="1" /></p>
-<p><input type="submit" value="ä¸‹ä¸€æ­¥" name="ok" /></p>
+<p><input type="submit" value="ÏÂÒ»²½" name="ok" /></p>
 </form>
 
 <?php
-/*å®‰è£…çš„ç¬¬ä¸€æ­¥*/
+/*°²×°µÄµÚÒ»²½*/
 }elseif($_POST['step']=='1')
  {
 ?>
-<h2>å¼€å§‹å®‰è£…</h2>
+<h2>¿ªÊ¼°²×°</h2>
 <form action="install.php" method="post">
-		<p><label>æœåŠ¡å™¨åœ°å€ï¼š</label><input type="text" name="host" value="localhost" />* ä¸€èˆ¬ä¸ºlocalhost</p>
-		<p><label>æœåŠ¡å™¨ç”¨æˆ·åï¼š</label><input name="name_s" type="text" value="root" />
+		<p><label>·şÎñÆ÷µØÖ·£º</label><input type="text" name="host" value="localhost" />* Ò»°ãÎªlocalhost</p>
+		<p><label>·şÎñÆ÷ÓÃ»§Ãû£º</label><input name="name_s" type="text" value="root" />
 		*</p>
-		<p><label>æœåŠ¡å™¨ç”¨æˆ·å¯†ç ï¼š</label><input type="text" name="pass" /> å¦‚æœæ²¡æœ‰è®¾ç½®å°±ä¸ç”¨å¡«</p>
-		<p><label>æ•°æ®åº“åç§°ï¼š</label><input type="text" name="database" />*</p>
-		<p><label>æ•°æ®è¡¨å‰ç¼€ï¼š</label><input name="table_prefix" type="text" /> 
-		å¦‚æœä¸å¡«å°±ä¸ºfkduo_</p>
+		<p><label>·şÎñÆ÷ÓÃ»§ÃÜÂë£º</label><input type="text" name="pass" /> Èç¹ûÃ»ÓĞÉèÖÃ¾Í²»ÓÃÌî</p>
+		<p><label>Êı¾İ¿âÃû³Æ£º</label><input type="text" name="database" />*</p>
+		<p><label>Êı¾İ±íÇ°×º£º</label><input name="table_prefix" type="text" /> 
+		Èç¹û²»Ìî¾ÍÎªfkduo_</p>
 		<p><input type="hidden" name="step" value="2" /></p>
-		<p><input type="submit" value="ä¸‹ä¸€æ­¥" name="ok" /></p>
+		<p><input type="submit" value="ÏÂÒ»²½" name="ok" /></p>
 </form>
 <?php
-/*å®‰è£…çš„ç¬¬äºŒæ­¥*/
+/*°²×°µÄµÚ¶ş²½*/
 }elseif($_POST['step']=='2'){
 	$host = trim($_POST['host']);
 	$name = trim($_POST['name_s']);
@@ -98,32 +98,32 @@ echo "<font color=blue>æ£€æµ‹é€šè¿‡ï¼Œä½ å¯ä»¥è¿›å…¥ä¸‹ä¸€æ­¥</font>";
 	$table_prefix = trim($_POST['table_prefix']) ? trim($_POST['table_prefix']) : 'fkduo_';
 	
 	if($host==''||$name==''||$database==''){
-		echo '<p>è¯·ç¡®è®¤å¿…å¡«å†™æ˜¯å¦å¡«å†™</p>','<p><input type="button" value="ä¸Šä¸€æ­¥" onclick="history.back()" /></p>';
+		echo '<p>ÇëÈ·ÈÏ±ØÌîĞ´ÊÇ·ñÌîĞ´</p>','<p><input type="button" value="ÉÏÒ»²½" onclick="history.back()" /></p>';
 		exit();
 	}
 	
 	$conn = @mysql_connect($host,$name,$pass) or die('
-		<p>è¯·ç¡®è®¤æœåŠ¡å™¨åœ°å€ã€æœåŠ¡å™¨ç”¨æˆ·åã€æœåŠ¡å™¨ç”¨æˆ·å¯†ç æ˜¯å¦æ­£ç¡®ï¼</p>
-		<p><input type="button" value="ä¸Šä¸€æ­¥" onclick="history.back()" /></p>
+		<p>ÇëÈ·ÈÏ·şÎñÆ÷µØÖ·¡¢·şÎñÆ÷ÓÃ»§Ãû¡¢·şÎñÆ÷ÓÃ»§ÃÜÂëÊÇ·ñÕıÈ·£¡</p>
+		<p><input type="button" value="ÉÏÒ»²½" onclick="history.back()" /></p>
 	');
 
-	mysql_query("CREATE DATABASE IF NOT EXISTS `".$database."` DEFAULT CHARACTER SET gbk") or die(mysql_error());
-	mysql_select_db($database,$conn) or die("æ²¡æœ‰è¯¥æ•°æ®åº“");
-	mysql_query("set names 'GBK'");
-	mysql_query("SET character_set_client = gbk;");
-    mysql_query("SET character_set_connection = gbk;");
-    mysql_query("SET character_set_database = gbk;");
-    mysql_query("SET character_set_results = gbk;");
-    mysql_query("SET character_set_server = gbk;");
+	mysql_query("CREATE DATABASE IF NOT EXISTS `".$database."` DEFAULT CHARACTER SET utf8") or die(mysql_error());
+	mysql_select_db($database,$conn) or die("Ã»ÓĞ¸ÃÊı¾İ¿â");
+	mysql_query("set names 'utf8'");
+	mysql_query("SET character_set_client = utf8;");
+    mysql_query("SET character_set_connection = utf8;");
+    mysql_query("SET character_set_database = utf8;");
+    mysql_query("SET character_set_results = utf8;");
+    mysql_query("SET character_set_server = utf8;");
 
-    mysql_query("SET collation_connection = gbk;");
-    mysql_query("SET collation_database = gbk;");
-    mysql_query("SET collation_server = gbk;");
+    mysql_query("SET collation_connection = utf8;");
+    mysql_query("SET collation_database = utf8;");
+    mysql_query("SET collation_server = utf8;");
 
 
 	
 	$file = 'fkduo.sql';
-	echo '<h2 id="prompt">æ­£åœ¨å®‰è£…ï¼Œè¯·ç¨ç­‰...</h2>',
+	echo '<h2 id="prompt">ÕıÔÚ°²×°£¬ÇëÉÔµÈ...</h2>',
 		 '<div id="progress_w"><div id="progress"></div></div>',
 		 '<div id="wrapper"><div id="info">';
 	if(file_exists($file)){
@@ -132,24 +132,24 @@ echo "<font color=blue>æ£€æµ‹é€šè¿‡ï¼Œä½ å¯ä»¥è¿›å…¥ä¸‹ä¸€æ­¥</font>";
 		fclose($handle);
 		$buffer = str_replace('{table_prefix}',$table_prefix,$buffer);
 		$arr = explode(";\r",$buffer);
-		//å‡ºæ ˆï¼Œåˆ é™¤æœ€åä¸€ä¸ªç©ºSQLè¯­å¥çš„æ•°ç»„
+		//³öÕ»£¬É¾³ı×îºóÒ»¸ö¿ÕSQLÓï¾äµÄÊı×é
 		array_pop($arr);
-		//è®¡ç®—ä¸€å…±æœ‰å¤šå°‘å¼ è¡¨
+		//¼ÆËãÒ»¹²ÓĞ¶àÉÙÕÅ±í
 		$total_table = preg_match_all("/CREATE TABLE `(.*)` /i",$buffer,$a);
-		//è®¡æ•°å™¨
+		//¼ÆÊıÆ÷
 		$n = 0;
-		//éå†å¼€å‰²å¼€çš„SQLè¯­å¥å¹¶æ‰§è¡Œ
+		//±éÀú¿ª¸î¿ªµÄSQLÓï¾ä²¢Ö´ĞĞ
 		foreach($arr as $query){
-			//å®‰è£…è¿›åº¦æ¡çš„å®½åº¦
+			//°²×°½ø¶ÈÌõµÄ¿í¶È
 			$width = 500;
-                        mysql_query("set names 'GBK'");
+                        mysql_query("set names 'utf8'");
 			mysql_query($query) or die(mysql_error());
-			//åŒ¹é…å»ºç«‹è¡¨çš„SQLè¯­å¥
+			//Æ¥Åä½¨Á¢±íµÄSQLÓï¾ä
 			$is = preg_match("/CREATE TABLE `(.*)` /i",$query,$arr_preg);
 			if($is){
 				$n++;
 				$progress = ceil(($n/$total_table)*$width);
-				echo 'æ­£åœ¨åˆ›å»ºè¡¨ ',$arr_preg[1],'... <font color=red>æˆåŠŸ</font><br />',
+				echo 'ÕıÔÚ´´½¨±í ',$arr_preg[1],'... <font color=red>³É¹¦</font><br />',
 					 '<script type="text/javascript">',
 					 	'var wrapper = document.getElementById("wrapper");',
 					 	'var height = wrapper.clientHeight;',
@@ -158,13 +158,13 @@ echo "<font color=blue>æ£€æµ‹é€šè¿‡ï¼Œä½ å¯ä»¥è¿›å…¥ä¸‹ä¸€æ­¥</font>";
 						'progress.style.background = "#999";',
 						'progress.style.width = "',$progress,'px"',
 					 '</script>';
-				//å¾ªç¯ä¸€æ¬¡æ˜¾ç¤ºä¸€æ¬¡
+				//Ñ­»·Ò»´ÎÏÔÊ¾Ò»´Î
 				flush();
 			}
 		}
 		echo '</div></div>';
 	}else{
-		echo 'SQLçš„å¯¼å…¥æ–‡ä»¶ä¸å­˜åœ¨ï¼Œå®‰è£…æ— æ³•ç»§ç»­ï¼',dirname(__FILE__),'/fkduo.sql';
+		echo 'SQLµÄµ¼ÈëÎÄ¼ş²»´æÔÚ£¬°²×°ÎŞ·¨¼ÌĞø£¡',dirname(__FILE__),'/fkduo.sql';
 		exit();
 	}
 	
@@ -181,7 +181,7 @@ echo "<font color=blue>æ£€æµ‹é€šè¿‡ï¼Œä½ å¯ä»¥è¿›å…¥ä¸‹ä¸€æ­¥</font>";
 		fclose($handle);
 	}
 	
-	echo '<script type="text/javascript">document.getElementById("prompt").innerHTML = "å®‰è£…å®Œæˆå•¦ï¼Œå¾ˆå¿«å§ï¼^_^";</script>';
+	echo '<script type="text/javascript">document.getElementById("prompt").innerHTML = "°²×°Íê³ÉÀ²£¬ºÜ¿ì°É£¡^_^";</script>';
 	
 	$filename="install.lock";
     if (file_exists($filename)) {

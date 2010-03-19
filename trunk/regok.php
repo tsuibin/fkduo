@@ -3,13 +3,13 @@ include 'conn.php';
 include 'tis.php';
 
 if ($regemail==1 and $_SESSION[regallow]!=1){
-$tis= "å¯¹ä¸èµ·ï¼Œæ³¨å†Œè¯·å…ˆé€šè¿‡é‚®ä»¶éªŒè¯!";
+$tis= "¶Ô²»Æğ£¬×¢²áÇëÏÈÍ¨¹ıÓÊ¼şÑéÖ¤!";
 tis($tis);
 exit;
 }
 
 if (empty($_POST['password'])){
-$tis= "å¯¹ä¸èµ·ï¼Œå¯†ç ä¸èƒ½ä¸ºç©º!";
+$tis= "¶Ô²»Æğ£¬ÃÜÂë²»ÄÜÎª¿Õ!";
 tis($tis);
 exit;
 }
@@ -18,13 +18,13 @@ if ($regemail==0){
 $_POST['email']=trim($_POST['email']);
 if(!ereg('^[a-zA-Z0-9\._\-]+@([a-zA-Z0-9][a-zA-Z0-9\-]*\.)+[a-zA-Z]+$',$_POST['email'])) 
 { 
-$tis= "Emailæ ¼å¼ä¸æ­£ç¡®ï¼Œæˆ–è€…å«æœ‰éæ³•å­—ç¬¦ï¼Œè¯·è®¤çœŸå¡«å†™"; 
+$tis= "Email¸ñÊ½²»ÕıÈ·£¬»òÕßº¬ÓĞ·Ç·¨×Ö·û£¬ÇëÈÏÕæÌîĞ´"; 
 tis($tis);
 exit;
 }}
 
 if (empty($_POST['logname'])){
-$tis= "å¯¹ä¸èµ·ï¼Œç”¨æˆ·åä¸èƒ½ä¸ºç©º!";
+$tis= "¶Ô²»Æğ£¬ÓÃ»§Ãû²»ÄÜÎª¿Õ!";
 tis($tis);
 exit;
 }
@@ -33,7 +33,7 @@ $_POST['logname']=trim($_POST['logname']);
 
 if(!ereg("^[a-zA-Z][a-zA-Z0-9_]{3,15}$",$_POST['logname']))  
 { 
-$tis= "å‡ºé”™äº†ï¼Œç”¨æˆ·åå¿…é¡»æ˜¯è‹±æ–‡å­—æ¯å¼€å¤´ï¼Œå…è®¸å«æœ‰(å­—æ¯,æ•°å­—å’Œä¸‹åˆ’çº¿)çš„ç»„åˆ<br />é•¿åº¦é™åˆ¶ä¸ºï¼ˆ4-15ï¼‰ä¸ªå­—ç¬¦"; 
+$tis= "³ö´íÁË£¬ÓÃ»§Ãû±ØĞëÊÇÓ¢ÎÄ×ÖÄ¸¿ªÍ·£¬ÔÊĞíº¬ÓĞ(×ÖÄ¸,Êı×ÖºÍÏÂ»®Ïß)µÄ×éºÏ<br />³¤¶ÈÏŞÖÆÎª£¨4-15£©¸ö×Ö·û"; 
 tis($tis);
 exit;
 }
@@ -51,7 +51,7 @@ if ($emailre==1){
 $query=mysql_query("select * from `{$fkduo}user` where (`email`='$email')");
 $jilu=mysql_num_rows($query);
 if ($jilu>0){
-$tis= "å¯¹ä¸èµ·ï¼Œæ­¤é‚®ç®±å·²è¢«æ³¨å†Œè¿‡äº†!è¯·æ¢ä¸€ä¸ª";
+$tis= "¶Ô²»Æğ£¬´ËÓÊÏäÒÑ±»×¢²á¹ıÁË!Çë»»Ò»¸ö";
 tis($tis);
 exit;
 }
@@ -67,13 +67,13 @@ $password = md5(md5($password).$salt);
 $query=mysql_query("select * from `{$fkduo}user` where (`logname`='$logname')");
 $row=mysql_fetch_array($query);
 if ($logname===$row[logname]) {
-$tis= "æ­¤ç”¨æˆ·åå·²ç»æœ‰äººä½¿ç”¨äº†ï¼Œè¯·æ›´æ¢ä¸€ä¸ª";
+$tis= "´ËÓÃ»§ÃûÒÑ¾­ÓĞÈËÊ¹ÓÃÁË£¬Çë¸ü»»Ò»¸ö";
 tis($tis);
 exit;
 }else
 {
 $sql="INSERT INTO `{$fkduo}user` (`logname`,`pass`,`email`,`nickname`,`regtime`,`lasttime`,`salt`) VALUES ('$logname','$password','$email','$nickname','$regtime','$lasttime','$salt')";
-$query=mysql_query($sql);//æ›´æ–°æ—¥å¿—
+$query=mysql_query($sql);//¸üĞÂÈÕÖ¾
 
 $_SESSION[logname]=$logname;
 $_SESSION[power]='9';
@@ -83,13 +83,13 @@ $_SESSION[holdtimes]=mktime();
 
 mysql_query("update `{$fkduo}emailact` set `doo`='1' where (`id`='$_SESSION[id]') limit 1");
 
-$title="æ­å–œï¼Œæ‚¨å·²ç»æˆåŠŸæ³¨å†Œæœ¬è®ºå›!";
-$content="å‘è¨€è¯·éµå®ˆå½“åœ°æ³•å¾‹æ³•è§„ï¼Œè°¢è°¢ï¼";
+$title="¹§Ï²£¬ÄúÒÑ¾­³É¹¦×¢²á±¾ÂÛÌ³!";
+$content="·¢ÑÔÇë×ñÊØµ±µØ·¨ÂÉ·¨¹æ£¬Ğ»Ğ»£¡";
 $from=$sitename;
 $to=$_SESSION[logname];
 $time=mktime();
 $sql="INSERT INTO `{$fkduo}sms` (`title`,`content`,`from`,`fromnkname`,`to`,`time`,`read`) VALUES ('$title','$content','$from','$fromnkname','$to','$time','0')";
-$query=mysql_query($sql);//å‘é€æ³¨å†ŒæˆåŠŸç¥è´ºçŸ­ä¿¡.
+$query=mysql_query($sql);//·¢ËÍ×¢²á³É¹¦×£ºØ¶ÌĞÅ.
 
 header ("location: my.php?action=mysms"); 
 }

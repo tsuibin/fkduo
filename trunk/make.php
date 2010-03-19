@@ -3,26 +3,26 @@ include 'conn.php';
 include 'xingTemplate.php';
 
 if (empty($_GET['action'])){
-echo "å‚æ•°é”™è¯¯!";
+echo "²ÎÊı´íÎó!";
 exit;
 }
 
-if ($_GET['action']==right){  //ç”Ÿæˆå³ä¾§æ’è¡Œ
+if ($_GET['action']==right){  //Éú³ÉÓÒ²àÅÅĞĞ
 $time= mktime();
 $time1=$time-(int)(3600*$sys_right_hour);
 
 $sql1="select `cid`,`bk`,`title`,`click` FROM `{$fkduo}zhuti` where (`firsttime` between '$time1' and '$time') and img='0' and through='0' order by `click` desc limit $sys_right_list1";
-$query1=mysql_query($sql1);//24å°æ—¶äººæ°”æ’è¡Œ
+$query1=mysql_query($sql1);//24Ğ¡Ê±ÈËÆøÅÅĞĞ
 
 $sql3="select `cid`,`bk`,`title` FROM `{$fkduo}zhuti` where tj='1' and img='0' and through='0' order by `cid` DESC limit $sys_right_list3";
-$query3=mysql_query($sql3);//ç‰ˆä¸»æ¨èæ— å›¾  
+$query3=mysql_query($sql3);//°æÖ÷ÍÆ¼öÎŞÍ¼  
 
 $sql2="select `cid`,`bk`,`title`,`img` FROM `{$fkduo}zhuti` where tj='1' and img!='0' and through='0' order by `cid` desc limit $sys_right_list2";
-$query2=mysql_query($sql2);//æ¨èå›¾ç‰‡ 
+$query2=mysql_query($sql2);//ÍÆ¼öÍ¼Æ¬ 
 
 $html = $xingTemplate->fetch('rightmb');
 $he="template/right.html";
-$shuchu="å³ä¾§æ“ä½œæˆåŠŸ";  
+$shuchu="ÓÒ²à²Ù×÷³É¹¦";  
   
   }
 
@@ -42,7 +42,7 @@ return $cls;
 }
 
 if ($_SESSION[power]!=1){
-echo "<font color=red>ç®¡ç†é‡åœ°ï¼Œé—²äººå‹¿è¿›ï¼</font>";
+echo "<font color=red>¹ÜÀíÖØµØ£¬ÏĞÈËÎğ½ø£¡</font>";
 exit;
 }
 $sql="select * FROM `{$fkduo}bk` order by `px`";
@@ -50,25 +50,25 @@ $query=mysql_query($sql);
 while ($row=mysql_fetch_array($query)){
 $nav=$nav."<a href=\"".url($row[bkid])."\"".cls($row[bkid]).$row[bkname]."</a>";
 
-  }//ç”Ÿæˆå¯¼èˆª  
+  }//Éú³Éµ¼º½  
 
 $sql="select * FROM `{$fkduo}bkmaster` where `bkid`=$bk";
 $query=mysql_query($sql);
 while ($row=mysql_fetch_array($query)){
   $bkmaster=$bkmaster."<a href=info.php?bk=".$row[uid]."  target=_blank>".$row[uid]."</a>&nbsp;";
-  }//ç‰ˆä¸»åˆ—è¡¨
+  }//°æÖ÷ÁĞ±í
 
 $sql="select * FROM `{$fkduo}bk` where `bkid`=$bk limit 1";
 $query=mysql_query($sql);
 while ($row=mysql_fetch_array($query)){
   $bkname=$row[bkname];
   $bkjj=$row[bkjj];
-  }//ç‰ˆå—ç®€ä»‹  
+  }//°æ¿é¼ò½é  
 
 
 $html = $xingTemplate->fetch('headmb');
 $he="template/head.html";
-$shuchu="è®ºå›å¯¼èˆªç”ŸæˆæˆåŠŸ";
+$shuchu="ÂÛÌ³µ¼º½Éú³É³É¹¦";
   }
   
   
@@ -87,7 +87,7 @@ $str=$str."<a href='".$row[url]."' target=_blank>".$row[name]."</a>";
 
 $html = $xingTemplate->fetch('linkmb');
 $he="template/link.html";
-$shuchu="å‹æƒ…é“¾æ¥ç”ŸæˆæˆåŠŸ";
+$shuchu="ÓÑÇéÁ´½ÓÉú³É³É¹¦";
 }
 
 
@@ -102,24 +102,24 @@ $query2=mysql_query($sql2);
 while ($row2=mysql_fetch_array($query2)){
 $bkname=$row2[bkname];
 $bkjj=$row2[bkjj];
-  }//ç‰ˆå—ç®€ä»‹  
+  }//°æ¿é¼ò½é  
   
 $sql3="select * FROM `{$fkduo}zhuti` where `bk`='$bk' and `zd`='1' and `hs`='0' order by `cid` desc limit 10";
 $query3=mysql_query($sql3);
 
-function uuuw($mkktime){ //æ—¶é—´è½¬æ¢æ ¼å¼
+function uuuw($mkktime){ //Ê±¼ä×ª»»¸ñÊ½
 $mkktime=date("y-m-d H:i",$mkktime);
 return $mkktime;  
 }
 
-function uuuy($mkktime){ //æ—¶é—´è½¬æ¢æ ¼å¼
+function uuuy($mkktime){ //Ê±¼ä×ª»»¸ñÊ½
 $mkktime=date("m-d H:i",$mkktime);
 return $mkktime;
 }
 
  $html = $xingTemplate->fetch('listtopmb');
  $he="template/listtop".$bk.".html";
- $shuchu="æ“ä½œæˆåŠŸ";  
+ $shuchu="²Ù×÷³É¹¦";  
  }
   
     

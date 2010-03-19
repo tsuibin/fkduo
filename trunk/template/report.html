@@ -1,11 +1,11 @@
 {xingTemplate head}
-<!-- æ’å…¥å¤´éƒ¨é¡µé¢ -->
+<!-- ²åÈëÍ·²¿Ò³Ãæ -->
 <script language="javascript">
 function check()
 { var check_error=0;
 if(document.Reportform.content.value=="")
 {
-alert("å†…å®¹ä¸èƒ½ä¸ºç©º!");
+alert("ÄÚÈİ²»ÄÜÎª¿Õ!");
 document.Reportform.content.focus();
 return false; 
 }
@@ -16,7 +16,7 @@ check_error=1;
 }
 if(check_error==0)
 {
-alert("é”™è¯¯ç±»å‹æ²¡é€‰!");
+alert("´íÎóÀàĞÍÃ»Ñ¡!");
 return false;
 }
 document.Reportform.action="report.php?action=report&bk={$bk}";
@@ -24,54 +24,54 @@ document.Reportform.submit();
 //return true;
 }
 </script>
-<!-- ä¸»è¦æ¡†æ¶ -->
-<div class="center" id="main_frame"><!-- å·¦è¾¹ -->
+<!-- Ö÷Òª¿ò¼Ü -->
+<div class="center" id="main_frame"><!-- ×ó±ß -->
 <div id="left_content">
 
 <div id="reportForm">
-<h1 style="color: #000; font-size: 14px; margin: 10px 0">ç”¨æˆ·åé¦ˆ</h1>
+<h1 style="color: #000; font-size: 14px; margin: 10px 0">ÓÃ»§·´À¡</h1>
 <form name="Reportform" method="post" action="report.php?action=report&bk={$bk}">
-<font color="#FF0000">ä¸¾æŠ¥ç½‘å€:</font><a href="{$url}" target=_blank >{$url}</a><br>
+<font color="#FF0000">¾Ù±¨ÍøÖ·:</font><a href="{$url}" target=_blank >{$url}</a><br>
 <input type=hidden name=bbsid value="4563834">
 <input type=hidden name=topicid value="15">
 <input type=hidden name=msgid value="2926788">
 <input type=hidden name=nowpage value="0">
 <input type="hidden" name="url"  value="{$url}"/>
 <input type="radio" name="error_type" value="1"> 
-è¿åå›½å®¶æ³•å¾‹ &nbsp;&nbsp;<br>
+Î¥·´¹ú¼Ò·¨ÂÉ &nbsp;&nbsp;<br>
 <input type="radio" name="error_type" value="2"> 
-å«æœ‰è‰²æƒ…å†…å®¹ &nbsp;&nbsp;<br>
+º¬ÓĞÉ«ÇéÄÚÈİ &nbsp;&nbsp;<br>
 <input type="radio" name="error_type" value="3"> 
-å¯¹ä»–äººè¿›è¡Œæ¶æ„æ”»å‡» &nbsp;&nbsp;<br>
+¶ÔËûÈË½øĞĞ¶ñÒâ¹¥»÷ &nbsp;&nbsp;<br>
 <input type="radio" name="error_type" value="4"> 
-æ•£å¸ƒå¹¿å‘Šä»¥åŠå…¶å®ƒå•†ä¸šåŒ–çš„å®£ä¼  &nbsp;&nbsp;<br>
+É¢²¼¹ã¸æÒÔ¼°ÆäËüÉÌÒµ»¯µÄĞû´« &nbsp;&nbsp;<br>
 <input type="radio" name="error_type" value="5"> 
-å¹²æ‰°æˆ–æ··ä¹±è®ºå›åŠç½‘ç»œæœåŠ¡ &nbsp;&nbsp;<br>
+¸ÉÈÅ»ò»ìÂÒÂÛÌ³¼°ÍøÂç·şÎñ &nbsp;&nbsp;<br>
 <input type="radio" name="error_type" value="6"> 
-å‘å¸ƒä»»ä½•åŒ…å«ç§æ—ã€ æ€§åˆ«ã€å®—æ•™æ­§è§†æ€§å’ŒçŒ¥äºµæ€§çš„ä¿¡æ¯å†…å®¹ &nbsp;&nbsp;<br>
+·¢²¼ÈÎºÎ°üº¬ÖÖ×å¡¢ ĞÔ±ğ¡¢×Ú½ÌÆçÊÓĞÔºÍâ«ÙôĞÔµÄĞÅÏ¢ÄÚÈİ &nbsp;&nbsp;<br>
 <input type="radio" name="error_type" value="7"> 
-ç½‘é¡µä¸èƒ½æ‰“å¼€ &nbsp;&nbsp;<br>
+ÍøÒ³²»ÄÜ´ò¿ª &nbsp;&nbsp;<br>
 
 <input type="hidden" name="bk"  value="{$_GET['bk']}"/>
 <input type="radio" name="error_type" value="8"> 
-å›¾ç‰‡ä¸èƒ½æ˜¾ç¤º &nbsp;&nbsp;<br>
-<label> <strong>å†…å®¹:</strong> <br /> <textarea name="content" cols="50" rows="9"></textarea> </label>
+Í¼Æ¬²»ÄÜÏÔÊ¾ &nbsp;&nbsp;<br>
+<label> <strong>ÄÚÈİ:</strong> <br /> <textarea name="content" cols="50" rows="9"></textarea> </label>
 <table>
 <tr>
 <td height="10" colspan="2" align="center" bgcolor="#F6F6F6"><input
-type="button" name="submit1" value=" æ äº¤ " onclick="check()">
+type="button" name="submit1" value=" Ìá ½» " onclick="check()">
 </td>
 </tr>
 </form>
 </table>
 </div>
 </div>
-<!-- /å·¦è¾¹ -->
-<!-- å³è¾¹ -->
+<!-- /×ó±ß -->
+<!-- ÓÒ±ß -->
 {xingTemplate right}
-<!-- /å³è¾¹ --> <br class="nof" />
+<!-- /ÓÒ±ß --> <br class="nof" />
 </div>
-<!-- /ä¸»è¦æ¡†æ¶ -->
-<!-- æ’å…¥å°¾éƒ¨ -->
+<!-- /Ö÷Òª¿ò¼Ü -->
+<!-- ²åÈëÎ²²¿ -->
 {xingTemplate foot}
-<!-- æ’å…¥å°¾éƒ¨ -->
+<!-- ²åÈëÎ²²¿ -->

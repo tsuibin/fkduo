@@ -4,7 +4,7 @@ include 'check.php';
 switch ($_GET[action]){
 case add:
 if (empty($_POST[logname]) or empty($_POST[password])){
-echo "<font color=red>å‡ºé”™äº†ï¼Œç”¨æˆ·å’Œå¯†ç éƒ½è¦å¡«å†™å®Œæ•´ï¼</font>";
+echo "<font color=red>³ö´íÁË£¬ÓÃ»§ºÍÃÜÂë¶¼ÒªÌîĞ´ÍêÕû£¡</font>";
 exit;
 }
 
@@ -14,7 +14,7 @@ $password=$_POST[password];
 $query=mysql_query("select `logname` from `{$fkduo}user` where `logname`='$logname' limit 1");
 $jilu=mysql_num_rows($query);
 if ($jilu==0){
-echo "<font color=red>é”™è¯¯ï¼Œç®¡ç†å‘˜å¿…é¡»æ˜¯è®ºå›å·²æœ‰çš„æ³¨å†Œä¼šå‘˜ï¼</font>";
+echo "<font color=red>´íÎó£¬¹ÜÀíÔ±±ØĞëÊÇÂÛÌ³ÒÑÓĞµÄ×¢²á»áÔ±£¡</font>";
 exit;
 }
 
@@ -22,7 +22,7 @@ exit;
 $salt = substr(uniqid(rand()), -6);
 $password = md5(md5($password).$salt);
 
-mysql_query("INSERT INTO `{$fkduo}fkduo` (`logname`,`password`,`salt`) VALUES ('$logname','$password','$salt')");//æ›´æ–°æ—¥å¿—
+mysql_query("INSERT INTO `{$fkduo}fkduo` (`logname`,`password`,`salt`) VALUES ('$logname','$password','$salt')");//¸üĞÂÈÕÖ¾
 
 $sql="update `{$fkduo}user` set `power`='3' where (`logname`='$logname') limit 1";
 $query=mysql_query($sql);
@@ -36,18 +36,18 @@ $sql="select `id` FROM `{$fkduo}fkduo`";
 $query=mysql_query($sql);
 $jilu=mysql_num_rows($query);
 if ($jilu<2){
-echo "<font color=red>å¿…é¡»ä¿ç•™è‡³å°‘ä¸€ä½ç®¡ç†å‘˜</font>";
+echo "<font color=red>±ØĞë±£ÁôÖÁÉÙÒ»Î»¹ÜÀíÔ±</font>";
 break;
 }else{
 mysql_query("DELETE FROM `{$fkduo}fkduo` WHERE `id`='$_GET[id]'");
 mysql_query("update `{$fkduo}user` set `power`='9' where `logname`='$_GET[logname]' limit 1");
-echo "åˆ é™¤æˆåŠŸ";
+echo "É¾³ı³É¹¦";
 }
 break;
 
 
 case ok:
-echo "<font color=red>å¢åŠ æˆåŠŸ!</font><br><br>";
+echo "<font color=red>Ôö¼Ó³É¹¦!</font><br><br>";
 break;
 
 default:
@@ -58,8 +58,8 @@ break;
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>æ— æ ‡é¢˜æ–‡æ¡£</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+<title>ÎŞ±êÌâÎÄµµ</title>
 </head>
 
 <body>
@@ -69,7 +69,7 @@ break;
 <table width="36%" height="108" border="0" cellpadding="0" cellspacing="0">
 
   <tr>
-    <td bgcolor="#9999FF">æ·»åŠ ç®¡ç†å‘˜</td>
+    <td bgcolor="#9999FF">Ìí¼Ó¹ÜÀíÔ±</td>
     <td bgcolor="#9999FF"></td>
     <td bgcolor="#9999FF"></td>
   </tr> 
@@ -77,7 +77,7 @@ break;
 
 
   <tr>
-    <td>ç”¨æˆ·å</td>
+    <td>ÓÃ»§Ãû</td>
     <td><label>
           <input type="text" name="logname" accesskey="2" />
         </label>    </td>
@@ -85,12 +85,12 @@ break;
   </tr>
   
     <tr>
-    <td>ç®¡ç†å¯†ç </td>
+    <td>¹ÜÀíÃÜÂë</td>
     <td><label>
           <input type="password" name="password" accesskey="3" />
         </label>    </td>
     <td><label>
-      <input type="submit" name="Submit" value="æ·» åŠ " accesskey="4" />
+      <input type="submit" name="Submit" value="Ìí ¼Ó" accesskey="4" />
       </label></td>
   </tr>
   
@@ -99,17 +99,17 @@ break;
   $sql="select * FROM `{$fkduo}fkduo`";
 $query=mysql_query($sql);
 $jilu=mysql_num_rows($query);?>
-  å½“å‰ç®¡ç†å‘˜<font color=red><? echo $jilu ?></font>ä½ï¼š<br />
+  µ±Ç°¹ÜÀíÔ±<font color=red><? echo $jilu ?></font>Î»£º<br />
   <?
 
 while ($row=mysql_fetch_array($query)){
-echo $row[id].".".$row[logname]."&nbsp;<a href=adminadd.php?action=del&logname=".$row[logname]."&id=".$row[id].">åˆ é™¤</a><br>";
+echo $row[id].".".$row[logname]."&nbsp;<a href=adminadd.php?action=del&logname=".$row[logname]."&id=".$row[id].">É¾³ı</a><br>";
 }
   ?>
   <br />
   <br />
   <br />
-  ä¿®æ”¹ç®¡ç†å‘˜å¯†ç ï¼š<br />
-  (åŠŸèƒ½å¼€å‘ä¸­ï¼Œè¯·å…ˆåˆ é™¤ï¼Œç„¶åé‡æ–°æ·»åŠ å³å¯)
+  ĞŞ¸Ä¹ÜÀíÔ±ÃÜÂë£º<br />
+  (¹¦ÄÜ¿ª·¢ÖĞ£¬ÇëÏÈÉ¾³ı£¬È»ºóÖØĞÂÌí¼Ó¼´¿É)
 </body>
 </html>

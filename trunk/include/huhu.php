@@ -1,5 +1,5 @@
 <?
-//æœ¬é¡µç”Ÿæˆloop2.phpåˆ†é¡µé¡µæ•°
+//±¾Ò³Éú³Éloop2.php·ÖÒ³Ò³Êý
 $now=(int)($_GET['now']);
 if ($now==0) {
 $now=1;
@@ -15,7 +15,7 @@ $title=$row2[title];
 
 
 
-if ($huifu<$contentstep){ //æ±‚é¡µæ•°
+if ($huifu<$contentstep){ //ÇóÒ³Êý
 $pnum=1;
 }elseif($huifu%$contentstep==0)
 {
@@ -40,15 +40,15 @@ return $url;
 }
 
 
-//å½“now==1æˆ–""; 
+//µ±now==1»ò""; 
 function now1($now,$pnum,$contentstep,$cid,$bk) {
-//$start=($now-1)*$contentstep;//é»˜è®¤
+//$start=($now-1)*$contentstep;//Ä¬ÈÏ
 $pa1=new a1();
 $firstxu="<a href=".$pa1->url2($bk,$cid)."><<</a>&nbsp;";
 $lastxu="&nbsp;<a href=".$pa1->url2($bk,$cid,$pnum).">>></a>";
 
 if ($pnum<=1){
-//echo "ç©º";
+//echo "¿Õ";
 //$start=0;
 }elseif ($pnum>1 and $pnum<=9)
 {
@@ -76,14 +76,14 @@ $pa1=null;
 
 
 
-function now2($now,$pnum,$contentstep,$cid,$bk) { //å½“now=2;
+function now2($now,$pnum,$contentstep,$cid,$bk) { //µ±now=2;
 $pa1=new a1();
 $firstxu="<a href=".$pa1->url2($bk,$cid)."><<</a>&nbsp;";
 $lastxu="&nbsp;<a href=".$pa1->url2($bk,$cid,$pnum).">>></a>";
 
 
 if ($pnum<=1){
-//echo "ç©º";
+//echo "¿Õ";
 //$start=0;
 }elseif ($pnum>1 and $pnum<=9)
 {
@@ -116,7 +116,7 @@ $pa1=null;
 }
 
 
-function now3($now,$pnum,$contentstep,$cid,$bk) { //å½“now>2;
+function now3($now,$pnum,$contentstep,$cid,$bk) { //µ±now>2;
 
 $pa1=new a1();
 $firstxu="<a href=".$pa1->url2($bk,$cid)."><<</a>&nbsp;";
@@ -154,7 +154,7 @@ $pa1=null;
 switch ($now){
 
 case 1:
-$scfy=now1($now,$pnum,$contentstep,$cid,$bk);break;//è¾“å‡ºåˆ†é¡µ
+$scfy=now1($now,$pnum,$contentstep,$cid,$bk);break;//Êä³ö·ÖÒ³
 case 2:
 $scfy=now2($now,$pnum,$contentstep,$cid,$bk);break;
 default:

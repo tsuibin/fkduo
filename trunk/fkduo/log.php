@@ -2,13 +2,13 @@
 include '../conn.php';
 
 if ($_SESSION[power]>3){
-echo "<font color=red>ç®¡ç†é‡åœ°ï¼Œé—²äººå‹¿è¿›ï¼</font>";
+echo "<font color=red>¹ÜÀíÖØµØ£¬ÏĞÈËÎğ½ø£¡</font>";
 exit;
 }
 
 
 if (empty($_SESSION[logname])){
-echo "è¯·å…ˆä»å‰å°ç™»é™†ï¼";
+echo "ÇëÏÈ´ÓÇ°Ì¨µÇÂ½£¡";
 exit;
 }
 
@@ -26,7 +26,7 @@ $row=mysql_fetch_array($query);
 $salt=$row[salt];
 
 if ($jilu==0 or $_SESSION[logname]!=$logname){
-echo "<font color=red>ç”¨æˆ·åæˆ–å¯†ç é”™è¯¯ï¼</font>";
+echo "<font color=red>ÓÃ»§Ãû»òÃÜÂë´íÎó£¡</font>";
 session_destroy();
 exit;
 }
@@ -37,7 +37,7 @@ $_SESSION[power]='1';
 header ("location: f.php");
 }else
 {
-echo "<font color=red>ç”¨æˆ·åæˆ–å¯†ç é”™è¯¯ï¼</font>";
+echo "<font color=red>ÓÃ»§Ãû»òÃÜÂë´íÎó£¡</font>";
 session_destroy();
 exit;
 }
@@ -45,7 +45,7 @@ break;
 
 case out:
 $_SESSION[power]=3;
-echo "<font color=red>æ‚¨å·²ç»æˆåŠŸé€€å‡ºé«˜çº§ç®¡ç†çŠ¶æ€ã€‚</font>";
+echo "<font color=red>ÄúÒÑ¾­³É¹¦ÍË³ö¸ß¼¶¹ÜÀí×´Ì¬¡£</font>";
 exit;
 break;
 
@@ -57,24 +57,24 @@ break;
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>æ— æ ‡é¢˜æ–‡æ¡£</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+<title>ÎŞ±êÌâÎÄµµ</title>
 </head>
 
 <body>
-ç®¡ç†å‘˜ç™»é™†ï¼š
+¹ÜÀíÔ±µÇÂ½£º
 <form id="form1" name="form1" method="post" action="log.php?action=log">
-  <label>ç”¨æˆ·å
+  <label>ÓÃ»§Ãû
   <input type="text" name="logname" tabindex="1" />
   </label>
   <p>
-    <label>å¯†ç  &nbsp;
+    <label>ÃÜÂë &nbsp;
     <input type="password" name="password" tabindex="2" />
     </label>
   </p>
   <p>
     <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <input type="submit" name="Submit" value="æäº¤" tabindex="3" />
+    <input type="submit" name="Submit" value="Ìá½»" tabindex="3" />
     </label>
   </p>
 </form>

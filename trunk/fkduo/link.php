@@ -8,13 +8,13 @@ $px=(int)($_POST[px]);
 
 switch ($_GET[action]){
 case add:
-$query=mysql_query("INSERT INTO `{$fkduo}link` (`name`,`url`,`px`) VALUES ('$name','$url','$px')");//æ›´æ–°æ—¥å¿—
+$query=mysql_query("INSERT INTO `{$fkduo}link` (`name`,`url`,`px`) VALUES ('$name','$url','$px')");//¸üĞÂÈÕÖ¾
 $eee="link.php?action=ok";
 header ("location: $eee"); 
 break;
 
 case ok:
-echo "<font color=red>æ“ä½œæˆåŠŸï¼</font>";
+echo "<font color=red>²Ù×÷³É¹¦£¡</font>";
 $eee="../make.php?action=link";
 echo "<iframe src=".$eee." width=\"300\" height=\"30\" frameborder=\"0\" marginheight=\"0\" marginwidth=\"0\"></iframe>";
 
@@ -37,16 +37,16 @@ break;
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>æ— æ ‡é¢˜æ–‡æ¡£</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+<title>ÎŞ±êÌâÎÄµµ</title>
 </head>
 
 <body>
-<h2>å‹æƒ…é“¾æ¥ï¼</h2>(åªå‡ºç°åœ¨é¦–é¡µåº•éƒ¨)
+<h2>ÓÑÇéÁ´½Ó£¡</h2>(Ö»³öÏÖÔÚÊ×Ò³µ×²¿)
 <table width="44%" border="1" cellpadding="0" cellspacing="0">
   <tr>
-    <td bgcolor="#99CC99">ç½‘ç«™åç§°</td>
-	<td bgcolor="#99CC99">æ’åº</td>
+    <td bgcolor="#99CC99">ÍøÕ¾Ãû³Æ</td>
+	<td bgcolor="#99CC99">ÅÅĞò</td>
     <td bgcolor="#99CC99"></td>
   </tr>
   <?
@@ -57,7 +57,7 @@ while ($row=mysql_fetch_array($query)){
     <tr>
       <td><a href=<? echo $row[url] ?> target=_blank><? echo $row[name] ?></a></td>
 	  <td><? echo $row[px] ?></td>
-      <td><a href="link.php?action=del&id=<? echo $row[id] ?>">åˆ é™¤</a></td>
+      <td><a href="link.php?action=del&id=<? echo $row[id] ?>">É¾³ı</a></td>
     </tr>
   <?
   }
@@ -65,9 +65,9 @@ while ($row=mysql_fetch_array($query)){
   </table><br><br>
   <table>
     <tr>
-    <td bgcolor="#99CC99">ç½‘ç«™åç§°</td>
-	<td bgcolor="#99CC99">ç½‘å€</td>
-    <td bgcolor="#99CC99">æ’åº</td>
+    <td bgcolor="#99CC99">ÍøÕ¾Ãû³Æ</td>
+	<td bgcolor="#99CC99">ÍøÖ·</td>
+    <td bgcolor="#99CC99">ÅÅĞò</td>
   </tr>
   
   <form id="form1" name="form1" method="post" action="link.php?action=add">
@@ -75,7 +75,7 @@ while ($row=mysql_fetch_array($query)){
     <td><input name="name" type="text" id="name" accesskey="1" /></td>
 	<td><input name="url" type="text" id="url" accesskey="2" value="http://" /></td>
     <td><input name="px" type="text" id="px" accesskey="2" value="1" size="6" />
-    <input type="submit" name="Submit" value="æ·»åŠ " accesskey="3" /></td>
+    <input type="submit" name="Submit" value="Ìí¼Ó" accesskey="3" /></td>
   </tr>
   </form>
 </table>

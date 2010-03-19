@@ -4,9 +4,9 @@ include 'check.php';
 switch ($_GET[action]){
 case del:
 $bkid=$_GET[bkid];
-mysql_query("DELETE FROM `{$fkduo}bk` WHERE `bkid`='$bkid'");//åˆ é™¤ç‰ˆå—
+mysql_query("DELETE FROM `{$fkduo}bk` WHERE `bkid`='$bkid'");//É¾³ı°æ¿é
 
-$doo=(int)($_POST[checkbox]);//åˆ é™¤å¸–å­æ•°æ®
+$doo=(int)($_POST[checkbox]);//É¾³ıÌû×ÓÊı¾İ
 if ($doo==95){
 mysql_query("DELETE FROM `{$fkduo}zhuti` WHERE `bk`='$bkid'");
 mysql_query("DELETE FROM `{$fkduo}card` WHERE `bk`='$bkid'");
@@ -17,7 +17,7 @@ header ("location: $eee");
 break;
 
 case ok:
-echo "åˆ é™¤æˆåŠŸï¼Œé’ˆå¯¹ç‰ˆå—id:<font color=red>".$_GET[bkid]."</font><br><br>";
+echo "É¾³ı³É¹¦£¬Õë¶Ô°æ¿éid:<font color=red>".$_GET[bkid]."</font><br><br>";
 $eee="../make.php?action=head";
 echo "<iframe src=".$eee." width=\"300\" height=\"30\" frameborder=\"0\" marginheight=\"0\" marginwidth=\"0\"></iframe>";
 
@@ -31,19 +31,19 @@ break;
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>æ— æ ‡é¢˜æ–‡æ¡£</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+<title>ÎŞ±êÌâÎÄµµ</title>
 </head>
 
 <body>
 <table width="54%" height="70" border="1" cellpadding="0" cellspacing="0">
   <tr>
-    <h1>ç‰ˆå—åˆ é™¤</h1>
+    <h1>°æ¿éÉ¾³ı</h1>
   </tr>
   <tr>
     <td width="6%" bgcolor="#99CC99">ID:</td>
-    <td width="22%" bgcolor="#99CC99">ç‰ˆå—åç§°</td>
-    <td width="40%" bgcolor="#99CC99">åŒæ—¶åˆ é™¤æ——ä¸‹å¸–å­</td>
+    <td width="22%" bgcolor="#99CC99">°æ¿éÃû³Æ</td>
+    <td width="40%" bgcolor="#99CC99">Í¬Ê±É¾³ıÆìÏÂÌû×Ó</td>
     <td width="32%" bgcolor="#99CC99"></td>
   </tr>
   <?
@@ -58,7 +58,7 @@ while ($row=mysql_fetch_array($query)){
       <td><div align="center">
         <input type="checkbox" name="checkbox" value="95" />
       </div></td>
-      <td><input type="submit" name="Submit<? $row[id] ?>" value="åˆ  é™¤" /></td>
+      <td><input type="submit" name="Submit<? $row[id] ?>" value="É¾ ³ı" /></td>
     </tr>
   </form>
   <?
