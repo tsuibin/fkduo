@@ -1,7 +1,7 @@
 <?
 
 
-//æœ¬é¡µç”Ÿæˆloop2.phpåˆ†é¡µé¡µæ•°--æœ¬é¡µæŽ§åˆ¶å›žæ”¶ç«™çš„å¸–å­
+//±¾Ò³Éú³Éloop2.php·ÖÒ³Ò³Êý--±¾Ò³¿ØÖÆ»ØÊÕÕ¾µÄÌû×Ó
 $now=(int)($_GET['now']);
 if ($now==0) {
 $now=1;
@@ -17,7 +17,7 @@ $title=$row2[title];
 
 
 
-if ($huifu<$contentstep){ //æ±‚é¡µæ•°
+if ($huifu<$contentstep){ //ÇóÒ³Êý
 $pnum=1;
 }elseif($huifu%$contentstep==0)
 {
@@ -34,17 +34,17 @@ $pnum=(int)($huifu/$contentstep)+1;
 
 
 
-//3ç§æƒ…å†µ
+//3ÖÖÇé¿ö
 //now=1
 //now=2
 //now>2
 
-//å½“now==1æˆ–""; 
+//µ±now==1»ò""; 
 function now1($now,$pnum,$contentstep,$cid,$bk) {
-//$start=($now-1)*$contentstep;//é»˜è®¤
+//$start=($now-1)*$contentstep;//Ä¬ÈÏ
 
 if ($pnum<=1){
-//echo "ç©º";
+//echo "¿Õ";
 //$start=0;
 }elseif ($pnum>1 and $pnum<=9)
 {
@@ -71,10 +71,10 @@ return $str;
 
 
 
-function now2($now,$pnum,$contentstep,$cid,$bk) { //å½“now=2;
-//$start=($now-1)*$contentstep;//é»˜è®¤
+function now2($now,$pnum,$contentstep,$cid,$bk) { //µ±now=2;
+//$start=($now-1)*$contentstep;//Ä¬ÈÏ
 if ($pnum<=1){
-//echo "ç©º";
+//echo "¿Õ";
 //$start=0;
 }elseif ($pnum>1 and $pnum<=9)
 {
@@ -106,8 +106,8 @@ return $str;
 }
 
 
-function now3($now,$pnum,$contentstep,$cid,$bk) { //å½“now>2;
-//$start=($now-1)*$contentstep;//é»˜è®¤
+function now3($now,$pnum,$contentstep,$cid,$bk) { //µ±now>2;
+//$start=($now-1)*$contentstep;//Ä¬ÈÏ
 if (($now+8)<$pnum) {
 $str1="<<"."<a href=loop2.php?bk=".$bk."&cid=".$cid."&now=".($now-2).">".($now-2)."</a>&nbsp;";
 $str2="<a href=loop2.php?bk=".$bk."&cid=".$cid."&now=".($now-1).">".($now-1)."</a>&nbsp;";
@@ -139,7 +139,7 @@ return $str;
 switch ($now){
 
 case 1:
-$scfy=now1($now,$pnum,$contentstep,$cid,$bk);break;//è¾“å‡ºåˆ†é¡µ
+$scfy=now1($now,$pnum,$contentstep,$cid,$bk);break;//Êä³ö·ÖÒ³
 case 2:
 $scfy=now2($now,$pnum,$contentstep,$cid,$bk);break;
 default:

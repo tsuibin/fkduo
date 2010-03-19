@@ -3,21 +3,21 @@ include 'conn.php';
 include 'tis.php';
 
 if (($_SESSION[power]>3) or ($_SESSION[power]<1)){
-echo "<font color=red>ç®¡ç†é‡åœ°ï¼Œé—²äººå‹¿è¿›ï¼</font>";
+echo "<font color=red>¹ÜÀíÖØµØ£¬ÏĞÈËÎğ½ø£¡</font>";
 exit;
 }
 
-if ($_SESSION[power]==3){//ç‰ˆä¸»å’Œç®¡ç†å‘˜åŒºåˆ†
+if ($_SESSION[power]==3){//°æÖ÷ºÍ¹ÜÀíÔ±Çø·Ö
 $query=mysql_query("select * from {$fkduo}bkmaster where `bkid`='$bk' and `uid`='$_SESSION[logname]'");
 $jilu=mysql_num_rows($query);
 if ($jilu==0){
-$tis="æ“ä½œå¤±è´¥,ä½ ä¸æ˜¯è¿™ä¸ªç‰ˆçš„ç‰ˆä¸»!<br>å¦‚æœæ‚¨æ˜¯ç®¡ç†å‘˜ï¼Œè¯·å…ˆå‡ä¸ºç®¡ç†å‘˜!";
+$tis="²Ù×÷Ê§°Ü,Äã²»ÊÇÕâ¸ö°æµÄ°æÖ÷!<br>Èç¹ûÄúÊÇ¹ÜÀíÔ±£¬ÇëÏÈÉıÎª¹ÜÀíÔ±!";
 tis($tis);
 exit;
 }}
 
 
-function tj($cid,$bk,$fkduo) { //æ¨èè®¾ç½®ä¸è§£é™¤åŠŸèƒ½
+function tj($cid,$bk,$fkduo) { //ÍÆ¼öÉèÖÃÓë½â³ı¹¦ÄÜ
 $tj=(int)($_GET['tj']);
 if ($tj=='1'){
 $sql="update `{$fkduo}zhuti` set `tj`='1' where (`cid`='$cid' and `bk`='$bk') limit 1";
@@ -35,7 +35,7 @@ header ("location: $eee");
 }
 
 
-function zd($cid,$bk,$fkduo) { //ç½®é¡¶è®¾ç½®ä¸è§£é™¤åŠŸèƒ½
+function zd($cid,$bk,$fkduo) { //ÖÃ¶¥ÉèÖÃÓë½â³ı¹¦ÄÜ
 
 $zd=(int)($_GET['zd']);
 if ($zd=='1'){
@@ -53,99 +53,99 @@ header ("location: $eee");
 }
 }
 
-function jh($cid,$fkduo) { //ç²¾åè®¾ç½®ä¸è§£é™¤åŠŸèƒ½
+function jh($cid,$fkduo) { //¾«»ªÉèÖÃÓë½â³ı¹¦ÄÜ
 $jh=(int)($_GET['jh']);
 if ($jh=='1'){
 $sql="update `{$fkduo}zhuti` set `jh`='1' where (`cid`='$cid') limit 1";
 $query=mysql_query($sql); //
-echo "<br>ç²¾åæˆåŠŸ<br><br>";
-echo "<a href=process.php?action=jh&jh=2&cid=".$cid.">ç‚¹æ­¤è§£é™¤ç²¾å</a>";
+echo "<br>¾«»ª³É¹¦<br><br>";
+echo "<a href=process.php?action=jh&jh=2&cid=".$cid.">µã´Ë½â³ı¾«»ª</a>";
 }else
 {
 $sql="update `{$fkduo}zhuti` set `jh`='0' where (`cid`='$cid') limit 1";
 $query=mysql_query($sql); //
-echo "è§£é™¤ç²¾åæˆåŠŸ";
+echo "½â³ı¾«»ª³É¹¦";
 }
 exit;
 }
 
-function lock($cid,$fkduo) { //é”å®šè®¾ç½®ä¸è§£é™¤åŠŸèƒ½
+function lock($cid,$fkduo) { //Ëø¶¨ÉèÖÃÓë½â³ı¹¦ÄÜ
 $lock=(int)($_GET['lock']);
 if ($lock=='1'){
 $sql="update `{$fkduo}zhuti` set `lock`='1' where (`cid`='$cid') limit 1";
 $query=mysql_query($sql); //
-echo "<br>é”å®šæˆåŠŸ<br><br>";
-echo "<a href=process.php?action=lock&lock=2&cid=".$cid.">ç‚¹æ­¤è§£é™¤é”å®š</a>";
+echo "<br>Ëø¶¨³É¹¦<br><br>";
+echo "<a href=process.php?action=lock&lock=2&cid=".$cid.">µã´Ë½â³ıËø¶¨</a>";
 
 }else
 {
 $sql="update `{$fkduo}zhuti` set `lock`='0' where (`cid`='$cid') limit 1";
 $query=mysql_query($sql); //
-echo "è§£é™¤é”å®šæˆåŠŸ";
+echo "½â³ıËø¶¨³É¹¦";
 }
 }
 
-function pblz($cid,$bk,$fkduo) { //ä¸»è´´å±è”½è®¾ç½®ä¸è§£é™¤åŠŸèƒ½
+function pblz($cid,$bk,$fkduo) { //Ö÷ÌùÆÁ±ÎÉèÖÃÓë½â³ı¹¦ÄÜ
 $pb=(int)($_GET['pb']);
 if ($pb=='1'){
 $sql="update `{$fkduo}zhuti` set `pb`='1' where (`cid`='$cid' and `bk`='$bk') limit 1";
 $query=mysql_query($sql); //
-echo "<br>å±è”½æˆåŠŸ<br><br>";
-echo "<a href=process.php?action=pblz&pb=2&cid=".$cid.">ç‚¹æ­¤è§£é™¤å±è”½</a>";
+echo "<br>ÆÁ±Î³É¹¦<br><br>";
+echo "<a href=process.php?action=pblz&pb=2&cid=".$cid.">µã´Ë½â³ıÆÁ±Î</a>";
 }else
 {
 $sql="update `{$fkduo}zhuti` set `pb`='0' where (`cid`='$cid' and `bk`='$bk') limit 1";
 $query=mysql_query($sql); //
-echo "è§£é™¤å±è”½æˆåŠŸ";
+echo "½â³ıÆÁ±Î³É¹¦";
 }
 }
 
-function pbhuifu($cid,$bk,$fkduo) { //å›è´´å±è”½è®¾ç½®ä¸è§£é™¤åŠŸèƒ½
+function pbhuifu($cid,$bk,$fkduo) { //»ØÌùÆÁ±ÎÉèÖÃÓë½â³ı¹¦ÄÜ
 $pb=(int)($_GET['pb']);
 $lc=(int)($_GET['lc']);
 if ($pb=='1'){
 $sql="update `{$fkduo}card` set `pb`='1' where (`cid`='$cid' and `lc`='$lc' and `bk`='$bk') limit 1";
 $query=mysql_query($sql); //
-echo "å±è”½æˆåŠŸ";
+echo "ÆÁ±Î³É¹¦";
 }else
 {
 $sql="update `{$fkduo}card` set `pb`='0' where (`cid`='$cid' and `lc`='$lc' and `bk`='$bk') limit 1";
 $query=mysql_query($sql); //
-echo "è§£é™¤å±è”½æˆåŠŸ";
+echo "½â³ıÆÁ±Î³É¹¦";
 }
 }
 
 
-function hslz($cid,$fkduo) { //ä¸»é¢˜å›æ”¶ç«™è®¾ç½®ä¸è§£é™¤åŠŸèƒ½
+function hslz($cid,$fkduo) { //Ö÷Ìâ»ØÊÕÕ¾ÉèÖÃÓë½â³ı¹¦ÄÜ
 $huifu=(int)($_GET['huifu']);
-mysql_query("update `{$fkduo}zhuti` set `hs`='1' where (`cid`='$cid') limit 1"); //å›æ”¶ä¸»è´´
-if ($huifu>0){ mysql_query("update `{$fkduo}card` set `hs`='1' where (`cid`='$cid')");}//å›æ”¶å›è´´
-echo "è´´å­æˆåŠŸç§»å…¥å›æ”¶ç«™";
+mysql_query("update `{$fkduo}zhuti` set `hs`='1' where (`cid`='$cid') limit 1"); //»ØÊÕÖ÷Ìù
+if ($huifu>0){ mysql_query("update `{$fkduo}card` set `hs`='1' where (`cid`='$cid')");}//»ØÊÕ»ØÌù
+echo "Ìù×Ó³É¹¦ÒÆÈë»ØÊÕÕ¾";
 }
 
 
-function delhuifu($cid,$fkduo) { //å›å¤åˆ é™¤
+function delhuifu($cid,$fkduo) { //»Ø¸´É¾³ı
 $lc=(int)($_GET['lc']);
 $query=mysql_query("select * FROM `{$fkduo}card` where (`cid`='$cid' and `lc`='$lc') limit 1");
 $row=mysql_fetch_array($query);
-if ($row[pic]!="0"){ unlink($row[pic]); }//åˆ é™¤é™„ä»¶
+if ($row[pic]!="0"){ unlink($row[pic]); }//É¾³ı¸½¼ş
 
-mysql_query("DELETE FROM `{$fkduo}card` WHERE (`cid`='$cid' and `lc`='$lc') limit 1") or die ("åˆ é™¤å‡ºé”™äº†!");
-mysql_query("update `{$fkduo}zhuti` set `huifu`=`huifu`-1 where (`cid`='$cid') limit 1"); //æ›´æ–°ä¸»é¢˜å›å¤æ•°
+mysql_query("DELETE FROM `{$fkduo}card` WHERE (`cid`='$cid' and `lc`='$lc') limit 1") or die ("É¾³ı³ö´íÁË!");
+mysql_query("update `{$fkduo}zhuti` set `huifu`=`huifu`-1 where (`cid`='$cid') limit 1"); //¸üĞÂÖ÷Ìâ»Ø¸´Êı
 
-echo "è´´å­æˆåŠŸåˆ é™¤æˆ–ç§»å…¥å›æ”¶ç«™";
+echo "Ìù×Ó³É¹¦É¾³ı»òÒÆÈë»ØÊÕÕ¾";
 }
 
 
-function highlight($cid,$mod,$fkduo){//é«˜äº®
+function highlight($cid,$mod,$fkduo){//¸ßÁÁ
 if ($mod==1){
-mysql_query("update `{$fkduo}zhuti` set `highlight`='1' where `cid`='$cid' limit 1") or die ("å‡ºé”™äº†"); //é«˜äº®
-echo "<br >é«˜äº®æˆåŠŸäº†!<br ><br >";
-echo "<a href=process.php?action=highlight&mod=2&cid=".$cid.">ç‚¹æ­¤è§£é™¤é«˜äº®</a>";
+mysql_query("update `{$fkduo}zhuti` set `highlight`='1' where `cid`='$cid' limit 1") or die ("³ö´íÁË"); //¸ßÁÁ
+echo "<br >¸ßÁÁ³É¹¦ÁË!<br ><br >";
+echo "<a href=process.php?action=highlight&mod=2&cid=".$cid.">µã´Ë½â³ı¸ßÁÁ</a>";
 }else
 {
-mysql_query("update `{$fkduo}zhuti` set `highlight`='0' where `cid`='$cid' limit 1") or die ("å‡ºé”™äº†"); //æ’¤æ¶ˆé«˜äº®
-echo "å–æ¶ˆé«˜äº®æˆåŠŸ!";
+mysql_query("update `{$fkduo}zhuti` set `highlight`='0' where `cid`='$cid' limit 1") or die ("³ö´íÁË"); //³·Ïû¸ßÁÁ
+echo "È¡Ïû¸ßÁÁ³É¹¦!";
 }
 exit;
 }
@@ -173,6 +173,6 @@ case 'delhuifu':
 case 'highlight':
        highlight($cid,$_GET['mod'],$fkduo);break;
 default:
-       echo "æ— æ“ä½œï¼"; // 
+       echo "ÎŞ²Ù×÷£¡"; // 
 }
 ?>

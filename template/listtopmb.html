@@ -1,50 +1,50 @@
-<!--ä¸ºnoä¸ºä¸ªäººèµ„æ–™æ¨¡æ¿ -->
-<!-- æ’å…¥å¤´éƒ¨é¡µé¢ -->
+<!--ÎªnoÎª¸öÈË×ÊÁÏÄ£°å -->
+<!-- ²åÈëÍ·²¿Ò³Ãæ -->
 
-<!-- ä¸»è¦æ¡†æ¶ -->
+<!-- Ö÷Òª¿ò¼Ü -->
 <div class="center" id="main_frame" >
-<!-- å·¦è¾¹ -->
+<!-- ×ó±ß -->
 <div id="left_content">
-<!-- æ’å…¥è®ºå›å¤´éƒ¨æ¨¡å— -->
-<!-- ä½ç½® -->
-<div id="breadcrumbs"><strong class="t">ä½ç½®</strong>:<a href="{url($bk)}"><strong><u>{$bkname}</u></strong></a>
+<!-- ²åÈëÂÛÌ³Í·²¿Ä£¿é -->
+<!-- Î»ÖÃ -->
+<div id="breadcrumbs"><strong class="t">Î»ÖÃ</strong>:<a href="{url($bk)}"><strong><u>{$bkname}</u></strong></a>
 - <a href="{url($bk)}">{$bkjj}</a>!{$navtis!}
 </div>
-<!-- ä½ç½® -->
-<!-- ç‰ˆä¸» -->
+<!-- Î»ÖÃ -->
+<!-- °æÖ÷ -->
 <div id="admin">
-ç‰ˆä¸»ï¼š
+°æÖ÷£º
 {while ($row1=mysql_fetch_array($query1))}
 <a href="info.php?logname={$row1[uid]}"  target=_blank>{$row1[uid]}</a>&nbsp;
 {/while}  
 </div>
-<!-- /ç‰ˆä¸» -->
+<!-- /°æÖ÷ -->
 <br class="nof" />
-<!-- æœç´¢ -->
+<!-- ËÑË÷ -->
 
 
 <div id="topic_search">
 <input name="searchKey" id="searchKey" type="text" size="15" value="" onKeyPress="var code =event.keyCode;if(code==13){location='search.php?action='+document.getElementById('searchType').value+'&keyword='+encodeURI(document.getElementById('searchKey').value)+'&bk={$bk}'; return false; } else {return true;}">
 <select name="searchType" id="searchType">
-<option value="1" selected>æŒ‰ä¸»é¢˜</option>
-<option value='3' >æŒ‰ç”¨æˆ·å</option>
-<option value='2' >æŒ‰æ˜µç§°</option>
+<option value="1" selected>°´Ö÷Ìâ</option>
+<option value='3' >°´ÓÃ»§Ãû</option>
+<option value='2' >°´êÇ³Æ</option>
 </select>
-<input name="Submit" type="button" value="æœç´¢" id="submit_seach" onclick="location='search.php?action='+document.getElementById('searchType').value+'&keyword='+encodeURI(document.getElementById('searchKey').value)+'&bk={$bk}';">
+<input name="Submit" type="button" value="ËÑË÷" id="submit_seach" onclick="location='search.php?action='+document.getElementById('searchType').value+'&keyword='+encodeURI(document.getElementById('searchKey').value)+'&bk={$bk}';">
 </div>
 
 
-<!-- æœç´¢ -->
-<!-- å‘è¡¨æŒ‰é’® -->
+<!-- ËÑË÷ -->
+<!-- ·¢±í°´Å¥ -->
 <div id="button">
-<a href="post.php?bk={$bk}" id="publish">å‘è¡¨æ–‡ç« </a><a href="my.php?action=mypost" target="_blank" id="my_topic">æˆ‘çš„å¸–å­</a>
-<a href="loopjh.php?bk={$bk}" id="ess">ç²¾ååº“</a>
+<a href="post.php?bk={$bk}" id="publish">·¢±íÎÄÕÂ</a><a href="my.php?action=mypost" target="_blank" id="my_topic">ÎÒµÄÌû×Ó</a>
+<a href="loopjh.php?bk={$bk}" id="ess">¾«»ª¿â</a>
 </div>
-<!-- /å‘è¡¨æŒ‰é’® -->
+<!-- /·¢±í°´Å¥ -->
 
-<!-- é—¨æ´¾ -->
-<!-- /é—¨æ´¾ -->
-<!-- åˆ†æ¿å—å…ˆä¸è¦äº† -->
+<!-- ÃÅÅÉ -->
+<!-- /ÃÅÅÉ -->
+<!-- ·Ö°å¿éÏÈ²»ÒªÁË -->
 <!--
 <div id="area">
 <ul>
@@ -52,23 +52,23 @@
 </ul>
 </div>
 -->
-<!--/åˆ†æ¿å— -->
+<!--/·Ö°å¿é -->
 
-<!-- /æ’å…¥è®ºå›å¤´éƒ¨æ¨¡å— -->
+<!-- /²åÈëÂÛÌ³Í·²¿Ä£¿é -->
 
 !{if ((int)($cid))==0!}
-<!-- æ’å…¥ä¸»é¢˜åˆ—è¡¨ -->
+<!-- ²åÈëÖ÷ÌâÁĞ±í -->
 <ul class="list_item list_title">
-<li class="i1">å›¾ç¤º</li>
-<li class="i2">äººæ°”</li>
+<li class="i1">Í¼Ê¾</li>
+<li class="i2">ÈËÆø</li>
 <li class="i3">
-&nbsp;&nbsp;&nbsp;&nbsp;ä¸»é¢˜
+&nbsp;&nbsp;&nbsp;&nbsp;Ö÷Ìâ
 </li>
-<li class="i4">å›å¤</li>
-<li class="i5">å‘è¡¨äºº</li>
-<li class="i6">å‘è¡¨æ—¶é—´</li>
-<li class="i7">å›å¤äºº</li>
-<li class="i8">å›å¤æ—¶é—´</li>
+<li class="i4">»Ø¸´</li>
+<li class="i5">·¢±íÈË</li>
+<li class="i6">·¢±íÊ±¼ä</li>
+<li class="i7">»Ø¸´ÈË</li>
+<li class="i8">»Ø¸´Ê±¼ä</li>
 </ul> 
 <form id="mytopics" name="mytopics" > 
 !{/if!}

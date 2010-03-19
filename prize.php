@@ -16,7 +16,7 @@ $sql="select * FROM `{$fkduo}user` where (`logname`='$to') limit 1";
 $query=mysql_query($sql);
 $jilu=mysql_num_rows($query);
 if ($jilu==0){
-$tis="æ‰¾ä¸åˆ°è¿™ä¸ªç”¨æˆ·åï¼Œæ— æ³•å¥–åˆ†!";
+$tis="ÕÒ²»µ½Õâ¸öÓÃ»§Ãû£¬ÎŞ·¨½±·Ö!";
 tis($tis);
 exit;
 }
@@ -36,33 +36,33 @@ $lc=(int)($_GET['lc']);
 $why=ruku($_POST['why']);
 
 if ($how>$_SESSION[ppallow]){
-$tis= "æ“ä½œå¤±è´¥ï¼Œä½ çš„å¯ç”¨åˆ†æ•°ä¸è¶³ï¼";
+$tis= "²Ù×÷Ê§°Ü£¬ÄãµÄ¿ÉÓÃ·ÖÊı²»×ã£¡";
 tis($tis);
 exit();
 }
 
 if ($_SESSION[logname]==$_POST['to']){
-$tis= "å¯ä¸å¯ä»¥ä¸è¦ç»™è‡ªå·±å¥–åˆ†ï¼Œè®¨åŒï¼";
+$tis= "¿É²»¿ÉÒÔ²»Òª¸ø×Ô¼º½±·Ö£¬ÌÖÑá£¡";
 tis($tis);
 exit();
 }
 
 if ($how<=$_SESSION[ppallow] and $how>0){
 $sql="update `{$fkduo}user` set `ppallow`=`ppallow`-$how where (`logname`='$_SESSION[logname]') limit 1";
-$query=mysql_query($sql);//æ›´æ–°ç”¨æˆ·å‘è´´æ€»æ•°
+$query=mysql_query($sql);//¸üĞÂÓÃ»§·¢Ìù×ÜÊı
 
 $to=addslashes($_POST['to']);
 $sql="update `{$fkduo}user` set `pp`=`pp`+$how where (`logname`='$to') limit 1";
-$query=mysql_query($sql);//æ›´æ–°ç”¨æˆ·å‘è´´æ€»æ•°
+$query=mysql_query($sql);//¸üĞÂÓÃ»§·¢Ìù×ÜÊı
 
 switch ($_GET['mod']){
 case lz:
 $sql="update `{$fkduo}zhuti` set `prizepp`=`prizepp`+$how where (`cid`='$cid') limit 1";
-$query=mysql_query($sql);//æ›´æ–°ç”¨æˆ·å‘è´´æ€»æ•°
+$query=mysql_query($sql);//¸üĞÂÓÃ»§·¢Ìù×ÜÊı
 break;
 case huifu:
 $sql="update `{$fkduo}card` set `prizepp`=`prizepp`+$how where (`cid`='$cid' and `lc`='$lc') limit 1";
-$query=mysql_query($sql);//æ›´æ–°ç”¨æˆ·å‘è´´æ€»æ•°
+$query=mysql_query($sql);//¸üĞÂÓÃ»§·¢Ìù×ÜÊı
 break;
 default:
 break;
@@ -82,7 +82,7 @@ $eeee="prize.php?action=prizeinfo&mod=".$_GET['mod']."&bk=".$bk."&cid=".$cid."&l
 header ("location: $eeee"); 
 }else
 {
-$tis= "æ‚¨çš„åˆ†æ•°ä¸å¤Ÿ!";
+$tis= "ÄúµÄ·ÖÊı²»¹»!";
 tis($tis);
 }
 exit;}

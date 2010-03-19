@@ -37,7 +37,7 @@ return 0;
 }
 }
 
-function msubstr($str, $start, $len) { //æˆªå–ä¸­æ–‡
+function msubstr($str, $start, $len) { //½ØÈ¡ÖĞÎÄ
     $tmpstr = ""; 
     $strlen = $start + $len; 
     for($i = 0; $i < $strlen; $i++) { 
@@ -50,15 +50,15 @@ function msubstr($str, $start, $len) { //æˆªå–ä¸­æ–‡
     return $tmpstr; 
 }
 
-$z_content=$row2[content];//åªèƒ½å–ä¸€æ¬¡
+$z_content=$row2[content];//Ö»ÄÜÈ¡Ò»´Î
 $Description1=msubstr($z_content,0,160);
-$Description1=htmlentities($Description1, ENT_QUOTES,gb2312);
+$Description1=htmlentities($Description1, ENT_QUOTES,utf8);
 
-$endtime=microtime(true);//è¾“å‡ºè¿è¡Œæ—¶é—´
+$endtime=microtime(true);//Êä³öÔËĞĞÊ±¼ä
 $total=$endtime-$starttime; 
 $runtimes="<center>{$total} second(s)</center>";
 
-$listtop="listtop".$bk;//æ–‡ä»¶å
+$listtop="listtop".$bk;//ÎÄ¼şÃû
 include 'xingTemplate.php';
 $xingTemplate->setConfig('PHP_off',true);
 $xingTemplate->display('onlyou');

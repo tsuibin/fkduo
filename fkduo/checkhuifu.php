@@ -23,8 +23,8 @@ break;
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>鏃犳爣棰樻枃妗�</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+<title>无标题文档</title>
 </head>
 
 <body>
@@ -36,7 +36,7 @@ $jilu=mysql_num_rows($query);
 ?>
 <table border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td bgcolor="#00CCFF">瀹℃牳鍥炲笘,鎬诲叡<font color=red><? echo $jilu ?></font>鏉�</td>
+    <td bgcolor="#00CCFF">审核回帖,总共<font color=red><? echo $jilu ?></font>条</td>
   </tr>
 <?
 function uuuw($mkktime){
@@ -50,9 +50,9 @@ while ($row=mysql_fetch_array($query)){
     <td>
 	<?
 
-echo "鍥炲鏃堕棿:".uuuw($row[lasttime])."<br>";
-echo "鍥炲鍐呭:".$row[content]."<br>";
-echo "<a href=checkhuifu.php?action=del&cid=".$row[cid]."&lc=".$row[lc].">鍒犻櫎</a>&nbsp;&nbsp;<a href=checkhuifu.php?action=pass&cid=".$row[cid]."&lc=".$row[lc].">閫氳繃</a><br>";
+echo "回复时间:".uuuw($row[lasttime])."<br>";
+echo "回复内容:".$row[content]."<br>";
+echo "<a href=checkhuifu.php?action=del&cid=".$row[cid]."&lc=".$row[lc].">删除</a>&nbsp;&nbsp;<a href=checkhuifu.php?action=pass&cid=".$row[cid]."&lc=".$row[lc].">通过</a><br>";
 if (!$row[pic]==0){
 echo "<img src=../".$row[pic].">";
 }

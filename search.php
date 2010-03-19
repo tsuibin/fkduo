@@ -5,25 +5,25 @@ $filename="template/listtop{$_GET['bk']}.html";
 
 if (!file_exists($filename)) {
 	include 'tis.php';
-	$tis= "ç‰ˆå—å‚æ•°é”™è¯¯ï¼Œæˆ–è€…ç›¸å…³æ¨¡æ¿æ–‡ä»¶ä¸å­˜åœ¨ï¼";
+	$tis= "°æ¿é²ÎÊı´íÎó£¬»òÕßÏà¹ØÄ£°åÎÄ¼ş²»´æÔÚ£¡";
 	tis($tis);
 	exit;
 } 
 
 
-$keyword1=urldecode(iconv('UTF-8', 'gb2312', $_GET['keyword'] ));
+$keyword1=urldecode(iconv('UTF-8', 'utf8', $_GET['keyword'] ));
 $keyword1=addslashes($keyword1);//
-$kk1=urlencode(iconv("gb2312", "UTF-8", "$keyword1"));   //ç¿»é¡µurl
+$kk1=urlencode(iconv("utf8", "UTF-8", "$keyword1"));   //·­Ò³url
 
 $action=(int)($_GET['action']);
 $bkk=bk;
-$navtis="(<font color=green><b>å½“å‰æœç´¢ç»“æœ</b></font>)";
-$listtop="listtop".$bk;//æ–‡ä»¶å
+$navtis="(<font color=green><b>µ±Ç°ËÑË÷½á¹û</b></font>)";
+$listtop="listtop".$bk;//ÎÄ¼şÃû
 
 
     switch ($action){
         case 1:   
-		$keyword="%".$keyword1."%"; //ä¹±ç 
+		$keyword="%".$keyword1."%"; //ÂÒÂë
             $search="and `title` like '$keyword'";
             break;
         case 2:
@@ -71,27 +71,27 @@ if ($now==1 and $pages==1)
 $start=0;
 }elseif ($now==1 and $pages>1)
 {
-$thedown="<a href=search.php?bk=".$bk."&action=".$action."&keyword=".$kk1."&now=".($now+1).">ä¸‹ä¸€é¡µ</a>";
+$thedown="<a href=search.php?bk=".$bk."&action=".$action."&keyword=".$kk1."&now=".($now+1).">ÏÂÒ»Ò³</a>";
 $start=0;
 }elseif ($now>1 and $now<$pages)
 {
-$theup="<a href=search.php?bk=".$bk."&action=".$action."&keyword=".$kk1."&now=".($now-1).">ä¸Šä¸€é¡µ</a>";
-$thedown="<a href=search.php?bk=".$bk."&action=".$action."&keyword=".$kk1."&now=".($now+1).">ä¸‹ä¸€é¡µ</a>";
+$theup="<a href=search.php?bk=".$bk."&action=".$action."&keyword=".$kk1."&now=".($now-1).">ÉÏÒ»Ò³</a>";
+$thedown="<a href=search.php?bk=".$bk."&action=".$action."&keyword=".$kk1."&now=".($now+1).">ÏÂÒ»Ò³</a>";
 $start=($now-1)*$liststep;
 }elseif (($now>1 and $now==$pages) or ($now>$pages))
 {
-$theup="<a href=search.php?bk=".$bk."&action=".$action."&keyword=".$kk1."&now=".($pages-1).">ä¸Šä¸€é¡µ</a>";
+$theup="<a href=search.php?bk=".$bk."&action=".$action."&keyword=".$kk1."&now=".($pages-1).">ÉÏÒ»Ò³</a>";
 $start=($pages-1)*$liststep;
 $now=$pages;
 }
 
 
-function uuuw($mkktime){ //æ—¶é—´è½¬æ¢æ ¼å¼
+function uuuw($mkktime){ //Ê±¼ä×ª»»¸ñÊ½
 $mkktime=date("09-m-d H:i",$mkktime);
 return $mkktime;  
 }
 
-function uuuy($mkktime){ //æ—¶é—´è½¬æ¢æ ¼å¼
+function uuuy($mkktime){ //Ê±¼ä×ª»»¸ñÊ½
 $mkktime=date("m-d H:i",$mkktime);
 return $mkktime;
 }

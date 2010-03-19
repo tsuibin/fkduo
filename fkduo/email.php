@@ -5,18 +5,18 @@ case add:
 
 $str= <<< EOT
 <?
-\$smtpserver = "$_POST[smtpserver]";    //SMTPæœåŠ¡å™¨
-\$smtpserverport ='$_POST[smtpserverport]';    //SMTPæœåŠ¡å™¨ç«¯å£
-\$smtpusermail = "$_POST[smtpusermail]";    //SMTPæœåŠ¡å™¨çš„ç”¨æˆ·é‚®ç®±
-\$smtpuser = "$_POST[smtpuser]";    //SMTPæœåŠ¡å™¨çš„ç”¨æˆ·å¸å·
-\$smtppass = "$_POST[smtppass]";    //SMTPæœåŠ¡å™¨çš„ç”¨æˆ·å¯†ç 
-\$mailtype = "HTML";    //é‚®ä»¶æ ¼å¼ï¼ˆHTML/TXTï¼‰,TXTä¸ºæ–‡æœ¬é‚®ä»¶
+\$smtpserver = "$_POST[smtpserver]";    //SMTP·þÎñÆ÷
+\$smtpserverport ='$_POST[smtpserverport]';    //SMTP·þÎñÆ÷¶Ë¿Ú
+\$smtpusermail = "$_POST[smtpusermail]";    //SMTP·þÎñÆ÷µÄÓÃ»§ÓÊÏä
+\$smtpuser = "$_POST[smtpuser]";    //SMTP·þÎñÆ÷µÄÓÃ»§ÕÊºÅ
+\$smtppass = "$_POST[smtppass]";    //SMTP·þÎñÆ÷µÄÓÃ»§ÃÜÂë
+\$mailtype = "HTML";    //ÓÊ¼þ¸ñÊ½£¨HTML/TXT£©,TXTÎªÎÄ±¾ÓÊ¼þ
 ?>
 EOT;
 
   $he="../config/email.php";
-  $handle=fopen($he,"w"); //å†™å…¥æ–¹å¼æ‰“å¼€æ–°é—»è·¯å¾„
-  fwrite($handle,$str); //æŠŠåˆšæ‰æ›¿æ¢çš„å†…å®¹å†™è¿›ç”Ÿæˆçš„HTMLæ–‡ä»¶
+  $handle=fopen($he,"w"); //Ð´Èë·½Ê½´ò¿ªÐÂÎÅÂ·¾¶
+  fwrite($handle,$str); //°Ñ¸Õ²ÅÌæ»»µÄÄÚÈÝÐ´½øÉú³ÉµÄHTMLÎÄ¼þ
   fclose($handle);
   //header ("location: email.php?action=ok");
   
@@ -24,24 +24,24 @@ EOT;
 require_once ('../include/email.class.php');
 require_once ('../config/email.php');
 
-$mailsubject= "é‚®ä»¶å‘é€æµ‹è¯•ï¼";
-$mailbody= "è¿™æ˜¯ä¸€å°é‚®ä»¶å‘é€æµ‹è¯•";
+$mailsubject= "ÓÊ¼þ·¢ËÍ²âÊÔ£¡";
+$mailbody= "ÕâÊÇÒ»·âÓÊ¼þ·¢ËÍ²âÊÔ";
 $smtpemailto=$_POST[smtpusermail];
 
-$smtp = new smtp($smtpserver,$smtpserverport,true,$smtpuser,$smtppass);//è¿™é‡Œé¢çš„ä¸€ä¸ªtrueæ˜¯è¡¨ç¤ºä½¿ç”¨èº«ä»½éªŒè¯,å¦åˆ™ä¸ä½¿ç”¨èº«ä»½éªŒè¯.
-$smtp->debug = FALSE;//æ˜¯å¦æ˜¾ç¤ºå‘é€çš„è°ƒè¯•ä¿¡æ¯
+$smtp = new smtp($smtpserver,$smtpserverport,true,$smtpuser,$smtppass);//ÕâÀïÃæµÄÒ»¸ötrueÊÇ±íÊ¾Ê¹ÓÃÉí·ÝÑéÖ¤,·ñÔò²»Ê¹ÓÃÉí·ÝÑéÖ¤.
+$smtp->debug = FALSE;//ÊÇ·ñÏÔÊ¾·¢ËÍµÄµ÷ÊÔÐÅÏ¢
 if ($smtp->sendmail($smtpemailto, $smtpusermail, $mailsubject, $mailbody, $mailtype)){
 header ("location: email.php?action=ok"); 
 }else
 {
-echo "<script language=\"javascript\"> alert(\"æµ‹è¯•ä¸æˆåŠŸï¼Œè¯·æ£€æŸ¥é…ç½®ï¼\");</script>";
+echo "<script language=\"javascript\"> alert(\"²âÊÔ²»³É¹¦£¬Çë¼ì²éÅäÖÃ£¡\");</script>";
 exit;
-}//æµ‹è¯•éƒ¨åˆ†
+}//²âÊÔ²¿·Ö
 
 exit;
 
 case ok:
-echo "<script language=\"javascript\"> alert(\"æ­å–œï¼Œæµ‹è¯•æˆåŠŸï¼å½“å‰é…ç½®å¯ä»¥å‘é€é‚®ä»¶..\");</script>";
+echo "<script language=\"javascript\"> alert(\"¹§Ï²£¬²âÊÔ³É¹¦£¡µ±Ç°ÅäÖÃ¿ÉÒÔ·¢ËÍÓÊ¼þ..\");</script>";
 break;
 
 default:
@@ -53,8 +53,8 @@ break;
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>æ— æ ‡é¢˜æ–‡æ¡£</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+<title>ÎÞ±êÌâÎÄµµ</title>
 <style type="text/css">
 <!--
 .aaaa {
@@ -74,33 +74,33 @@ include '../config/email.php';
 <form action="email.php?action=add" method="post" name="form1" class="aaaa" id="form1">
 <table width="515" height="495" border="1">
   <tr>
-    <td colspan="2" bgcolor="#FFFF00">é‚®ä»¶å‘é€é…ç½®</td>
+    <td colspan="2" bgcolor="#FFFF00">ÓÊ¼þ·¢ËÍÅäÖÃ</td>
   </tr>
   <tr>
-    <td>SMTPæœåŠ¡å™¨ï¼š</td>
+    <td>SMTP·þÎñÆ÷£º</td>
     <td>
 
         <input name="smtpserver" type="text" id="smtpserver" tabindex="1" value="<? echo $smtpserver ?>" />    </td>
   </tr>
   <tr>
-    <td bgcolor="#CCCCCC">SMTPæœåŠ¡å™¨ç«¯å£:</td>
+    <td bgcolor="#CCCCCC">SMTP·þÎñÆ÷¶Ë¿Ú:</td>
     <td bgcolor="#CCCCCC"><input name="smtpserverport" type="text" id="smtpserverport" tabindex="1" value="<? echo $smtpserverport ?>" size="5" /></td>
   </tr>
   <tr>
-    <td>SMTPæœåŠ¡å™¨çš„ç”¨æˆ·é‚®ç®±ï¼š</td>
+    <td>SMTP·þÎñÆ÷µÄÓÃ»§ÓÊÏä£º</td>
     <td><input name="smtpusermail" type="text" id="smtpusermail" tabindex="1" value="<? echo $smtpusermail ?>" /></td>
   </tr>
   <tr>
-    <td bgcolor="#CCCCCC">SMTPæœåŠ¡å™¨çš„ç”¨æˆ·å¸å·:</td>
+    <td bgcolor="#CCCCCC">SMTP·þÎñÆ÷µÄÓÃ»§ÕÊºÅ:</td>
     <td bgcolor="#CCCCCC"><input name="smtpuser" type="text" id="smtpuser" tabindex="1" value="<? echo $smtpuser ?>" /></td>
   </tr>
   <tr>
-    <td>SMTPæœåŠ¡å™¨çš„ç”¨æˆ·å¯†ç :</td>
+    <td>SMTP·þÎñÆ÷µÄÓÃ»§ÃÜÂë:</td>
     <td><input name="smtppass" type="text" id="smtppass" tabindex="1" value="<? echo $smtppass ?>" /></td>
   </tr>
   <tr>
     <td colspan="2"><label>
-     <center> <input type="submit" name="Submit" value="æ äº¤ ä¿® æ”¹" />
+     <center> <input type="submit" name="Submit" value="Ìá ½» ÐÞ ¸Ä" />
      </center></label></td>
     </tr>
 </table>

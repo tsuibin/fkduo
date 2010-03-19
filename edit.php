@@ -3,20 +3,20 @@ include 'conn.php';
 include 'tis.php';
 
 if ($_SESSION[lock]==1){
-$tis= "对不起，你的账号处于冻结期，无法编辑！";
+$tis= "�Բ�������˺Ŵ��ڶ����ڣ��޷��༭��";
 tis($tis);
 exit;
 }
 
 if (empty($_SESSION[logname])){
-$tis= "对不起，请先登陆！";
+$tis= "�Բ������ȵ�½��";
 tis($tis);
 exit;
 }
 
 $filename="template/listtop{$_GET['bk']}.html";
 if (!file_exists($filename)) {
-$tis= "版块参数错误，或者相关模板文件不存在！";
+$tis= "���������󣬻������ģ���ļ������ڣ�";
 tis($tis);
 exit;
 } 
@@ -32,20 +32,20 @@ $row=mysql_fetch_array($query);
 
 if ($_SESSION[power]>3){
 if ($row[pb]==1){
-$tis= "帖子被屏蔽，无法修改！";
+$tis= "���ӱ����Σ��޷��޸ģ�";
 tis($tis);
 exit;
 }
 
 if (!($row[firstlogname]==$_SESSION[logname]))
 {
-$tis= "你没有登陆或没有权限编辑人家的帖子！";
+$tis= "��û�е�½��û��Ȩ�ޱ༭�˼ҵ����ӣ�";
 tis($tis);
 exit;
 }
 
 if ($row[edits]>=$_SESSION[ppallow]){
-$tis= "<b>已经不可以编辑了，你当前的等级对一个贴子只能编辑<font color=red>".$_SESSION[ppallow]."</font>次！</b>";
+$tis= "<b>�Ѿ������Ա༭�ˣ��㵱ǰ�ĵȼ���һ������ֻ�ܱ༭<font color=red>".$_SESSION[ppallow]."</font>�Σ�</b>";
 tis($tis);
 exit;
 }
@@ -60,20 +60,20 @@ $row=mysql_fetch_array($query);
 
 if ($_SESSION[power]>3){
 if ($row[pb]==1){
-$tis= "帖子被屏蔽，无法修改！";
+$tis= "���ӱ����Σ��޷��޸ģ�";
 tis($tis);
 exit;
 }
 
 if (!($row[lastlogname]==$_SESSION[logname]))
 {
-$tis= "你没有登陆或没有权限编辑人家的帖子！";
+$tis= "��û�е�½��û��Ȩ�ޱ༭�˼ҵ����ӣ�";
 tis($tis);
 exit;
 }
 
 if ($row[edits]>=$_SESSION[ppallow]){
-$tis= "<b>已经不可以编辑了，你当前的等级对一个贴子只能编辑<font color=red>".$_SESSION[ppallow]."</font>次！</b>";
+$tis= "<b>�Ѿ������Ա༭�ˣ��㵱ǰ�ĵȼ���һ������ֻ�ܱ༭<font color=red>".$_SESSION[ppallow]."</font>�Σ�</b>";
 tis($tis);
 exit;
 }

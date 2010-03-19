@@ -36,31 +36,31 @@
 
 
 
-<!-- 翻页 -->
+<!-- ��ҳ -->
 <div class="pager">
-<a class="reload" href="search.php?bk={$bk}&now={$now}&action={$action}&keyword={$kk1}">[ 刷新本页 ]</a> 
-共有 <b>{$pages}</b> 页,现在是第 <b>{$now}</b> 页,转到 <input name="nowpage" id="nowpage" type="text" size="2" value='1' onKeyPress="var code =event.keyCode;if(code==13){location='search.php?bk={$bk}&action={$action}&keyword={$kk1}&now='+document.getElementById('nowpage').value+'&search=0'; return false; } else {return true;}"> 页 
+<a class="reload" href="search.php?bk={$bk}&now={$now}&action={$action}&keyword={$kk1}">[ ˢ�±�ҳ ]</a> 
+���� <b>{$pages}</b> ҳ,�����ǵ� <b>{$now}</b> ҳ,ת�� <input name="nowpage" id="nowpage" type="text" size="2" value='1' onKeyPress="var code =event.keyCode;if(code==13){location='search.php?bk={$bk}&action={$action}&keyword={$kk1}&now='+document.getElementById('nowpage').value+'&search=0'; return false; } else {return true;}"> ҳ 
 &nbsp;{$theup}&nbsp;{$thedown}
 </div>
-<!-- /翻页 --> 
-<!-- 说明信息 -->
+<!-- /��ҳ --> 
+<!-- ˵����Ϣ -->
 <ul id="topic_type">
-<li><img src="html/img/gif5.gif" />含有回复的话题</li>
-<li><img src="html/img/topic_t.gif" />置于顶部的话题</li>
-<li><img src="html/img/topic_n.gif" />没有回复的话题</li>
-<li><img src="html/img/notice.gif" />版面通告</li>
-<li><img src="html/img/topic_lock.gif" />已关闭的话题</li>
-<li><img src="html/img/club1tag.gif" />精华话题</li> 
+<li><img src="html/img/gif5.gif" />���лظ��Ļ���</li>
+<li><img src="html/img/topic_t.gif" />���ڶ����Ļ���</li>
+<li><img src="html/img/topic_n.gif" />û�лظ��Ļ���</li>
+<li><img src="html/img/notice.gif" />����ͨ��</li>
+<li><img src="html/img/topic_lock.gif" />�ѹرյĻ���</li>
+<li><img src="html/img/club1tag.gif" />��������</li> 
 </ul>
-<!-- /说明信息 -->
-<!-- 插入主题列表 -->
+<!-- /˵����Ϣ -->
+<!-- ���������б� -->
 </div>
-<!-- /左边 -->
-<!-- 右边 -->
+<!-- /��� -->
+<!-- �ұ� -->
 {xingTemplate right}
-<!-- /右边 -->
+<!-- /�ұ� -->
 <br class="nof" /> 
 </div>
-<!-- /主要框架 -->
-<!-- 插入尾部 -->
+<!-- /��Ҫ��� -->
+<!-- ����β�� -->
 {xingTemplate foot}

@@ -3,12 +3,12 @@ include 'conn.php';
 include 'check.php' ;
 $bk=no;
 
-function uuuw($mkktime){ //æ—¶é—´è½¬æ¢æ ¼å¼
+function uuuw($mkktime){ //Ê±¼ä×ª»»¸ñÊ½
 $mkktime=date("y-m-d H:i",$mkktime);
 return $mkktime;  
 }
 
-include 'xingTemplate.php';//æ‰“å¤´
+include 'xingTemplate.php';//´òÍ·
 
 if(!isset($_GET['action'])){
 $_GET['action']=myinfo;
@@ -18,18 +18,18 @@ $sql2="select * FROM `{$fkduo}user` where `logname`='$_SESSION[logname]' limit 1
 $query2=mysql_query($sql2);
 $row2=mysql_fetch_array($query2) ;
 
-if ($_GET['action']==myinfo){ //ä¸ªäººä¿¡æ¯
-$row2[sign] = preg_replace("/\<([\/]?)br(.*?)\>/i","\n",$row2[sign]); // /bçš„
+if ($_GET['action']==myinfo){ //¸öÈËĞÅÏ¢
+$row2[sign] = preg_replace("/\<([\/]?)br(.*?)\>/i","\n",$row2[sign]); // /bµÄ
 $xingTemplate->display('my');
 
 if ($_GET['mod']==ok){
-echo "<script language=\"javascript\"> alert(\"ä¿®æ”¹æˆåŠŸï¼\");</script>";
+echo "<script language=\"javascript\"> alert(\"ĞŞ¸Ä³É¹¦£¡\");</script>";
 }
 exit;
 }
 
 
-if ($_GET['action']==myfav){ //æˆ‘çš„æ”¶è—
+if ($_GET['action']==myfav){ //ÎÒµÄÊÕ²Ø
 $sql="select * FROM `{$fkduo}fav` where `favuser`='$_SESSION[logname]'";
 $query=mysql_query($sql);
 $rows=mysql_num_rows($query);
@@ -55,16 +55,16 @@ if ($now==1 and $pages==1)
 $start=0;
 }elseif ($now==1 and $pages>1)
 {
-$thedown="<a href=my.php?action=myfav&now=".($now+1).">ä¸‹ä¸€é¡µ</a>";
+$thedown="<a href=my.php?action=myfav&now=".($now+1).">ÏÂÒ»Ò³</a>";
 $start=0;
 }elseif ($now>1 and $now<$pages)
 {
-$theup="<a href=my.php?action=myfav&now=".($now-1).">ä¸Šä¸€é¡µ</a>";
-$thedown="<a href=my.php?action=myfav&now=".($now+1).">ä¸‹ä¸€é¡µ</a>";
+$theup="<a href=my.php?action=myfav&now=".($now-1).">ÉÏÒ»Ò³</a>";
+$thedown="<a href=my.php?action=myfav&now=".($now+1).">ÏÂÒ»Ò³</a>";
 $start=($now-1)*$liststep;
 }elseif (($now>1 and $now==$pages) or ($now>$pages))
 {
-$theup="<a href=my.php?action=myfav&now=".($now-1).">ä¸Šä¸€é¡µ</a>";
+$theup="<a href=my.php?action=myfav&now=".($now-1).">ÉÏÒ»Ò³</a>";
 $start=($pages-1)*$liststep;
 $now=$pages;
 }
@@ -75,14 +75,14 @@ $query=mysql_query($sql);
 $xingTemplate->display('my');
 
 if ($_GET['mod']==delok){
-echo "<Script language='JavaScript'> alert('åˆ é™¤æˆåŠŸï¼');</Script>";
+echo "<Script language='JavaScript'> alert('É¾³ı³É¹¦£¡');</Script>";
 }
 exit;
 }
 
 
 
-if ($_GET['action']==mypost){ //æˆ‘çš„è´´å­
+if ($_GET['action']==mypost){ //ÎÒµÄÌù×Ó
 $sql="select * FROM `{$fkduo}zhuti` where `firstlogname`='$_SESSION[logname]' and `hs`='0'";
 $query=mysql_query($sql);
 $rows=mysql_num_rows($query);
@@ -109,16 +109,16 @@ if ($now==1 and $pages==1)
 $start=0;
 }elseif ($now==1 and $pages>1)
 {
-$thedown="<a href=my.php?action=mypost&now=".($now+1).">ä¸‹ä¸€é¡µ</a>";
+$thedown="<a href=my.php?action=mypost&now=".($now+1).">ÏÂÒ»Ò³</a>";
 $start=0;
 }elseif ($now>1 and $now<$pages)
 {
-$theup="<a href=my.php?action=mypost&now=".($now-1).">ä¸Šä¸€é¡µ</a>";
-$thedown="<a href=my.php?action=mypost&now=".($now+1).">ä¸‹ä¸€é¡µ</a>";
+$theup="<a href=my.php?action=mypost&now=".($now-1).">ÉÏÒ»Ò³</a>";
+$thedown="<a href=my.php?action=mypost&now=".($now+1).">ÏÂÒ»Ò³</a>";
 $start=($now-1)*$liststep;
 }elseif (($now>1 and $now==$pages) or ($now>$pages))
 {
-$theup="<a href=my.php?action=mypost&now=".($now-1).">ä¸Šä¸€é¡µ</a>";
+$theup="<a href=my.php?action=mypost&now=".($now-1).">ÉÏÒ»Ò³</a>";
 $start=($pages-1)*$liststep;
 $now=$pages;
 }
@@ -131,7 +131,7 @@ exit;
 
 
 
-if ($_GET['action']==mysms){ //æˆ‘çš„çŸ­ä¿¡
+if ($_GET['action']==mysms){ //ÎÒµÄ¶ÌĞÅ
 
 $sql="select * FROM `{$fkduo}sms` where (`to`='$_SESSION[logname]') order by `time` DESC";
 $query=mysql_query($sql);
@@ -158,16 +158,16 @@ if ($now==1 and $pages==1)
 $start=0;
 }elseif ($now==1 and $pages>1)
 {
-$thedown="<a href=my.php?action=mysms&now=".($now+1).">ä¸‹ä¸€é¡µ</a>";
+$thedown="<a href=my.php?action=mysms&now=".($now+1).">ÏÂÒ»Ò³</a>";
 $start=0;
 }elseif ($now>1 and $now<$pages)
 {
-$theup="<a href=my.php?action=mysms&now=".($now-1).">ä¸Šä¸€é¡µ</a>";
-$thedown="<a href=my.php?action=mysms&now=".($now+1).">ä¸‹ä¸€é¡µ</a>";
+$theup="<a href=my.php?action=mysms&now=".($now-1).">ÉÏÒ»Ò³</a>";
+$thedown="<a href=my.php?action=mysms&now=".($now+1).">ÏÂÒ»Ò³</a>";
 $start=($now-1)*$liststep;
 }elseif (($now>1 and $now==$pages) or ($now>$pages))
 {
-$theup="<a href=my.php?action=mysms&now=".($now-1).">ä¸Šä¸€é¡µ</a>";
+$theup="<a href=my.php?action=mysms&now=".($now-1).">ÉÏÒ»Ò³</a>";
 $start=($pages-1)*$liststep;
 $now=$pages;
 }
@@ -177,17 +177,17 @@ $query=mysql_query($sql);
 $xingTemplate->display('my');
 
 if ($_GET['mod']==sendok){
-echo "<Script language='JavaScript'> alert('çŸ­ä¿¡å‘é€æˆåŠŸï¼');</Script>";
+echo "<Script language='JavaScript'> alert('¶ÌĞÅ·¢ËÍ³É¹¦£¡');</Script>";
 }
 if ($_GET['mod']==delok){
-echo "<Script language='JavaScript'> alert('çŸ­ä¿¡åˆ é™¤æˆåŠŸï¼');</Script>";
+echo "<Script language='JavaScript'> alert('¶ÌĞÅÉ¾³ı³É¹¦£¡');</Script>";
 }
 exit;
 }
 
 
 
-if ($_GET['action']==myface){ //æˆ‘çš„å¤´åƒ
+if ($_GET['action']==myface){ //ÎÒµÄÍ·Ïñ
 $xingTemplate->display('my');
 exit;
 }
@@ -195,7 +195,7 @@ exit;
 
 
 
-if ($_GET['action']==sendsms){ //å‘é€çŸ­ä¿¡
+if ($_GET['action']==sendsms){ //·¢ËÍ¶ÌĞÅ
 
 if (isset($_GET['logname'])){
 $logname=ruku($_GET['logname']);
@@ -204,7 +204,7 @@ $query=mysql_query($sql);
 $row=mysql_fetch_array($query) ;
 if (!($row[logname]==$logname))
 {
-$tis='æ”¶ä»¶äººæœ‰è¯¯ï¼Œæ²¡æœ‰è¿™ä¸ªç”¨æˆ·åï¼';
+$tis='ÊÕ¼şÈËÓĞÎó£¬Ã»ÓĞÕâ¸öÓÃ»§Ãû£¡';
 $xingTemplate->display('tis');
 exit;
 }}
@@ -215,7 +215,7 @@ exit;
 
 
 
-if ($_GET['action']==readsms){ //é˜…è¯»çŸ­ä¿¡
+if ($_GET['action']==readsms){ //ÔÄ¶Á¶ÌĞÅ
 $id=(int)($_GET['id']);
 $sql="select * FROM `{$fkduo}sms` where (`id`='$id') limit 1";
 $query=mysql_query($sql);
@@ -223,7 +223,7 @@ $row=mysql_fetch_array($query);
 $xingTemplate->display('my');
 if ($row[read]==0){
 $sql="update `{$fkduo}sms` set `read`=1 where (`id`='$id') limit 1";
-$query=mysql_query($sql);//çŸ­ä¿¡æ”¹ä¸ºå·²è¯»
+$query=mysql_query($sql);//¶ÌĞÅ¸ÄÎªÒÑ¶Á
 }
 exit;
 }

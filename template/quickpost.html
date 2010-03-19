@@ -2,16 +2,16 @@
 <table id="reply" width="100%">
 <form name="input" enctype="multipart/form-data" method="post" action="feifuok.php?bk={$bk}&cid={$cid}">
 <tr>
-<th colspan="2" class="t">回复主题 <a class="return" href="{url($bk)}"><font
-color="#FFFFFF">[<u> 返回版面 </u>]</font></a> <a href=#top><img
+<th colspan="2" class="t">�ظ����� <a class="return" href="{url($bk)}"><font
+color="#FFFFFF">[<u> ���ذ��� </u>]</font></a> <a href=#top><img
 src=html/img/top.gif
 border=0></a></th>
 </tr>
 <tr>
-<th>主题：</th>
-<td>{$row2[title]}&nbsp;&nbsp;<input type="checkbox" name="checkbox" value="checkbox" />收藏本贴</td>
+<th>���⣺</th>
+<td>{$row2[title]}&nbsp;&nbsp;<input type="checkbox" name="checkbox" value="checkbox" />�ղر���</td>
 </tr>
-<!-- 插入发贴文件 -->
+<!-- ���뷢���ļ� -->
 <script language="JavaScript" src="html/js/postFunction.js"></script>
 <script language="JavaScript" src="html/js/replyIcons.js"></script>
 <SCRIPT language=JavaScript>
@@ -75,13 +75,13 @@ clubVoteId++;
 var objTab= document.getElementById(tabId);
 var newTr = objTab.insertRow(objTab.rows.length);
 var newTd = newTr.insertCell(0);
-var data = '&nbsp;'+clubVoteId+'：&nbsp;<input name=q'+clubVoteId+' type=text id=q'+clubVoteId+' size=50>';
+var data = '&nbsp;'+clubVoteId+'��&nbsp;<input name=q'+clubVoteId+' type=text id=q'+clubVoteId+' size=50>';
 newTd.bgColor = "#f9f9f9"; 
 newTd.height = 15; 
 newTd.innerHTML = data;
 is_choose('voteMulti');
 }else{
-alert('请注意最多添加10个选项!');
+alert('��ע���������10��ѡ��!');
 return;
 }
 }
@@ -97,7 +97,7 @@ cityNode.setAttribute('name','voteMultiLimit');
 for( i = 1 ; i < clubVoteId ; i++){
 var oOption = document.createElement("option");
 oOption.value = i;
-oOption.text = "最多选"+i+"项" ;
+oOption.text = "���ѡ"+i+"��" ;
 cityNode.options.add(oOption);
 }
 objvote.appendChild(cityNode);
@@ -115,45 +115,45 @@ is_choose('voteMulti');
 
 
 <tr id="propInput" style="display:none">
-<td bgcolor="#F9F9F9" height="25">使用说明</td>
+<td bgcolor="#F9F9F9" height="25">ʹ��˵��</td>
 <td bgcolor="#F9F9F9" id="propInput6" style="display:none">
-使用后你的信息将会在贴子里隐藏，该道具消耗PP值 <font color=red>15</font> 点
+ʹ�ú������Ϣ���������������أ��õ�������PPֵ <font color=red>15</font> ��
 </td>
 </tr>
 
 <tr>
-<td width="125" bgcolor="#F9F9F9">消息图标:<br>
-（点击图标可以在发言中贴图）</td>
+<td width="125" bgcolor="#F9F9F9">��Ϣͼ��:<br>
+�����ͼ������ڷ�������ͼ��</td>
 <td bgcolor="#F9F9F9"><script language="JavaScript">
 ToolBar.outputExp();
 </script></td>
 </tr>
 <tr id="codebuttons">
-<td bgcolor="#F9F9F9">代码辅助模式：<br>
+<td bgcolor="#F9F9F9">���븨��ģʽ��<br>
 <input onclick="chmode('2')" type="RADIO" checked value="2" name="mode">
-提示插入<br>
+��ʾ����<br>
 <input onclick="chmode('0')" type="RADIO" value="0" name="mode">
-直接插入<br>
+ֱ�Ӳ���<br>
 <input onclick="chmode('1')" type="RADIO" value="1" name="mode">
-帮助信息</td>
+������Ϣ</td>
 <td bgcolor="#F9F9F9"><a href="javascript:bold()"><img
-alt=插入粗体文本
+alt=��������ı�
 src="html/ico/bb_bold.gif"
-border="0"></a> <a href="javascript:hyperlink()"><img alt=插入超级链接
+border="0"></a> <a href="javascript:hyperlink()"><img alt=���볬������
 src="html/ico/bb_url.gif"
-border="0"></a> <a href="javascript:image()"><img alt=插入图片
+border="0"></a> <a href="javascript:image()"><img alt=����ͼƬ
 src="html/ico/bb_image.gif"
-border="0"></a> <a href="javascript:quote()"><img alt=插入引用
+border="0"></a> <a href="javascript:quote()"><img alt=��������
 src="html/ico/bb_quote.gif"
-border="0"></a> <a href="javascript:flash()"><img alt=插入FLASH
+border="0"></a> <a href="javascript:flash()"><img alt=����FLASH
 src="html/ico/bb_flash.gif"
 border="0"></a> <br>
 </td>
 </tr>
 <tr>
-<td bgcolor="#F9F9F9">内容区:<br>
-(最大长度8000字节)<a href="javascript:checklength(document.input);">[字数检查]</a><br>
-[<a href="javascript:banWord(document.input);"><font color=red>禁词检查</font></a>]</td>
+<td bgcolor="#F9F9F9">������:<br>
+(��󳤶�8000�ֽ�)<a href="javascript:checklength(document.input);">[�������]</a><br>
+[<a href="javascript:banWord(document.input);"><font color=red>���ʼ��</font></a>]</td>
 <td bgcolor="#F9F9F9"><textarea name="message" id='message'
 cols="60" rows="8" class="input" onkeydown="javascript: ctlent();"
 onkeyup="javascript: storeCaret(this);"
@@ -161,36 +161,36 @@ onclick="javascript: storeCaret(this);"
 onselect="javascript: storeCaret(this);"></textarea></td>
 </tr>
 <tr>
-<td bgcolor="#F9F9F9">上传贴图/附件</td>
+<td bgcolor="#F9F9F9">�ϴ���ͼ/����</td>
 
 {if ($_SESSION[picallow]>=1)}
 <td bgcolor="#F9F9F9">
-本版对 HP>={$hplower}的网友提供上传贴图功能,图片自动贴在文字的最后。图片支持jpg、gif格式,图片大小允许{$max_file_size}k以内。本版图片显示宽度为600像素，点击图片可欣赏原始大小图片。<br>
+����� HP>={$hplower}�������ṩ�ϴ���ͼ����,ͼƬ�Զ��������ֵ����ͼƬ֧��jpg��gif��ʽ,ͼƬ��С����{$max_file_size}k���ڡ�����ͼƬ��ʾ����Ϊ600���أ����ͼƬ������ԭʼ��СͼƬ��<br>
 <!-- <input name="userfile1" type="FILE" class="input" > -->
 <input name="upfile" type="file" class="input" >
 
-&nbsp;&nbsp;[<a href="#" target="_blank"><font color=red>如何发图</font></a>] 
-在本版块你今天还可以发图 <font color=red><b>{$_SESSION[picallow]}</b></font>张。
+&nbsp;&nbsp;[<a href="#" target="_blank"><font color=red>��η�ͼ</font></a>] 
+�ڱ��������컹���Է�ͼ <font color=red><b>{$_SESSION[picallow]}</b></font>�š�
 </td>
 
 {else}
 <td bgcolor="#F9F9F9">
-本版对 HP>=7的网友提供上传贴图功能,图片自动贴在文字的最后。图片支持jpg、jpeg、gif格式,图片大小允许300k以内。本版图片显示宽度为600像素，点击图片可欣赏原始大小图片。<br>
+����� HP>=7�������ṩ�ϴ���ͼ����,ͼƬ�Զ��������ֵ����ͼƬ֧��jpg��jpeg��gif��ʽ,ͼƬ��С����300k���ڡ�����ͼƬ��ʾ����Ϊ600���أ����ͼƬ������ԭʼ��СͼƬ��<br>
 <input name="userfile1" type="FILE" class="input"disabled >
-&nbsp;&nbsp;[<a href="#" target="_blank"><font color=red>如何发图</font></a>] 
-HP未满7点，或当日额度用完，暂无法上图。请查看<a href="#"><b><font color="blue">升级说明</font></b></a>
+&nbsp;&nbsp;[<a href="#" target="_blank"><font color=red>��η�ͼ</font></a>] 
+HPδ��7�㣬���ն�����꣬���޷���ͼ����鿴<a href="#"><b><font color="blue">����˵��</font></b></a>
 </td>
 {/if}
 
 
 
 </tr>
-<!-- 插入发贴文件 -->
+<!-- ���뷢���ļ� -->
 <tr>
 <th></th>
 <td><input type="button" name="sendMessageBtn"
-id="sendMessageBtn" value="回复话题" class="button" onclick="validate()">
-<input type="reset" name="Submit22" value="清除字段" class="button"></td>
+id="sendMessageBtn" value="�ظ�����" class="button" onclick="validate()">
+<input type="reset" name="Submit22" value="����ֶ�" class="button"></td>
 </tr>
  <input type="hidden" name="bk" value="{$bk}"/>
   <input type="hidden" name="cid" value="{$cid}"/>
@@ -199,19 +199,19 @@ id="sendMessageBtn" value="回复话题" class="button" onclick="validate()">
 {else}
 <table id="reply" width="100%">
 <tr>
-<th colspan="2" class="t">回复主题 <a class="return" href="{url($bk)}"><font
-color="#FFFFFF">[<u> 返回版面 </u>]</font></a> <a href=#top><img
+<th colspan="2" class="t">�ظ����� <a class="return" href="{url($bk)}"><font
+color="#FFFFFF">[<u> ���ذ��� </u>]</font></a> <a href=#top><img
 src=html/img/top.gif
 border=0></a></th>
 </tr>
 <tr>
-<th>主题：</th>
+<th>���⣺</th>
 <td>{$row2[title]}</td>
 </tr>
 <tr>
 <th></th>
 <td><script language="javascript">
-document.write('请先在<a href=#top><u>上部登陆</u></a>，然后<a href="'+document.location.href+'">刷新本页</a>');
+document.write('������<a href=#top><u>�ϲ���½</u></a>��Ȼ��<a href="'+document.location.href+'">ˢ�±�ҳ</a>');
 </script></td>
 </tr>
 <tr>
