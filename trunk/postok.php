@@ -6,7 +6,7 @@ include 'check.php';
 $_POST['title']=trim($_POST['title']);
 
 if (empty($_POST['message']) or empty($_POST['title']) or empty($_GET['bk'])){
-$tis= "²ÎÊı´íÎó£¬ÄÚÈİ»ò±êÌâ²»ÄÜÎª¿Õ£¬»òÕßÇë´ÓÕı³£Ò³Ãæ½øĞĞ²Ù×÷"; 
+$tis= "å‚æ•°é”™è¯¯ï¼Œå†…å®¹æˆ–æ ‡é¢˜ä¸èƒ½ä¸ºç©ºï¼Œæˆ–è€…è¯·ä»æ­£å¸¸é¡µé¢è¿›è¡Œæ“ä½œ"; 
 tis($tis);
 exit;
 }
@@ -14,7 +14,7 @@ exit;
 $query=mysql_query("select * from {$fkduo}bk where `bkid`='$bk' limit 1");
 $jilu=mysql_num_rows($query);
 if ($jilu==0){
-$tis= "ÄúËùÌá½»µÄ°æÃæ²»´æÔÚ£¡"; 
+$tis= "æ‚¨æ‰€æäº¤çš„ç‰ˆé¢ä¸å­˜åœ¨ï¼"; 
 tis($tis);
 exit;
 }
@@ -25,28 +25,28 @@ $lasttime=$firsttime=mktime();
 $query9=mysql_query("select * FROM `{$fkduo}user` where `logname`='$_SESSION[logname]' limit 1");
 $row9=mysql_fetch_array($query9) ;
 if ($row9[lock]==1){
-$tis= "¶Ô²»Æğ£¬ÄãµÄÕËºÅ´¦ÓÚ¶³½áÆÚ£¬ÎŞ·¨·¢Ìù£¡";
+$tis= "å¯¹ä¸èµ·ï¼Œä½ çš„è´¦å·å¤„äºå†»ç»“æœŸï¼Œæ— æ³•å‘è´´ï¼";
 tis($tis);
 exit;
 }
 
 if (($lasttime-$row9[lastft])<$ftime){
-$tis= "¶Ô²»Æğ£¬ÄãµÄ·¢Ìù¼ä¸ôÊ±¼äÉÙÓÚ".$ftime."Ãë£¡";
+$tis= "å¯¹ä¸èµ·ï¼Œä½ çš„å‘è´´é—´éš”æ—¶é—´å°‘äº".$ftime."ç§’ï¼";
 tis($tis);
 exit;
 }
 
 
-if (is_uploaded_file($_FILES["upfile"][tmp_name]))//ÊÇ·ñÓĞÉÏ´«ÎÄ¼şÒª´¦Àí
+if (is_uploaded_file($_FILES["upfile"][tmp_name]))//æ˜¯å¦æœ‰ä¸Šä¼ æ–‡ä»¶è¦å¤„ç†
 {
 
 if ($_SESSION[picallow]<1){
-$tis= "Äú½ñÌìµÄ·¢Í¼¶î¶ÈÒÑÓÃÍê£¡";
+$tis= "æ‚¨ä»Šå¤©çš„å‘å›¾é¢åº¦å·²ç”¨å®Œï¼";
 tis($tis);
 exit;
 }
 
-$smallmark = 1; //Éú³ÉËõÂÔÍ¼
+$smallmark = 1; //ç”Ÿæˆç¼©ç•¥å›¾
 include 'up.php';
 }else
 {
@@ -58,7 +58,7 @@ $pic=0;
 }			
 
 if (empty($_POST['bk'])) {
-$tis= "´íÎó°æ¿é£¬Çë´ÓÕı³£Ò³Ãæ½øÈë·¢±í"; //ÅĞ¶ÏÊÇ·ñÓĞ°æ¿é
+$tis= "é”™è¯¯ç‰ˆå—ï¼Œè¯·ä»æ­£å¸¸é¡µé¢è¿›å…¥å‘è¡¨"; //åˆ¤æ–­æ˜¯å¦æœ‰ç‰ˆå—
 tis($tis);
 exit;
 }
@@ -94,9 +94,9 @@ $content=htmlentities($content, ENT_QUOTES,utf8);
 $content=str_replace("\r\n","<br />",$content); 
 $content=addslashes($content);
 
-include 'include/replace.php';//½øĞĞÉóºË¹ıÂË´ÊÓï´¦Àí
+include 'include/replace.php';//è¿›è¡Œå®¡æ ¸è¿‡æ»¤è¯è¯­å¤„ç†
 
-include 'include/ubb.php';//½øĞĞUBB´¦Àí
+include 'include/ubb.php';//è¿›è¡ŒUBBå¤„ç†
 
 $ip=$_SERVER['REMOTE_ADDR']; 
 $lastlogname=$firstlogname=$_SESSION['logname'];
@@ -114,11 +114,11 @@ $area=$row9[area];
 
 
 $sql="INSERT INTO `{$fkduo}zhuti` (`title`,`content`,`bk`,`firstlogname`,`firstnkname`,`firsttime`,`ip`,`lastnkname`,`lastlogname`,`lasttime`,`pic`,`img`,`regtime`,`hp`,`pp`,`area`,`sign`,`through`,`zts`,`hfs`,`face`,`sort`,`replyview`) VALUES ('$title','$content','$bk','$firstlogname','$firstnickname','$firsttime','$ip','$lastnkname','$lastlogname','$lasttime','$pic','$img','$regtime','$hp','$pp','$area','$sign','$through','$zts','$hfs','$face','$sort','$replyview')";
-$query=mysql_query($sql);//·¢²¼Ìù×Ó
+$query=mysql_query($sql);//å‘å¸ƒè´´å­
 $cid=mysql_insert_id();
 
 $sql2="update `{$fkduo}user` set `zts`=`zts`+1,`lastft`='$lasttime' where (`logname`='$firstlogname')";
-$query2=mysql_query($sql2);//¸üĞÂÓÃ»§·¢ÌùÊı
+$query2=mysql_query($sql2);//æ›´æ–°ç”¨æˆ·å‘è´´æ•°
 
 
 $eee="postalert.php?action=lz&cid=".$cid."&bk=".$bk;

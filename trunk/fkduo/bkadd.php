@@ -6,23 +6,23 @@ $bkjj=$_POST[bkjj];
 
 switch ($_GET[action]){
 case add:
-$query=mysql_query("INSERT INTO `{$fkduo}bk` (`bkname`,`bkjj`) VALUES ('$bkname','$bkjj')");//¸üĞÂÈÕÖ¾
+$query=mysql_query("INSERT INTO `{$fkduo}bk` (`bkname`,`bkjj`) VALUES ('$bkname','$bkjj')");//æ›´æ–°æ—¥å¿—
 $bkid=mysql_insert_id();
 
 $regtime=$firsttime=$lasttime=time();
 
-$title="Ã¿¸ö°æÃæÄ¬ÈÏµÄ¶¼ÒªÓĞÒ»¸öÌû×Ó";
-$content="Èç¹ûÉ¾³ıÁËÔò°æÃæ´ò²»¿ª£¬Çë´Ó»ØÊÕÕ¾»Ö¸´Ò»ÏÂ£¡";
-$sql="INSERT INTO `{$fkduo}zhuti` (`title`,`content`,`bk`,`firstlogname`,`firstnkname`,`firsttime`,`ip`,`lastnkname`,`lastlogname`,`lasttime`,`pic`,`img`,`regtime`,`hp`,`pp`,`area`,`sign`,`through`,`zts`,`hfs`,`face`,`sort`,`replyview`) VALUES ('$title','$content','$bkid','test','test','$firsttime','127.0.0.1','test','test','$lasttime','0','0','$regtime','1','1','±£ÃÜ','no sign','0','1','1','1','[ÎŞ]','0')";
+$title="æ¯ä¸ªç‰ˆé¢é»˜è®¤çš„éƒ½è¦æœ‰ä¸€ä¸ªå¸–å­";
+$content="å¦‚æœåˆ é™¤äº†åˆ™ç‰ˆé¢æ‰“ä¸å¼€ï¼Œè¯·ä»å›æ”¶ç«™æ¢å¤ä¸€ä¸‹ï¼";
+$sql="INSERT INTO `{$fkduo}zhuti` (`title`,`content`,`bk`,`firstlogname`,`firstnkname`,`firsttime`,`ip`,`lastnkname`,`lastlogname`,`lasttime`,`pic`,`img`,`regtime`,`hp`,`pp`,`area`,`sign`,`through`,`zts`,`hfs`,`face`,`sort`,`replyview`) VALUES ('$title','$content','$bkid','test','test','$firsttime','127.0.0.1','test','test','$lasttime','0','0','$regtime','1','1','ä¿å¯†','no sign','0','1','1','1','[æ— ]','0')";
 
-$query=mysql_query($sql);//·¢²¼µÚÒ»¸öÌù×Ó
+$query=mysql_query($sql);//å‘å¸ƒç¬¬ä¸€ä¸ªè´´å­
 
 $eee="bkadd.php?action=ok&bkid=".$bkid;
 header ("location: $eee"); 
 break;
 
 case ok:
-echo "<font color=red>Ôö¼Ó³É¹¦£¡</font>";
+echo "<font color=red>å¢åŠ æˆåŠŸï¼</font>";
 $bkid=$_GET[bkid];
 echo $eee1="../make.php?action=listtop&bk=".$bkid;
 $eee2="../make.php?action=head";
@@ -40,21 +40,21 @@ break;
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
-<title>ÎŞ±êÌâÎÄµµ</title>
+<title>æ— æ ‡é¢˜æ–‡æ¡£</title>
 </head>
 
 <body>
 <form id="form1" name="form1" method="post" action="bkadd.php?action=add">
-  <label>ĞÂÔö°æÃæ
+  <label>æ–°å¢ç‰ˆé¢
   <input name="bkname" type="text" id="bjname" accesskey="1" />
   </label>
   <label> <br />
   <br />
-  °æÃæ¼ò½é
+  ç‰ˆé¢ç®€ä»‹
   <textarea name="bkjj" cols="40" rows="3" id="bkjj" accesskey="2"></textarea>
   <br />
   <br />
-  <input type="submit" name="Submit" value="Ìá½»" accesskey="3" />
+  <input type="submit" name="Submit" value="æäº¤" accesskey="3" />
   </label>
 </form>
 

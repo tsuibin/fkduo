@@ -10,7 +10,7 @@ $sql="select * FROM `{$fkduo}bkmaster` where (`uid`='$logname' and `bkid`='$bkid
 $query=mysql_query($sql);
 $jilu=mysql_num_rows($query);
 if ($jilu>0){
-echo "<font color=red>²»ÒªÖØ¸´Ìí¼Ó£¬´ËÈË±¾À´¾ÍÊÇÕâ¸ö°æµÄ°æÖ÷</fotn>";
+echo "<font color=red>ä¸è¦é‡å¤æ·»åŠ ï¼Œæ­¤äººæœ¬æ¥å°±æ˜¯è¿™ä¸ªç‰ˆçš„ç‰ˆä¸»</fotn>";
 exit;
 }
 
@@ -19,13 +19,13 @@ $sql="select * FROM `{$fkduo}user` where `logname`='$logname'";
 $query=mysql_query($sql);
 $jilu=mysql_num_rows($query);
 if ($jilu==0){
-echo "<font color=red>Ã»ÓĞÕâ¸öÓÃ»§Ãû£¬»á²»»áĞ´´íÁË!</fotn>";
+echo "<font color=red>æ²¡æœ‰è¿™ä¸ªç”¨æˆ·åï¼Œä¼šä¸ä¼šå†™é”™äº†!</fotn>";
 exit;
 }
 
 
 
-mysql_query("INSERT INTO `{$fkduo}bkmaster` (`uid`,`bkid`) VALUES ('$logname','$bkid')");//Ôö¼Ó°æÖ÷
+mysql_query("INSERT INTO `{$fkduo}bkmaster` (`uid`,`bkid`) VALUES ('$logname','$bkid')");//å¢åŠ ç‰ˆä¸»
 mysql_query("update `{$fkduo}user` set `power`='3' where (`logname`='$logname') limit 1");
 
 $eee="bkmasteradd.php?action=ok&bk=".$bkid;
@@ -33,7 +33,7 @@ header ("location: $eee");
 break;
 
 case ok:
-echo "<font color=red>°æÖ÷Ôö¼Ó³É¹¦</fotn><br><br>";
+echo "<font color=red>ç‰ˆä¸»å¢åŠ æˆåŠŸ</fotn><br><br>";
 $eee="../make.php?action=listtop&bk=".$_GET[bk];
 echo "<iframe src=".$eee." width=\"300\" height=\"30\" frameborder=\"0\" marginheight=\"0\" marginwidth=\"0\"></iframe>";
 break;
@@ -47,7 +47,7 @@ break;
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
-<title>ÎŞ±êÌâÎÄµµ</title>
+<title>æ— æ ‡é¢˜æ–‡æ¡£</title>
 </head>
 
 <body>
@@ -57,14 +57,14 @@ break;
 <table width="36%" height="108" border="0" cellpadding="0" cellspacing="0">
 
   <tr>
-    <td bgcolor="#9999FF">Ìí¼Ó°æÖ÷</td>
+    <td bgcolor="#9999FF">æ·»åŠ ç‰ˆä¸»</td>
     <td bgcolor="#9999FF"></td>
     <td bgcolor="#9999FF"></td>
   </tr>
   
   
   <tr>
-    <td>Ñ¡Ôñ°æ¿é£º</td>
+    <td>é€‰æ‹©ç‰ˆå—ï¼š</td>
     <td>
 	<select name="bkid" accesskey="1" >
 <?
@@ -82,12 +82,12 @@ while ($row=mysql_fetch_array($query)){
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td>ÓÃ»§Ãû</td>
+    <td>ç”¨æˆ·å</td>
     <td><label>
           <input type="text" name="logname" accesskey="2" />
         </label>    </td>
     <td><label>
-      <input type="submit" name="Submit" value="Ìí ¼Ó" accesskey="3" />
+      <input type="submit" name="Submit" value="æ·» åŠ " accesskey="3" />
       </label></td>
   </tr>
 </table>      </form>

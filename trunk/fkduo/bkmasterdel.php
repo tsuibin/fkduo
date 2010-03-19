@@ -6,7 +6,7 @@ include 'check.php';
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
-<title>ÎŞ±êÌâÎÄµµ</title>
+<title>æ— æ ‡é¢˜æ–‡æ¡£</title>
 </head>
 
 <body>
@@ -16,14 +16,14 @@ include 'check.php';
 <table width="36%" border="0" cellpadding="0" cellspacing="0">
 
   <tr>
-    <td bgcolor="#9999FF">É¾³ı°æÖ÷</td>
+    <td bgcolor="#9999FF">åˆ é™¤ç‰ˆä¸»</td>
     <td bgcolor="#9999FF"></td>
     <td bgcolor="#9999FF"></td>
   </tr>
   
   
   <tr>
-    <td>Ñ¡Ôñ°æ¿é£º</td>
+    <td>é€‰æ‹©ç‰ˆå—ï¼š</td>
     <td>
 	<select name="bkid" accesskey="1" >
 <?
@@ -38,7 +38,7 @@ while ($row=mysql_fetch_array($query)){
 </select>
 	
 	</td>
-    <td><input type="submit" name="Submit" value="ÁĞ ³ö °æ Ö÷" accesskey="3" /></td>
+    <td><input type="submit" name="Submit" value="åˆ— å‡º ç‰ˆ ä¸»" accesskey="3" /></td>
   </tr>
 </table>      </form>
 
@@ -53,10 +53,10 @@ $query=mysql_query($sql);
 $jilu=mysql_num_rows($query);
 if ($jilu>0){
 while ($row=mysql_fetch_array($query)){
-echo $row[uid]."<a href=bkmasterdel.php?action=del&uid=".$row[uid]."&bkid=".$row[bkid].">É¾³ı</a><br>"; }
+echo $row[uid]."<a href=bkmasterdel.php?action=del&uid=".$row[uid]."&bkid=".$row[bkid].">åˆ é™¤</a><br>"; }
 }else
 {
-echo "<font color=red>µ±Ç°´Ë°æÃ»ÓĞ°æÖ÷</font>";
+echo "<font color=red>å½“å‰æ­¤ç‰ˆæ²¡æœ‰ç‰ˆä¸»</font>";
 }
 //$eee="bkmaster.php?action=ok&bk=".$bkid;
 //header ("location: $eee"); 
@@ -66,7 +66,7 @@ case del:
 mysql_query("DELETE FROM `{$fkduo}bkmaster` WHERE (`bkid`='$_GET[bkid]' and `uid`='$_GET[uid]')");
 mysql_query("update `{$fkduo}user` set `power`='9' where (`logname`='$_GET[uid]') limit 1");
 
-echo "É¾³ı³É¹¦";
+echo "åˆ é™¤æˆåŠŸ";
 $eee="../make.php?action=listtop&bk=".$_GET[bkid];
 echo "<iframe src=".$eee." width=\"300\" height=\"30\" frameborder=\"0\" marginheight=\"0\" marginwidth=\"0\"></iframe>";
 break;

@@ -1,60 +1,60 @@
 {xingTemplate head}
-<!-- /ÂÛÌ³µ¼º½ -->
+<!-- /è®ºå›å¯¼èˆª -->
 <link href="html/css/myhome.css" rel="stylesheet" type="text/css" />
 <!-- main -->
 <div class="mainCon fix">
 
-<!-- ×¢²áwrapper -->
+<!-- æ³¨å†Œwrapper -->
 <dl id="fkduoRegBox">
 
 <script type="text/javascript">
  function checkpwd(){
-  var p1=document.form1.password.value;//»ñÈ¡ÃÜÂë¿òµÄÖµ
-  var p2=document.form1.repeatPwd.value;//»ñÈ¡ÖØĞÂÊäÈëµÄÃÜÂëÖµ
+  var p1=document.form1.password.value;//è·å–å¯†ç æ¡†çš„å€¼
+  var p2=document.form1.repeatPwd.value;//è·å–é‡æ–°è¾“å…¥çš„å¯†ç å€¼
   if(p1==""){
-   alert("ÇëÊäÈëÃÜÂë£¡");//¼ì²âµ½ÃÜÂëÎª¿Õ£¬ÌáĞÑÊäÈë//
-   document.form1.password.focus();//½¹µã·Åµ½ÃÜÂë¿ò
-   return false;//ÍË³ö¼ì²âº¯Êı
-  }//Èç¹ûÔÊĞí¿ÕÃÜÂë£¬¿ÉÈ¡ÏûÕâ¸öÌõ¼ş
+   alert("è¯·è¾“å…¥å¯†ç ï¼");//æ£€æµ‹åˆ°å¯†ç ä¸ºç©ºï¼Œæé†’è¾“å…¥//
+   document.form1.password.focus();//ç„¦ç‚¹æ”¾åˆ°å¯†ç æ¡†
+   return false;//é€€å‡ºæ£€æµ‹å‡½æ•°
+  }//å¦‚æœå…è®¸ç©ºå¯†ç ï¼Œå¯å–æ¶ˆè¿™ä¸ªæ¡ä»¶
   
-  if(p1!=p2){//ÅĞ¶ÏÁ½´ÎÊäÈëµÄÖµÊÇ·ñÒ»ÖÂ£¬²»Ò»ÖÂÔòÏÔÊ¾´íÎóĞÅÏ¢
-   document.getElementById("msg").innerHTML="Á½´ÎÊäÈëÃÜÂë²»Ò»ÖÂ£¬ÇëÖØĞÂÊäÈë";//ÔÚdivÏÔÊ¾´íÎóĞÅÏ¢
+  if(p1!=p2){//åˆ¤æ–­ä¸¤æ¬¡è¾“å…¥çš„å€¼æ˜¯å¦ä¸€è‡´ï¼Œä¸ä¸€è‡´åˆ™æ˜¾ç¤ºé”™è¯¯ä¿¡æ¯
+   document.getElementById("msg").innerHTML="ä¸¤æ¬¡è¾“å…¥å¯†ç ä¸ä¸€è‡´ï¼Œè¯·é‡æ–°è¾“å…¥";//åœ¨divæ˜¾ç¤ºé”™è¯¯ä¿¡æ¯
    return false;
   }else{
-   //ÃÜÂëÒ»ÖÂ£¬¿ÉÒÔ¼ÌĞøÏÂÒ»²½²Ù×÷ 
-   document.getElementById("msg").innerHTML="OK";//ÔÚdivÏÔÊ¾´íÎóĞÅÏ¢
+   //å¯†ç ä¸€è‡´ï¼Œå¯ä»¥ç»§ç»­ä¸‹ä¸€æ­¥æ“ä½œ 
+   document.getElementById("msg").innerHTML="OK";//åœ¨divæ˜¾ç¤ºé”™è¯¯ä¿¡æ¯
   }
  }
 </script>
 
 <form action="regok.php" method="post" name="form1" onsubmit="return checkSubmit();">
-<dt class="t">ÓÃ»§×¢²á(µÚ¶ş²½)</dt>
+<dt class="t">ç”¨æˆ·æ³¨å†Œ(ç¬¬äºŒæ­¥)</dt>
 <dd class="c">
-<!-- ±íµ¥ -->
+<!-- è¡¨å• -->
 <dl id="fkduoRegFormWrapper">
-<dt class="subT">»ù±¾ĞÅÏ¢(±ØÌî)</dt>
+<dt class="subT">åŸºæœ¬ä¿¡æ¯(å¿…å¡«)</dt>
 <dd class="subC">
 <table class="myDetialForm">
 <tr>
-<th><label for="userName">ÓÃ»§Ãû</label></th>
+<th><label for="userName">ç”¨æˆ·å</label></th>
 <td><input type="text" id="logname" class="inputText" name="logname" /> 
-<span id="userNameInf" class="inf_normal">&nbsp; ÓÃ»§IDÖ»ÄÜ°üº¬(Êı×Ö¡¢×ÖÄ¸¡¢ÏÂ»®Ïß)£¬²¢±ØĞëÒÔ×ÖÄ¸¿ªÊ¼£¬³¤¶ÈÎª 4-15 ¸ö×Ö·û</span></td>
+<span id="userNameInf" class="inf_normal">&nbsp; ç”¨æˆ·IDåªèƒ½åŒ…å«(æ•°å­—ã€å­—æ¯ã€ä¸‹åˆ’çº¿)ï¼Œå¹¶å¿…é¡»ä»¥å­—æ¯å¼€å§‹ï¼Œé•¿åº¦ä¸º 4-15 ä¸ªå­—ç¬¦</span></td>
 </tr> 
 
 <tr>
-<th><label for="newPwd">ÃÜÂë(1)</label></th>
-<td><input type="password" id="password" class="inputText" name="password" /> <span id="passwordInf" class=""inf_normal"">&nbsp; ÃÜÂëĞè³¤¶ÈÎª 4-20 µÄÈÎÒâ×Ö·û</span></td>
+<th><label for="newPwd">å¯†ç (1)</label></th>
+<td><input type="password" id="password" class="inputText" name="password" /> <span id="passwordInf" class=""inf_normal"">&nbsp; å¯†ç éœ€é•¿åº¦ä¸º 4-20 çš„ä»»æ„å­—ç¬¦</span></td>
 </tr>
 <tr>
-<th><label for="repeatPwd">ÔÙÊäÒ»´ÎÃÜÂë(2)</label></th>
+<th><label for="repeatPwd">å†è¾“ä¸€æ¬¡å¯†ç (2)</label></th>
 <td><input type="password" id="repeatPwd" class="inputText" name="repeatPwd"  onchange="checkpwd();"/> <div id="msg" style="color:red;"></div></td>
 </tr>
 <tr>
-<th><label for="email">µç×ÓÓÊ¼ş</label></th>
+<th><label for="email">ç”µå­é‚®ä»¶</label></th>
 <td>
 {if ($regemail==1)}
 <input name="email" type="text" class="inputText" id="email" value="{$email}" disabled /> 
-<span id="emailInf" class=""inf_normal"">&nbsp; EmailÒÑÑéÖ¤</span>
+<span id="emailInf" class=""inf_normal"">&nbsp; Emailå·²éªŒè¯</span>
 {else}
 <input name="email" type="text" class="inputText" id="email" value="{$email}" /> 
 <span id="emailInf" class=""inf_normal"">&nbsp; </span>
@@ -65,19 +65,19 @@
 </dd>
 </dl>
 <span id="submitInf" class="inf_normal"></span>
-<!-- /±íµ¥ -->
+<!-- /è¡¨å• -->
 </dd>
 <dd class="submit">
 <label>
-<input type="submit" name="Submit" value="Ìá ½»" accesskey="6">
+<input type="submit" name="Submit" value="æ äº¤" accesskey="6">
 </label>
 </dd>
 </form>
 </dl>
-<!-- ×¢²áwrapper -->
+<!-- æ³¨å†Œwrapper -->
 </div> <!-- /main -->
-<!-- Ò³½Å -->
+<!-- é¡µè„š -->
 {xingTemplate foot}
-<!-- /Ò³½Å -->
+<!-- /é¡µè„š -->
 </body>
 </html> 

@@ -22,7 +22,7 @@
 
 </head>
 <body>
-<!-- ²åÈëHTMLÍ·²¿ -->
+<!-- æ’å…¥HTMLå¤´éƒ¨ -->
 <script language="javascript" src="html/js/popupImages.js"></script>
 <!-- <DIV ID="dek" CLASS="dek"></DIV> -->
 <script language="JavaScript">
@@ -80,14 +80,14 @@ document.getElementById(id).src = ImgSrc;
 </script>
 <div id="LayerAlbum" style="z-index:9999;visibility: hidden; position: absolute; top: 0px; left: 0px;"><img id="AlbumImage" style="border: 1px solid #cccccc;" /></div>
 <a name=top></a>
-<!-- ²åÈëÓÃ»§×´Ì¬Ìõ -->
+<!-- æ’å…¥ç”¨æˆ·çŠ¶æ€æ¡ -->
 <script type="text/JavaScript">
 function MM_jumpMenu(selObj,restore){ //v3.0
 eval("location='"+selObj.options[selObj.selectedIndex].value+"'");
 if(restore) selObj.selectedIndex=0;
 }
 </script>
-<!-- µÇÂ½Í·²¿ -->
+<!-- ç™»é™†å¤´éƒ¨ -->
 
 !{if ($_SESSION[logname])!}
 !{xingTemplate headlogin!}
@@ -96,28 +96,28 @@ if(restore) selObj.selectedIndex=0;
 !{/if!}
 
 
-<!-- /µÇÂ½Í·²¿ --><!-- ²åÈëÓÃ»§×´Ì¬Ìõ -->
-<!-- Í·²¿logo & ¹ã¸æ -->
+<!-- /ç™»é™†å¤´éƒ¨ --><!-- æ’å…¥ç”¨æˆ·çŠ¶æ€æ¡ -->
+<!-- å¤´éƒ¨logo & å¹¿å‘Š -->
 <div class="center" id="top_content">
 <a href="{$siteurl}" id="club_logo1" title="{$sitename}">{$sitename}<span id="title"></span></a>
-<!-- ¹ã¸æ -->
+<!-- å¹¿å‘Š -->
 
 <div class="fkduo_ad0">
 !{$ad0!}
 </div>
 
-<!-- ¹ã¸æ -->
-<!-- ¿ì½İÁ´½Ó -->
+<!-- å¹¿å‘Š -->
+<!-- å¿«æ·é“¾æ¥ -->
 <div id="shortcut_link">
 !{if $_SESSION[power]<4 and (int)($_SESSION[power])!=0!}
-[<a href="fkduo/log.php" target=_blank><font color=red><b>ÉıÎª¹ÜÀíÔ±È¨ÏŞ</b></font></a>] £ü
+[<a href="fkduo/log.php" target=_blank><font color=red><b>å‡ä¸ºç®¡ç†å‘˜æƒé™</b></font></a>] ï½œ
 !{/if!}
- <a href="#" class="strong">PPÒøĞĞ</a> £ü <a href="#">ÎŞÏßWAP</a> </div>
-<!-- ¿ì½İÁ´½Ó -->
+ <a href="#" class="strong">PPé“¶è¡Œ</a> ï½œ <a href="#">æ— çº¿WAP</a> </div>
+<!-- å¿«æ·é“¾æ¥ -->
 </div>
-<!-- Í·²¿logo & ¹ã¸æ -->
-<!-- ÂÛÌ³µ¼º½ -->
-<div class="bbsmenu center" id="mainmenu" ><a class="first" href="index.php">Ê×Ò³</a>
+<!-- å¤´éƒ¨logo & å¹¿å‘Š -->
+<!-- è®ºå›å¯¼èˆª -->
+<div class="bbsmenu center" id="mainmenu" ><a class="first" href="index.php">é¦–é¡µ</a>
 {$nav}
 </div>
-<!-- /ÂÛÌ³µ¼º½ -->
+<!-- /è®ºå›å¯¼èˆª -->

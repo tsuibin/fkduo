@@ -6,44 +6,44 @@ if (empty($_GET[step])){
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
-<title>ÎÞ±êÌâÎÄµµ</title>
+<title>æ— æ ‡é¢˜æ–‡æ¡£</title>
 </head>
 
 <body>
 
 
 <form id="form1" name="form1" method="post" action="sign.php?step=2">
-<p>ÅúÁ¿ÐÞ¸ÄÓÃ»§Ìû×ÓÇ©Ãû£º</p>
-<p>ÓÃ»§Ãû£º</p>
+<p>æ‰¹é‡ä¿®æ”¹ç”¨æˆ·å¸–å­ç­¾åï¼š</p>
+<p>ç”¨æˆ·åï¼š</p>
 
   <label>
   <input type="text" name="logname" />
   </label>
 
-<p>Ìæ»»Ç©Ãû(Áô¿ÕÖ±½ÓÇå¿Õ)£º</p>
+<p>æ›¿æ¢ç­¾å(ç•™ç©ºç›´æŽ¥æ¸…ç©º)ï¼š</p>
 <p>
   <label>
-  <textarea name="sign" cols="40" rows="7">Õâ¼Ò»ïºÜÀÁ£¬Ã»ÓÐÐ´Ç©Ãû!</textarea>
+  <textarea name="sign" cols="40" rows="7">è¿™å®¶ä¼™å¾ˆæ‡’ï¼Œæ²¡æœ‰å†™ç­¾å!</textarea>
   </label>
 </p>
-<p>ÆÚÏÞ£º
+<p>æœŸé™ï¼š
   <label>
   <input name="howtime" type="radio" value="3" checked="checked" />
-  ÈýÌìÄÚ</label>
+  ä¸‰å¤©å†…</label>
   <label>
   <input type="radio" name="howtime" value="7" />
-Ò»ÖÜÄÚ</label>
+ä¸€å‘¨å†…</label>
   <label>
   <input type="radio" name="howtime" value="30" />
-  Ò»ÔÂÄÚ</label>
+  ä¸€æœˆå†…</label>
   <label>
   <input type="radio" name="howtime" value="0" />
-  ËùÓÐÊ±¼ä
+  æ‰€æœ‰æ—¶é—´
   </label>
 </p>
 <p>
   <label>
-  <input type="submit" name="Submit" value="ÐÞ¸Ä" />
+  <input type="submit" name="Submit" value="ä¿®æ”¹" />
   </label>
 </p>
 </form>
@@ -59,25 +59,25 @@ $sql="select * from {$fkduo}user where `logname`='$logname' limit 1";
 $query=mysql_query($sql);
 $jilu=mysql_num_rows($query);
 if ($jilu==0){
-echo "Ã»ÓÐÕâ¸öÓÃ»§";
-echo "[ <a href=\"javascript:history.back(1)\" ><font color=\"blue\">·µ»Ø</font></a> ]";
+echo "æ²¡æœ‰è¿™ä¸ªç”¨æˆ·";
+echo "[ <a href=\"javascript:history.back(1)\" ><font color=\"blue\">è¿”å›ž</font></a> ]";
 exit;
 }
 
 
 if ($howtime==0){
-mysql_query("update `{$fkduo}zhuti` set `sign`='$sign' where (`firstlogname`='$logname')") or die("³ö´íÁË") ;
-mysql_query("update `{$fkduo}card` set `sign`='$sign' where (`lastlogname`='$logname')") or die("³ö´íÁË");
+mysql_query("update `{$fkduo}zhuti` set `sign`='$sign' where (`firstlogname`='$logname')") or die("å‡ºé”™äº†") ;
+mysql_query("update `{$fkduo}card` set `sign`='$sign' where (`lastlogname`='$logname')") or die("å‡ºé”™äº†");
 
-echo "ÓÃ»§:".$logname."ËùÓÐÊ±¼äµÄÇ©Ãû¸üÐÂ³É¹¦£¡";
+echo "ç”¨æˆ·:".$logname."æ‰€æœ‰æ—¶é—´çš„ç­¾åæ›´æ–°æˆåŠŸï¼";
 }else
 {
 $howtime=$timenow-($howtime*86400);
 
-mysql_query("update `{$fkduo}zhuti` set `sign`='$sign' where `firstlogname`='$logname' and `firsttime` between '$howtime' and '$timenow'") or die("³ö´íÁË");
-mysql_query("update `{$fkduo}card` set `sign`='$sign' where `lastlogname`='$logname' and `lasttime` between '$howtime' and '$timenow'") or die("³ö´íÁË");
+mysql_query("update `{$fkduo}zhuti` set `sign`='$sign' where `firstlogname`='$logname' and `firsttime` between '$howtime' and '$timenow'") or die("å‡ºé”™äº†");
+mysql_query("update `{$fkduo}card` set `sign`='$sign' where `lastlogname`='$logname' and `lasttime` between '$howtime' and '$timenow'") or die("å‡ºé”™äº†");
 
-echo "ÓÃ»§:".$logname.$how."ÌìÄÚµÄÇ©Ãû¸üÐÂ³É¹¦£¡";
+echo "ç”¨æˆ·:".$logname.$how."å¤©å†…çš„ç­¾åæ›´æ–°æˆåŠŸï¼";
 }
 }
 ?>

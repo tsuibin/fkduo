@@ -1,11 +1,11 @@
 <?php
 
                                                 /******************************************************************************
-                                                Ê¹ÓÃËµÃ÷:
-                                                1. ½«PHP.INIÎÄ¼þÀïÃæµÄ"extension=php_gd2.dll"Ò»ÐÐÇ°ÃæµÄ;ºÅÈ¥µô,ÒòÎªÎÒÃÇÒªÓÃµ½GD¿â;
-                                                2. ½«extension_dir =¸ÄÎªÄãµÄphp_gd2.dllËùÔÚÄ¿Â¼;php4.6.0ÒÔÉÏ°æ±¾Ê¹ÓÃÄ¬ÈÏÂ·¾¶
+                                                ä½¿ç”¨è¯´æ˜Ž:
+                                                1. å°†PHP.INIæ–‡ä»¶é‡Œé¢çš„"extension=php_gd2.dll"ä¸€è¡Œå‰é¢çš„;å·åŽ»æŽ‰,å› ä¸ºæˆ‘ä»¬è¦ç”¨åˆ°GDåº“;
+                                                2. å°†extension_dir =æ”¹ä¸ºä½ çš„php_gd2.dllæ‰€åœ¨ç›®å½•;php4.6.0ä»¥ä¸Šç‰ˆæœ¬ä½¿ç”¨é»˜è®¤è·¯å¾„
                                                 ******************************************************************************/
-        //ÉÏ´«ÎÄ¼þÀàÐÍÁÐ±í
+        //ä¸Šä¼ æ–‡ä»¶ç±»åž‹åˆ—è¡¨
         $uptypes=array(
                                                      'image/jpg',
                                                      'image/jpeg',
@@ -21,33 +21,33 @@
         if ($_SERVER['REQUEST_METHOD'] == 'POST')
         {
             if (!is_uploaded_file($_FILES["upfile"][tmp_name]))
-            //ÊÇ·ñ´æÔÚÎÄ¼þ
+            //æ˜¯å¦å­˜åœ¨æ–‡ä»¶
             {
-                echo "Í¼Æ¬²»´æÔÚ!";
+                echo "å›¾ç‰‡ä¸å­˜åœ¨!";
                 exit;
             }
 			
             $file = $_FILES["upfile"];
             if($max_file_size < $file["size"])
-            //¼ì²éÎÄ¼þ´óÐ¡
+            //æ£€æŸ¥æ–‡ä»¶å¤§å°
             {   $max_file_size = $max_file_size/1000;
-                echo "Í¼Æ¬Ì«´ó£¬³¬¹ý ".$max_file_size." KB!";
+                echo "å›¾ç‰‡å¤ªå¤§ï¼Œè¶…è¿‡ ".$max_file_size." KB!";
                 exit;
             }
             if(!in_array($file["type"],$uptypes))
-            //¼ì²éÎÄ¼þÀàÐÍ
+            //æ£€æŸ¥æ–‡ä»¶ç±»åž‹
             {
-                echo "Í¼Æ¬ÀàÐÍ²»·û!".$file["type"];
+                echo "å›¾ç‰‡ç±»åž‹ä¸ç¬¦!".$file["type"];
                 exit;
             }
             if(!file_exists($path_im))
-            //¼ì²éÉÏ´«Ä¿Â¼ÊÇ·ñ´æÔÚ£¬²»´æÔÚ´´½¨
+            //æ£€æŸ¥ä¸Šä¼ ç›®å½•æ˜¯å¦å­˜åœ¨ï¼Œä¸å­˜åœ¨åˆ›å»º
             {
                 mkdir($path_im);
             }
 
             if(!file_exists($path_sim))
-            //¼ì²éËõÂÔÍ¼Ä¿Â¼ÊÇ·ñ´æÔÚ£¬²»´æÔÚ´´½¨
+            //æ£€æŸ¥ç¼©ç•¥å›¾ç›®å½•æ˜¯å¦å­˜åœ¨ï¼Œä¸å­˜åœ¨åˆ›å»º
             {
                 mkdir($path_sim);
             }
@@ -60,26 +60,26 @@
 
             $pinfo = pathinfo($file["name"]);
             $filetype = $pinfo['extension'];
-            $all_path = $path_im.time().".".$filetype;  //Â·¾¶+ÎÄ¼þÃû,Ä¿Ç°ÒÔÉÏ´«Ê±¼äÃüÃû
+            $all_path = $path_im.time().".".$filetype;  //è·¯å¾„+æ–‡ä»¶å,ç›®å‰ä»¥ä¸Šä¼ æ—¶é—´å‘½å
             if (file_exists($all_path))
             {
-                echo "Í¬ÃûÎÄ¼þÒÑ¾­´æÔÚÁË";
+                echo "åŒåæ–‡ä»¶å·²ç»å­˜åœ¨äº†";
                 exit;
             }
             if(!move_uploaded_file ($filename,$all_path))
             {
-                echo "ÒÆ¶¯ÎÄ¼þ³ö´í";
+                echo "ç§»åŠ¨æ–‡ä»¶å‡ºé”™";
                 exit;
             }
             $pinfo = pathinfo($all_path);
             $fname = $pinfo[basename];
-			$pic=$all_path;//ÉÏ´«Í¼Æ¬µÄµØÖ·
+			$pic=$all_path;//ä¸Šä¼ å›¾ç‰‡çš„åœ°å€
 
 
-            switch($src_type)//ÅÐ¶ÏÔ´Í¼Æ¬ÎÄ¼þÀàÐÍ
+            switch($src_type)//åˆ¤æ–­æºå›¾ç‰‡æ–‡ä»¶ç±»åž‹
             {
                 case 1://gif
-                    $src_im = imagecreatefromgif($all_path);//´ÓÔ´Í¼Æ¬ÎÄ¼þÈ¡µÃÍ¼Ïñ
+                    $src_im = imagecreatefromgif($all_path);//ä»Žæºå›¾ç‰‡æ–‡ä»¶å–å¾—å›¾åƒ
                     break;
                 case 2://jpg
                     $src_im = imagecreatefromjpeg($all_path);
@@ -88,7 +88,7 @@
                     $src_im = imagecreatefrompng($all_path);
                     break;
                 default:
-                    die("²»Ö§³ÖµÄÎÄ¼þÀàÐÍ");
+                    die("ä¸æ”¯æŒçš„æ–‡ä»¶ç±»åž‹");
                     exit;
                 }
 				
@@ -99,29 +99,29 @@
                 {
                     //$iinfo = getimagesize($all_path,$iinfo);
                     $dst_im = imagecreatetruecolor($src_w,$src_h);
-                    //¸ù¾ÝÔ­Í¼³ß´ç´´½¨Ò»¸öÏàÍ¬´óÐ¡µÄÕæ²ÊÉ«Î»Í¼
-                    $white = imagecolorallocate($dst_im,255,255,255);//°×
-                    //¸øÐÂÍ¼Ìî³ä±³¾°É«
-                    $black = imagecolorallocate($dst_im,0,0,0);//ºÚ
-                    $red = imagecolorallocate($dst_im,255,0,0);//ºì
-                    $orange = imagecolorallocate($dst_im,255,85,0);//³È
+                    //æ ¹æ®åŽŸå›¾å°ºå¯¸åˆ›å»ºä¸€ä¸ªç›¸åŒå¤§å°çš„çœŸå½©è‰²ä½å›¾
+                    $white = imagecolorallocate($dst_im,255,255,255);//ç™½
+                    //ç»™æ–°å›¾å¡«å……èƒŒæ™¯è‰²
+                    $black = imagecolorallocate($dst_im,0,0,0);//é»‘
+                    $red = imagecolorallocate($dst_im,255,0,0);//çº¢
+                    $orange = imagecolorallocate($dst_im,255,85,0);//æ©™
                     imagefill($dst_im,0,0,$white);
 
-                    imagecopymerge($dst_im,$src_im,0,0,0,0,$src_w,$src_h,100);//Ô­Í¼Í¼ÏñÐ´ÈëÐÂ½¨Õæ²ÊÎ»Í¼ÖÐ
+                    imagecopymerge($dst_im,$src_im,0,0,0,0,$src_w,$src_h,100);//åŽŸå›¾å›¾åƒå†™å…¥æ–°å»ºçœŸå½©ä½å›¾ä¸­
                     //imagefilledrectangle($dst_im,1,$src_h-15,80,$src_h,$white);
                     switch($watertype)
                     {
-                        case 1:    //¼ÓË®Ó¡×Ö·û´®
-                            imagestring($dst_im,3,$src_w-130,$src_h-35,$waterstring,$white);//ÎÄ×ÖË®Ó¡
+                        case 1:    //åŠ æ°´å°å­—ç¬¦ä¸²
+                            imagestring($dst_im,3,$src_w-130,$src_h-35,$waterstring,$white);//æ–‡å­—æ°´å°
                             break;
-                        case 2:    //¼ÓË®Ó¡Í¼Æ¬
+                        case 2:    //åŠ æ°´å°å›¾ç‰‡
 
-                            $lim_size = getimagesize($waterimg);        //È¡µÃË®Ó¡Í¼Ïñ³ß´ç£¬ÐÅÏ¢
+                            $lim_size = getimagesize($waterimg);        //å–å¾—æ°´å°å›¾åƒå°ºå¯¸ï¼Œä¿¡æ¯
 
-                            switch($lim_size[2]) //ÅÐ¶ÏË®Ó¡Í¼Æ¬ÎÄ¼þÀàÐÍ
+                            switch($lim_size[2]) //åˆ¤æ–­æ°´å°å›¾ç‰‡æ–‡ä»¶ç±»åž‹
                             {
                                 case 1://gif
-                                    $src_lim = imagecreatefromgif($waterimg);  //È¡µÃË®Ó¡Í¼Ïñ
+                                    $src_lim = imagecreatefromgif($waterimg);  //å–å¾—æ°´å°å›¾åƒ
                                     break;
                                 case 2://jpg
                                     $src_lim = imagecreatefromjpeg($waterimg);
@@ -133,33 +133,33 @@
                                 //$src_im=imagecreatefromwbmp($waterimg);
                                 //break;
                                 default:
-                                    die("²»Ö§³ÖµÄÎÄ¼þÀàÐÍ");
+                                    die("ä¸æ”¯æŒçš„æ–‡ä»¶ç±»åž‹");
                                     exit;
                                 }
 
-                                $src_lw = ($src_w-$lim_size[0])/2;  //Ë®Ó¡Î»ÓÚ±³¾°Í¼ÕýÖÐÑëwidth¶¨Î»
-                                $src_lh = ($src_h-$lim_size[1])/2;  //height¶¨Î»
+                                $src_lw = ($src_w-$lim_size[0])/2;  //æ°´å°ä½äºŽèƒŒæ™¯å›¾æ­£ä¸­å¤®widthå®šä½
+                                $src_lh = ($src_h-$lim_size[1])/2;  //heightå®šä½
 
-                                imagecopymerge($dst_im,$src_lim,$src_lw,$src_lh,0,0,$lim_size[0],$lim_size [1],$waterclearly);//ºÏ²¢Á½¸öÍ¼Ïñ£¬ÉèÖÃË®Ó¡Í¸Ã÷¶È$waterclearly
+                                imagecopymerge($dst_im,$src_lim,$src_lw,$src_lh,0,0,$lim_size[0],$lim_size [1],$waterclearly);//åˆå¹¶ä¸¤ä¸ªå›¾åƒï¼Œè®¾ç½®æ°´å°é€æ˜Žåº¦$waterclearly
                                 imagedestroy($src_lim);
                                 break;
                     }
                     switch($src_type)
                     {
                         case 1:
-                            imagegif($dst_im,$all_path,$imclearly);//Éú³ÉgifÎÄ¼þ£¬Í¼Æ¬ÇåÎú¶È0-100
+                            imagegif($dst_im,$all_path,$imclearly);//ç”Ÿæˆgifæ–‡ä»¶ï¼Œå›¾ç‰‡æ¸…æ™°åº¦0-100
                             break;
                         case 2:
-                            imagejpeg($dst_im,$all_path,$imclearly);//Éú³ÉjpgÎÄ¼þ£¬Í¼Æ¬ÇåÎú¶È0-100
+                            imagejpeg($dst_im,$all_path,$imclearly);//ç”Ÿæˆjpgæ–‡ä»¶ï¼Œå›¾ç‰‡æ¸…æ™°åº¦0-100
                             break;
                         case 3:
-                            imagepng($dst_im,$all_path,$imclearly);//Éú³ÉpngÎÄ¼þ£¬Í¼Æ¬ÇåÎú¶È0-100
+                            imagepng($dst_im,$all_path,$imclearly);//ç”Ÿæˆpngæ–‡ä»¶ï¼Œå›¾ç‰‡æ¸…æ™°åº¦0-100
                             break;
                         //case 6:
                         //imagewbmp($dst_im,$all_path);
                         break;
                     }
-                    //ÊÍ·Å»º´æ
+                    //é‡Šæ”¾ç¼“å­˜
                     imagedestroy($dst_im);
                 }
 
@@ -169,53 +169,53 @@
 
                     if (file_exists($sall_path))
                     {
-                        echo "Í¬ÃûÎÄ¼þÒÑ¾­´æÔÚÁË";
+                        echo "åŒåæ–‡ä»¶å·²ç»å­˜åœ¨äº†";
                         exit;
                     }
 					
 					
 
-                    if($src_w <= $dst_sw and $src_h <=130 ) // Ô­Í¼¿í³ß´ç <= ËõÂÔÍ¼³ß´ç
+                    if($src_w <= $dst_sw and $src_h <=130 ) // åŽŸå›¾å®½å°ºå¯¸ <= ç¼©ç•¥å›¾å°ºå¯¸
                     {   
 					    //if ($dst_sh>100){$dst_sh=100;};
-                        $dst_sim = imagecreatetruecolor($src_w,$src_h); //ÐÂ½¨ËõÂÔÍ¼Õæ²ÊÎ»Í¼
-                        imagecopymerge($dst_sim,$src_im,0,0,0,0,$src_w,$src_h,100); //Ô­Í¼Í¼ÏñÐ´ÈëÐÂ½¨Õæ²ÊÎ»Í¼ÖÐ
+                        $dst_sim = imagecreatetruecolor($src_w,$src_h); //æ–°å»ºç¼©ç•¥å›¾çœŸå½©ä½å›¾
+                        imagecopymerge($dst_sim,$src_im,0,0,0,0,$src_w,$src_h,100); //åŽŸå›¾å›¾åƒå†™å…¥æ–°å»ºçœŸå½©ä½å›¾ä¸­
                     }else
 
-                    //if($src_w > $dst_sw) // Ô­Í¼¿í³ß´ç > ËõÂÔÍ¼³ß´ç
+                    //if($src_w > $dst_sw) // åŽŸå›¾å®½å°ºå¯¸ > ç¼©ç•¥å›¾å°ºå¯¸
                     {
                         $dst_sh = $dst_sw/$src_w*$src_h; 
 						if ($dst_sh>130){$dst_sh=130;$dst_sw=130*($src_w/$src_h);};
-                        $dst_sim = imagecreatetruecolor($dst_sw,$dst_sh); //ÐÂ½¨ËõÂÔÍ¼Õæ²ÊÎ»Í¼£¨µÈ±ÈÀýËõÐ¡Ô­Í¼³ß´ç£©
-                        imagecopyresampled($dst_sim,$src_im,0,0,0,0,$dst_sw,$dst_sh,$src_w,$src_h); //Ô­Í¼Í¼ÏñÐ´ÈëÐÂ½¨Õæ²ÊÎ»Í¼ÖÐ
+                        $dst_sim = imagecreatetruecolor($dst_sw,$dst_sh); //æ–°å»ºç¼©ç•¥å›¾çœŸå½©ä½å›¾ï¼ˆç­‰æ¯”ä¾‹ç¼©å°åŽŸå›¾å°ºå¯¸ï¼‰
+                        imagecopyresampled($dst_sim,$src_im,0,0,0,0,$dst_sw,$dst_sh,$src_w,$src_h); //åŽŸå›¾å›¾åƒå†™å…¥æ–°å»ºçœŸå½©ä½å›¾ä¸­
                     }
 
                     switch($src_type)
                     {
                         case 1:
-                            imagegif($dst_sim,$sall_path,$simclearly);//Éú³ÉgifÎÄ¼þ£¬Í¼Æ¬ÇåÎú¶È0-100
+                            imagegif($dst_sim,$sall_path,$simclearly);//ç”Ÿæˆgifæ–‡ä»¶ï¼Œå›¾ç‰‡æ¸…æ™°åº¦0-100
                             break;
                         case 2:
-                            imagejpeg($dst_sim,$sall_path,$simclearly);//Éú³ÉjpgÎÄ¼þ£¬Í¼Æ¬ÇåÎú¶È0-100
+                            imagejpeg($dst_sim,$sall_path,$simclearly);//ç”Ÿæˆjpgæ–‡ä»¶ï¼Œå›¾ç‰‡æ¸…æ™°åº¦0-100
                             break;
                         case 3:
-                            imagepng($dst_sim,$sall_path,$simclearly);//Éú³ÉpngÎÄ¼þ£¬Í¼Æ¬ÇåÎú¶È0-100
+                            imagepng($dst_sim,$sall_path,$simclearly);//ç”Ÿæˆpngæ–‡ä»¶ï¼Œå›¾ç‰‡æ¸…æ™°åº¦0-100
                             break;
                         case 6:
                             imagewbmp($dst_sim,$sall_path);
                             break;
                         }
-                        //ÊÍ·Å»º´æ
+                        //é‡Šæ”¾ç¼“å­˜
                         imagedestroy($dst_sim);
                     }
 
-                    //ÊÍ·Å»º´æ
+                    //é‡Šæ”¾ç¼“å­˜
                     imagedestroy($src_im);
                 }				
-			$img=$sall_path;//ËõÂÔÍ¼µØÖ·
+			$img=$sall_path;//ç¼©ç•¥å›¾åœ°å€
 			
 $_SESSION[picallow]=$_SESSION[picallow]-1;		
 $sql2="update `{$fkduo}user` set `picallow`=`picallow`-1 where (`logname`='$_SESSION[logname]') limit 1";
-$query2=mysql_query($sql2);//¸üÐÂÓÃ»§·¢Í¼ÊýÁ¿
+$query2=mysql_query($sql2);//æ›´æ–°ç”¨æˆ·å‘å›¾æ•°é‡
 
                 ?>

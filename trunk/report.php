@@ -15,7 +15,7 @@ header ("location: report.php?action=ok");
 break;
 
 case ok:
-echo "��л���ı��棬���ǻᾡ�촦���������ڿ��Թرձ�ҳ�档";
+echo "感谢您的报告，我们会尽快处理！您现在可以关闭本页面。";
 exit;
 
 default;

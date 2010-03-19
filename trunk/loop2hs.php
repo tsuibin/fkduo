@@ -1,17 +1,17 @@
 <?
 include 'conn.php';
-include 'include/huhuhs.php';//·ÖÒ³¼ÆËã
+include 'include/huhuhs.php';//åˆ†é¡µè®¡ç®—
 include 'tis.php';
 
 if (($_SESSION[power]>3) or ((int)($_SESSION[power])==0))
 {
-$tis="ÄãÃ»ÓÐÈ¨ÏÞ·ÃÎÊ´ËÒ³";
+$tis="ä½ æ²¡æœ‰æƒé™è®¿é—®æ­¤é¡µ";
 tis($tis);
 exit;
 }
 
 if ($jilu==0){
-$tis="¶Ô²»Æð£¬¼ÇÂ¼²»´æÔÚ!";
+$tis="å¯¹ä¸èµ·ï¼Œè®°å½•ä¸å­˜åœ¨!";
 tis($tis);
 exit;
 }
@@ -34,7 +34,7 @@ $mkktime=date("Y-m-d",$mkktime);
 return $mkktime;
 }
 
-$listtop="listtop".$bk;//ÎÄ¼þÃû
+$listtop="listtop".$bk;//æ–‡ä»¶å
 
 include 'xingTemplate.php';
 $xingTemplate->setConfig('PHP_off',true);
@@ -43,5 +43,5 @@ $xingTemplate->display('icbc21');
 
 $sql90="update `zhuti` set `click`=`click`+1 where (`cid`='$cid')";
 $query90=mysql_unbuffered_query($sql90); //
-//require_once ('include/runtime.php');//Êä³öÔËÐÐÊ±¼ä
+//require_once ('include/runtime.php');//è¾“å‡ºè¿è¡Œæ—¶é—´
 ?>

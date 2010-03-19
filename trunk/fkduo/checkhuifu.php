@@ -24,7 +24,7 @@ break;
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
-<title>�ޱ����ĵ�</title>
+<title>无标题文档</title>
 </head>
 
 <body>
@@ -36,7 +36,7 @@ $jilu=mysql_num_rows($query);
 ?>
 <table border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td bgcolor="#00CCFF">��˻���,�ܹ�<font color=red><? echo $jilu ?></font>��</td>
+    <td bgcolor="#00CCFF">审核回帖,总共<font color=red><? echo $jilu ?></font>条</td>
   </tr>
 <?
 function uuuw($mkktime){
@@ -50,9 +50,9 @@ while ($row=mysql_fetch_array($query)){
     <td>
 	<?
 
-echo "�ظ�ʱ��:".uuuw($row[lasttime])."<br>";
-echo "�ظ�����:".$row[content]."<br>";
-echo "<a href=checkhuifu.php?action=del&cid=".$row[cid]."&lc=".$row[lc].">ɾ��</a>&nbsp;&nbsp;<a href=checkhuifu.php?action=pass&cid=".$row[cid]."&lc=".$row[lc].">ͨ��</a><br>";
+echo "回复时间:".uuuw($row[lasttime])."<br>";
+echo "回复内容:".$row[content]."<br>";
+echo "<a href=checkhuifu.php?action=del&cid=".$row[cid]."&lc=".$row[lc].">删除</a>&nbsp;&nbsp;<a href=checkhuifu.php?action=pass&cid=".$row[cid]."&lc=".$row[lc].">通过</a><br>";
 if (!$row[pic]==0){
 echo "<img src=../".$row[pic].">";
 }
