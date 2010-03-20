@@ -37,10 +37,10 @@ if (($lasttime-$row9[lastft])<$ftime){
 }
 
 
-if (is_uploaded_file($_FILES["upfile"][tmp_name]))//是否有上传文件要处理
+if (is_uploaded_file($_FILES["upfile"]['tmp_name']))//是否有上传文件要处理
 {
 
-	if ($_SESSION[picallow]<1){
+	if ($_SESSION['picallow']<1){
 		$tis= "您今天的发图额度已用完！";
 		tis($tis);
 		exit;
