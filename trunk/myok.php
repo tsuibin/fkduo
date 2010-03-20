@@ -118,10 +118,10 @@ if ($_GET['action']==send){//SMS发送处理
 		$sign=addslashes($sign);
 
 		if (!empty($_POST['newpassword'])){//新密码是否设了
-			$password = md5(md5($_POST['newpassword']).$row[salt]);
+			$password = md5(md5($_POST['newpassword']).$row['salt']);
 		}
 
-		$sql="update `{$fkduo}user` set 
+		$sql="update `{$fkduo}user` set
 		`nickname`='{$nickname}',
 		`pass`='{$password}',
 		`email`='{$email}',
@@ -134,13 +134,19 @@ if ($_GET['action']==send){//SMS发送处理
 		 * 如果不使用花括号告诉解析器这是一个变量
 		 * 就会引起解析错误
 		 * */
-		
+
 		$query=mysql_query($sql);//如果失败返回false
-		var_dump($sql);
-		var_dump($query);
-		//这里没有做判断，如果修改失败了呢?
-		//header ("location: my.php?action=myinfo&mod=ok");
-		exit;}
+
+		//如果修改失败返回错误信息
+		if($query){
+			header ("location: my.php?action=myinfo&mod=ok");
+		}else{
+			//这里最好是做一个宏定义
+			var_dump($sql);
+			var_dump($query);
+		}
+		exit;
+	}
 
 
 
@@ -148,79 +154,79 @@ if ($_GET['action']==send){//SMS发送处理
 
 
 
-		if ($_GET['action']==myfaceok){//头像上传处理
-			if (is_uploaded_file($_FILES['upfile']['tmp_name'])){
-				$upfile=$_FILES["upfile"];
-				$type = $upfile["type"];
-				$size = $upfile["size"];
-				$tmp_name = $upfile["tmp_name"];
-				$error = $upfile["error"];
-				$image_size = getimagesize($tmp_name);
-				$face_size=$face_size*1000;
+	if ($_GET['action']==myfaceok){//头像上传处理
+		if (is_uploaded_file($_FILES['upfile']['tmp_name'])){
+			$upfile=$_FILES["upfile"];
+			$type = $upfile["type"];
+			$size = $upfile["size"];
+			$tmp_name = $upfile["tmp_name"];
+			$error = $upfile["error"];
+			$image_size = getimagesize($tmp_name);
+			$face_size=$face_size*1000;
 
 
-				if ($size>$face_size){
-					$tis= "错误，上传的头像文件大小不能超过".($face_size/1000)."K";
-					tis($tis);
-					exit;
-				}
-
-				if ($image_size[0]>100 or $image_size[1]>100){
-					$tis= "错误，图片尺寸请限制在100*100以内";
-					tis($tis);
-					exit;
-				}
-
-
-				switch ($type) {
-					case 'image/pjpeg' : $ok=1;
-	    $name=$_SESSION[logname].".jpg";
-	    $face=jpg;
-	    break;
-					case 'image/jpeg' : $ok=1;
-	    $name=$_SESSION[logname].".jpg";
-	    $face=jpg;
-	    break;
-					case 'image/gif' : $ok=1;
-	    $name=$_SESSION[logname].".gif";
-	    $face=gif;
-	    break;
-					default:
-						echo "不允许的文件内型";
-						exit;
-				}
-
-				$name="html/face/".$name;
-
-				if($ok && $error=='0'){
-					move_uploaded_file($tmp_name,$name);
-					mysql_query("update `{$fkduo}user` set `face`='$face' where (`logname`='$_SESSION[logname]') limit 1");
-					$tis= "头像上传成功！<br />如果左侧头像图片没更新，请刷新一下。"; 
-					tis($tis);
-				}
-			}exit;}
-
-
-
-
-
-			if ($_GET['action']==favdel){//收藏夹删除
-				switch ($_GET['mod']){
-					case listt:
-						$idd=$_POST['Idx'];
-						$how=count($idd);
-						for ($i=0;$i<count($idd);$i++){
-							$id=(int)($idd[$i]);
-							mysql_query("DELETE FROM `{$fkduo}fav` WHERE `cid`='$id' and `favuser`='$_SESSION[logname]'");
-						}
-
-						mysql_query("update `{$fkduo}user` set `favcount`=`favcount`-'$how' where (`logname`='$_SESSION[logname]')");
-						break;
-
-					default;
-					echo "出错了！";
-					exit;
-				}
-				header ("location: my.php?action=myfav&mod=delok");
+			if ($size>$face_size){
+				$tis= "错误，上传的头像文件大小不能超过".($face_size/1000)."K";
+				tis($tis);
+				exit;
 			}
-			?>
+
+			if ($image_size[0]>100 or $image_size[1]>100){
+				$tis= "错误，图片尺寸请限制在100*100以内";
+				tis($tis);
+				exit;
+			}
+
+
+			switch ($type) {
+				case 'image/pjpeg' : $ok=1;
+				$name=$_SESSION[logname].".jpg";
+				$face=jpg;
+				break;
+				case 'image/jpeg' : $ok=1;
+				$name=$_SESSION[logname].".jpg";
+				$face=jpg;
+				break;
+				case 'image/gif' : $ok=1;
+				$name=$_SESSION[logname].".gif";
+				$face=gif;
+				break;
+				default:
+					echo "不允许的文件内型";
+					exit;
+			}
+
+			$name="html/face/".$name;
+
+			if($ok && $error=='0'){
+				move_uploaded_file($tmp_name,$name);
+				mysql_query("update `{$fkduo}user` set `face`='$face' where (`logname`='$_SESSION[logname]') limit 1");
+				$tis= "头像上传成功！<br />如果左侧头像图片没更新，请刷新一下。"; 
+				tis($tis);
+			}
+		}exit;}
+
+
+
+
+
+		if ($_GET['action']==favdel){//收藏夹删除
+			switch ($_GET['mod']){
+				case listt:
+					$idd=$_POST['Idx'];
+					$how=count($idd);
+					for ($i=0;$i<count($idd);$i++){
+						$id=(int)($idd[$i]);
+						mysql_query("DELETE FROM `{$fkduo}fav` WHERE `cid`='$id' and `favuser`='$_SESSION[logname]'");
+					}
+
+					mysql_query("update `{$fkduo}user` set `favcount`=`favcount`-'$how' where (`logname`='$_SESSION[logname]')");
+					break;
+
+				default;
+				echo "出错了！";
+				exit;
+			}
+			header ("location: my.php?action=myfav&mod=delok");
+		}
+		?>
