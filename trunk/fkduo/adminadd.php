@@ -67,7 +67,7 @@ switch ($_GET[action]){
 <form id="form1" name="form1" method="post"
 	action="adminadd.php?action=add">
 
-<table width="36%" height="108" border="0" cellpadding="0"
+<table width="36%" border="0" cellpadding="0"
 	cellspacing="0">
 
 	<tr>

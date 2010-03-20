@@ -6,7 +6,7 @@ switch ($_GET[action]){
 		$bkid=$_GET[bkid];
 		mysql_query("DELETE FROM `{$fkduo}bk` WHERE `bkid`='$bkid'");//删除版块
 
-		$doo=(int)($_POST[checkbox]);//删除帖子数据
+		$doo=(int)($_POST['checkbox']);//删除帖子数据
 		if ($doo==95){
 			mysql_query("DELETE FROM `{$fkduo}zhuti` WHERE `bk`='$bkid'");
 			mysql_query("DELETE FROM `{$fkduo}card` WHERE `bk`='$bkid'");
@@ -47,25 +47,28 @@ switch ($_GET[action]){
 		<td width="40%" bgcolor="#99CC99">同时删除旗下帖子</td>
 		<td width="32%" bgcolor="#99CC99"></td>
 	</tr>
-	<?
+<?php
 	$sql="select * FROM `{$fkduo}bk` ORDER by `px`";
 	$query=mysql_query($sql);
 	while ($row=mysql_fetch_array($query)){
-		?>
-	<form id="form<? echo $row['bkid'] ?>"
-		name="form<? echo $row['bkid'] ?>" method="post"
-		action="bkdel.php?action=del&bkid=<? echo $row['bkid'] ?>">
+$form=<<<EOF
+	<form id='form.{$row['bkid']}'
+		name='form.{$row['bkid']}' method='post'
+		action='bkdel.php?action=del&bkid=.{$row['bkid']}'
+		>
 	<tr>
-		<td><font color=red><? echo $row['bkid'] ?></font></td>
-		<td><? echo $row['bkname'] ?></td>
+		<td><font color=red>.{$row['bkid']}.</font></td>
+		<td>.{$row['bkname']}.</td>
 		<td>
-		<div align="center"><input type="checkbox" name="checkbox" value="95" />
+		<div align='center'><input type='checkbox' name='checkbox' value='95' />
 		</div>
 		</td>
-		<td><input type="submit" name="Submit<? $row[id] ?>" value="删 除" /></td>
+		<td><input type='submit' name='Submit.{$row[id]}.' value='删 除' /></td>
 	</tr>
 	</form>
-	<?
+EOF;
+	echo $form;
+	
 	}
 	?>
 </table>
