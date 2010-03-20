@@ -15,7 +15,7 @@ if ($yanc!=1){
 include 'config/database.php';
 
 $starttime=microtime(true);//计算运行时间起始值
-$conn = @ mysql_connect($db_host, $db_username, $db_password) or die("数据库配置错误");
+$conn = mysql_connect($db_host, $db_username, $db_password) or die("数据库配置错误");
 mysql_select_db($db_name, $conn);
 mysql_query("set names 'utf8'"); //使用utf8中文编码;
 date_default_timezone_set('PRC'); //设为中文时
