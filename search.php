@@ -1,4 +1,6 @@
-<?
+<?php
+
+
 include 'conn.php';
 
 $filename="template/listtop{$_GET['bk']}.html";
@@ -11,33 +13,36 @@ if (!file_exists($filename)) {
 } 
 
 
-$keyword1=urldecode(iconv('UTF-8', 'utf8', $_GET['keyword'] ));
-$keyword1=addslashes($keyword1);//
-$kk1=urlencode(iconv("utf8", "UTF-8", "$keyword1"));   //翻页url
-
+$keyword1=urldecode(iconv('UTF-8', 'UTF-8', $_GET['keyword'] ));
+$keyword1=addslashes($keyword1);//序列化
+$kk1=urlencode(iconv("UTF-8", "UTF-8", "$keyword1"));   //翻页url
 $action=(int)($_GET['action']);
-$bkk=bk;
+$bkk='bk';
 $navtis="(<font color=green><b>当前搜索结果</b></font>)";
 $listtop="listtop".$bk;//文件名
 
+	/*
+	 * 1 搜索标题
+	 * 2 搜索昵称
+	 * 3 搜索用户名
+	 * */
 
     switch ($action){
         case 1:   
-		$keyword="%".$keyword1."%"; //乱码
+			$keyword="%".$keyword1."%"; //乱码
             $search="and `title` like '$keyword'";
             break;
         case 2:
-		$keyword=$keyword1;
+			$keyword=$keyword1;
             $search="and `firstnkname`='$keyword'";
             break;
 			
 		case 3:
-		$keyword=$keyword1;
+			$keyword=$keyword1;
             $search="and `firstlogname`='$keyword'";
             break;
 			
         default:
-            //
             break;
     }
 	
