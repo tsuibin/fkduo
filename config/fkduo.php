@@ -28,7 +28,7 @@ $face_size='40';        //头像文件的大小，单位为k
 $regemail='0';   //是否开启注册Email验证功能,1开启，0不开启.
 $sys_emailcontrol='139.com,126.com,163.com,qq.com'; //EMAIL限制
 $emailre='0';      //用户注册邮箱是否允许重复,1为不允许,0为允许。
-$sys_rewrite='0'; //是否开启URL静态功能
+$sys_rewrite='1'; //是否开启URL静态功能
 $sys_sign='1'; //是否显示签名档
 $sys_highlight='red'; //主题高亮的颜色
 

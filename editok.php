@@ -31,12 +31,12 @@ if ($row11[lock]==1){
 
 
 $title=$_POST['title'];
-$title=htmlentities($title, ENT_QUOTES,utf8);
+$title=htmlentities($title, ENT_QUOTES,'UTF-8');
 $title=str_replace("\r\n","",$title);
 $title=addslashes($title);
 
 $content=$_POST['message'];
-$content=htmlentities($content, ENT_QUOTES,utf8);
+$content=htmlentities($content, ENT_QUOTES,'UTF-8');
 $content=str_replace("\r\n","<br />",$content);
 $content=addslashes($content);
 

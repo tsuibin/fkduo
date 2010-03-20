@@ -4,9 +4,9 @@ include 'tis.php';
 
 if (empty($_GET['logname']))
 {
-$tis= "没有这个用户！";
-tis($tis);
-exit;
+	$tis= "没有这个用户！";
+	tis($tis);
+	exit;
 }
 $logname=ruku($_GET['logname']);
 
@@ -16,15 +16,15 @@ $row=mysql_fetch_array($query) ;
 
 if (!($row[logname]==$logname))
 {
-$tis= "没有这个用户！";
-tis($tis);
-exit;
+	$tis= "没有这个用户！";
+	tis($tis);
+	exit;
 }
 
 
 function uuuw($mkktime){ //时间转换格式
-$mkktime=date("y-m-d H:i",$mkktime);
-return $mkktime;  
+	$mkktime=date("y-m-d H:i",$mkktime);
+	return $mkktime;
 }
 
 
@@ -33,38 +33,38 @@ $query=mysql_query($sql);
 $rows=mysql_num_rows($query);
 
 if ($rows<$liststep) {
-$pages=1;
+	$pages=1;
 }elseif($rows%$liststep==0)
 {
-$pages=(int)($rows/$liststep);
+	$pages=(int)($rows/$liststep);
 }elseif($rows%$liststep>0)
 {
-$pages=(int)($rows/$liststep)+1;
+	$pages=(int)($rows/$liststep)+1;
 }
 
 if ((int)($_GET['now'])==0){
-$now=1;
+	$now=1;
 }else{
-$now=(int)($_GET['now']);
+	$now=(int)($_GET['now']);
 }
 
 if ($now==1 and $pages==1)
 {
-$start=0;
+	$start=0;
 }elseif ($now==1 and $pages>1)
 {
-$thedown="<a href=info.php?logname={$logname}&now=".($now+1).">下一页</a>";
-$start=0;
+	$thedown="<a href=info.php?logname={$logname}&now=".($now+1).">下一页</a>";
+	$start=0;
 }elseif ($now>1 and $now<$pages)
 {
-$theup="<a href=info.php?logname={$logname}&now=".($now-1).">上一页</a>";
-$thedown="<a href=info.php?logname={$logname}&now=".($now+1).">下一页</a>";
-$start=($now-1)*$liststep;
+	$theup="<a href=info.php?logname={$logname}&now=".($now-1).">上一页</a>";
+	$thedown="<a href=info.php?logname={$logname}&now=".($now+1).">下一页</a>";
+	$start=($now-1)*$liststep;
 }elseif (($now>1 and $now==$pages) or ($now>$pages))
 {
-$theup="<a href=info.php?logname={$logname}&now=".($now-1).">上一页</a>";
-$start=($pages-1)*$liststep;
-$now=$pages;
+	$theup="<a href=info.php?logname={$logname}&now=".($now-1).">上一页</a>";
+	$start=($pages-1)*$liststep;
+	$now=$pages;
 }
 
 
