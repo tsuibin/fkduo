@@ -2,21 +2,21 @@
 -- version 2.11.9.4
 -- http://www.phpmyadmin.net
 --
--- Ö÷»ú: localhost:3306
--- Éú³ÉÈÕÆÚ: 2009 Äê 11 ÔÂ 25 ÈÕ 08:21
--- ·şÎñÆ÷°æ±¾: 5.1.37
--- PHP °æ±¾: 5.2.10
+-- ä¸»æœº: localhost:3306
+-- ç”Ÿæˆæ—¥æœŸ: 2009 å¹´ 11 æœˆ 25 æ—¥ 08:21
+-- æœåŠ¡å™¨ç‰ˆæœ¬: 5.1.37
+-- PHP ç‰ˆæœ¬: 5.2.10
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
 --
--- Êı¾İ¿â: `baidu`
+-- æ•°æ®åº“: `baidu`
 --
 
 -- --------------------------------------------------------
 
 --
--- ±íµÄ½á¹¹ `{table_prefix}bk`
+-- è¡¨çš„ç»“æ„ `{table_prefix}bk`
 --
 
 DROP TABLE IF EXISTS `{table_prefix}bk`;
@@ -29,16 +29,16 @@ CREATE TABLE `{table_prefix}bk` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
--- µ¼³ö±íÖĞµÄÊı¾İ `{table_prefix}bk`
+-- å¯¼å‡ºè¡¨ä¸­çš„æ•°æ® `{table_prefix}bk`
 --
 
 INSERT INTO `{table_prefix}bk` (`bkid`, `bkname`, `bkjj`, `px`) VALUES
-(1, 'µÚÒ»°æ¿é', 'ÕâÊÇÒ»¸öÓÃÀ´²âÊÔµÄ°æÃæ..', 0);
+(1, 'ç¬¬ä¸€ç‰ˆå—', 'è¿™æ˜¯ä¸€ä¸ªç”¨æ¥æµ‹è¯•çš„ç‰ˆé¢..', 0);
 
 -- --------------------------------------------------------
 
 --
--- ±íµÄ½á¹¹ `{table_prefix}bkmaster`
+-- è¡¨çš„ç»“æ„ `{table_prefix}bkmaster`
 --
 
 DROP TABLE IF EXISTS `{table_prefix}bkmaster`;
@@ -48,14 +48,14 @@ CREATE TABLE `{table_prefix}bkmaster` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- µ¼³ö±íÖĞµÄÊı¾İ `{table_prefix}bkmaster`
+-- å¯¼å‡ºè¡¨ä¸­çš„æ•°æ® `{table_prefix}bkmaster`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- ±íµÄ½á¹¹ `{table_prefix}card`
+-- è¡¨çš„ç»“æ„ `{table_prefix}card`
 --
 
 DROP TABLE IF EXISTS `{table_prefix}card`;
@@ -89,14 +89,14 @@ CREATE TABLE `{table_prefix}card` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
--- µ¼³ö±íÖĞµÄÊı¾İ `{table_prefix}card`
+-- å¯¼å‡ºè¡¨ä¸­çš„æ•°æ® `{table_prefix}card`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- ±íµÄ½á¹¹ `{table_prefix}emailact`
+-- è¡¨çš„ç»“æ„ `{table_prefix}emailact`
 --
 
 DROP TABLE IF EXISTS `{table_prefix}emailact`;
@@ -109,14 +109,14 @@ CREATE TABLE `{table_prefix}emailact` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
--- µ¼³ö±íÖĞµÄÊı¾İ `{table_prefix}emailact`
+-- å¯¼å‡ºè¡¨ä¸­çš„æ•°æ® `{table_prefix}emailact`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- ±íµÄ½á¹¹ `{table_prefix}fav`
+-- è¡¨çš„ç»“æ„ `{table_prefix}fav`
 --
 
 DROP TABLE IF EXISTS `{table_prefix}fav`;
@@ -130,14 +130,14 @@ CREATE TABLE `{table_prefix}fav` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- µ¼³ö±íÖĞµÄÊı¾İ `{table_prefix}fav`
+-- å¯¼å‡ºè¡¨ä¸­çš„æ•°æ® `{table_prefix}fav`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- ±íµÄ½á¹¹ `{table_prefix}fkduo`
+-- è¡¨çš„ç»“æ„ `{table_prefix}fkduo`
 --
 
 DROP TABLE IF EXISTS `{table_prefix}fkduo`;
@@ -150,7 +150,7 @@ CREATE TABLE `{table_prefix}fkduo` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
--- µ¼³ö±íÖĞµÄÊı¾İ `{table_prefix}fkduo`
+-- å¯¼å‡ºè¡¨ä¸­çš„æ•°æ® `{table_prefix}fkduo`
 --
 
 INSERT INTO `{table_prefix}fkduo` (`id`, `logname`, `password`, `salt`) VALUES
@@ -159,7 +159,7 @@ INSERT INTO `{table_prefix}fkduo` (`id`, `logname`, `password`, `salt`) VALUES
 -- --------------------------------------------------------
 
 --
--- ±íµÄ½á¹¹ `{table_prefix}link`
+-- è¡¨çš„ç»“æ„ `{table_prefix}link`
 --
 
 DROP TABLE IF EXISTS `{table_prefix}link`;
@@ -172,14 +172,14 @@ CREATE TABLE `{table_prefix}link` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
--- µ¼³ö±íÖĞµÄÊı¾İ `{table_prefix}link`
+-- å¯¼å‡ºè¡¨ä¸­çš„æ•°æ® `{table_prefix}link`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- ±íµÄ½á¹¹ `{table_prefix}prizeinfo`
+-- è¡¨çš„ç»“æ„ `{table_prefix}prizeinfo`
 --
 
 DROP TABLE IF EXISTS `{table_prefix}prizeinfo`;
@@ -196,14 +196,14 @@ CREATE TABLE `{table_prefix}prizeinfo` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- µ¼³ö±íÖĞµÄÊı¾İ `{table_prefix}prizeinfo`
+-- å¯¼å‡ºè¡¨ä¸­çš„æ•°æ® `{table_prefix}prizeinfo`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- ±íµÄ½á¹¹ `{table_prefix}replace`
+-- è¡¨çš„ç»“æ„ `{table_prefix}replace`
 --
 
 DROP TABLE IF EXISTS `{table_prefix}replace`;
@@ -216,14 +216,14 @@ CREATE TABLE `{table_prefix}replace` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
--- µ¼³ö±íÖĞµÄÊı¾İ `{table_prefix}replace`
+-- å¯¼å‡ºè¡¨ä¸­çš„æ•°æ® `{table_prefix}replace`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- ±íµÄ½á¹¹ `{table_prefix}report`
+-- è¡¨çš„ç»“æ„ `{table_prefix}report`
 --
 
 DROP TABLE IF EXISTS `{table_prefix}report`;
@@ -238,14 +238,14 @@ CREATE TABLE `{table_prefix}report` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
--- µ¼³ö±íÖĞµÄÊı¾İ `{table_prefix}report`
+-- å¯¼å‡ºè¡¨ä¸­çš„æ•°æ® `{table_prefix}report`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- ±íµÄ½á¹¹ `{table_prefix}sms`
+-- è¡¨çš„ç»“æ„ `{table_prefix}sms`
 --
 
 DROP TABLE IF EXISTS `{table_prefix}sms`;
@@ -263,16 +263,16 @@ CREATE TABLE `{table_prefix}sms` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
--- µ¼³ö±íÖĞµÄÊı¾İ `{table_prefix}sms`
+-- å¯¼å‡ºè¡¨ä¸­çš„æ•°æ® `{table_prefix}sms`
 --
 
 INSERT INTO `{table_prefix}sms` (`id`, `title`, `content`, `from`, `fromnkname`, `to`, `time`, `read`) VALUES
-(1, '¹§Ï²£¬ÄúÒÑ¾­³É¹¦×¢²á±¾ÂÛÌ³!', '·¢ÑÔÇë×ñÊØµ±µØ·¨ÂÉ·¨¹æ£¬Ğ»Ğ»£¡', '·Ã¿Í¶àÂÛÌ³', '', 'fkduo', 1259053045, 1);
+(1, 'æ­å–œï¼Œæ‚¨å·²ç»æˆåŠŸæ³¨å†Œæœ¬è®ºå›!', 'å‘è¨€è¯·éµå®ˆå½“åœ°æ³•å¾‹æ³•è§„ï¼Œè°¢è°¢ï¼', 'è®¿å®¢å¤šè®ºå›', '', 'fkduo', 1259053045, 1);
 
 -- --------------------------------------------------------
 
 --
--- ±íµÄ½á¹¹ `{table_prefix}sort`
+-- è¡¨çš„ç»“æ„ `{table_prefix}sort`
 --
 
 DROP TABLE IF EXISTS `{table_prefix}sort`;
@@ -284,14 +284,14 @@ CREATE TABLE `{table_prefix}sort` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
--- µ¼³ö±íÖĞµÄÊı¾İ `{table_prefix}sort`
+-- å¯¼å‡ºè¡¨ä¸­çš„æ•°æ® `{table_prefix}sort`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- ±íµÄ½á¹¹ `{table_prefix}user`
+-- è¡¨çš„ç»“æ„ `{table_prefix}user`
 --
 
 DROP TABLE IF EXISTS `{table_prefix}user`;
@@ -323,7 +323,7 @@ CREATE TABLE `{table_prefix}user` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
--- µ¼³ö±íÖĞµÄÊı¾İ `{table_prefix}user`
+-- å¯¼å‡ºè¡¨ä¸­çš„æ•°æ® `{table_prefix}user`
 --
 
 INSERT INTO `{table_prefix}user` (`uid`, `logname`, `pass`, `power`, `email`, `nickname`, `hp`, `pp`, `area`, `ppallow`, `picallow`, `favcount`, `regtime`, `lasttime`, `salt`, `sign`, `face`, `zts`, `hfs`, `lock`, `locktime`, `lastft`) VALUES
@@ -332,7 +332,7 @@ INSERT INTO `{table_prefix}user` (`uid`, `logname`, `pass`, `power`, `email`, `n
 -- --------------------------------------------------------
 
 --
--- ±íµÄ½á¹¹ `{table_prefix}userlog`
+-- è¡¨çš„ç»“æ„ `{table_prefix}userlog`
 --
 
 DROP TABLE IF EXISTS `{table_prefix}userlog`;
@@ -344,14 +344,14 @@ CREATE TABLE `{table_prefix}userlog` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
--- µ¼³ö±íÖĞµÄÊı¾İ `{table_prefix}userlog`
+-- å¯¼å‡ºè¡¨ä¸­çš„æ•°æ® `{table_prefix}userlog`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- ±íµÄ½á¹¹ `{table_prefix}zhuti`
+-- è¡¨çš„ç»“æ„ `{table_prefix}zhuti`
 --
 
 DROP TABLE IF EXISTS `{table_prefix}zhuti`;
@@ -400,8 +400,8 @@ CREATE TABLE `{table_prefix}zhuti` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
--- µ¼³ö±íÖĞµÄÊı¾İ `{table_prefix}zhuti`
+-- å¯¼å‡ºè¡¨ä¸­çš„æ•°æ® `{table_prefix}zhuti`
 --
 
 INSERT INTO `{table_prefix}zhuti` (`cid`, `bk`, `title`, `content`, `click`, `huifu`, `huifuall`, `firstnkname`, `firstlogname`, `firsttime`, `lastnkname`, `lastlogname`, `lasttime`, `hp`, `pp`, `area`, `regtime`, `favcount`, `ip`, `sign`, `pic`, `img`, `zd`, `hs`, `pb`, `jh`, `tj`, `lock`, `through`, `edit`, `prizepp`, `zts`, `hfs`, `face`, `sort`, `edits`, `replyview`, `highlight`) VALUES
-(1, 1, '¹§Ï²Äú£¬°²×°³É¹¦À²£¡', '<br />·Ã¿Í¶àÂÛÌ³ <br />µ±Ç°°æ±¾:fkduo r15°æ<br /><br />Ê¹ÓÃ·½ÃæÉÏÓĞÈÎºÎÎÊÌâ£¬Çëµ½¹Ù·½ÍøÕ¾×ÉÑ¯:<br /><a href="http://code.google.com/p/fkduo/" target="_blank">http://code.google.com/p/fkduo/</a><br /><br />×£ÄãÊ¹ÓÃÓä¿ì£¡', 0, 0, 0, 'fkduo', 'fkduo', 1259053206, 'fkduo', 'fkduo', 1259053206, 0, 0, 'no', 0, 0, '', '', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '1', '', 0, 0, 0);
+(1, 1, 'æ­å–œæ‚¨ï¼Œå®‰è£…æˆåŠŸå•¦ï¼', '<br />è®¿å®¢å¤šè®ºå› <br />å½“å‰ç‰ˆæœ¬:fkduo r15ç‰ˆ<br /><br />ä½¿ç”¨æ–¹é¢ä¸Šæœ‰ä»»ä½•é—®é¢˜ï¼Œè¯·åˆ°å®˜æ–¹ç½‘ç«™å’¨è¯¢:<br /><a href="http://code.google.com/p/fkduo/" target="_blank">http://code.google.com/p/fkduo/</a><br /><br />ç¥ä½ ä½¿ç”¨æ„‰å¿«ï¼', 0, 0, 0, 'fkduo', 'fkduo', 1259053206, 'fkduo', 'fkduo', 1259053206, 0, 0, 'no', 0, 0, '', '', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '1', '', 0, 0, 0);
