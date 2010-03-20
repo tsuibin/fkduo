@@ -1,66 +1,66 @@
 <?
 include 'conn.php';
-$bkk=bk;
+$bkk='bk';
 
 $sql="select `cid` from `{$fkduo}zhuti` where (bk='$bk' and zd='0'and hs='0' and through='0')";
 $query=mysql_query($sql);
 
-$rows=mysql_num_rows($query); 
+$rows=mysql_num_rows($query);
 if ($rows==0){
-include 'tis.php';
-$tis= "对不起，当前版面不存在";
-tis($tis);
-exit();
+	include 'tis.php';
+	$tis= "对不起，当前版面不存在";
+	tis($tis);
+	exit();
 }
 
 if ($rows<$liststep) {
-$pages=1;
+	$pages=1;
 }elseif($rows%$liststep==0)
 {
-$pages=(int)($rows/$liststep);
+	$pages=(int)($rows/$liststep);
 }elseif($rows%$liststep>0)
 {
-$pages=(int)($rows/$liststep)+1;
+	$pages=(int)($rows/$liststep)+1;
 }
 
 if ((int)($_GET['now'])==0){
-$now=1;
+	$now=1;
 }else{
-$now=(int)($_GET['now']);
+	$now=(int)($_GET['now']);
 }
 
 if ($now==1 and $pages==1)
 {
-$start=0;
+	$start=0;
 }elseif ($now==1 and $pages>1)
 {
-$thedown="<a href=".url($bk,$now+1).">下一页</a>";
-$start=0;
+	$thedown="<a href=".url($bk,$now+1).">下一页</a>";
+	$start=0;
 }elseif ($now>1 and $now<$pages)
 {
-$theup="<a href=".url($bk,$now-1).">上一页</a>";
-$thedown="<a href=".url($bk,$now+1).">下一页</a>";
-$start=($now-1)*$liststep;
+	$theup="<a href=".url($bk,$now-1).">上一页</a>";
+	$thedown="<a href=".url($bk,$now+1).">下一页</a>";
+	$start=($now-1)*$liststep;
 }elseif (($now>1 and $now==$pages) or ($now>$pages))
 {
-$theup="<a href=".url($bk,$pages-1).">上一页</a>";
-$start=($pages-1)*$liststep;
-$now=$pages;
+	$theup="<a href=".url($bk,$pages-1).">上一页</a>";
+	$start=($pages-1)*$liststep;
+	$now=$pages;
 }
 
 function uuuw($mkktime){ //时间转换格式
-$mkktime=date("y-m-d H:i",$mkktime);
-return $mkktime;  
+	$mkktime=date("y-m-d H:i",$mkktime);
+	return $mkktime;
 }
 
 function uuuy($mkktime){ //时间转换格式
-$mkktime=date("m-d H:i",$mkktime);
-return $mkktime;
+	$mkktime=date("m-d H:i",$mkktime);
+	return $mkktime;
 }
 
 function uuuz($uuuz1,$uuuz2){ //列表简略分页
-$uuuz=(int)($uuuz1/$uuuz2);
-return $uuuz+1;
+	$uuuz=(int)($uuuz1/$uuuz2);
+	return $uuuz+1;
 }
 
 $listtop="listtop".$bk;//文件名
@@ -69,7 +69,7 @@ $sql="select * from `{$fkduo}zhuti` where (bk='$bk' and zd='0'and hs='0' and thr
 $query=mysql_query($sql);
 
 $endtime=microtime(true);//输出运行时间
-$total=$endtime-$starttime; 
+$total=$endtime-$starttime;
 $runtimes="<center>{$total} second(s)</center>";
 
 include 'xingTemplate.php';

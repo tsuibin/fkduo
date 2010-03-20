@@ -1,11 +1,12 @@
 <?php
-session_start();
+session_start(); //启动会话SESSION
 
+//
 if ($yanc!=1){
 	$time_curr = time();
 	$time_pre = (int)($_SESSION['time_pre']);
-	if($time_curr-$time_pre<1){ 
-		sleep(1); 
+	if($time_curr-$time_pre<1){
+		sleep(1);
 	}else{
 		$_SESSION['time_pre']=$time_curr;
 	}
