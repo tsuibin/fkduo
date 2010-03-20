@@ -39,7 +39,7 @@ switch ($_GET[action]){
 <table width="54%" height="70" border="1" cellpadding="0"
 	cellspacing="0">
 	<tr>
-		<H1>版块删除</H1>
+		<h1>版块删除</h1>
 	</tr>
 	<tr>
 		<td width="6%" bgcolor="#99CC99">ID:</td>
