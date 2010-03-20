@@ -2,7 +2,7 @@
 include 'conn.php';
 include 'check.php' ;
 
-if ($_SESSION[lock]==1){
+if ($_SESSION['lock']==1){
 	$tis= "对不起，你的账号处于冻结期，无法发贴！";
 	tis($tis);
 	exit;

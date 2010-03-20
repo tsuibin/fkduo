@@ -15,6 +15,8 @@
         );
 
         include_once 'config/img.php';
+        /*处理中文乱码问题*/
+        $waterstring = iconv('UTF-8','GBK',$waterstring);
 
 	$max_file_size=$max_file_size*1000;
 		
@@ -112,7 +114,7 @@
                     switch($watertype)
                     {
                         case 1:    //加水印字符串
-                            imagestring($dst_im,3,$src_w-130,$src_h-35,$waterstring,$white);//文字水印
+                            imagestring($dst_im,'simsun.ttc',$src_w-130,$src_h-35,$waterstring,$white);//文字水印
                             break;
                         case 2:    //加水印图片
 
