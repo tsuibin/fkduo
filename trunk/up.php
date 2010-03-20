@@ -108,13 +108,16 @@
                     $red = imagecolorallocate($dst_im,255,0,0);//红
                     $orange = imagecolorallocate($dst_im,255,85,0);//橙
                     imagefill($dst_im,0,0,$white);
-
+                    $angle =0;
+                    $fontSize=12;
+                    $fontFile='./include/simhei.ttf';
                     imagecopymerge($dst_im,$src_im,0,0,0,0,$src_w,$src_h,100);//原图图像写入新建真彩位图中
                     //imagefilledrectangle($dst_im,1,$src_h-15,80,$src_h,$white);
                     switch($watertype)
                     {
                         case 1:    //加水印字符串
-                            imagestring($dst_im,'simsun.ttc',$src_w-130,$src_h-35,$waterstring,$white);//文字水印
+                        	imagettftext($dst_im,$fontSize,$angle,$src_w-130,$src_h-35,$white,$fontFile,$waterstring);
+                            //imagestring($dst_im,3,$src_w-130,$src_h-35,$waterstring,$white);//文字水印
                             break;
                         case 2:    //加水印图片
 
