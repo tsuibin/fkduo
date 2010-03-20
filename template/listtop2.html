@@ -1,0 +1,74 @@
+<!--为no为个人资料模板 -->
+<!-- 插入头部页面 -->
+
+<!-- 主要框架 -->
+<div class="center" id="main_frame" >
+<!-- 左边 -->
+<div id="left_content">
+<!-- 插入论坛头部模块 -->
+<!-- 位置 -->
+<div id="breadcrumbs"><strong class="t">位置</strong>:<a href="loop,2,1.html"><strong><u>板块增加</u></strong></a>
+- <a href="loop,2,1.html">版面介绍</a>{$navtis}
+</div>
+<!-- 位置 -->
+<!-- 版主 -->
+<div id="admin">
+版主：
+  
+</div>
+<!-- /版主 -->
+<br class="nof" />
+<!-- 搜索 -->
+
+
+<div id="topic_search">
+<input name="searchKey" id="searchKey" type="text" size="15" value="" onKeyPress="var code =event.keyCode;if(code==13){location='search.php?action='+document.getElementById('searchType').value+'&keyword='+encodeURI(document.getElementById('searchKey').value)+'&bk=2'; return false; } else {return true;}">
+<select name="searchType" id="searchType">
+<option value="1" selected>按主题</option>
+<option value='3' >按用户名</option>
+<option value='2' >按昵称</option>
+</select>
+<input name="Submit" type="button" value="搜索" id="submit_seach" onclick="location='search.php?action='+document.getElementById('searchType').value+'&keyword='+encodeURI(document.getElementById('searchKey').value)+'&bk=2';">
+</div>
+
+
+<!-- 搜索 -->
+<!-- 发表按钮 -->
+<div id="button">
+<a href="post.php?bk=2" id="publish">发表文章</a><a href="my.php?action=mypost" target="_blank" id="my_topic">我的帖子</a>
+<a href="loopjh.php?bk=2" id="ess">精华库</a>
+</div>
+<!-- /发表按钮 -->
+
+<!-- 门派 -->
+<!-- /门派 -->
+<!-- 分板块先不要了 -->
+<!--
+<div id="area">
+<ul>
+</ul>
+</div>
+-->
+<!--/分板块 -->
+
+<!-- /插入论坛头部模块 -->
+
+{if ((int)($cid))==0}
+<!-- 插入主题列表 -->
+<ul class="list_item list_title">
+<li class="i1">图示</li>
+<li class="i2">人气</li>
+<li class="i3">
+&nbsp;&nbsp;&nbsp;&nbsp;主题
+</li>
+<li class="i4">回复</li>
+<li class="i5">发表人</li>
+<li class="i6">发表时间</li>
+<li class="i7">回复人</li>
+<li class="i8">回复时间</li>
+</ul> 
+<form id="mytopics" name="mytopics" > 
+{/if}
+
+{if ((int)($cid))==0 and $now==1}
+{/if}
