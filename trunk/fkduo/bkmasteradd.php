@@ -72,7 +72,7 @@ $sql="select * FROM `{$fkduo}bk` ORDER by `px`";
 $query=mysql_query($sql);
 while ($row=mysql_fetch_array($query)){
 ?>
-<option value="<? echo $row[bkid] ?>" selected="selected"><? echo $row[bkname] ?></option>
+<option value="<? echo $row['bkid'] ?>" selected="selected"><? echo $row['bkname'] ?></option>
 <?
 }
 ?>
