@@ -16,8 +16,9 @@
 
         include_once 'config/img.php';
         /*处理中文乱码问题*/
-        $waterstring = iconv('UTF-8','GBK',$waterstring);
-
+        //$waterstring = iconv('UTF-8','GBK',$waterstring);
+		//var_dump($waterstring);
+		//die();
 	$max_file_size=$max_file_size*1000;
 		
         if ($_SERVER['REQUEST_METHOD'] == 'POST')
