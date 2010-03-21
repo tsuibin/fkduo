@@ -19,105 +19,101 @@
 <link href="html/css/display.css" rel="stylesheet" type="text/css" />
 !{/if!}
 <link href="html/css/fkduonav.css" rel="stylesheet" type="text/css" />
-
 </head>
 <body>
 <!-- 插入HTML头部 -->
 <script language="javascript" src="html/js/popupImages.js"></script>
 <!-- <DIV ID="dek" CLASS="dek"></DIV> -->
 <script language="JavaScript">
-var MouseX, MouseY
-if (!document.all) document.captureEvents(Event.MOUSEMOVE);
-document.onmousemove=MouseMove;
-function MouseMove(e){
-if(document.all){
-MouseX=document.documentElement.scrollLeft+event.clientX;
-MouseY=document.documentElement.scrollTop+event.clientY;
-}else{
-MouseX=e.pageX;
-MouseY=e.pageY;
-}
-}
-function getImageSize(ImgSrc)
-{
-var img=new Image();
-img.src=ImgSrc;
-var imgSize={w:img.width,h:img.height};
-delete img;
-return imgSize;
-}
-function ShowLayerAlbum(ImgSrc){
-if(MouseX && MouseY){
-swapImage('AlbumImage',ImgSrc,getImageSize(ImgSrc));
-}
-}
-function HideLayerAlbum(){
-showHideLayers('LayerAlbum','hide');
-}
-function showHideLayers(id, v) {
-if(v=='hide')
-{
-document.getElementById(id).innerHTML="";
-}else if(v=='show')
-{
-if(!document.getElementById("AlbumImage"))
-{
-var img=document.createElement("img");
-img.id="AlbumImage";
-img.cssText="border: 1px solid #cccccc; width:0px;height:0px";
-document.getElementById(id).appendChild(img);
-}
-}
-document.getElementById(id).style.visibility=(v=='show')?'visible':(v=='hide')?'hidden':v;
-}
-function swapImage(id, ImgSrc,imgsize) {
-var yOffset=imgsize.h;
-showHideLayers('LayerAlbum','show');
-document.getElementById('LayerAlbum').style.left=MouseX+"px";
-document.getElementById('LayerAlbum').style.top=MouseY-yOffset -20+"px";
-document.getElementById(id).src = ImgSrc;
-}
+	var MouseX, MouseY
+	if (!document.all)
+		document.captureEvents(Event.MOUSEMOVE);
+	document.onmousemove = MouseMove;
+	function MouseMove(e) {
+		if (document.all) {
+			MouseX = document.documentElement.scrollLeft + event.clientX;
+			MouseY = document.documentElement.scrollTop + event.clientY;
+		} else {
+			MouseX = e.pageX;
+			MouseY = e.pageY;
+		}
+	}
+	function getImageSize(ImgSrc) {
+		var img = new Image();
+		img.src = ImgSrc;
+		var imgSize = {
+			w : img.width,
+			h : img.height
+		};
+		delete img;
+		return imgSize;
+	}
+	function ShowLayerAlbum(ImgSrc) {
+		if (MouseX && MouseY) {
+			swapImage('AlbumImage', ImgSrc, getImageSize(ImgSrc));
+		}
+	}
+	function HideLayerAlbum() {
+		showHideLayers('LayerAlbum', 'hide');
+	}
+	function showHideLayers(id, v) {
+		if (v == 'hide') {
+			document.getElementById(id).innerHTML = "";
+		} else if (v == 'show') {
+			if (!document.getElementById("AlbumImage")) {
+				var img = document.createElement("img");
+				img.id = "AlbumImage";
+				img.cssText = "border: 1px solid #cccccc; width:0px;height:0px";
+				document.getElementById(id).appendChild(img);
+			}
+		}
+		document.getElementById(id).style.visibility = (v == 'show') ? 'visible'
+				: (v == 'hide') ? 'hidden' : v;
+	}
+	function swapImage(id, ImgSrc, imgsize) {
+		var yOffset = imgsize.h;
+		showHideLayers('LayerAlbum', 'show');
+		document.getElementById('LayerAlbum').style.left = MouseX + "px";
+		document.getElementById('LayerAlbum').style.top = MouseY - yOffset - 20
+				+ "px";
+		document.getElementById(id).src = ImgSrc;
+	}
 </script>
-<div id="LayerAlbum" style="z-index:9999;visibility: hidden; position: absolute; top: 0px; left: 0px;"><img id="AlbumImage" style="border: 1px solid #cccccc;" /></div>
+<div id="LayerAlbum"
+	style="z-index: 9999; visibility: hidden; position: absolute; top: 0px; left: 0px;"><img
+	id="AlbumImage" style="border: 1px solid #cccccc;" /></div>
 <a name=top></a>
 <!-- 插入用户状态条 -->
 <script type="text/JavaScript">
-function MM_jumpMenu(selObj,restore){ //v3.0
-eval("location='"+selObj.options[selObj.selectedIndex].value+"'");
-if(restore) selObj.selectedIndex=0;
-}
+	function MM_jumpMenu(selObj, restore) { //v3.0
+		eval("location='" + selObj.options[selObj.selectedIndex].value + "'");
+		if (restore)
+			selObj.selectedIndex = 0;
+	}
 </script>
 <!-- 登陆头部 -->
 
-!{if ($_SESSION[logname])!}
-!{xingTemplate headlogin!}
-!{else!}
-!{xingTemplate headnologin!}
-!{/if!}
+!{if ($_SESSION[logname])!} !{xingTemplate headlogin!} !{else!}
+!{xingTemplate headnologin!} !{/if!}
 
 
-<!-- /登陆头部 --><!-- 插入用户状态条 -->
+<!-- /登陆头部 -->
+<!-- 插入用户状态条 -->
 <!-- 头部logo & 广告 -->
-<div class="center" id="top_content">
-<a href="{$siteurl}" id="club_logo1" title="{$sitename}">{$sitename}<span id="title"></span></a>
+<div class="center" id="top_content"><a href="{$siteurl}"
+	id="club_logo1" title="{$sitename}">{$sitename}<span id="title"></span></a>
 <!-- 广告 -->
 
-<div class="fkduo_ad0">
-!{$ad0!}
-</div>
+<div class="fkduo_ad0">!{$ad0!}</div>
 
-<!-- 广告 -->
-<!-- 快捷链接 -->
-<div id="shortcut_link">
-!{if $_SESSION[power]<4 and (int)($_SESSION[power])!=0!}
-[<a href="fkduo/log.php" target=_blank><font color=red><b>管理员模式</b></font></a>] ｜
-!{/if!}
- <a href="#" class="strong">PP银行</a> ｜ <a href="#">无线WAP</a> </div>
-<!-- 快捷链接 -->
-</div>
+<!-- 广告 --> <!-- 快捷链接 -->
+<div id="shortcut_link">!{if $_SESSION[power]<4 and
+(int)($_SESSION[power])!=0!} [<a href="fkduo/log.php" target=_blank><font
+	color=red><b>管理面板</b></font></a>] ｜ !{/if!} <a href="#" class="strong">PP银行</a>
+｜ <a href="#">无线WAP</a></div>
+<!-- 快捷链接 --></div>
 <!-- 头部logo & 广告 -->
 <!-- 论坛导航 -->
-<div class="bbsmenu center" id="mainmenu" ><a class="first" href="index.php">首页</a>
-{$nav}
-</div>
+<div class="bbsmenu center" id="mainmenu"><a class="first"
+	href="index.php">首页</a> {$nav}</div>
 <!-- /论坛导航 -->
