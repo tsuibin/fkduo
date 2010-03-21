@@ -117,8 +117,8 @@
                     switch($watertype)
                     {
                         case 1:    //加水印字符串
-                        	imagettftext($dst_im,$fontSize,$angle,$src_w-130,$src_h-35,$white,$fontFile,$waterstring);
-                            //imagestring($dst_im,3,$src_w-130,$src_h-35,$waterstring,$white);//文字水印
+                        	//imagettftext($dst_im,$fontSize,$angle,$src_w-130,$src_h-35,$white,$fontFile,$waterstring);
+                            imagestring($dst_im,3,$src_w-130,$src_h-35,$waterstring,$white);//文字水印
                             break;
                         case 2:    //加水印图片
 
