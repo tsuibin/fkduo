@@ -1,5 +1,5 @@
 <?
-$sitename="访客多论坛";       //网站名称
+$sitename="'izi";       //网站名称
 $siteurl="http://localhost/";      //网站网址，后面要有"/"
 $beian='中国ICP备888888号';   //网站的备案号
 $sys_sitenameadd=''; //标题附加字
@@ -7,7 +7,7 @@ $sys_Keywords=''; //网站关键字，供搜索引擎参考
 $sys_Description=''; //网站简介，供搜索引擎参考
 
 $zhuid='1';         //主版ID,即打开论坛首页显示的版面
-$liststep='35';     //贴子列表一页显示多少条标题
+$liststep='35';     //贴子列表一页显示多少条标题 *禁止设为0
 $contentstep='10';   //贴子内容一页显示多少条回帖
 
 $sys_right_hour='24'; //右侧人气排行时间范围，默认24小时
@@ -32,5 +32,5 @@ $sys_rewrite='1'; //是否开启URL静态功能
 $sys_sign='1'; //是否显示签名档
 $sys_highlight='red'; //主题高亮的颜色
 
-$version='1.1';   //此项请勿更改
+$version='r15';   //此项请勿更改
 ?>

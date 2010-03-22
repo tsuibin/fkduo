@@ -15,11 +15,9 @@ if ($rows==0){
 
 if ($rows<$liststep) {
 	$pages=1;
-}elseif($rows%$liststep==0)
-{
+}elseif($rows%$liststep==0){
 	$pages=(int)($rows/$liststep);
-}elseif($rows%$liststep>0)
-{
+}elseif($rows%$liststep>0){
 	$pages=(int)($rows/$liststep)+1;
 }
 
