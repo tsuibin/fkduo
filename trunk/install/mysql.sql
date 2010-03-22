@@ -267,7 +267,7 @@ CREATE TABLE `{table_prefix}sms` (
 --
 
 INSERT INTO `{table_prefix}sms` (`id`, `title`, `content`, `from`, `fromnkname`, `to`, `time`, `read`) VALUES
-(1, '恭喜，您已经成功注册本论坛!', '发言请遵守当地法律法规，谢谢！', '访客多论坛', '', 'fkduo', 1259053045, 1);
+(1, '恭喜，您已经成功注册本论坛!', '发言请遵守当地法律法规，谢谢！', 'izi', '', 'fkduo', 1259053045, 1);
 
 -- --------------------------------------------------------
 
@@ -404,4 +404,4 @@ CREATE TABLE `{table_prefix}zhuti` (
 --
 
 INSERT INTO `{table_prefix}zhuti` (`cid`, `bk`, `title`, `content`, `click`, `huifu`, `huifuall`, `firstnkname`, `firstlogname`, `firsttime`, `lastnkname`, `lastlogname`, `lasttime`, `hp`, `pp`, `area`, `regtime`, `favcount`, `ip`, `sign`, `pic`, `img`, `zd`, `hs`, `pb`, `jh`, `tj`, `lock`, `through`, `edit`, `prizepp`, `zts`, `hfs`, `face`, `sort`, `edits`, `replyview`, `highlight`) VALUES
-(1, 1, '恭喜您，安装成功啦！', '<br />访客多论坛 <br />当前版本:fkduo r15版<br /><br />使用方面上有任何问题，请到官方网站咨询:<br /><a href="http://code.google.com/p/fkduo/" target="_blank">http://code.google.com/p/fkduo/</a><br /><br />祝你使用愉快！', 0, 0, 0, 'fkduo', 'fkduo', 1259053206, 'fkduo', 'fkduo', 1259053206, 0, 0, 'no', 0, 0, '', '', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '1', '', 0, 0, 0);
+(1, 1, '恭喜您，安装成功啦！', '<br />当前版本: r15<br /><br />使用方面上有任何问题，请到官方网站咨询:<br /><a href="http://code.google.com/p/fkduo/" target="_blank">http://code.google.com/p/fkduo/</a><br /><br />祝你使用愉快！', 0, 0, 0, 'fkduo', 'fkduo', 1259053206, 'fkduo', 'fkduo', 1259053206, 0, 0, 'no', 0, 0, '', '', '0', '0', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '1', '', 0, 0, 0);

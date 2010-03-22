@@ -1,25 +1,25 @@
 <? include 'check.php'; ?>
 <?
 
-switch ($_GET[action]){
-case add:
-$str= <<< EOT
+switch ($_GET['action']){
+	case add:
+		$str= <<< EOT
 <?
-\$sitename="$_POST[sitename]";       //网站名称
-\$siteurl="$_POST[siteurl]";      //网站网址，后面要有"/"
-\$beian='$_POST[beian]';   //网站的备案号
-\$sys_sitenameadd='$_POST[sys_sitenameadd]'; //标题附加字
-\$sys_Keywords='$_POST[sys_Keywords]'; //网站关键字，供搜索引擎参考
-\$sys_Description='$_POST[sys_Description]'; //网站简介，供搜索引擎参考
+\$sitename="{$_POST['sitename']}";       //网站名称
+\$siteurl="{$_POST['siteurl']}";      //网站网址，后面要有"/"
+\$beian='{$_POST['beian']}';   //网站的备案号
+\$sys_sitenameadd='{$_POST['sys_sitenameadd']}'; //标题附加字
+\$sys_Keywords='{$_POST['sys_Keywords']}'; //网站关键字，供搜索引擎参考
+\$sys_Description='{$_POST['sys_Description']}'; //网站简介，供搜索引擎参考
 
-\$zhuid='$_POST[zhuid]';         //主版ID,即打开论坛首页显示的版面
-\$liststep='$_POST[liststep]';     //贴子列表一页显示多少条标题
-\$contentstep='$_POST[contentstep]';   //贴子内容一页显示多少条回帖
+\$zhuid='{$_POST['zhuid']}';         //主版ID,即打开论坛首页显示的版面
+\$liststep='{$_POST['liststep']}';     //贴子列表一页显示多少条标题
+\$contentstep='{$_POST['contentstep']}';   //贴子内容一页显示多少条回帖
 
-\$sys_right_hour='$_POST[sys_right_hour]'; //右侧人气排行时间范围，默认24小时
-\$sys_right_list1='$_POST[sys_right_list1]'; //右侧X小时人气排行显示条数
-\$sys_right_list2='$_POST[sys_right_list2]'; //右侧版主推荐图片显示条数
-\$sys_right_list3='$_POST[sys_right_list3]'; //右侧版主推荐文章显示条数
+\$sys_right_hour='{$_POST['sys_right_hour']}'; //右侧人气排行时间范围，默认24小时
+\$sys_right_list1='{$_POST['sys_right_list1']}'; //右侧X小时人气排行显示条数
+\$sys_right_list2='{$_POST['sys_right_list2']}'; //右侧版主推荐图片显示条数
+\$sys_right_list3='{$_POST['sys_right_list3']}'; //右侧版主推荐文章显示条数
 
 
 \$ftime='$_POST[ftime]';         //发贴间隔秒数，防灌水
@@ -42,19 +42,19 @@ $str= <<< EOT
 ?>
 EOT;
 
-  $he="../config/fkduo.php";
-  $handle=fopen($he,"w"); //写入方式打开新闻路径
-  fwrite($handle,$str); //把刚才替换的内容写进生成的HTML文件
-  fclose($handle);
-  header ("location: info.php?action=ok");
-exit;
+		$he="../config/fkduo.php";
+		$handle=fopen($he,"w"); //写入方式打开新闻路径
+		fwrite($handle,$str); //把刚才替换的内容写进生成的HTML文件
+		fclose($handle);
+		header ("location: info.php?action=ok");
+		exit;
 
-case ok:
-echo "<script language=\"javascript\"> alert(\"修改成功！\");</script>";
-break;
-
-default:
-break;
+	case ok:
+		echo "<script language=\"javascript\"> alert(\"修改成功！\");</script>";
+		break;
+	
+	default:
+		break;
 }
 
 ?>
