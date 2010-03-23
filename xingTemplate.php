@@ -49,7 +49,7 @@ $xingTemplate_set = array(
  */
 'cacheId' => md5($_SERVER['REQUEST_URI']),
 
-/* 输出缓存时间 单位秒 *
+/* 输出缓存时间 单位秒 */
  'cache_time' => 500,
  
  /* 输出缓存目录,结尾不要加斜杠 '/' */
